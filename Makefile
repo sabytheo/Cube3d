@@ -6,7 +6,7 @@
 #    By: tsaby <tsaby@student.42lyon.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: Invalid date        by                   #+#    #+#              #
-#    Updated: 2025/07/29 20:25:57 by tsaby            ###   ########.fr        #
+#    Updated: 2025/08/08 15:35:06 by tsaby            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ NC		:= \033[0m
 #*------------------------------------------------------------------------------*
 
 SRCS		:=		main.c \
-					init_map.c \
+					parse_map.c \
 					debug.c
 
 #SRCS_BONUS	:=
@@ -134,7 +134,7 @@ re			:	fclean all
 
 
 run:
-				make && ./$(NAME)
+				make && ./$(NAME) maps/map.cub
 
 #re_bonus	:	fclean bonus
 

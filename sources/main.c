@@ -6,7 +6,7 @@
 /*   By: tsaby <tsaby@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 17:46:21 by tsaby             #+#    #+#             */
-/*   Updated: 2025/07/29 21:15:38 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/08/08 15:49:15 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int main(int argc, char **argv)
 	if (!cube.mlx)
 		return (0);
 	cube.windows = mlx_new_window(cube.mlx, 1280, 720 , "CUBE3D");
-	init_map(&cube,argv);
+	parse_map(&cube,argv);
 	mlx_key_hook(cube.windows, define_control, &cube);
 	mlx_hook(cube.windows, ON_DESTROY, BUTTON_PRESS_MASK, free_exit, &cube);
 	mlx_loop(cube.mlx);

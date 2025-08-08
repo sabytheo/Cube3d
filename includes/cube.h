@@ -6,7 +6,7 @@
 /*   By: tsaby <tsaby@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/07/29 21:14:17 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/08/08 16:07:17 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,16 +39,25 @@ enum
 
 typedef struct s_gamestruct
 {
-	int		fd;
-	int		hmap;
+	int		height;
+	int		*width;
 	char	**map;
+	int 	player_start_x;
+	int 	player_start_y;
+	int 	player_start_dir;
+	float   pos_x;
+	float   pos_y;
+	double	angle;
+	float	fov;
 	void	*mlx;
 	void	*windows;
 
 }			t_gamestruct;
 
 void	print_map(char **map);
+void print_width(t_gamestruct *cube);
+
 int	free_exit(t_gamestruct *cube);
-int	init_map(t_gamestruct *cube, char **argv);
+int	parse_map(t_gamestruct *cube, char **argv);
 
 #endif
