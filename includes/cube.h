@@ -6,19 +6,28 @@
 /*   By: tsaby <tsaby@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/08/08 16:07:17 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/08/19 19:10:49 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CUBE_H
 # define CUBE_H
 
+# include "error.h"
 # include "ft_printf.h"
 # include "ft_printf_fd.h"
 # include "get_next_line.h"
 # include "libft.h"
 # include "mlx.h"
 # include <fcntl.h>
+
+# define WHITE 0x00FFFFFF
+# define BLACK 0x00000000
+# define RED 0x00FF0000
+# define GREEN 0x0000FF00
+# define BLUE 0x000000FF
+# define YELLOW 0x00FFFF00
+# define PURPLE 0x00FF00FF
 
 enum
 {
@@ -37,27 +46,42 @@ enum
 	ESCAPE = 65307
 };
 
-typedef struct s_gamestruct
+typedef struct s_player
 {
-	int		height;
-	int		*width;
-	char	**map;
-	int 	player_start_x;
-	int 	player_start_y;
-	int 	player_start_dir;
-	float   pos_x;
-	float   pos_y;
-	double	angle;
-	float	fov;
-	void	*mlx;
-	void	*windows;
+	float		pos_x;
+	float		pos_y;
+	double		angle;
+	float		fov;
+}				t_player;
 
-}			t_gamestruct;
+typedef struct s_map
+{
+	int			height;
+	int			max_width;
+	int			*width;
+	char		**grid;
 
-void	print_map(char **map);
-void print_width(t_gamestruct *cube);
+	int			start_x;
+	int			start_y;
+	char		start_dir;
 
-int	free_exit(t_gamestruct *cube);
-int	parse_map(t_gamestruct *cube, char **argv);
+}				t_map;
+
+typedef struct s_game
+{
+	void		*mlx;
+	void		*windows;
+	t_map		*map;
+	t_player	*player;
+
+}				t_game;
+
+
+
+void			print_map(char **map);
+void			print_width(t_game *cube);
+
+int				free_exit(t_game *cube);
+int				parse_map(t_game *cube, char **argv);
 
 #endif

@@ -6,13 +6,13 @@
 /*   By: tsaby <tsaby@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 19:35:31 by tsaby             #+#    #+#             */
-/*   Updated: 2025/08/08 16:53:15 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/08/19 18:36:32 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cube.h"
 
-static int	copy_line(t_gamestruct *cube, char *line)
+static int	copy_line(t_game *cube, char *line)
 {
 	char	**temp;
 	int		i;
@@ -20,27 +20,27 @@ static int	copy_line(t_gamestruct *cube, char *line)
 	if (!line)
 		return (0);
 	i = 0;
-	cube->height++;
-	temp = (char **)malloc(sizeof(char *) * (cube->height + 1));
+	cube->map->height++;
+	temp = (char **)malloc(sizeof(char *) * (cube->map->height + 1));
 	if (!temp)
 	{
 		free(line);
 		free_exit(cube);
 	}
-	temp[cube->height] = NULL;
-	while (i < cube->height - 1)
+	temp[cube->map->height] = NULL;
+	while (i < cube->map->height - 1)
 	{
-		temp[i] = cube->map[i];
+		temp[i] = cube->map->grid[i];
 		i++;
 	}
 	temp[i] = line;
-	if (cube->map)
-		free(cube->map);
-	cube->map = temp;
+	if (cube->map->grid)
+		free(cube->map->grid);
+	cube->map->grid = temp;
 	return (1);
 }
 
-int	open_map(t_gamestruct *cube, char **argv)
+int	open_map(t_game *cube, char **argv)
 {
 	char	*line;
 	int		fd;
@@ -60,41 +60,55 @@ int	open_map(t_gamestruct *cube, char **argv)
 	close(fd);
 	return (0);
 }
-int get_width(char ** map, t_gamestruct *cube)
+int	get_width(char **map, t_game *cube)
 {
-	int i;
-	int j;
-	int len;
+	int	i;
+	int	j;
+	int	len;
 
 	i = 6;
-	cube->width = malloc(sizeof(int) * (cube->height - 6 + 1));
-	if (!cube->width)
+	cube->map->width = malloc(sizeof(int) * (cube->map->height - 6 + 1));
+	if (!cube->map->width)
 		return (-1);
 	while (map[i])
 	{
 		j = 0;
 		len = 0;
-		while(map[i][j])
+		while (map[i][j])
 		{
 			while ((map[i][j] >= 9 && map[i][j] <= 13) || (map[i][j] == ' '))
 				j++;
 			len++;
 			j++;
 		}
-		cube->width[i] = len - 1;
+		cube->map->width[i] = len - 1;
+		if (cube->map->width[i] > cube->map->max_width)
+			cube->map->max_width = cube->map->width[i];
 		i++;
 	}
 	return (0);
 }
-
-int	parse_map(t_gamestruct *cube, char **argv)
+int	check_arg(char *mapname)
 {
-	if (open_map(cube, argv) < 0)
+	char	*s;
+
+	s = ".cub\0";
+	if ((ft_strncmp(ft_strchr(mapname, '.'), s, 5)) != 0)
+	{
+		ft_printf_fd(2, E_WRONG_EXT);
 		return (-1);
-	get_width(cube->map, cube);
-	print_width(cube);
-	print_map(cube->map);
+	}
 	return (0);
 }
 
-
+int	parse_map(t_game *cube, char **argv)
+{
+	if (check_arg(argv[1]) < 0)
+		return (-1);
+	if (open_map(cube, argv) < 0)
+		return (-1);
+	get_width(cube->map->grid, cube);
+	print_width(cube);
+	print_map(cube->map->grid);
+	return (0);
+}
