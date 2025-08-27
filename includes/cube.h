@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cube.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42lyon.fr>            +#+  +:+       +#+        */
+/*   By: egache <egache@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/08/19 19:10:49 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/08/27 19:33:12 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include "libft.h"
 # include "mlx.h"
 # include <fcntl.h>
+# include <stdbool.h>
 
 # define WHITE 0x00FFFFFF
 # define BLACK 0x00000000
@@ -67,16 +68,37 @@ typedef struct s_map
 
 }				t_map;
 
+typedef struct s_textures
+{
+
+	char *wall[4][3];
+	int *c[3];
+	int *f[3];
+	// int			texture_count;
+	// char		*no;
+	// bool		no_found;
+	// char		*so;
+	// bool		so_found;
+	// char		*we;
+	// bool		we_found;
+	// char		*ea;
+	// bool		ea_found;
+	// char		**f;
+	// bool		f_found;
+	// char		**c;
+	// bool		c_found;
+
+}				t_textures;
+
 typedef struct s_game
 {
 	void		*mlx;
 	void		*windows;
 	t_map		*map;
 	t_player	*player;
+	t_textures	*textures;
 
 }				t_game;
-
-
 
 void			print_map(char **map);
 void			print_width(t_game *cube);

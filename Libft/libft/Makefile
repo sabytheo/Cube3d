@@ -6,7 +6,7 @@
 #    By: egache <egache@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/08 12:50:41 by tsaby             #+#    #+#              #
-#    Updated: 2025/06/24 13:21:50 by egache           ###   ########.fr        #
+#    Updated: 2025/08/21 18:33:15 by egache           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,6 +42,7 @@ SRCS		:= \
 					ft_strcmp.c\
 					ft_strncmp.c\
 					ft_strnstr.c\
+					ft_strstr.c\
 					ft_strrchr.c\
 					ft_strtrim.c\
 					ft_substr.c\

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42lyon.fr>            +#+  +:+       +#+        */
+/*   By: egache <egache@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 17:46:21 by tsaby             #+#    #+#             */
-/*   Updated: 2025/08/19 19:15:44 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/08/27 19:34:32 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,15 +35,26 @@ int init(t_game *cube)
 {
 	ft_bzero(cube, sizeof(t_game));
     cube->map = (t_map *)malloc(sizeof(t_map));
-    // if (!cube->map)
-    // {
-    //     ft_printf_fd(2, "Error:\n Failed to allocate cube->map\n");
-    //     return (-1);
-    // }
+    cube->textures = (t_textures *)malloc(sizeof(t_textures));
     cube->map->height = 0;
     cube->map->grid = NULL;
 	return (0);
 
+}
+
+int	init_wall_tab(t_game *cube)
+{
+	// int	i;
+	// i = 0;
+	// while (i < 4)
+	// {
+	// 	cube->textures->wall[0][i] = (char *)malloc(3 * sizeof(char));
+	// 	i++;
+	// }
+	cube->textures->wall[0][0] = "NO";
+	cube->textures->wall[1][0] = "SO";
+	cube->textures->wall[2][0] = "WE";
+	cube->textures->wall[3][0] = "EA";
 }
 int	main(int argc, char **argv)
 {
@@ -63,9 +74,7 @@ int	main(int argc, char **argv)
 	if (!cube.mlx)
 		return (0);
 	cube.windows = mlx_new_window(cube.mlx, 1280, 720, "CUBE3D");
-	// cube.img_ptr = mlx_new_image(cube.mlx, 1280, 720);
-	// cube.img_data = mlx_get_data_addr(cube.img_ptr, &cube.bits, &cube.size_line,
-	// 		&cube.endian);
+
 	mlx_key_hook(cube.windows, define_control, &cube);
 	mlx_hook(cube.windows, ON_DESTROY, BUTTON_PRESS_MASK, free_exit, &cube);
 	mlx_loop(cube.mlx);
