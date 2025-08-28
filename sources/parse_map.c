@@ -6,11 +6,12 @@
 /*   By: tsaby <tsaby@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 19:35:31 by tsaby             #+#    #+#             */
-/*   Updated: 2025/08/19 18:36:32 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/08/28 18:25:56 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cube.h"
+#include <stdio.h>
 
 static int	copy_line(t_game *cube, char *line)
 {
@@ -25,7 +26,7 @@ static int	copy_line(t_game *cube, char *line)
 	if (!temp)
 	{
 		free(line);
-		free_exit(cube);
+		free_exit(cube,EXIT_FAILURE);
 	}
 	temp[cube->map->height] = NULL;
 	while (i < cube->map->height - 1)
@@ -74,16 +75,16 @@ int	get_width(char **map, t_game *cube)
 	{
 		j = 0;
 		len = 0;
-		while (map[i][j])
+		while (map[i][j] != '\n')
 		{
 			while ((map[i][j] >= 9 && map[i][j] <= 13) || (map[i][j] == ' '))
 				j++;
 			len++;
 			j++;
 		}
-		cube->map->width[i] = len - 1;
-		if (cube->map->width[i] > cube->map->max_width)
-			cube->map->max_width = cube->map->width[i];
+		cube->map->width[i - 6] = len - 1;
+		if (cube->map->width[i - 6] > cube->map->max_width)
+			cube->map->max_width = cube->map->width[i - 6];
 		i++;
 	}
 	return (0);
@@ -108,7 +109,9 @@ int	parse_map(t_game *cube, char **argv)
 	if (open_map(cube, argv) < 0)
 		return (-1);
 	get_width(cube->map->grid, cube);
-	print_width(cube);
-	print_map(cube->map->grid);
-	return (0);
+	if (parse_textures(cube, cube->map->grid) < 0)
+		return (-1);
+	print_map(cube->textures->wall);
+	print_map(cube->textures->fc);
+		return (0);
 }

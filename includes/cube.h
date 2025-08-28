@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cube.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/08/27 19:33:12 by egache           ###   ########.fr       */
+/*   Updated: 2025/08/28 17:17:53 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,23 +71,8 @@ typedef struct s_map
 typedef struct s_textures
 {
 
-	char *wall[4][3];
-	int *c[3];
-	int *f[3];
-	// int			texture_count;
-	// char		*no;
-	// bool		no_found;
-	// char		*so;
-	// bool		so_found;
-	// char		*we;
-	// bool		we_found;
-	// char		*ea;
-	// bool		ea_found;
-	// char		**f;
-	// bool		f_found;
-	// char		**c;
-	// bool		c_found;
-
+	char **wall;
+	char **fc;
 }				t_textures;
 
 typedef struct s_game
@@ -103,7 +88,9 @@ typedef struct s_game
 void			print_map(char **map);
 void			print_width(t_game *cube);
 
-int				free_exit(t_game *cube);
+int				free_exit(t_game *cube, int state);
 int				parse_map(t_game *cube, char **argv);
+
+int	parse_textures(t_game *cube,char **grid);
 
 #endif

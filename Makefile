@@ -6,7 +6,7 @@
 #    By: tsaby <tsaby@student.42lyon.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: Invalid date        by                   #+#    #+#              #
-#    Updated: 2025/08/08 15:35:06 by tsaby            ###   ########.fr        #
+#    Updated: 2025/08/28 17:02:13 by tsaby            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,8 @@ NC		:= \033[0m
 
 SRCS		:=		main.c \
 					parse_map.c \
+					parse_textures.c \
+					reef.c \
 					debug.c
 
 #SRCS_BONUS	:=
@@ -134,7 +136,7 @@ re			:	fclean all
 
 
 run:
-				make && ./$(NAME) maps/map.cub
+				make &&  valgrind --leak-check=full --show-leak-kinds=all ./$(NAME) maps/map.cub
 
 #re_bonus	:	fclean bonus
 

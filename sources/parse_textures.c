@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_textures.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/21 17:20:40 by egache            #+#    #+#             */
-/*   Updated: 2025/08/27 19:42:18 by egache           ###   ########.fr       */
+/*   Updated: 2025/08/28 19:09:51 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,55 +26,104 @@ Donc :
 	- Si autre que whitespaces ou virgule -> ERROR
 	- Check que la valeur <= 255
 */
-
-int find_identifier(t_game *cube, char *line)
+int rgb_to_hex(char * line)
 {
 	int i;
 
 	i = 0;
-	while (i < 4)
-	{
-		if (ft_strncmp(line, cube->textures->wall[i][0], 3) == 0)
-			if (!cube->textures->wall[i][1])
-			{
-				fill_texture_path(cube, line, i);
-				return (0);
-			}
-			else
-				return (1); // ALREADY FOUND
 
+	while(line[i] != '\n' && line[i])
+	{
+		while )
 	}
+}
+int	fill_colors(t_game *cube, char *line, int i)
+{
+	line += 1;
+	while (*line == ' ' || *line == '\t')
+		line++;
+
+	cube->textures->fc[i] = rgb_to_hex(line);
+	if (!cube->textures->fc[i])
+	{
+		return (-1);
+	}
+	return (0);
 }
 
 int	fill_texture_path(t_game *cube, char *line, int i)
 {
-	char *str;
-
-	// FILL LE TAB EN ENLEVANT IDENTIFIER ET LES WHITESPACES ETC ....
-	if (ft_strnstr(line, "NO", 2))
+	line += 2;
+	while (*line == ' ' || *line == '\t')
+		line++;
+	cube->textures->wall[i] = ft_strdup(line);
+	if (!cube->textures->wall[i])
 	{
-		if (cube->textures->no_found == false && str != NULL)
-		{
-			cube->textures->no_found = true;
-			return (1)
-		}
-		else
-			return (0);
+		return (-1);
 	}
+	return (0);
 }
 
-void	parse_textures(t_game *cube)
+int find_fc_id(t_game *cube,const char fc_id[2][3], char *line, int i)
 {
-	char **grid;
-	int	i;
-	int	j;
+	ft_printf("%s\n",fc_id[i]);
+	if (ft_strncmp(line,fc_id[i], 2) == 0)
+		{
+			if (!cube->textures->fc[i])
+			{
+				if (fill_colors(cube, line, i) < 0)
+					return (-1);
+				return (0);
+			}
+		}
+	return (1);
+}
 
-	cube->textures->no_found = false;
-	grid = cube->map->grid;
+int find_wall_id(t_game *cube,const char wall_id[4][4], char *line, int i)
+{
+	if (ft_strncmp(line,wall_id[i], 3) == 0)
+		{
+			if (!cube->textures->wall[i])
+			{
+				if (fill_texture_path(cube, line, i) < 0)
+					return (-1);
+				return (0);
+			}
+		}
+	return (1);
+}
+int	find_identifier(t_game *cube, char *line)
+{
+	int	i;
+	const char wall_id[4][4] = {"NO ","SO ","WE ","EA "};
+	const char fc_id[2][3] = {"F ","C "};
+
 	i = 0;
-	j = 0;
+	while (i < 4)
+	{
+		if(find_wall_id(cube,wall_id,line,i) < 0)
+			return (-1);
+		if (i < 2)
+		{
+			if(find_fc_id(cube,fc_id,line,i) < 0)
+				return (-1);
+		}
+		i++;
+	}
+	return (0);
+}
+
+int	parse_textures(t_game *cube, char **grid)
+{
+	int		i;
+
+	i = 0;
 	while (grid[i])
 	{
-		if ()
+		if (find_identifier(cube, grid[i]) < 0)
+			return (-1);
+
+		i++;
 	}
+	return (0);
 }
