@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   debug.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42lyon.fr>            +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 20:21:37 by tsaby             #+#    #+#             */
-/*   Updated: 2025/08/19 18:31:31 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/09/25 17:24:14 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cube.h"
+#include <stdio.h>
 
 void	print_map(char **map)
 {
@@ -21,6 +22,29 @@ void	print_map(char **map)
 	{
 		// ft_printf("[%d] :", i);
 		ft_printf("%s", map[i]);
+		i++;
+	}
+}
+
+void print_texture(t_texture *textures)
+{
+	int i;
+
+	i = 0;
+
+	printf("texture NO : %s\n", textures->NO);
+	printf("texture SO : %s\n", textures->SO);
+	printf("texture WE : %s\n", textures->WE);
+	printf("texture EA : %s\n", textures->EA);
+	while (i < 3)
+	{
+		printf("texture C : %d\n",textures->ceiling[i]);
+		i++;
+	}
+	i = 0;
+	while (i < 3)
+	{
+		printf("texture F : %d\n",textures->floor[i]);
 		i++;
 	}
 }

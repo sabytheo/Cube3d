@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cube.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42lyon.fr>            +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/08/19 19:10:49 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/09/25 18:10:43 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,12 +60,38 @@ typedef struct s_map
 	int			max_width;
 	int			*width;
 	char		**grid;
-
 	int			start_x;
 	int			start_y;
 	char		start_dir;
 
 }				t_map;
+
+typedef struct s_texture
+{
+	char		*NO;
+	char		*SO;
+	char		*WE;
+	char		*EA;
+	int			ceiling[3];
+	int			floor[3];
+
+}				t_texture;
+
+enum			direction
+{
+	NO,
+	SO,
+	WE,
+	EA,
+	TEXTURES_FOUND
+};
+
+enum
+{
+	FLOOR,
+	CEILING,
+	COLORS_FOUND
+};
 
 typedef struct s_game
 {
@@ -73,15 +99,22 @@ typedef struct s_game
 	void		*windows;
 	t_map		*map;
 	t_player	*player;
+	t_texture	*textures;
 
 }				t_game;
 
+int				init_textures(char **grid, t_game *cube);
+int				init_colors(char **grid, t_game *cube);
 
-
+// Debug
 void			print_map(char **map);
 void			print_width(t_game *cube);
+void			print_texture(t_texture *textures);
 
+// Reef
 int				free_exit(t_game *cube);
+
+// Parse_map
 int				parse_map(t_game *cube, char **argv);
 
 #endif

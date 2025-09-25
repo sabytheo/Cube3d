@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   parse_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42lyon.fr>            +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 19:35:31 by tsaby             #+#    #+#             */
-/*   Updated: 2025/08/19 18:36:32 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/09/25 16:10:18 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cube.h"
+#include <stdio.h>
 
 static int	copy_line(t_game *cube, char *line)
 {
@@ -66,15 +67,15 @@ int	get_width(char **map, t_game *cube)
 	int	j;
 	int	len;
 
-	i = 6;
-	cube->map->width = malloc(sizeof(int) * (cube->map->height - 6 + 1));
+	i = 0;
+	cube->map->width = malloc(sizeof(int) * (cube->map->height + 1));
 	if (!cube->map->width)
 		return (-1);
 	while (map[i])
 	{
 		j = 0;
 		len = 0;
-		while (map[i][j])
+		while (map[i][j] != '\n')
 		{
 			while ((map[i][j] >= 9 && map[i][j] <= 13) || (map[i][j] == ' '))
 				j++;
@@ -101,6 +102,7 @@ int	check_arg(char *mapname)
 	return (0);
 }
 
+
 int	parse_map(t_game *cube, char **argv)
 {
 	if (check_arg(argv[1]) < 0)
@@ -108,7 +110,12 @@ int	parse_map(t_game *cube, char **argv)
 	if (open_map(cube, argv) < 0)
 		return (-1);
 	get_width(cube->map->grid, cube);
-	print_width(cube);
-	print_map(cube->map->grid);
+	if (init_textures(cube->map->grid,cube) < 0)
+		return (-1);
+	if (init_colors(cube->map->grid,cube) < 0)
+		return (-1);
+	// print_width(cube);
+	// print_map(cube->map->grid);
+	print_texture(cube->textures);
 	return (0);
 }
