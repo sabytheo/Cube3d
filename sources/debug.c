@@ -6,7 +6,7 @@
 /*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 20:21:37 by tsaby             #+#    #+#             */
-/*   Updated: 2025/09/25 17:24:14 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/09/29 17:03:11 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,13 +52,13 @@ void print_texture(t_texture *textures)
 void print_width(t_game *cube)
 {
 	ft_printf("------------------------------------\n");
-	for (int i = 6; i < cube->map->height; i++)
+	for (int i = 6; i < cube->map->total_height; i++)
 	{
 		ft_printf("width[%d] = %d\n",i,cube->map->width[i]);
 	}
 	ft_printf("------------------------------------\n");
 	ft_printf("Max width = %d\n", cube->map->max_width);
-	ft_printf("Height =  %d\n", cube->map->height - 6);
+	ft_printf("Height =  %d\n", cube->map->total_height - 6);
 	ft_printf("------------------------------------\n");
 	ft_printf("\n");
 }

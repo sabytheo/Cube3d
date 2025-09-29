@@ -6,7 +6,7 @@
 /*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 17:46:21 by tsaby             #+#    #+#             */
-/*   Updated: 2025/09/25 15:44:00 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/09/29 16:03:22 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int	init(t_game *cube)
 {
 	ft_bzero(cube, sizeof(t_game));
 	cube->map = (t_map *)ft_calloc(1,sizeof(t_map));
+	cube->player = (t_player *)ft_calloc(1,sizeof(t_player));
 	if (!cube->map)
 	{
 	    ft_printf_fd(2, "Error:\n Failed to allocate cube->map\n");

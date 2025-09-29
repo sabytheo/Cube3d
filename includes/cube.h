@@ -6,7 +6,7 @@
 /*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/09/25 18:10:43 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/09/29 17:16:19 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ enum
 typedef struct s_player
 {
 	float		pos_x;
+	char		direction;
 	float		pos_y;
 	double		angle;
 	float		fov;
@@ -56,10 +57,13 @@ typedef struct s_player
 
 typedef struct s_map
 {
-	int			height;
+	int			total_height;
 	int			max_width;
+	int			grid_start;
+	int			grid_height;
 	int			*width;
 	char		**grid;
+	char		**final_grid;
 	int			start_x;
 	int			start_y;
 	char		start_dir;
@@ -103,8 +107,8 @@ typedef struct s_game
 
 }				t_game;
 
-int				init_textures(char **grid, t_game *cube);
-int				init_colors(char **grid, t_game *cube);
+int				init_textures(int *i, char **grid, t_game *cube);
+int				init_colors(int *i, char **grid, t_game *cube);
 
 // Debug
 void			print_map(char **map);
@@ -116,5 +120,8 @@ int				free_exit(t_game *cube);
 
 // Parse_map
 int				parse_map(t_game *cube, char **argv);
+
+// Parse_grid
+void parse_grid(int *i, char **grid, t_game *cube);
 
 #endif

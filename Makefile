@@ -6,7 +6,7 @@
 #    By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: Invalid date        by                   #+#    #+#              #
-#    Updated: 2025/09/29 11:28:40 by tsaby            ###   ########.fr        #
+#    Updated: 2025/09/29 15:06:28 by tsaby            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ NC		:= \033[0m
 SRCS		:=		main.c \
 					parse_map.c \
 					parse_texture.c \
+					parse_grid.c \
 					reef.c \
 					debug.c
 

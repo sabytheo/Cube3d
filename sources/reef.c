@@ -6,7 +6,7 @@
 /*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 15:37:43 by tsaby             #+#    #+#             */
-/*   Updated: 2025/09/25 18:10:14 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/09/29 16:04:23 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,5 +71,7 @@ int	free_exit(t_game *cube)
 		free(cube->map->width);
 	if (cube->map)
 		free(cube->map);
+	if (cube->player)
+		free(cube->player);
 	exit(0);
 }
