@@ -6,7 +6,7 @@
 /*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 12:42:42 by tsaby             #+#    #+#             */
-/*   Updated: 2025/09/25 18:10:50 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/09/29 13:17:10 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	init_textures(char **grid, t_game *cube)
 	{
 		if (ft_strncmp("NO ", grid[i], 3) == 0 || ft_strncmp("SO ", grid[i],
 				3) == 0 || ft_strncmp("EA ", grid[i], 3) == 0
-			|| ft_strncmp("WE ", grid[i], 3) == 0 )
+			|| ft_strncmp("WE ", grid[i], 3) == 0)
 		{
 			if (get_textures(grid[i], textures, count) < 0)
 				return (-1);
@@ -67,65 +67,90 @@ int	init_textures(char **grid, t_game *cube)
 	}
 	return (-1);
 }
-static int get_colors(char *str,t_texture *textures, int i)
-{
-	int j;
-	int len;
-	char *tmp;
 
-	j = 0;
-	len = 0;
-	while(*str && *str != '\n')
+
+int	get_ceiling_values(char *str, int len, t_texture *textures, int j)
+{
+	char	*tmp;
+
+	tmp = ft_strldup(str, len);
+	textures->ceiling[j] = ft_atoi(tmp);
+	free(tmp);
+	if (&textures->ceiling[j] == NULL)
+		return (-1);
+	if (textures->floor[j] > 255)
 	{
-		if (j > 2)
+		ft_printf(E_BAD_COLOR_USAGE);
+		return (-1);
+	}
+	return (0);
+}
+
+int	get_floor_values(char *str, int len, t_texture *textures, int j)
+{
+	char	*tmp;
+
+	tmp = ft_strldup(str, len);
+	textures->floor[j] = ft_atoi(tmp);
+	free(tmp);
+	if (&textures->floor[j] == NULL)
+		return (-1);
+	if (textures->floor[j] > 255)
+	{
+		ft_printf(E_BAD_COLOR_USAGE);
+		return (-1);
+	}
+	return (0);
+}
+
+int check_len_and_skip_space(char **str , int *j, int *len)
+{
+	if (*j > 2)
 		{
 			ft_printf(E_BAD_COLOR_USAGE);
 			return (-1);
 		}
-		str++;
-		while (*str == ' ' || (*str >= 9 && *str <= 13))
-			str++;
-		while(*str && *str != '\n' &&*str != ',' )
+		(*str)++;
+		while (**str == ' ' || (**str >= 9 && **str <= 13))
+			(*str)++;
+		while (**str && **str != '\n' && **str != ',')
 		{
-			len++;
-			str++;
+			(*len)++;
+			(*str)++;
 		}
-		if (len > 3 || len == 0)
+		if (*len > 3 || *len == 0)
 		{
 			ft_printf(E_BAD_COLOR_USAGE);
-			return(-1);
+			return (-1);
 		}
-		str -= len;
-		if ( i == FLOOR  && !textures->floor[j])
+		(*str) -= (*len);
+		return (0);
+}
+
+static int	get_colors(char *str, t_texture *textures, int i)
+{
+	int	j;
+	int	len;
+
+	j = 0;
+	while (*str && *str != '\n')
+	{
+		len = 0;
+		if (check_len_and_skip_space(&str,&j,&len) < 0)
+			return (-1);
+		if (i == FLOOR && !textures->floor[j])
 		{
-			tmp = ft_strldup(str, len);
-			textures->floor[j] = ft_atoi(tmp);
-			free(tmp);
-			if (&textures->floor[j] == NULL)
+			if (get_floor_values(str, len, textures, j) < 0)
 				return (-1);
-			if (textures->floor[j] > 255)
-			{
-				ft_printf(E_BAD_COLOR_USAGE);
-				return (-1);
-			}
 		}
-		else if ( i == CEILING  && !textures->ceiling[j])
+		else if (i == CEILING && !textures->ceiling[j])
 		{
-			tmp = ft_strldup(str, len);
-			textures->ceiling[j] = ft_atoi(tmp);
-			free(tmp);
-			if (&textures->ceiling[j] == NULL)
+			if (get_ceiling_values(str, len, textures, j) < 0)
 				return (-1);
-			if (textures->floor[j] > 255)
-			{
-				ft_printf(E_BAD_COLOR_USAGE);
-				return (-1);
-			}
 		}
 		else
 			return (-1);
 		str += len;
-		len = 0;
 		j++;
 	}
 	if (j == 3)
@@ -133,24 +158,25 @@ static int get_colors(char *str,t_texture *textures, int i)
 	return (-1);
 }
 
-int init_colors(char **grid, t_game *cube)
+int	init_colors(char **grid, t_game *cube)
 {
-	int i;
-	int count;
+	int	i;
+	int	count;
+
 	count = 0;
 	i = 0;
-
 	while (grid[i])
 	{
-		if (ft_strncmp("F ", grid[i], 2) == 0 || ft_strncmp("C ", grid[i], 2) == 0)
+		if (ft_strncmp("F ", grid[i], 2) == 0 || ft_strncmp("C ", grid[i],
+				2) == 0)
 		{
-			if(get_colors(grid[i],cube->textures,count) < 0)
-				return(-1);
+			if (get_colors(grid[i], cube->textures, count) < 0)
+				return (-1);
 			count++;
 		}
 		i++;
 	}
 	if (count == COLORS_FOUND)
-		return(0);
-	return(-1);
+		return (0);
+	return (-1);
 }

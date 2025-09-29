@@ -6,7 +6,7 @@
 #    By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: Invalid date        by                   #+#    #+#              #
-#    Updated: 2025/09/25 15:49:33 by tsaby            ###   ########.fr        #
+#    Updated: 2025/09/29 11:28:40 by tsaby            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,6 +58,8 @@ CFLAGS		:=	-Wall -Wextra -Werror -g3
 #*------------------------------------------------------------------------------*
 
 NAME		:=	cube
+
+VFLAGS		=	--leak-check=full --show-leak-kinds=all
 
 #NAME_B		:=	minishell_bonus
 
@@ -134,6 +136,9 @@ fclean		:	clean
 
 re			:	fclean all
 
+
+valgrind	:
+				make && valgrind $(VFLAGS) ./$(NAME) maps/map.cub
 
 run:
 				make && ./$(NAME) maps/map.cub
