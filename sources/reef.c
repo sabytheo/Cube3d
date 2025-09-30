@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   reef.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: teatime <teatime@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 15:37:43 by tsaby             #+#    #+#             */
-/*   Updated: 2025/09/29 16:04:23 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/09/30 18:54:20 by teatime          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cube.h"
 
-void	free_tab(char **tab)
+void free_tab(char **tab)
 {
-	int	i;
+	int i;
 
 	i = 0;
 	if (tab)
@@ -44,7 +44,7 @@ void	free_tab(char **tab)
 // 	}
 // }
 
-int	free_exit(t_game *cube)
+int free_exit(t_game *cube)
 {
 	if (cube->windows)
 		mlx_destroy_window(cube->mlx, cube->windows);
@@ -55,6 +55,8 @@ int	free_exit(t_game *cube)
 	}
 	if (cube->map->grid)
 		free_tab(cube->map->grid);
+	if (cube->map->final_grid)
+		free_tab(cube->map->final_grid);
 	if (cube->textures->NO)
 		free(cube->textures->NO);
 	if (cube->textures->SO)
@@ -63,11 +65,9 @@ int	free_exit(t_game *cube)
 		free(cube->textures->WE);
 	if (cube->textures->EA)
 		free(cube->textures->EA);
-	// free(cube->textures->ceiling);
-	// free(cube->textures->floor);
 	if (cube->textures)
 		free(cube->textures);
-	if(cube->map->width)
+	if (cube->map->width)
 		free(cube->map->width);
 	if (cube->map)
 		free(cube->map);

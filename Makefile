@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+         #
+#    By: teatime <teatime@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: Invalid date        by                   #+#    #+#              #
-#    Updated: 2025/09/29 15:06:28 by tsaby            ###   ########.fr        #
+#    Updated: 2025/09/30 18:49:16 by teatime          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ NC		:= \033[0m
 
 SRCS		:=		main.c \
 					parse_map.c \
-					parse_texture.c \
+					parse_textures.c \
 					parse_grid.c \
 					reef.c \
 					debug.c
