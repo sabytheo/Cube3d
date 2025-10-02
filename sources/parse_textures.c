@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse_texture.c                                    :+:      :+:    :+:   */
+/*   parse_textures.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: teatime <teatime@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 12:42:42 by tsaby             #+#    #+#             */
-/*   Updated: 2025/09/30 18:48:30 by teatime          ###   ########.fr       */
+/*   Updated: 2025/10/02 18:30:33 by teatime          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ int init_textures(int *i, char **grid, t_game *cube)
 			count++;
 		}
 		(*i)++;
-		printf("i dans textures : %d\n", *i);
+		// printf("i dans textures : %d\n", *i);
 		cube->textures = textures;
 		if (count == TEXTURES_FOUND)
 		{

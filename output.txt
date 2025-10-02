@@ -1,0 +1,542 @@
+make && ./cube maps/map.cub
+make[1]: Entering directory '/home/teatime/work/Cube3d'
+make --no-print-directory -C mlx_linux/
+./configure
+[96m[1mconfigure[0m [[92minfo[0m] : Found X11 include path directory: /usr/include
+[96m[1mconfigure[0m [[92minfo[0m] : Generate "makefile.gen" from template "makefile.mk"
+[96m[1mconfigure[0m [[92minfo[0m] : Generate "test/makefile.gen" from template "test/makefile.mk"
+[96m[1mconfigure[0m [[92minfo[0m] : Execute "make all" from file "makefile.gen"
+make[3]: Nothing to be done for 'all'.
+[96m[1mconfigure[0m [[92minfo[0m] : Execute "make all" from file "test/makefile.gen"
+make[3]: Nothing to be done for 'all'.
+make[2]: 'cube' is up to date.
+make[1]: Leaving directory '/home/teatime/work/Cube3d'
+              1 
+     11     11F111
+           11FFFF1
+111000001 1FFFFFF1
+000000001111111F11
+11001101FFFFFFFF11
+101    1FFFF3FFFF1
+101    1FFFFFFFFF111111
+       11111111111111 19 - 10 = 9 >? 9
+
+---------------------------------
+
+---------------------------------
+APPEL INITIAL: check_grid_validity(6, 12, cube)
+Visite [6][12] = '3' (appel #1)
+  -> Marquage en 'V'
+  -> Check BAS [7][12]
+Visite [7][12] = 'F' (appel #2)
+  -> Marquage en 'V'
+  -> Check BAS [8][12]
+Visite [8][12] = '1' (appel #3)
+  -> Mur trouvé, OK
+  -> Check HAUT [6][12]
+Visite [6][12] = 'V' (appel #4)
+  -> Déjà visité, skip
+  -> Check DROITE [7][13]
+Visite [7][13] = 'F' (appel #5)
+  -> Marquage en 'V'
+  -> Check BAS [8][13]
+Visite [8][13] = '1' (appel #6)
+  -> Mur trouvé, OK
+  -> Check HAUT [6][13]
+Visite [6][13] = 'F' (appel #7)
+  -> Marquage en 'V'
+  -> Check BAS [7][13]
+Visite [7][13] = 'V' (appel #8)
+  -> Déjà visité, skip
+  -> Check HAUT [5][13]
+Visite [5][13] = 'F' (appel #9)
+  -> Marquage en 'V'
+  -> Check BAS [6][13]
+Visite [6][13] = 'V' (appel #10)
+  -> Déjà visité, skip
+  -> Check HAUT [4][13]
+Visite [4][13] = '1' (appel #11)
+  -> Mur trouvé, OK
+  -> Check DROITE [5][14]
+Visite [5][14] = 'F' (appel #12)
+  -> Marquage en 'V'
+  -> Check BAS [6][14]
+Visite [6][14] = 'F' (appel #13)
+  -> Marquage en 'V'
+  -> Check BAS [7][14]
+Visite [7][14] = 'F' (appel #14)
+  -> Marquage en 'V'
+  -> Check BAS [8][14]
+Visite [8][14] = '1' (appel #15)
+  -> Mur trouvé, OK
+  -> Check HAUT [6][14]
+Visite [6][14] = 'V' (appel #16)
+  -> Déjà visité, skip
+  -> Check DROITE [7][15]
+Visite [7][15] = 'F' (appel #17)
+  -> Marquage en 'V'
+  -> Check BAS [8][15]
+Visite [8][15] = '1' (appel #18)
+  -> Mur trouvé, OK
+  -> Check HAUT [6][15]
+Visite [6][15] = 'F' (appel #19)
+  -> Marquage en 'V'
+  -> Check BAS [7][15]
+Visite [7][15] = 'V' (appel #20)
+  -> Déjà visité, skip
+  -> Check HAUT [5][15]
+Visite [5][15] = 'F' (appel #21)
+  -> Marquage en 'V'
+  -> Check BAS [6][15]
+Visite [6][15] = 'V' (appel #22)
+  -> Déjà visité, skip
+  -> Check HAUT [4][15]
+Visite [4][15] = 'F' (appel #23)
+  -> Marquage en 'V'
+  -> Check BAS [5][15]
+Visite [5][15] = 'V' (appel #24)
+  -> Déjà visité, skip
+  -> Check HAUT [3][15]
+Visite [3][15] = 'F' (appel #25)
+  -> Marquage en 'V'
+  -> Check BAS [4][15]
+Visite [4][15] = 'V' (appel #26)
+  -> Déjà visité, skip
+  -> Check HAUT [2][15]
+Visite [2][15] = 'F' (appel #27)
+  -> Marquage en 'V'
+  -> Check BAS [3][15]
+Visite [3][15] = 'V' (appel #28)
+  -> Déjà visité, skip
+  -> Check HAUT [1][15]
+Visite [1][15] = '1' (appel #29)
+  -> Mur trouvé, OK
+  -> Check DROITE [2][16]
+Visite [2][16] = 'F' (appel #30)
+  -> Marquage en 'V'
+  -> Check BAS [3][16]
+Visite [3][16] = 'F' (appel #31)
+  -> Marquage en 'V'
+  -> Check BAS [4][16]
+Visite [4][16] = '1' (appel #32)
+  -> Mur trouvé, OK
+  -> Check HAUT [2][16]
+Visite [2][16] = 'V' (appel #33)
+  -> Déjà visité, skip
+  -> Check DROITE [3][17]
+Visite [3][17] = '1' (appel #34)
+  -> Mur trouvé, OK
+  -> Check GAUCHE [3][15]
+Visite [3][15] = 'V' (appel #35)
+  -> Déjà visité, skip
+  -> [3][16] validé complètement
+  -> Check HAUT [1][16]
+Visite [1][16] = '1' (appel #36)
+  -> Mur trouvé, OK
+  -> Check DROITE [2][17]
+Visite [2][17] = '1' (appel #37)
+  -> Mur trouvé, OK
+  -> Check GAUCHE [2][15]
+Visite [2][15] = 'V' (appel #38)
+  -> Déjà visité, skip
+  -> [2][16] validé complètement
+  -> Check GAUCHE [2][14]
+Visite [2][14] = 'F' (appel #39)
+  -> Marquage en 'V'
+  -> Check BAS [3][14]
+Visite [3][14] = 'F' (appel #40)
+  -> Marquage en 'V'
+  -> Check BAS [4][14]
+Visite [4][14] = '1' (appel #41)
+  -> Mur trouvé, OK
+  -> Check HAUT [2][14]
+Visite [2][14] = 'V' (appel #42)
+  -> Déjà visité, skip
+  -> Check DROITE [3][15]
+Visite [3][15] = 'V' (appel #43)
+  -> Déjà visité, skip
+  -> Check GAUCHE [3][13]
+Visite [3][13] = 'F' (appel #44)
+  -> Marquage en 'V'
+  -> Check BAS [4][13]
+Visite [4][13] = '1' (appel #45)
+  -> Mur trouvé, OK
+  -> Check HAUT [2][13]
+Visite [2][13] = 'F' (appel #46)
+  -> Marquage en 'V'
+  -> Check BAS [3][13]
+Visite [3][13] = 'V' (appel #47)
+  -> Déjà visité, skip
+  -> Check HAUT [1][13]
+Visite [1][13] = '1' (appel #48)
+  -> Mur trouvé, OK
+  -> Check DROITE [2][14]
+Visite [2][14] = 'V' (appel #49)
+  -> Déjà visité, skip
+  -> Check GAUCHE [2][12]
+Visite [2][12] = '1' (appel #50)
+  -> Mur trouvé, OK
+  -> [2][13] validé complètement
+  -> Check DROITE [3][14]
+Visite [3][14] = 'V' (appel #51)
+  -> Déjà visité, skip
+  -> Check GAUCHE [3][12]
+Visite [3][12] = 'F' (appel #52)
+  -> Marquage en 'V'
+  -> Check BAS [4][12]
+Visite [4][12] = '1' (appel #53)
+  -> Mur trouvé, OK
+  -> Check HAUT [2][12]
+Visite [2][12] = '1' (appel #54)
+  -> Mur trouvé, OK
+  -> Check DROITE [3][13]
+Visite [3][13] = 'V' (appel #55)
+  -> Déjà visité, skip
+  -> Check GAUCHE [3][11]
+Visite [3][11] = 'F' (appel #56)
+  -> Marquage en 'V'
+  -> Check BAS [4][11]
+Visite [4][11] = '1' (appel #57)
+  -> Mur trouvé, OK
+  -> Check HAUT [2][11]
+Visite [2][11] = '1' (appel #58)
+  -> Mur trouvé, OK
+  -> Check DROITE [3][12]
+Visite [3][12] = 'V' (appel #59)
+  -> Déjà visité, skip
+  -> Check GAUCHE [3][10]
+Visite [3][10] = '1' (appel #60)
+  -> Mur trouvé, OK
+  -> [3][11] validé complètement
+  -> [3][12] validé complètement
+  -> [3][13] validé complètement
+  -> [3][14] validé complètement
+  -> Check HAUT [1][14]
+Visite [1][14] = 'F' (appel #61)
+  -> Marquage en 'V'
+  -> Check BAS [2][14]
+Visite [2][14] = 'V' (appel #62)
+  -> Déjà visité, skip
+  -> Check HAUT [0][14]
+Visite [0][14] = '1' (appel #63)
+  -> Mur trouvé, OK
+  -> Check DROITE [1][15]
+Visite [1][15] = '1' (appel #64)
+  -> Mur trouvé, OK
+  -> Check GAUCHE [1][13]
+Visite [1][13] = '1' (appel #65)
+  -> Mur trouvé, OK
+  -> [1][14] validé complètement
+  -> Check DROITE [2][15]
+Visite [2][15] = 'V' (appel #66)
+  -> Déjà visité, skip
+  -> Check GAUCHE [2][13]
+Visite [2][13] = 'V' (appel #67)
+  -> Déjà visité, skip
+  -> [2][14] validé complètement
+  -> [2][15] validé complètement
+  -> Check DROITE [3][16]
+Visite [3][16] = 'V' (appel #68)
+  -> Déjà visité, skip
+  -> Check GAUCHE [3][14]
+Visite [3][14] = 'V' (appel #69)
+  -> Déjà visité, skip
+  -> [3][15] validé complètement
+  -> Check DROITE [4][16]
+Visite [4][16] = '1' (appel #70)
+  -> Mur trouvé, OK
+  -> Check GAUCHE [4][14]
+Visite [4][14] = '1' (appel #71)
+  -> Mur trouvé, OK
+  -> [4][15] validé complètement
+  -> Check DROITE [5][16]
+Visite [5][16] = '1' (appel #72)
+  -> Mur trouvé, OK
+  -> Check GAUCHE [5][14]
+Visite [5][14] = 'V' (appel #73)
+  -> Déjà visité, skip
+  -> [5][15] validé complètement
+  -> Check DROITE [6][16]
+Visite [6][16] = 'F' (appel #74)
+  -> Marquage en 'V'
+  -> Check BAS [7][16]
+Visite [7][16] = 'F' (appel #75)
+  -> Marquage en 'V'
+  -> Check BAS [8][16]
+Visite [8][16] = '1' (appel #76)
+  -> Mur trouvé, OK
+  -> Check HAUT [6][16]
+Visite [6][16] = 'V' (appel #77)
+  -> Déjà visité, skip
+  -> Check DROITE [7][17]
+Visite [7][17] = '1' (appel #78)
+  -> Mur trouvé, OK
+  -> Check GAUCHE [7][15]
+Visite [7][15] = 'V' (appel #79)
+  -> Déjà visité, skip
+  -> [7][16] validé complètement
+  -> Check HAUT [5][16]
+Visite [5][16] = '1' (appel #80)
+  -> Mur trouvé, OK
+  -> Check DROITE [6][17]
+Visite [6][17] = '1' (appel #81)
+  -> Mur trouvé, OK
+  -> Check GAUCHE [6][15]
+Visite [6][15] = 'V' (appel #82)
+  -> Déjà visité, skip
+  -> [6][16] validé complètement
+  -> Check GAUCHE [6][14]
+Visite [6][14] = 'V' (appel #83)
+  -> Déjà visité, skip
+  -> [6][15] validé complètement
+  -> Check DROITE [7][16]
+Visite [7][16] = 'V' (appel #84)
+  -> Déjà visité, skip
+  -> Check GAUCHE [7][14]
+Visite [7][14] = 'V' (appel #85)
+  -> Déjà visité, skip
+  -> [7][15] validé complètement
+  -> Check GAUCHE [7][13]
+Visite [7][13] = 'V' (appel #86)
+  -> Déjà visité, skip
+  -> [7][14] validé complètement
+  -> Check HAUT [5][14]
+Visite [5][14] = 'V' (appel #87)
+  -> Déjà visité, skip
+  -> Check DROITE [6][15]
+Visite [6][15] = 'V' (appel #88)
+  -> Déjà visité, skip
+  -> Check GAUCHE [6][13]
+Visite [6][13] = 'V' (appel #89)
+  -> Déjà visité, skip
+  -> [6][14] validé complètement
+  -> Check HAUT [4][14]
+Visite [4][14] = '1' (appel #90)
+  -> Mur trouvé, OK
+  -> Check DROITE [5][15]
+Visite [5][15] = 'V' (appel #91)
+  -> Déjà visité, skip
+  -> Check GAUCHE [5][13]
+Visite [5][13] = 'V' (appel #92)
+  -> Déjà visité, skip
+  -> [5][14] validé complètement
+  -> Check GAUCHE [5][12]
+Visite [5][12] = 'F' (appel #93)
+  -> Marquage en 'V'
+  -> Check BAS [6][12]
+Visite [6][12] = 'V' (appel #94)
+  -> Déjà visité, skip
+  -> Check HAUT [4][12]
+Visite [4][12] = '1' (appel #95)
+  -> Mur trouvé, OK
+  -> Check DROITE [5][13]
+Visite [5][13] = 'V' (appel #96)
+  -> Déjà visité, skip
+  -> Check GAUCHE [5][11]
+Visite [5][11] = 'F' (appel #97)
+  -> Marquage en 'V'
+  -> Check BAS [6][11]
+Visite [6][11] = 'F' (appel #98)
+  -> Marquage en 'V'
+  -> Check BAS [7][11]
+Visite [7][11] = 'F' (appel #99)
+  -> Marquage en 'V'
+  -> Check BAS [8][11]
+Visite [8][11] = '1' (appel #100)
+  -> Mur trouvé, OK
+  -> Check HAUT [6][11]
+Visite [6][11] = 'V' (appel #101)
+  -> Déjà visité, skip
+  -> Check DROITE [7][12]
+Visite [7][12] = 'V' (appel #102)
+  -> Déjà visité, skip
+  -> Check GAUCHE [7][10]
+Visite [7][10] = 'F' (appel #103)
+  -> Marquage en 'V'
+  -> Check BAS [8][10]
+Visite [8][10] = '1' (appel #104)
+  -> Mur trouvé, OK
+  -> Check HAUT [6][10]
+Visite [6][10] = 'F' (appel #105)
+  -> Marquage en 'V'
+  -> Check BAS [7][10]
+Visite [7][10] = 'V' (appel #106)
+  -> Déjà visité, skip
+  -> Check HAUT [5][10]
+Visite [5][10] = 'F' (appel #107)
+  -> Marquage en 'V'
+  -> Check BAS [6][10]
+Visite [6][10] = 'V' (appel #108)
+  -> Déjà visité, skip
+  -> Check HAUT [4][10]
+Visite [4][10] = '1' (appel #109)
+  -> Mur trouvé, OK
+  -> Check DROITE [5][11]
+Visite [5][11] = 'V' (appel #110)
+  -> Déjà visité, skip
+  -> Check GAUCHE [5][9]
+Visite [5][9] = 'F' (appel #111)
+  -> Marquage en 'V'
+  -> Check BAS [6][9]
+Visite [6][9] = 'F' (appel #112)
+  -> Marquage en 'V'
+  -> Check BAS [7][9]
+Visite [7][9] = 'F' (appel #113)
+  -> Marquage en 'V'
+  -> Check BAS [8][9]
+Visite [8][9] = '1' (appel #114)
+  -> Mur trouvé, OK
+  -> Check HAUT [6][9]
+Visite [6][9] = 'V' (appel #115)
+  -> Déjà visité, skip
+  -> Check DROITE [7][10]
+Visite [7][10] = 'V' (appel #116)
+  -> Déjà visité, skip
+  -> Check GAUCHE [7][8]
+Visite [7][8] = 'F' (appel #117)
+  -> Marquage en 'V'
+  -> Check BAS [8][8]
+Visite [8][8] = '1' (appel #118)
+  -> Mur trouvé, OK
+  -> Check HAUT [6][8]
+Visite [6][8] = 'F' (appel #119)
+  -> Marquage en 'V'
+  -> Check BAS [7][8]
+Visite [7][8] = 'V' (appel #120)
+  -> Déjà visité, skip
+  -> Check HAUT [5][8]
+Visite [5][8] = 'F' (appel #121)
+  -> Marquage en 'V'
+  -> Check BAS [6][8]
+Visite [6][8] = 'V' (appel #122)
+  -> Déjà visité, skip
+  -> Check HAUT [4][8]
+Visite [4][8] = '1' (appel #123)
+  -> Mur trouvé, OK
+  -> Check DROITE [5][9]
+Visite [5][9] = 'V' (appel #124)
+  -> Déjà visité, skip
+  -> Check GAUCHE [5][7]
+Visite [5][7] = '1' (appel #125)
+  -> Mur trouvé, OK
+  -> [5][8] validé complètement
+  -> Check DROITE [6][9]
+Visite [6][9] = 'V' (appel #126)
+  -> Déjà visité, skip
+  -> Check GAUCHE [6][7]
+Visite [6][7] = '1' (appel #127)
+  -> Mur trouvé, OK
+  -> [6][8] validé complètement
+  -> Check DROITE [7][9]
+Visite [7][9] = 'V' (appel #128)
+  -> Déjà visité, skip
+  -> Check GAUCHE [7][7]
+Visite [7][7] = '1' (appel #129)
+  -> Mur trouvé, OK
+  -> [7][8] validé complètement
+  -> [7][9] validé complètement
+  -> Check HAUT [5][9]
+Visite [5][9] = 'V' (appel #130)
+  -> Déjà visité, skip
+  -> Check DROITE [6][10]
+Visite [6][10] = 'V' (appel #131)
+  -> Déjà visité, skip
+  -> Check GAUCHE [6][8]
+Visite [6][8] = 'V' (appel #132)
+  -> Déjà visité, skip
+  -> [6][9] validé complètement
+  -> Check HAUT [4][9]
+Visite [4][9] = '1' (appel #133)
+  -> Mur trouvé, OK
+  -> Check DROITE [5][10]
+Visite [5][10] = 'V' (appel #134)
+  -> Déjà visité, skip
+  -> Check GAUCHE [5][8]
+Visite [5][8] = 'V' (appel #135)
+  -> Déjà visité, skip
+  -> [5][9] validé complètement
+  -> [5][10] validé complètement
+  -> Check DROITE [6][11]
+Visite [6][11] = 'V' (appel #136)
+  -> Déjà visité, skip
+  -> Check GAUCHE [6][9]
+Visite [6][9] = 'V' (appel #137)
+  -> Déjà visité, skip
+  -> [6][10] validé complètement
+  -> Check DROITE [7][11]
+Visite [7][11] = 'V' (appel #138)
+  -> Déjà visité, skip
+  -> Check GAUCHE [7][9]
+Visite [7][9] = 'V' (appel #139)
+  -> Déjà WE ./path_to_the_west_texture
+NO ./path_to_the_north_texture
+EA ./path_to_the_east_texture
+SO ./path_to_the_south_texture
+
+C 100,120,130
+
+
+
+F 220,245,255
+              1 
+     11     11F111
+           11FFFF1
+111000001 1FFFFFF1
+000000001111111F11
+11001101FFFFFFFF11
+101    1FFFF3FFFF1
+101    1FFFFFFFFF111111
+       11111111111111 visité, skip
+  -> [7][10] validé complètement
+  -> [7][11] validé complètement
+  -> Check HAUT [5][11]
+Visite [5][11] = 'V' (appel #140)
+  -> Déjà visité, skip
+  -> Check DROITE [6][12]
+Visite [6][12] = 'V' (appel #141)
+  -> Déjà visité, skip
+  -> Check GAUCHE [6][10]
+Visite [6][10] = 'V' (appel #142)
+  -> Déjà visité, skip
+  -> [6][11] validé complètement
+  -> Check HAUT [4][11]
+Visite [4][11] = '1' (appel #143)
+  -> Mur trouvé, OK
+  -> Check DROITE [5][12]
+Visite [5][12] = 'V' (appel #144)
+  -> Déjà visité, skip
+  -> Check GAUCHE [5][10]
+Visite [5][10] = 'V' (appel #145)
+  -> Déjà visité, skip
+  -> [5][11] validé complètement
+  -> [5][12] validé complètement
+  -> [5][13] validé complètement
+  -> Check DROITE [6][14]
+Visite [6][14] = 'V' (appel #146)
+  -> Déjà visité, skip
+  -> Check GAUCHE [6][12]
+Visite [6][12] = 'V' (appel #147)
+  -> Déjà visité, skip
+  -> [6][13] validé complètement
+  -> Check DROITE [7][14]
+Visite [7][14] = 'V' (appel #148)
+  -> Déjà visité, skip
+  -> Check GAUCHE [7][12]
+Visite [7][12] = 'V' (appel #149)
+  -> Déjà visité, skip
+  -> [7][13] validé complètement
+  -> Check GAUCHE [7][11]
+Visite [7][11] = 'V' (appel #150)
+  -> Déjà visité, skip
+  -> [7][12] validé complètement
+  -> Check HAUT [5][12]
+Visite [5][12] = 'V' (appel #151)
+  -> Déjà visité, skip
+  -> Check DROITE [6][13]
+Visite [6][13] = 'V' (appel #152)
+  -> Déjà visité, skip
+  -> Check GAUCHE [6][11]
+Visite [6][11] = 'V' (appel #153)
+  -> Déjà visité, skip
+  -> [6][12] validé complètement
+Map valide !
