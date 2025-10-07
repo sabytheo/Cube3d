@@ -6,7 +6,7 @@
 /*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 17:46:21 by tsaby             #+#    #+#             */
-/*   Updated: 2025/09/29 16:03:22 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/10/07 13:26:55 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,16 @@ int	define_control(int keypress, t_game *cube)
 int	init(t_game *cube)
 {
 	ft_bzero(cube, sizeof(t_game));
-	cube->map = (t_map *)ft_calloc(1,sizeof(t_map));
-	cube->player = (t_player *)ft_calloc(1,sizeof(t_player));
+	cube->map = (t_map *)ft_calloc(1, sizeof(t_map));
+	cube->player = (t_player *)ft_calloc(1, sizeof(t_player));
 	if (!cube->map)
 	{
-	    ft_printf_fd(2, "Error:\n Failed to allocate cube->map\n");
-	    return (-1);
+		ft_printf_fd(2, "Error:\n Failed to allocate cube->map\n");
+		return (-1);
 	}
 	return (0);
 }
+
 int	main(int argc, char **argv)
 {
 	t_game	cube;
@@ -50,7 +51,7 @@ int	main(int argc, char **argv)
 		return (0);
 	cube.windows = mlx_new_window(cube.mlx, 1280, 720, "CUBE3D");
 	// cube.img_ptr = mlx_new_image(cube.mlx, 1280, 720);
-	// cube.img_data = mlx_get_data_addr(cube.img_ptr, &cube.bits,&cube.size_line,&cube.endian);
+	// cube.img_data = mlx_get_data_addr(cube.img_ptr,&cube.bits,&cube.size_line,&cube.endian);
 	mlx_key_hook(cube.windows, define_control, &cube);
 	mlx_hook(cube.windows, ON_DESTROY, BUTTON_PRESS_MASK, free_exit, &cube);
 	mlx_loop(cube.mlx);

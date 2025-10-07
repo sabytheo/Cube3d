@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   debug.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 20:21:37 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/07 13:22:37 by egache           ###   ########.fr       */
+/*   Updated: 2025/10/07 13:24:25 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,35 +26,34 @@ void	print_map(char **map)
 	}
 }
 
-void print_texture(t_texture *textures)
+void	print_texture(t_texture *textures)
 {
-	int i;
+	int	i;
 
 	i = 0;
-
 	printf("texture NO : %s\n", textures->NO);
 	printf("texture SO : %s\n", textures->SO);
 	printf("texture WE : %s\n", textures->WE);
 	printf("texture EA : %s\n", textures->EA);
 	while (i < 3)
 	{
-		printf("texture C : %d\n",textures->ceiling[i]);
+		printf("texture C : %d\n", textures->ceiling[i]);
 		i++;
 	}
 	i = 0;
 	while (i < 3)
 	{
-		printf("texture F : %d\n",textures->floor[i]);
+		printf("texture F : %d\n", textures->floor[i]);
 		i++;
 	}
 }
 
-void print_width(t_game *cube)
+void	print_width(t_game *cube)
 {
 	ft_printf("------------------------------------\n");
 	for (int i = 6; i < cube->map->total_height; i++)
 	{
-		ft_printf("width[%d] = %d\n",i,cube->map->width[i]);
+		ft_printf("width[%d] = %d\n", i, cube->map->width[i]);
 	}
 	ft_printf("------------------------------------\n");
 	ft_printf("Max width = %d\n", cube->map->max_width);

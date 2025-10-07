@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   parse_grid_utils.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 12:47:21 by egache            #+#    #+#             */
-/*   Updated: 2025/10/07 12:48:41 by egache           ###   ########.fr       */
+/*   Updated: 2025/10/07 13:27:58 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cube.h"
 
-bool is_only_whitespace(int *i, char **grid)
+bool	is_only_whitespace(int *i, char **grid)
 {
-	int j;
+	int	j;
 
 	j = 0;
 	while (grid[*i][j] && grid[*i][j] != '\n')
@@ -26,24 +26,24 @@ bool is_only_whitespace(int *i, char **grid)
 	return (true);
 }
 
-bool is_a_wall(char c)
+bool	is_a_wall(char c)
 {
 	if (c == '1')
 		return (true);
 	return (false);
 }
 
-bool is_a_player(char c)
+bool	is_a_player(char c)
 {
 	if (c == 'N' || c == 'S' || c == 'E' || c == 'W')
 		return (true);
 	return (false);
 }
 
-bool is_a_valid_char(char c, bool state)
+bool	is_a_valid_char(char c, bool state)
 {
-	static bool found_player = 0;
-	
+	static bool	found_player = 0;
+
 	if (state == BEFORE_FF)
 	{
 		if (c == '0' || c == '1' || c == 'D' || c == ' ')

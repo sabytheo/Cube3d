@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: egache <egache@student.42.fr>              +#+  +:+       +#+         #
+#    By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: Invalid date        by                   #+#    #+#              #
-#    Updated: 2025/10/07 12:50:32 by egache           ###   ########.fr        #
+#    Updated: 2025/10/07 13:31:38 by tsaby            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ NC		:= \033[0m
 SRCS		:=		main.c \
 					parse_map.c \
 					parse_textures.c \
+					parse_colors.c \
 					parse_grid.c \
 					parse_grid_utils.c \
 					parse_grid_flood_fill.c \

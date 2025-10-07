@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   reef.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: teatime <teatime@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 15:37:43 by tsaby             #+#    #+#             */
-/*   Updated: 2025/09/30 18:54:20 by teatime          ###   ########.fr       */
+/*   Updated: 2025/10/07 13:25:31 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cube.h"
 
-void free_tab(char **tab)
+void	free_tab(char **tab)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (tab)
@@ -44,7 +44,7 @@ void free_tab(char **tab)
 // 	}
 // }
 
-int free_exit(t_game *cube)
+int	free_exit(t_game *cube)
 {
 	if (cube->windows)
 		mlx_destroy_window(cube->mlx, cube->windows);

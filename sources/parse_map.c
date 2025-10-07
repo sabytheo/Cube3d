@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   parse_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 19:35:31 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/07 12:34:57 by egache           ###   ########.fr       */
+/*   Updated: 2025/10/07 13:28:44 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cube.h"
 
-static int copy_line(t_game *cube, char *line)
+static int	copy_line(t_game *cube, char *line)
 {
-	char **temp;
-	int i;
+	char	**temp;
+	int		i;
 
 	if (!line)
 		return (0);
@@ -40,10 +40,10 @@ static int copy_line(t_game *cube, char *line)
 	return (1);
 }
 
-int open_map(t_game *cube, char **argv)
+int	open_map(t_game *cube, char **argv)
 {
-	char *line;
-	int fd;
+	char	*line;
+	int		fd;
 
 	fd = open(argv[1], O_RDONLY);
 	if (fd < 0)
@@ -55,17 +55,17 @@ int open_map(t_game *cube, char **argv)
 	{
 		line = get_next_line(fd);
 		if (!copy_line(cube, line))
-			break;
+			break ;
 	}
 	close(fd);
 	return (0);
 }
 
-int get_width(char **map, t_game *cube)
+int	get_width(char **map, t_game *cube)
 {
-	int i;
-	int j;
-	int len;
+	int	i;
+	int	j;
+	int	len;
 
 	i = 0;
 	cube->map->width = malloc(sizeof(int) * (cube->map->total_height + 1));
@@ -77,9 +77,6 @@ int get_width(char **map, t_game *cube)
 		len = 0;
 		while (map[i][j] && map[i][j] != '\n')
 		{
-			// while ((map[i][j] >= 9 && map[i][j] <= 13) || (map[i][j] == ' '))
-			// {}
-			// 	j++;
 			len++;
 			j++;
 		}
@@ -91,9 +88,9 @@ int get_width(char **map, t_game *cube)
 	return (0);
 }
 
-int check_arg(char *mapname)
+int	check_arg(char *mapname)
 {
-	char *s;
+	char	*s;
 
 	s = ".cub\0";
 	if ((ft_strncmp(ft_strchr(mapname, '.'), s, 5)) != 0)
@@ -104,9 +101,9 @@ int check_arg(char *mapname)
 	return (0);
 }
 
-int parse_map(t_game *cube, char **argv)
+int	parse_map(t_game *cube, char **argv)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (check_arg(argv[1]) < 0)

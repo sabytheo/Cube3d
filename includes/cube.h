@@ -3,36 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   cube.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/07 12:50:38 by egache           ###   ########.fr       */
+/*   Updated: 2025/10/07 13:32:37 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CUBE_H
-#define CUBE_H
+# define CUBE_H
 
-#include "error.h"
-#include "ft_printf.h"
-#include "ft_printf_fd.h"
-#include "get_next_line.h"
-#include "libft.h"
-#include "mlx.h"
-#include <fcntl.h>
-#include <stdbool.h>
-#include <stdio.h>
+# include "error.h"
+# include "ft_printf.h"
+# include "ft_printf_fd.h"
+# include "get_next_line.h"
+# include "libft.h"
+# include "mlx.h"
+# include <fcntl.h>
+# include <stdbool.h>
+# include <stdio.h>
 
-#define WHITE 0x00FFFFFF
-#define BLACK 0x00000000
-#define RED 0x00FF0000
-#define GREEN 0x0000FF00
-#define BLUE 0x000000FF
-#define YELLOW 0x00FFFF00
-#define PURPLE 0x00FF00FF
+# define WHITE 0x00FFFFFF
+# define BLACK 0x00000000
+# define RED 0x00FF0000
+# define GREEN 0x0000FF00
+# define BLUE 0x000000FF
+# define YELLOW 0x00FFFF00
+# define PURPLE 0x00FF00FF
 
-#define BEFORE_FF false
-#define AFTER_FF true
+# define BEFORE_FF false
+# define AFTER_FF true
 
 enum
 {
@@ -53,40 +53,40 @@ enum
 
 typedef struct s_player
 {
-	float pos_x;
-	char direction;
-	float pos_y;
-	double angle;
-	float fov;
-} t_player;
+	float		pos_x;
+	char		direction;
+	float		pos_y;
+	double		angle;
+	float		fov;
+}				t_player;
 
 typedef struct s_map
 {
-	int total_height;
-	int max_width;
-	int grid_start;
-	int grid_height;
-	int *width;
-	char **grid;
-	char **final_grid;
-	int start_x;
-	int start_y;
-	char start_dir;
+	int			total_height;
+	int			max_width;
+	int			grid_start;
+	int			grid_height;
+	int			*width;
+	char		**grid;
+	char		**final_grid;
+	int			start_x;
+	int			start_y;
+	char		start_dir;
 
-} t_map;
+}				t_map;
 
 typedef struct s_texture
 {
-	char *NO;
-	char *SO;
-	char *WE;
-	char *EA;
-	int ceiling[3];
-	int floor[3];
+	char		*NO;
+	char		*SO;
+	char		*WE;
+	char		*EA;
+	int			ceiling[3];
+	int			floor[3];
 
-} t_texture;
+}				t_texture;
 
-enum direction
+enum			direction
 {
 	NO,
 	SO,
@@ -104,41 +104,43 @@ enum
 
 typedef struct s_game
 {
-	void *mlx;
-	void *windows;
-	t_map *map;
-	t_player *player;
-	t_texture *textures;
+	void		*mlx;
+	void		*windows;
+	t_map		*map;
+	t_player	*player;
+	t_texture	*textures;
 
-} t_game;
-
-int init_textures(int *i, char **grid, t_game *cube);
-int init_colors(int *i, char **grid, t_game *cube);
+}				t_game;
 
 // Debug
-void print_map(char **map);
-void print_width(t_game *cube);
-void print_texture(t_texture *textures);
+void			print_map(char **map);
+void			print_width(t_game *cube);
+void			print_texture(t_texture *textures);
 
 // Reef
-int free_exit(t_game *cube);
-void free_tab(char **tab);
+int				free_exit(t_game *cube);
+void			free_tab(char **tab);
 
 // Parse_map
-int parse_map(t_game *cube, char **argv);
+int				parse_map(t_game *cube, char **argv);
 
 // Parse_grid
-int parse_grid(int *i, char **grid, t_game *cube);
+int				parse_grid(int *i, char **grid, t_game *cube);
+
+// Parse_textures
+int				init_textures(int *i, char **grid, t_game *cube);
+
+// Parse_colors
+int				init_colors(int *i, char **grid, t_game *cube);
 
 // Parse_grid_utils
-bool is_only_whitespace(int *i, char **grid);
-bool is_a_wall(char c);
-bool is_a_player(char c);
-bool is_a_valid_char(char c, bool state);
+bool			is_only_whitespace(int *i, char **grid);
+bool			is_a_wall(char c);
+bool			is_a_player(char c);
+bool			is_a_valid_char(char c, bool state);
 
 // Parse_grid_flood_fill
-void flood_fill(int i, int j, t_game *cube);
-int vlood_vill(int i, int j, t_game *cube);
-
+void			flood_fill(int i, int j, t_game *cube);
+int				vlood_vill(int i, int j, t_game *cube);
 
 #endif
