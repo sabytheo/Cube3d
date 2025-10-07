@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: teatime <teatime@student.42.fr>            +#+  +:+       +#+         #
+#    By: egache <egache@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: Invalid date        by                   #+#    #+#              #
-#    Updated: 2025/09/30 18:49:16 by teatime          ###   ########.fr        #
+#    Updated: 2025/10/07 12:50:32 by egache           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,8 @@ SRCS		:=		main.c \
 					parse_map.c \
 					parse_textures.c \
 					parse_grid.c \
+					parse_grid_utils.c \
+					parse_grid_flood_fill.c \
 					reef.c \
 					debug.c
 

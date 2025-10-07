@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cube.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: teatime <teatime@student.42.fr>            +#+  +:+       +#+        */
+/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/09/30 19:08:04 by teatime          ###   ########.fr       */
+/*   Updated: 2025/10/07 12:50:38 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 #include "mlx.h"
 #include <fcntl.h>
 #include <stdbool.h>
+#include <stdio.h>
 
 #define WHITE 0x00FFFFFF
 #define BLACK 0x00000000
@@ -29,6 +30,9 @@
 #define BLUE 0x000000FF
 #define YELLOW 0x00FFFF00
 #define PURPLE 0x00FF00FF
+
+#define BEFORE_FF false
+#define AFTER_FF true
 
 enum
 {
@@ -124,6 +128,17 @@ void free_tab(char **tab);
 int parse_map(t_game *cube, char **argv);
 
 // Parse_grid
-void parse_grid(int *i, char **grid, t_game *cube);
+int parse_grid(int *i, char **grid, t_game *cube);
+
+// Parse_grid_utils
+bool is_only_whitespace(int *i, char **grid);
+bool is_a_wall(char c);
+bool is_a_player(char c);
+bool is_a_valid_char(char c, bool state);
+
+// Parse_grid_flood_fill
+void flood_fill(int i, int j, t_game *cube);
+int vlood_vill(int i, int j, t_game *cube);
+
 
 #endif

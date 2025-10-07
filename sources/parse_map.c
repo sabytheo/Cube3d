@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   parse_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: teatime <teatime@student.42.fr>            +#+  +:+       +#+        */
+/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 19:35:31 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/02 18:30:42 by teatime          ###   ########.fr       */
+/*   Updated: 2025/10/07 12:34:57 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cube.h"
-#include <stdio.h>
 
 static int copy_line(t_game *cube, char *line)
 {
@@ -61,6 +60,7 @@ int open_map(t_game *cube, char **argv)
 	close(fd);
 	return (0);
 }
+
 int get_width(char **map, t_game *cube)
 {
 	int i;
@@ -90,6 +90,7 @@ int get_width(char **map, t_game *cube)
 	}
 	return (0);
 }
+
 int check_arg(char *mapname)
 {
 	char *s;
@@ -120,9 +121,14 @@ int parse_map(t_game *cube, char **argv)
 	}
 	if (init_colors(&i, cube->map->grid, cube) < 0)
 		return (-1);
-	parse_grid(&i, cube->map->grid, cube);
+	if (parse_grid(&i, cube->map->grid, cube) < 0)
+	{
+		print_texture(cube->textures);
+		print_map(cube->map->grid);
+		return (-1);
+	}
+	print_texture(cube->textures);
 	// print_width(cube);
 	// print_map(cube->map->grid);
-	// print_texture(cube->textures);
 	return (0);
 }
