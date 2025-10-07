@@ -6,11 +6,12 @@
 /*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 14:33:21 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/07 13:25:09 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/10/07 21:28:00 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cube.h"
+#include <math.h>
 
 static int	copy_grid(t_game *cube)
 {
@@ -62,11 +63,27 @@ static int	check_char_validity(t_game *cube)
 	return (0);
 }
 
+void get_angle(t_game *cube, char c)
+{
+	if (c == 'N')
+		cube->player->angle =   M_PI / 2 ;
+	else if (c == 'S')
+		cube->player->angle =   - M_PI / 2 ;
+	else if (c == 'W')
+		cube->player->angle =  M_PI ;
+	else if (c == 'E')
+		cube->player->angle =   0 ;
+	return ;
+}
+
 static void	set_player_info(int i, int j, t_game *cube)
 {
 	cube->player->direction = cube->map->grid[i][j];
-	cube->player->pos_x = i;
-	cube->player->pos_y = j;
+	get_angle(cube, cube->player->direction);
+	cube->player->fov = M_PI / 3;
+	cube->player->pos_y = (i - cube->map->grid_start) + 0.5;
+	cube->player->pos_x = j + 0.5;
+	return;
 }
 
 static int	check_grid_validity(int *i, t_game *cube)

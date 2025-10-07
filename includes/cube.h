@@ -6,7 +6,7 @@
 /*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/07 13:32:37 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/10/07 21:29:58 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,11 @@
 # include "libft.h"
 # include "mlx.h"
 # include <fcntl.h>
+# include <math.h>
 # include <stdbool.h>
 # include <stdio.h>
+
+#define _GNU_SOURCE
 
 # define WHITE 0x00FFFFFF
 # define BLACK 0x00000000
@@ -30,6 +33,9 @@
 # define BLUE 0x000000FF
 # define YELLOW 0x00FFFF00
 # define PURPLE 0x00FF00FF
+
+# define WIDTH 1280
+# define HEIGHT 720
 
 # define BEFORE_FF false
 # define AFTER_FF true
@@ -59,6 +65,12 @@ typedef struct s_player
 	double		angle;
 	float		fov;
 }				t_player;
+
+typedef struct s_vector
+{
+	float		x;
+	float		y;
+}				t_vector;
 
 typedef struct s_map
 {
@@ -102,15 +114,30 @@ enum
 	COLORS_FOUND
 };
 
+typedef struct s_img
+{
+	void		*img_ptr;
+	char		*addr;
+	int			bits_per_pixel;
+	int			size_line;
+	int			endian;
+	int			width;
+	int			height;
+
+}				t_img;
+
 typedef struct s_game
 {
 	void		*mlx;
 	void		*windows;
 	t_map		*map;
+	t_img		*img;
 	t_player	*player;
 	t_texture	*textures;
 
 }				t_game;
+
+void			render(t_game *cube);
 
 // Debug
 void			print_map(char **map);

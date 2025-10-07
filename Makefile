@@ -6,7 +6,7 @@
 #    By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: Invalid date        by                   #+#    #+#              #
-#    Updated: 2025/10/07 13:31:38 by tsaby            ###   ########.fr        #
+#    Updated: 2025/10/07 14:26:15 by tsaby            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,7 @@ SRCS		:=		main.c \
 					parse_grid_utils.c \
 					parse_grid_flood_fill.c \
 					reef.c \
+					render.c \
 					debug.c
 
 #SRCS_BONUS	:=
