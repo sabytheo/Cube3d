@@ -6,7 +6,7 @@
 /*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 14:16:45 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/07 21:27:40 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/10/08 14:25:13 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,34 +60,20 @@ void	render_floor_ceilling(t_img *img, t_texture *textures)
 	return ;
 }
 
-// void	launch_rayon(t_game *cube)
-// {
-// 	t_vector	rayon;
-// 	int			x;
-// 	float R_H;
-// /*
-// vecteur direction / vecteur plan
-// */
-// 	R_H = 2 * tan(cube->player->fov * 0.5) / WIDTH;
-// 	printf("%f\n",R_H);
-// 	x = 0;
-// 	rayon.x = cube->player->pos_x;
-// 	rayon.y = cube->player->pos_y;
-// 	printf("pos x : %d  pos y : %d\n", (int)rayon.x, (int)rayon.y);
-// 	while (x <= WIDTH)
-// 	{
-// 		printf("pos x : %d  pos y : %d\n", (int)rayon.x, (int)rayon.y);
-// 		// rayon.x -= (x - WIDTH * 0.5) * R_H;
-// 		rayon.x--;
-// 		printf("%f\n",rayon.x);
-// 		if (cube->map->final_grid[(int)rayon.x][(int)rayon.y] == '1')
-// 		{
-// 			printf("wall trouve a %d %d\n", (int)rayon.x, (int)rayon.y);
-// 			break ;
-// 		}
-// 		x++;
-// 	}
-// }
+void	render_wall(float wall_height, t_game *cube, int x)
+{
+	float	start_y;
+	int		j;
+
+	printf(" x = %d wall height = %2.f\n",x,wall_height);
+	start_y = HEIGHT / 2;
+	j = 0;
+	while (j <= wall_height)
+	{
+		mlx_pixel_put(cube->mlx, cube->windows, x, (start_y - (wall_height * 0.5)) + j, WHITE);
+		j++;
+	}
+}
 
 void	launch_rayon(t_game *cube)
 {
@@ -96,39 +82,35 @@ void	launch_rayon(t_game *cube)
 	int			x;
 	float		R_H;
 	float		angle;
-	int step;
+	float		distance;
+	float		no_fish_distance;
+	float		wall_height;
+	float		base_height;
+	float		d_plan;
 
+	base_height = 1;
 	R_H = 2 * tan(cube->player->fov * 0.5) / WIDTH;
-	printf("Player angle: %f (devrait être ~1.5708 pour Nord)\n", cube->player->angle);
-	printf("Player pos: (%.2f, %.2f)\n", cube->player->pos_x, cube->player->pos_y);
-	printf("FOV: %f\n", cube->player->fov);
-	x = WIDTH;
-	while (x >= 0)
+	d_plan = WIDTH / (2 * tan(cube->player->fov * 0.5));
+	x = 0;
+	while (x <= WIDTH)
 	{
-		// Calculer l'angle pour ce rayon spécifique
-		angle = cube->player->angle + (x - WIDTH * 0.5) * R_H;
-		printf("angle = %f\n",angle);
-		// Direction du rayon
+		angle = cube->player->angle - (x - WIDTH * 0.5) * R_H;
 		dir.x = cos(angle);
 		dir.y = -sin(angle);
-		// Position de départ (position du joueur)
 		rayon.x = cube->player->pos_x;
 		rayon.y = cube->player->pos_y;
-		step = 0;
-		while (step <= 1000)
+		while (cube->map->final_grid[(int)rayon.y][(int)rayon.x] != '1')
 		{
-			rayon.x += dir.x ;
-			rayon.y += dir.y ;
-			// Vérifier si on touche un mur
-			if (cube->map->final_grid[(int)rayon.y][(int)rayon.x] == '1')
-			{
-				printf("Rayon %d: mur trouvé à (%.2f, %.2f)\n", x, rayon.x,
-					rayon.y);
-				break;
-			}
-			step++;
+			rayon.x += dir.x;
+			rayon.y += dir.y;
 		}
-		x--;
+		printf("Rayon %d: mur trouvé à (%.2f, %.2f)\n", x, rayon.x, rayon.y);
+		distance = sqrt(pow(rayon.x - cube->player->pos_x, 2) + pow(rayon.y
+					- cube->player->pos_y, 2));
+		no_fish_distance = distance * cos(angle - cube->player->angle);
+		wall_height = (base_height * d_plan) / no_fish_distance;
+		render_wall(wall_height, cube, x);
+		x++;
 	}
 	return ;
 }
