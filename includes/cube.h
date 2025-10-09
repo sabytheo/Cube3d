@@ -6,7 +6,7 @@
 /*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/09 14:25:22 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/10/09 14:53:50 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@
 # define YELLOW 0x00FFFF00
 # define PURPLE 0x00FF00FF
 
-# define WIDTH 640
-# define HEIGHT 480
+# define WIDTH 1280
+# define HEIGHT 720
 
 # define BEFORE_FF false
 # define AFTER_FF true

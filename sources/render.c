@@ -6,7 +6,7 @@
 /*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 14:16:45 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/09 12:40:49 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/10/09 14:52:18 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,6 @@ void	render_wall(float wall_height, t_game *cube, int x)
 		img_pixel_put(cube->img, x, j, WHITE);
 		j++;
 	}
-	mlx_put_image_to_window(cube->mlx, cube->windows, cube->img->img_ptr, 0, 0);
 }
 // void	launch_rayon(t_game *cube)
 // {
@@ -225,4 +224,5 @@ void	render(t_game *cube)
 {
 	render_floor_ceilling(cube->img, cube->textures);
 	raycast(cube, cube->raycast);
+	mlx_put_image_to_window(cube->mlx, cube->windows, cube->img->img_ptr, 0, 0);
 }
