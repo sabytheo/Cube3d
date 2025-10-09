@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cube.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/08 19:11:02 by egache           ###   ########.fr       */
+/*   Updated: 2025/10/09 14:25:22 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 # include <stdbool.h>
 # include <stdio.h>
 
-#define _GNU_SOURCE
+# define _GNU_SOURCE
 
 # define WHITE 0x00FFFFFF
 # define BLACK 0x00000000
@@ -56,6 +56,23 @@ enum
 	A = 97,
 	ESCAPE = 65307
 };
+typedef struct s_vector
+{
+	float		x;
+	float		y;
+}				t_vector;
+
+typedef struct s_raycast
+{
+	float		R_H;
+	float		angle;
+	float		distance;
+	float		corrected_distance;
+	int			wall_height;
+	int			base_height;
+	float		d_plan;
+	t_vector	*dir;
+}				t_raycast;
 
 typedef struct s_player
 {
@@ -66,11 +83,6 @@ typedef struct s_player
 	float		fov;
 }				t_player;
 
-typedef struct s_vector
-{
-	float		x;
-	float		y;
-}				t_vector;
 
 typedef struct s_map
 {
@@ -87,16 +99,6 @@ typedef struct s_map
 
 }				t_map;
 
-typedef struct s_texture
-{
-	char		*NO;
-	char		*SO;
-	char		*WE;
-	char		*EA;
-	int			ceiling[3];
-	int			floor[3];
-
-}				t_texture;
 
 enum			direction
 {
@@ -126,6 +128,21 @@ typedef struct s_img
 
 }				t_img;
 
+typedef struct s_texture
+{
+	char		*NO;
+	char		*SO;
+	char		*WE;
+	char		*EA;
+	t_img		NO_img;
+	t_img		SO_img;
+	t_img		WE_img;
+	t_img		EA_img;
+	int			ceiling[3];
+	int			floor[3];
+
+}				t_texture;
+
 typedef struct s_game
 {
 	void		*mlx;
@@ -133,11 +150,14 @@ typedef struct s_game
 	t_map		*map;
 	t_img		*img;
 	t_player	*player;
+	t_raycast	*raycast;
 	t_texture	*textures;
 
 }				t_game;
 
 void			render(t_game *cube);
+void			raycast(t_game *cube,t_raycast *raycast);
+int	define_control(int keypress, t_game *cube);
 
 // Debug
 void			print_map(char **map);

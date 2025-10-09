@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 14:16:45 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/08 20:08:16 by egache           ###   ########.fr       */
+/*   Updated: 2025/10/09 12:40:49 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	img_pixel_put(t_img *img, int x, int y, int color)
 		if (img->endian != 0)
 			*pixel++ = (color >> i) & 0xFF;
 		else
-			*pixel++ = (color >> (img->bits_per_pixel - 8 - i )) & 0xFF;
+			*pixel++ = (color >> (img->bits_per_pixel - 8 - i)) & 0xFF;
 		i -= 8;
 	}
 }
@@ -62,18 +62,26 @@ void	render_floor_ceilling(t_img *img, t_texture *textures)
 
 void	render_wall(float wall_height, t_game *cube, int x)
 {
-	float	start_y;
-	int		j;
+	int	start_y;
+	int	j;
+	int	draw_start;
+	int	draw_end;
 
-	printf(" x = %d wall height = %2.f\n",x,wall_height);
+	printf(" x = %d wall height = %f\n", x, wall_height);
 	start_y = HEIGHT / 2;
-	j = 0;
-	while (j <= wall_height)
+	draw_start = (start_y - (wall_height * 0.5));
+	if (draw_start < 0)
+		draw_start = 0;
+	draw_end = (start_y + (wall_height * 0.5));
+	if (draw_end >= HEIGHT)
+		draw_end = HEIGHT - 1;
+	j = draw_start;
+	while (j <= draw_end)
 	{
-		//img_pixel_put(cube->img, x, (start_y - (wall_height * 0.5)) + j, WHITE);
-		mlx_pixel_put(cube->mlx, cube->windows, x, (start_y - (wall_height * 0.5)) + j, WHITE);
+		img_pixel_put(cube->img, x, j, WHITE);
 		j++;
 	}
+	mlx_put_image_to_window(cube->mlx, cube->windows, cube->img->img_ptr, 0, 0);
 }
 // void	launch_rayon(t_game *cube)
 // {
@@ -96,7 +104,6 @@ void	render_wall(float wall_height, t_game *cube, int x)
 // 	int mapY;
 // 	bool hit;
 // 	int side;
-	
 
 // 	base_height = 1;
 // 	side = 0;
@@ -139,24 +146,27 @@ void	render_wall(float wall_height, t_game *cube, int x)
 // 			{
 // 				sideDistX += deltaDistX;
 // 				mapX += stepX;
-// 				side = 0;			
+// 				side = 0;
 // 			}
 // 			else
 // 			{
 // 				sideDistY += deltaDistY;
-// 				mapY += stepY;		
+// 				mapY += stepY;
 // 				side = 1;
 // 			}
 // 			if (cube->map->final_grid[mapY][mapX] == '1')
 // 			{
 // 				hit = true;
-// 				printf("Rayon %d: mur trouvé à (%.2f, %.2f)\n", x, cube->player->pos_x, cube->player->pos_y);
+// 				printf("Rayon %d: mur trouvé à (%.2f, %.2f)\n", x,
+// cube->player->pos_x, cube->player->pos_y);
 // 			}
 // 		}
 // 		if (side == 0)
-//             distance = (mapX - cube->player->pos_x + (1 - stepX) / 2) / dir.x;
+//             distance = (mapX - cube->player->pos_x + (1 - stepX) / 2)
+// / dir.x;
 //         else
-//             distance = (mapY - cube->player->pos_y + (1 - stepY) / 2) / dir.y;
+//             distance = (mapY - cube->player->pos_y + (1 - stepY) / 2)
+// / dir.y;
 // 		no_fish_distance = distance * cos(angle - cube->player->angle);
 // 		wall_height = (base_height * d_plan) / no_fish_distance;
 // 		render_wall(wall_height, cube, x);
@@ -165,41 +175,47 @@ void	render_wall(float wall_height, t_game *cube, int x)
 // 	return ;
 // }
 
-void	launch_rayon(t_game *cube)
+static void	init_raycast(t_game *cube)
 {
-	t_vector	rayon;
+	cube->raycast->base_height = 1;
+	cube->raycast->R_H = 2 * tan(cube->player->fov * 0.5) / WIDTH;
+	cube->raycast->d_plan = WIDTH / (2 * tan(cube->player->fov * 0.5));
+	return ;
+}
+
+static void	get_distance_and_wallheight(t_game *cube, t_vector rayon)
+{
+	cube->raycast->distance = sqrt(pow(rayon.x - cube->player->pos_x, 2)
+			+ pow(rayon.y - cube->player->pos_y, 2));
+	cube->raycast->corrected_distance = cube->raycast->distance
+		* cos(cube->raycast->angle - cube->player->angle);
+	cube->raycast->wall_height = (cube->raycast->base_height
+			* cube->raycast->d_plan) / cube->raycast->corrected_distance;
+}
+
+void	raycast(t_game *cube, t_raycast *raycast)
+{
+	t_vector	ray;
 	t_vector	dir;
 	int			x;
-	float		R_H;
-	float		angle;
-	float		distance;
-	float		no_fish_distance;
-	float		wall_height;
-	float		base_height;
-	float		d_plan;
 
-	base_height = 1;
-	R_H = 2 * tan(cube->player->fov * 0.5) / WIDTH;
-	d_plan = WIDTH / (2 * tan(cube->player->fov * 0.5));
+	cube->raycast->dir = &dir;
+	init_raycast(cube);
 	x = 0;
 	while (x <= WIDTH)
 	{
-		angle = cube->player->angle - (x - WIDTH * 0.5) * R_H;
-		dir.x = cos(angle)  * 0.001;
-		dir.y = -sin(angle) * 0.001;
-		rayon.x = cube->player->pos_x;
-		rayon.y = cube->player->pos_y;
-		while (cube->map->final_grid[(int)rayon.y][(int)rayon.x] != '1')
+		raycast->angle = cube->player->angle - (x - WIDTH * 0.5) * raycast->R_H;
+		dir.x = cos(raycast->angle) * 0.001;
+		dir.y = -sin(raycast->angle) * 0.001;
+		ray.x = cube->player->pos_x;
+		ray.y = cube->player->pos_y;
+		while (cube->map->final_grid[(int)ray.y][(int)ray.x] != '1')
 		{
-			rayon.x += dir.x;
-			rayon.y += dir.y;
+			ray.x += dir.x;
+			ray.y += dir.y;
 		}
-		printf("Rayon %d: mur trouvé à (%.2f, %.2f)\n", x, rayon.x, rayon.y);
-		distance = sqrt(pow(rayon.x - cube->player->pos_x, 2) + pow(rayon.y
-					- cube->player->pos_y, 2));
-		no_fish_distance = distance * cos(angle - cube->player->angle);
-		wall_height = (base_height * d_plan) / no_fish_distance;
-		render_wall(wall_height, cube, x);
+		get_distance_and_wallheight(cube, ray);
+		render_wall(raycast->wall_height, cube, x);
 		x++;
 	}
 	return ;
@@ -208,6 +224,5 @@ void	launch_rayon(t_game *cube)
 void	render(t_game *cube)
 {
 	render_floor_ceilling(cube->img, cube->textures);
-	mlx_put_image_to_window(cube->mlx, cube->windows, cube->img->img_ptr, 0, 0);
-	launch_rayon(cube);
+	raycast(cube, cube->raycast);
 }
