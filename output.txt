@@ -1,0 +1,5121 @@
+make && ./cube maps/map.cub
+make[1]: Entering directory '/home/tsaby/Documents/Cube3d'
+make --no-print-directory -C mlx_linux/
+./configure
+[96m[1mconfigure[0m [[92minfo[0m] : Found X11 include path directory: /usr/include
+[96m[1mconfigure[0m [[92minfo[0m] : Generate "makefile.gen" from template "makefile.mk"
+[96m[1mconfigure[0m [[92minfo[0m] : Generate "test/makefile.gen" from template "test/makefile.mk"
+[96m[1mconfigure[0m [[92minfo[0m] : Execute "make all" from file "makefile.gen"
+make[3]: Nothing to be done for 'all'.
+[96m[1mconfigure[0m [[92minfo[0m] : Execute "make all" from file "test/makefile.gen"
+make[3]: Nothing to be done for 'all'.
+[0;33mCompiling sources/render.c, depends on includes/cube.h ...[0m
+[0;33mcube successfully built![0m
+make[1]: Leaving directory '/home/tsaby/Documents/Cube3d'
+texture NO : |./assets/prototype_green.xpm|
+texture SO : |./assets/prototype_yellow.xpm|
+texture WE : |./assets/prototype_blue.xpm|
+texture EA : |./assets/prototype_red.xpm|
+texture C : 253
+texture C : 108
+texture C : 158
+texture F : 248
+texture F : 142
+texture F : 85
+prev_ray.x : 1.000088 | ray.x : 0.999542 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 2.197718 | ray.y : 2.196880 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 1.000092 | ray.x : 0.999547 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 2.192540 | ray.y : 2.191702 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 1.000427 | ray.x : 0.999883 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 2.188711 | ray.y : 2.187872 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 1.000223 | ray.x : 0.999680 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 2.184039 | ray.y : 2.183200 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 1.000245 | ray.x : 0.999702 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 2.179364 | ray.y : 2.178524 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 1.000272 | ray.x : 0.999730 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 2.174685 | ray.y : 2.173844 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 1.000307 | ray.x : 0.999765 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 2.170001 | ray.y : 2.169160 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 1.000127 | ray.x : 0.999586 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 2.165314 | ray.y : 2.164473 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 1.000492 | ray.x : 0.999952 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 2.161466 | ray.y : 2.160624 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 1.000005 | ray.x : 0.999466 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 2.155929 | ray.y : 2.155087 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 1.000064 | ray.x : 0.999526 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 2.151231 | ray.y : 2.150388 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 1.000445 | ray.x : 0.999907 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 2.147089 | ray.y : 2.146246 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 1.000515 | ray.x : 0.999979 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 2.142384 | ray.y : 2.141540 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 1.000370 | ray.x : 0.999834 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 2.137675 | ray.y : 2.136831 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 1.000453 | ray.x : 0.999918 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 2.132962 | ray.y : 2.132117 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 1.000319 | ray.x : 0.999785 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 2.128245 | ray.y : 2.127400 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 1.000415 | ray.x : 0.999881 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 2.123524 | ray.y : 2.122679 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 1.000516 | ray.x : 0.999984 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 2.118800 | ray.y : 2.117954 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 1.000401 | ray.x : 0.999868 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 2.114072 | ray.y : 2.113225 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 1.000515 | ray.x : 0.999983 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 2.109340 | ray.y : 2.108493 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 1.000105 | ray.x : 0.999574 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 2.103756 | ray.y : 2.102909 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 1.000007 | ray.x : 0.999477 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 2.099016 | ray.y : 2.098168 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 1.000141 | ray.x : 0.999612 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 2.094272 | ray.y : 2.093424 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 1.000055 | ray.x : 0.999527 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 2.089525 | ray.y : 2.088675 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 1.000201 | ray.x : 0.999674 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 2.084773 | ray.y : 2.083923 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 1.000354 | ray.x : 0.999827 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 2.080017 | ray.y : 2.079167 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 1.000513 | ray.x : 0.999987 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 2.075258 | ray.y : 2.074408 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 1.000451 | ray.x : 0.999926 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 2.070495 | ray.y : 2.069644 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 1.000395 | ray.x : 0.999870 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 2.065728 | ray.y : 2.064877 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 1.000048 | ray.x : 0.999525 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 2.060106 | ray.y : 2.059254 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 1.000233 | ray.x : 0.999710 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 2.055331 | ray.y : 2.054478 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 1.000423 | ray.x : 0.999901 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 2.050552 | ray.y : 2.049699 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 1.000392 | ray.x : 0.999871 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 2.045769 | ray.y : 2.044916 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 1.000075 | ray.x : 0.999554 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 2.040129 | ray.y : 2.039275 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 1.000285 | ray.x : 0.999765 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 2.035338 | ray.y : 2.034484 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 1.000501 | ray.x : 0.999982 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 2.030823 | ray.y : 2.029968 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 1.000494 | ray.x : 0.999976 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 2.026024 | ray.y : 2.025169 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 1.000206 | ray.x : 0.999689 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 2.020366 | ray.y : 2.019511 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 1.000442 | ray.x : 0.999925 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 2.015560 | ray.y : 2.014704 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 1.000169 | ray.x : 0.999653 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 2.009892 | ray.y : 2.009036 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 1.000187 | ray.x : 0.999672 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 2.005078 | ray.y : 2.004221 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 1.000211 | ray.x : 0.999697 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 2.000259 | ray.y : 1.999402 | prev_mapY : 2 | mapY : 1
+
+prev_ray.x : 1.000473 | ray.x : 0.999959 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.995438 | ray.y : 1.994580 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000228 | ray.x : 0.999715 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.989754 | ray.y : 1.988895 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000504 | ray.x : 0.999991 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.984924 | ray.y : 1.984065 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000041 | ray.x : 0.999529 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.979786 | ray.y : 1.978927 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000329 | ray.x : 0.999819 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.974948 | ray.y : 1.974088 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000114 | ray.x : 0.999604 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.969245 | ray.y : 1.968385 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000416 | ray.x : 0.999907 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.964399 | ray.y : 1.963538 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000216 | ray.x : 0.999708 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.958694 | ray.y : 1.957832 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000024 | ray.x : 0.999517 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.952978 | ray.y : 1.952116 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000347 | ray.x : 0.999840 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.948120 | ray.y : 1.947258 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000441 | ray.x : 0.999935 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.943258 | ray.y : 1.942396 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000271 | ray.x : 0.999765 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.937530 | ray.y : 1.936666 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000108 | ray.x : 0.999604 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.931796 | ray.y : 1.930933 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000458 | ray.x : 0.999954 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.926932 | ray.y : 1.926068 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000074 | ray.x : 0.999571 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.921190 | ray.y : 1.920326 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000436 | ray.x : 0.999934 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.916860 | ray.y : 1.915995 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000304 | ray.x : 0.999803 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.911109 | ray.y : 1.910244 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000180 | ray.x : 0.999679 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.905353 | ray.y : 1.904487 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000324 | ray.x : 0.999825 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.900472 | ray.y : 1.899606 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000215 | ray.x : 0.999716 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.894708 | ray.y : 1.893842 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000352 | ray.x : 0.999854 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.889214 | ray.y : 1.888347 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000019 | ray.x : 0.999522 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.883440 | ray.y : 1.882572 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000430 | ray.x : 0.999933 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.878546 | ray.y : 1.877678 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000351 | ray.x : 0.999855 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.872764 | ray.y : 1.871896 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000280 | ray.x : 0.999785 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.867526 | ray.y : 1.866657 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000471 | ray.x : 0.999976 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.862603 | ray.y : 1.861734 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000415 | ray.x : 0.999921 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.856827 | ray.y : 1.855957 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000116 | ray.x : 0.999623 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.850156 | ray.y : 1.849286 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000326 | ray.x : 0.999835 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.845222 | ray.y : 1.844351 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000294 | ray.x : 0.999803 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.839412 | ray.y : 1.838541 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000270 | ray.x : 0.999780 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.833620 | ray.y : 1.832748 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000254 | ray.x : 0.999764 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.828348 | ray.y : 1.827476 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000245 | ray.x : 0.999757 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.822525 | ray.y : 1.821652 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000245 | ray.x : 0.999757 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.816721 | ray.y : 1.815849 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000252 | ray.x : 0.999765 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.810889 | ray.y : 1.810016 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000023 | ray.x : 0.999537 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.805325 | ray.y : 1.804451 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000046 | ray.x : 0.999560 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.799510 | ray.y : 1.798636 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000323 | ray.x : 0.999838 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.793664 | ray.y : 1.792789 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000116 | ray.x : 0.999632 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.788358 | ray.y : 1.787483 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000163 | ray.x : 0.999680 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.782532 | ray.y : 1.781656 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000218 | ray.x : 0.999735 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.776672 | ray.y : 1.775796 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000280 | ray.x : 0.999799 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.770807 | ray.y : 1.769931 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000351 | ray.x : 0.999870 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.764970 | ray.y : 1.764093 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000430 | ray.x : 0.999950 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.759640 | ray.y : 1.758763 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000037 | ray.x : 0.999558 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.752884 | ray.y : 1.752006 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000133 | ray.x : 0.999654 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.747035 | ray.y : 1.746156 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000236 | ray.x : 0.999758 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.741418 | ray.y : 1.740540 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000347 | ray.x : 0.999870 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.735561 | ray.y : 1.734682 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000466 | ray.x : 0.999990 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.729665 | ray.y : 1.728785 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000118 | ray.x : 0.999643 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.723426 | ray.y : 1.722546 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000254 | ray.x : 0.999780 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.717557 | ray.y : 1.716677 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000398 | ray.x : 0.999924 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.711646 | ray.y : 1.710765 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000077 | ray.x : 0.999604 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.704889 | ray.y : 1.704008 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000237 | ray.x : 0.999765 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.698969 | ray.y : 1.698088 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000406 | ray.x : 0.999935 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.693585 | ray.y : 1.692703 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000112 | ray.x : 0.999641 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.686815 | ray.y : 1.685932 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000297 | ray.x : 0.999827 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.681150 | ray.y : 1.680267 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000021 | ray.x : 0.999552 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.674372 | ray.y : 1.673488 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000223 | ray.x : 0.999755 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.668967 | ray.y : 1.668084 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000433 | ray.x : 0.999966 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.663064 | ray.y : 1.662180 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000184 | ray.x : 0.999718 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.656227 | ray.y : 1.655342 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000411 | ray.x : 0.999945 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.650316 | ray.y : 1.649431 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000180 | ray.x : 0.999715 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.644007 | ray.y : 1.643121 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000423 | ray.x : 0.999959 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.638088 | ray.y : 1.637202 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000211 | ray.x : 0.999748 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.631499 | ray.y : 1.630613 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000009 | ray.x : 0.999546 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.624686 | ray.y : 1.623799 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000277 | ray.x : 0.999816 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.619242 | ray.y : 1.618355 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000351 | ray.x : 0.999891 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.612420 | ray.y : 1.611533 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000378 | ray.x : 0.999918 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.606429 | ray.y : 1.605541 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000012 | ray.x : 0.999553 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.598711 | ray.y : 1.597822 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000315 | ray.x : 0.999857 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.593246 | ray.y : 1.592358 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000366 | ray.x : 0.999909 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.587296 | ray.y : 1.586407 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000032 | ray.x : 0.999575 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.579775 | ray.y : 1.578886 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000360 | ray.x : 0.999904 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.573816 | ray.y : 1.572927 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000242 | ray.x : 0.999787 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.567442 | ray.y : 1.566552 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000133 | ray.x : 0.999678 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.560585 | ray.y : 1.559694 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000033 | ray.x : 0.999579 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.553664 | ray.y : 1.552773 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000396 | ray.x : 0.999943 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.547690 | ray.y : 1.546798 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000126 | ray.x : 0.999674 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.540463 | ray.y : 1.539571 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000242 | ray.x : 0.999791 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.534686 | ray.y : 1.533793 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000445 | ray.x : 0.999994 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.527807 | ray.y : 1.526914 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000392 | ray.x : 0.999943 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.521394 | ray.y : 1.520501 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000350 | ray.x : 0.999901 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.514506 | ray.y : 1.513613 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000317 | ray.x : 0.999868 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.507614 | ray.y : 1.506721 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000293 | ray.x : 0.999846 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.501185 | ray.y : 1.500291 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000279 | ray.x : 0.999832 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.494284 | ray.y : 1.493390 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000096 | ray.x : 0.999650 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.486682 | ray.y : 1.485787 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000102 | ray.x : 0.999657 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.480304 | ray.y : 1.479409 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000118 | ray.x : 0.999674 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.473390 | ray.y : 1.472494 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000143 | ray.x : 0.999700 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.466400 | ray.y : 1.465504 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000178 | ray.x : 0.999736 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.459477 | ray.y : 1.458580 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000051 | ray.x : 0.999609 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.452184 | ray.y : 1.451287 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000276 | ray.x : 0.999835 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.446341 | ray.y : 1.445444 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000170 | ray.x : 0.999730 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.438507 | ray.y : 1.437609 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000245 | ray.x : 0.999805 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.432096 | ray.y : 1.431198 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000328 | ray.x : 0.999890 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.425075 | ray.y : 1.424176 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000257 | ray.x : 0.999819 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.417226 | ray.y : 1.416327 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000088 | ray.x : 0.999651 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.410802 | ray.y : 1.409902 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000038 | ray.x : 0.999602 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.403129 | ray.y : 1.402229 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000162 | ray.x : 0.999727 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.396694 | ray.y : 1.395794 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000296 | ray.x : 0.999862 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.389726 | ray.y : 1.388825 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000280 | ray.x : 0.999847 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.381771 | ray.y : 1.380870 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000002 | ray.x : 0.999569 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.374421 | ray.y : 1.373520 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000166 | ray.x : 0.999734 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.367439 | ray.y : 1.366537 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000340 | ray.x : 0.999908 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.360717 | ray.y : 1.359815 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000370 | ray.x : 0.999939 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.353267 | ray.y : 1.352364 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000134 | ray.x : 0.999705 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.345368 | ray.y : 1.344465 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000339 | ray.x : 0.999910 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.338369 | ray.y : 1.337465 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000403 | ray.x : 0.999976 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.330988 | ray.y : 1.330084 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000349 | ray.x : 0.999922 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.324154 | ray.y : 1.323250 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000010 | ray.x : 0.999584 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.315858 | ray.y : 1.314954 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000256 | ray.x : 0.999830 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.308840 | ray.y : 1.307935 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000086 | ray.x : 0.999662 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.300912 | ray.y : 1.300007 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000209 | ray.x : 0.999785 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.293506 | ray.y : 1.292600 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000062 | ray.x : 0.999639 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.285737 | ray.y : 1.284831 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000348 | ray.x : 0.999926 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.279226 | ray.y : 1.278320 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000223 | ray.x : 0.999802 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.271278 | ray.y : 1.270371 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000392 | ray.x : 0.999972 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.263326 | ray.y : 1.262418 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000290 | ray.x : 0.999870 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.255894 | ray.y : 1.254986 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000199 | ray.x : 0.999780 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.248095 | ray.y : 1.247187 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000403 | ray.x : 0.999985 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.240652 | ray.y : 1.239743 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000335 | ray.x : 0.999918 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.232678 | ray.y : 1.231770 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000147 | ray.x : 0.999731 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.223791 | ray.y : 1.222882 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000231 | ray.x : 0.999816 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.217242 | ray.y : 1.216333 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000068 | ray.x : 0.999654 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.208606 | ray.y : 1.207697 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000046 | ray.x : 0.999632 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.201138 | ray.y : 1.200227 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000323 | ray.x : 0.999910 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.193034 | ray.y : 1.192123 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000323 | ray.x : 0.999911 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.185554 | ray.y : 1.184643 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000334 | ray.x : 0.999923 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.177807 | ray.y : 1.176896 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000236 | ray.x : 0.999825 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.169405 | ray.y : 1.168493 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000271 | ray.x : 0.999861 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.161386 | ray.y : 1.160474 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000199 | ray.x : 0.999790 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.152451 | ray.y : 1.151538 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000258 | ray.x : 0.999850 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.144945 | ray.y : 1.144032 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000327 | ray.x : 0.999920 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.137172 | ray.y : 1.136259 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000001 | ray.x : 0.999595 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.128742 | ray.y : 1.127829 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000388 | ray.x : 0.999982 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.120699 | ray.y : 1.119785 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000087 | ray.x : 0.999682 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.112142 | ray.y : 1.111228 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000094 | ray.x : 0.999690 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.103433 | ray.y : 1.102518 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000223 | ray.x : 0.999820 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.095894 | ray.y : 1.094979 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000363 | ray.x : 0.999961 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.087830 | ray.y : 1.086914 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000008 | ray.x : 0.999606 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.078449 | ray.y : 1.077533 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000172 | ray.x : 0.999771 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.070634 | ray.y : 1.069718 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000245 | ray.x : 0.999845 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.062158 | ray.y : 1.061241 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000034 | ray.x : 0.999635 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.053155 | ray.y : 1.052238 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000135 | ray.x : 0.999737 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.044668 | ray.y : 1.043750 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000347 | ray.x : 0.999950 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.036831 | ray.y : 1.035914 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000078 | ray.x : 0.999681 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.027414 | ray.y : 1.026496 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000013 | ray.x : 0.999618 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.019308 | ray.y : 1.018390 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000167 | ray.x : 0.999772 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.010797 | ray.y : 1.009879 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.000033 | ray.x : 0.999639 | prev_mapX : 1 | mapX : 0
+
+prev_ray.y : 1.002021 | ray.y : 1.001102 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 1.003360 | ray.x : 1.002967 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000855 | ray.y : 0.999935 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.006777 | ray.x : 1.006385 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000089 | ray.y : 0.999169 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.010888 | ray.x : 1.010496 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000763 | ray.y : 0.999843 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.014300 | ray.x : 1.013909 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000259 | ray.y : 0.999338 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.018015 | ray.x : 1.017625 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000014 | ray.y : 0.999093 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.021812 | ray.x : 1.021423 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000174 | ray.y : 0.999252 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.025913 | ray.x : 1.025524 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000852 | ray.y : 0.999931 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.029315 | ray.x : 1.028928 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000481 | ray.y : 0.999559 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.033023 | ray.x : 1.032637 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000239 | ray.y : 0.999317 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.036808 | ray.x : 1.036422 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000404 | ray.y : 0.999482 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.040512 | ray.x : 1.040128 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000165 | ray.y : 0.999242 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.044290 | ray.x : 1.043906 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000590 | ray.y : 0.999667 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.047992 | ray.x : 1.047608 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000352 | ray.y : 0.999429 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.051380 | ray.x : 1.050998 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000115 | ray.y : 0.999191 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.055148 | ray.x : 1.054767 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000544 | ray.y : 0.999620 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.058844 | ray.x : 1.058464 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000308 | ray.y : 0.999384 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.062606 | ray.x : 1.062226 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000483 | ray.y : 0.999558 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.066298 | ray.x : 1.065919 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000377 | ray.y : 0.999452 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.070053 | ray.x : 1.069675 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000812 | ray.y : 0.999886 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.073743 | ray.x : 1.073365 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000579 | ray.y : 0.999653 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.077808 | ray.x : 1.077431 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000759 | ray.y : 0.999832 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.081177 | ray.x : 1.080801 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000785 | ray.y : 0.999858 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.084862 | ray.x : 1.084487 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000554 | ray.y : 0.999627 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.088601 | ray.x : 1.088227 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000738 | ray.y : 0.999810 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.092282 | ray.x : 1.091909 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000638 | ray.y : 0.999710 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.095643 | ray.x : 1.095270 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000152 | ray.y : 0.999224 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.099693 | ray.x : 1.099321 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000853 | ray.y : 0.999925 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.103048 | ray.x : 1.102678 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000626 | ray.y : 0.999698 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.106724 | ray.x : 1.106354 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000144 | ray.y : 0.999215 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.110075 | ray.x : 1.109706 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000047 | ray.y : 0.999117 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.114116 | ray.x : 1.113748 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000239 | ray.y : 0.999309 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.117462 | ray.x : 1.117095 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000015 | ray.y : 0.999085 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.121132 | ray.x : 1.120765 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000048 | ray.y : 0.999118 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.124840 | ray.x : 1.124474 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000244 | ray.y : 0.999313 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.128506 | ray.x : 1.128141 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000151 | ray.y : 0.999220 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.132207 | ray.x : 1.131843 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000605 | ray.y : 0.999674 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.135870 | ray.x : 1.135506 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000385 | ray.y : 0.999454 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.139485 | ray.x : 1.139123 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000166 | ray.y : 0.999234 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.143506 | ray.x : 1.143145 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000752 | ray.y : 0.999819 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.146833 | ray.x : 1.146473 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000534 | ray.y : 0.999601 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.150489 | ray.x : 1.150129 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000317 | ray.y : 0.999384 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.154171 | ray.x : 1.153812 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000778 | ray.y : 0.999845 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.157824 | ray.x : 1.157465 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000690 | ray.y : 0.999757 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.161142 | ray.x : 1.160784 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000476 | ray.y : 0.999542 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.164792 | ray.x : 1.164435 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000006 | ray.y : 0.999072 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.168796 | ray.x : 1.168441 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000854 | ray.y : 0.999920 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.172108 | ray.x : 1.171753 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000132 | ray.y : 0.999197 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.175753 | ray.x : 1.175400 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000175 | ray.y : 0.999239 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.179061 | ray.x : 1.178708 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000091 | ray.y : 0.999155 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.183056 | ray.x : 1.182704 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000306 | ray.y : 0.999370 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.186358 | ray.x : 1.186007 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000351 | ray.y : 0.999415 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.190274 | ray.x : 1.189923 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000269 | ray.y : 0.999332 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.193921 | ray.x : 1.193571 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000488 | ray.y : 0.999551 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.197557 | ray.x : 1.197208 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000535 | ray.y : 0.999598 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.200850 | ray.x : 1.200502 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000455 | ray.y : 0.999517 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.204483 | ray.x : 1.204136 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000248 | ray.y : 0.999310 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.208462 | ray.x : 1.208116 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000726 | ray.y : 0.999788 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.211748 | ray.x : 1.211402 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000648 | ray.y : 0.999710 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.215377 | ray.x : 1.215033 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000444 | ray.y : 0.999506 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.218659 | ray.x : 1.218315 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000113 | ray.y : 0.999174 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.222629 | ray.x : 1.222286 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000850 | ray.y : 0.999910 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.226175 | ray.x : 1.225833 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000648 | ray.y : 0.999708 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.229798 | ray.x : 1.229457 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000319 | ray.y : 0.999379 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.233070 | ray.x : 1.232730 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000118 | ray.y : 0.999178 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.236691 | ray.x : 1.236351 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000045 | ray.y : 0.999104 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.239958 | ray.x : 1.239620 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000098 | ray.y : 0.999157 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.243914 | ray.x : 1.243576 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000461 | ray.y : 0.999519 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.247531 | ray.x : 1.247194 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000515 | ray.y : 0.999574 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.250792 | ray.x : 1.250455 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000318 | ray.y : 0.999376 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.254741 | ray.x : 1.254405 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000683 | ray.y : 0.999741 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.258261 | ray.x : 1.257927 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000740 | ray.y : 0.999798 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.261871 | ray.x : 1.261538 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000671 | ray.y : 0.999729 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.265123 | ray.x : 1.264790 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000477 | ray.y : 0.999534 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.268730 | ray.x : 1.268398 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000156 | ray.y : 0.999213 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.272668 | ray.x : 1.272337 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000906 | ray.y : 0.999962 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.275913 | ray.x : 1.275582 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000840 | ray.y : 0.999896 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.279516 | ray.x : 1.279187 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000900 | ray.y : 0.999956 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.283017 | ray.x : 1.282688 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000330 | ray.y : 0.999385 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.286617 | ray.x : 1.286290 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000391 | ray.y : 0.999446 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.289853 | ray.x : 1.289526 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000327 | ray.y : 0.999382 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.293451 | ray.x : 1.293125 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000138 | ray.y : 0.999192 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.297374 | ray.x : 1.297048 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000768 | ray.y : 0.999822 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.300602 | ray.x : 1.300278 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000580 | ray.y : 0.999634 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.304453 | ray.x : 1.304130 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000770 | ray.y : 0.999824 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.307676 | ray.x : 1.307354 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000709 | ray.y : 0.999762 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.311268 | ray.x : 1.310946 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000523 | ray.y : 0.999576 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.314859 | ray.x : 1.314538 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000211 | ray.y : 0.999264 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.318076 | ray.x : 1.317756 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000026 | ray.y : 0.999078 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.321984 | ray.x : 1.321665 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000915 | ray.y : 0.999967 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.325131 | ray.x : 1.324813 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000034 | ray.y : 0.999086 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.329033 | ray.x : 1.328716 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000925 | ray.y : 0.999977 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 1.332241 | ray.x : 1.331924 | prev_mapX : 1 | mapX : 1
+
+prev_ray.y : 1.000617 | ray.y : 0.999668 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 2.001247 | ray.x : 2.000932 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000729 | ray.y : 2.999780 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.002754 | ray.x : 2.002439 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000226 | ray.y : 2.999277 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.004198 | ray.x : 2.003884 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000925 | ray.y : 2.999975 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.005704 | ray.x : 2.005391 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000423 | ray.y : 2.999473 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.007146 | ray.x : 2.006834 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000871 | ray.y : 2.999921 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.008651 | ray.x : 2.008339 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000369 | ray.y : 2.999419 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.010156 | ray.x : 2.009845 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000118 | ray.y : 2.999168 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.011594 | ray.x : 2.011284 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000567 | ray.y : 2.999617 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.013098 | ray.x : 2.012789 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000066 | ray.y : 2.999115 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.014534 | ray.x : 2.014226 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000767 | ray.y : 2.999815 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.016037 | ray.x : 2.015730 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000015 | ray.y : 2.999063 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.017846 | ray.x : 2.017540 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000717 | ray.y : 2.999765 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.018973 | ray.x : 2.018667 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000216 | ray.y : 2.999264 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.020779 | ray.x : 2.020475 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000668 | ray.y : 2.999716 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.021905 | ray.x : 2.021601 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000418 | ray.y : 2.999465 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.023709 | ray.x : 2.023406 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000870 | ray.y : 2.999918 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.025209 | ray.x : 2.024907 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000370 | ray.y : 2.999417 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.026635 | ray.x : 2.026334 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000824 | ray.y : 2.999870 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.028134 | ray.x : 2.027834 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000574 | ray.y : 2.999620 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.029259 | ray.x : 2.028959 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000074 | ray.y : 2.999120 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.031056 | ray.x : 2.030758 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000529 | ray.y : 2.999575 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.032555 | ray.x : 2.032257 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000279 | ray.y : 2.999325 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.033975 | ray.x : 2.033678 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000735 | ray.y : 2.999780 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.035472 | ray.x : 2.035177 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000485 | ray.y : 2.999530 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.036891 | ray.x : 2.036595 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000692 | ray.y : 2.999737 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.038387 | ray.x : 2.038093 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000443 | ray.y : 2.999487 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.040176 | ray.x : 2.039883 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000900 | ray.y : 2.999944 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.041298 | ray.x : 2.041005 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000651 | ray.y : 2.999695 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.042793 | ray.x : 2.042502 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000153 | ray.y : 2.999196 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.044579 | ray.x : 2.044289 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000611 | ray.y : 2.999654 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.045700 | ray.x : 2.045410 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000362 | ray.y : 2.999405 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.047483 | ray.x : 2.047194 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000821 | ray.y : 2.999864 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.048604 | ray.x : 2.048315 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000572 | ray.y : 2.999615 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.050384 | ray.x : 2.050097 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000783 | ray.y : 2.999825 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.051877 | ray.x : 2.051590 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000535 | ray.y : 2.999576 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.052996 | ray.x : 2.052711 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000037 | ray.y : 2.999079 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.054773 | ray.x : 2.054489 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000747 | ray.y : 2.999788 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.056265 | ray.x : 2.055981 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000250 | ray.y : 2.999291 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.057384 | ray.x : 2.057101 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000001 | ray.y : 2.999042 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.059157 | ray.x : 2.058875 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000463 | ray.y : 2.999504 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.060556 | ray.x : 2.060275 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000926 | ray.y : 2.999967 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.062046 | ray.x : 2.061766 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000678 | ray.y : 2.999718 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.063536 | ray.x : 2.063256 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000182 | ray.y : 2.999222 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.064932 | ray.x : 2.064653 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000894 | ray.y : 2.999933 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.066420 | ray.x : 2.066143 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000397 | ray.y : 2.999437 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.067909 | ray.x : 2.067632 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000149 | ray.y : 2.999188 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.069302 | ray.x : 2.069026 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000614 | ray.y : 2.999653 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.070789 | ray.x : 2.070514 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000366 | ray.y : 2.999405 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.072551 | ray.x : 2.072277 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000832 | ray.y : 2.999871 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.073666 | ray.x : 2.073393 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000584 | ray.y : 2.999622 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.075426 | ray.x : 2.075153 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000803 | ray.y : 2.999841 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.076540 | ray.x : 2.076268 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000555 | ray.y : 2.999593 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.078026 | ray.x : 2.077755 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000060 | ray.y : 2.999097 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.079782 | ray.x : 2.079512 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000775 | ray.y : 2.999812 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.080895 | ray.x : 2.080626 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000280 | ray.y : 2.999317 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.082380 | ray.x : 2.082112 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000033 | ray.y : 2.999069 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.084132 | ray.x : 2.083865 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000502 | ray.y : 2.999538 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.085245 | ray.x : 2.084979 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000254 | ray.y : 2.999290 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.086995 | ray.x : 2.086729 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000724 | ray.y : 2.999760 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.088478 | ray.x : 2.088213 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000477 | ray.y : 2.999512 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.089854 | ray.x : 2.089590 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000947 | ray.y : 2.999982 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.091336 | ray.x : 2.091073 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000700 | ray.y : 2.999735 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.092818 | ray.x : 2.092556 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000206 | ray.y : 2.999241 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.094191 | ray.x : 2.093929 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000924 | ray.y : 2.999959 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.095672 | ray.x : 2.095411 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000431 | ray.y : 2.999465 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.097153 | ray.x : 2.096893 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000184 | ray.y : 2.999218 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.098522 | ray.x : 2.098264 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000656 | ray.y : 2.999690 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.100002 | ray.x : 2.099745 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000409 | ray.y : 2.999443 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.101739 | ray.x : 2.101482 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000883 | ray.y : 2.999916 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.102849 | ray.x : 2.102592 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000636 | ray.y : 2.999669 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.104328 | ray.x : 2.104073 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000390 | ray.y : 2.999423 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.105437 | ray.x : 2.105183 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000143 | ray.y : 2.999176 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.107170 | ray.x : 2.106916 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000618 | ray.y : 2.999650 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.108648 | ray.x : 2.108395 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000371 | ray.y : 2.999403 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.110008 | ray.x : 2.109756 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000846 | ray.y : 2.999878 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.111485 | ray.x : 2.111235 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000600 | ray.y : 2.999632 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.112963 | ray.x : 2.112713 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000108 | ray.y : 2.999139 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.114320 | ray.x : 2.114071 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000830 | ray.y : 2.999861 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.115796 | ray.x : 2.115548 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000338 | ray.y : 2.999369 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.117272 | ray.x : 2.117025 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000092 | ray.y : 2.999123 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.118626 | ray.x : 2.118380 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000815 | ray.y : 2.999846 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.120101 | ray.x : 2.119856 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000323 | ray.y : 2.999353 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.121577 | ray.x : 2.121332 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000077 | ray.y : 2.999107 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.122927 | ray.x : 2.122683 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000555 | ray.y : 2.999585 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.124402 | ray.x : 2.124159 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000309 | ray.y : 2.999339 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.126118 | ray.x : 2.125876 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000788 | ray.y : 2.999818 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.127223 | ray.x : 2.126982 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000543 | ray.y : 2.999572 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.128696 | ray.x : 2.128456 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000297 | ray.y : 2.999326 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.130170 | ray.x : 2.129930 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000051 | ray.y : 2.999081 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.131514 | ray.x : 2.131275 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000532 | ray.y : 2.999561 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.132986 | ray.x : 2.132748 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000286 | ray.y : 2.999315 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.134695 | ray.x : 2.134459 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000767 | ray.y : 2.999795 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.136167 | ray.x : 2.135931 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000522 | ray.y : 2.999550 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.137270 | ray.x : 2.137035 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000276 | ray.y : 2.999304 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.138976 | ray.x : 2.138742 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000758 | ray.y : 2.999786 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.140447 | ray.x : 2.140213 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000513 | ray.y : 2.999541 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.141550 | ray.x : 2.141317 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000268 | ray.y : 2.999295 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.143020 | ray.x : 2.142789 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000023 | ray.y : 2.999050 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.144721 | ray.x : 2.144491 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000506 | ray.y : 2.999533 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.145823 | ray.x : 2.145594 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000261 | ray.y : 2.999288 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.147293 | ray.x : 2.147064 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000016 | ray.y : 2.999042 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.148991 | ray.x : 2.148763 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000500 | ray.y : 2.999526 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.150092 | ray.x : 2.149865 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000255 | ray.y : 2.999281 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.151787 | ray.x : 2.151561 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000740 | ray.y : 2.999765 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.153255 | ray.x : 2.153029 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000740 | ray.y : 2.999765 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.154356 | ray.x : 2.154131 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000250 | ray.y : 2.999276 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.155823 | ray.x : 2.155600 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000006 | ray.y : 2.999031 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.157514 | ray.x : 2.157291 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000736 | ray.y : 2.999761 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.158614 | ray.x : 2.158392 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000247 | ray.y : 2.999272 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.160080 | ray.x : 2.159859 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000002 | ray.y : 2.999027 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.161767 | ray.x : 2.161547 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000734 | ray.y : 2.999758 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.163233 | ray.x : 2.163014 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000489 | ray.y : 2.999514 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.164332 | ray.x : 2.164114 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000001 | ray.y : 2.999025 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.166016 | ray.x : 2.165798 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000732 | ray.y : 2.999756 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.167480 | ray.x : 2.167264 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000488 | ray.y : 2.999512 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.168579 | ray.x : 2.168363 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000000 | ray.y : 2.999023 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.170044 | ray.x : 2.169829 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000000 | ray.y : 2.999023 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.171723 | ray.x : 2.171509 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000489 | ray.y : 2.999512 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.172821 | ray.x : 2.172607 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000245 | ray.y : 2.999268 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.174284 | ray.x : 2.174072 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000000 | ray.y : 2.999023 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.175960 | ray.x : 2.175748 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000490 | ray.y : 2.999513 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.177057 | ray.x : 2.176846 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000490 | ray.y : 2.999513 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.178520 | ray.x : 2.178310 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000003 | ray.y : 2.999025 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.180191 | ray.x : 2.179983 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000737 | ray.y : 2.999759 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.181653 | ray.x : 2.181446 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000493 | ray.y : 2.999515 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.182750 | ray.x : 2.182543 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000006 | ray.y : 2.999027 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.184212 | ray.x : 2.184006 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000006 | ray.y : 2.999027 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.185879 | ray.x : 2.185674 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000497 | ray.y : 2.999519 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.186975 | ray.x : 2.186770 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000254 | ray.y : 2.999275 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.188436 | ray.x : 2.188232 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000010 | ray.y : 2.999031 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.190099 | ray.x : 2.189897 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000746 | ray.y : 2.999767 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.191194 | ray.x : 2.190992 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000503 | ray.y : 2.999523 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.192654 | ray.x : 2.192453 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000259 | ray.y : 2.999279 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.194314 | ray.x : 2.194114 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000752 | ray.y : 2.999773 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.195773 | ray.x : 2.195574 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000752 | ray.y : 2.999773 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.196867 | ray.x : 2.196669 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000266 | ray.y : 2.999286 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.198327 | ray.x : 2.198129 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000023 | ray.y : 2.999043 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.199982 | ray.x : 2.199786 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000760 | ray.y : 2.999780 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.201076 | ray.x : 2.200880 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000517 | ray.y : 2.999537 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.202534 | ray.x : 2.202339 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000274 | ray.y : 2.999293 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.203992 | ray.x : 2.203798 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000031 | ray.y : 2.999050 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.205643 | ray.x : 2.205450 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000526 | ray.y : 2.999545 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.206736 | ray.x : 2.206544 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000526 | ray.y : 2.999545 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.208193 | ray.x : 2.208002 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000041 | ray.y : 2.999059 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.209840 | ray.x : 2.209650 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000780 | ray.y : 2.999798 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.210932 | ray.x : 2.210743 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000537 | ray.y : 2.999555 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.212389 | ray.x : 2.212200 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000294 | ray.y : 2.999312 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.213845 | ray.x : 2.213657 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000051 | ray.y : 2.999069 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.215487 | ray.x : 2.215301 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000791 | ray.y : 2.999809 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.216579 | ray.x : 2.216393 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000549 | ray.y : 2.999566 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.218034 | ray.x : 2.217849 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000306 | ray.y : 2.999323 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.219490 | ray.x : 2.219306 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000063 | ray.y : 2.999080 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.220764 | ray.x : 2.220581 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000804 | ray.y : 2.999821 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.222219 | ray.x : 2.222036 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000562 | ray.y : 2.999578 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.223673 | ray.x : 2.223492 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000319 | ray.y : 2.999336 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.225307 | ray.x : 2.225127 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000818 | ray.y : 2.999835 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.226398 | ray.x : 2.226218 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000818 | ray.y : 2.999835 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.227851 | ray.x : 2.227672 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000576 | ray.y : 2.999592 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.229304 | ray.x : 2.229127 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000092 | ray.y : 2.999107 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.230758 | ray.x : 2.230581 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000092 | ray.y : 2.999107 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.232024 | ray.x : 2.231848 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000834 | ray.y : 2.999849 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.233476 | ray.x : 2.233301 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000350 | ray.y : 2.999365 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.234929 | ray.x : 2.234755 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000350 | ray.y : 2.999365 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.236018 | ray.x : 2.235845 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000107 | ray.y : 2.999122 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.237643 | ray.x : 2.237470 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000608 | ray.y : 2.999623 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.239094 | ray.x : 2.238923 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000608 | ray.y : 2.999623 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.240546 | ray.x : 2.240375 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000366 | ray.y : 2.999381 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.241634 | ray.x : 2.241465 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000125 | ray.y : 2.999139 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.243255 | ray.x : 2.243086 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000868 | ray.y : 2.999883 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.244705 | ray.x : 2.244537 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000627 | ray.y : 2.999641 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.246156 | ray.x : 2.245989 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000385 | ray.y : 2.999399 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.247244 | ray.x : 2.247077 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000143 | ray.y : 2.999157 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.248859 | ray.x : 2.248694 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000888 | ray.y : 2.999901 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.250309 | ray.x : 2.250145 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000646 | ray.y : 2.999660 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.251396 | ray.x : 2.251233 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000404 | ray.y : 2.999418 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.252846 | ray.x : 2.252683 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000163 | ray.y : 2.999176 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.254457 | ray.x : 2.254295 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000908 | ray.y : 2.999921 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.255906 | ray.x : 2.255745 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000667 | ray.y : 2.999680 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.256992 | ray.x : 2.256832 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000667 | ray.y : 2.999680 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.258441 | ray.x : 2.258282 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000425 | ray.y : 2.999438 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.260047 | ray.x : 2.259889 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000930 | ray.y : 2.999942 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.261495 | ray.x : 2.261338 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000930 | ray.y : 2.999942 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.262581 | ray.x : 2.262424 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000689 | ray.y : 2.999701 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.264029 | ray.x : 2.263873 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000447 | ray.y : 2.999460 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.265476 | ray.x : 2.265322 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000206 | ray.y : 2.999218 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.266924 | ray.x : 2.266770 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000206 | ray.y : 2.999218 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.268162 | ray.x : 2.268010 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000712 | ray.y : 2.999724 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.269609 | ray.x : 2.269457 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000471 | ray.y : 2.999482 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.271056 | ray.x : 2.270905 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000471 | ray.y : 2.999482 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.272503 | ray.x : 2.272353 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000229 | ray.y : 2.999241 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.273737 | ray.x : 2.273588 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000977 | ray.y : 2.999989 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.275183 | ray.x : 2.275034 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000736 | ray.y : 2.999747 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.276628 | ray.x : 2.276481 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000736 | ray.y : 2.999747 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.277713 | ray.x : 2.277566 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000254 | ray.y : 2.999265 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.279159 | ray.x : 2.279013 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000013 | ray.y : 2.999024 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.280604 | ray.x : 2.280460 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000013 | ray.y : 2.999024 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.282194 | ray.x : 2.282050 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000762 | ray.y : 2.999772 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.283278 | ray.x : 2.283134 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000521 | ray.y : 2.999532 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.284722 | ray.x : 2.284580 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000280 | ray.y : 2.999290 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.286167 | ray.x : 2.286026 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000280 | ray.y : 2.999290 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.287612 | ray.x : 2.287472 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000040 | ray.y : 2.999049 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.288835 | ray.x : 2.288696 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000789 | ray.y : 2.999799 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.290279 | ray.x : 2.290140 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000548 | ray.y : 2.999558 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.291723 | ray.x : 2.291585 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000548 | ray.y : 2.999558 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.293167 | ray.x : 2.293030 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000308 | ray.y : 2.999317 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.294250 | ray.x : 2.294114 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000067 | ray.y : 2.999077 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.295828 | ray.x : 2.295693 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000817 | ray.y : 2.999826 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.297271 | ray.x : 2.297137 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000817 | ray.y : 2.999826 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.298714 | ray.x : 2.298581 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000577 | ray.y : 2.999586 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.299796 | ray.x : 2.299664 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000336 | ray.y : 2.999345 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.301239 | ray.x : 2.301108 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000096 | ray.y : 2.999104 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.302682 | ray.x : 2.302552 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000096 | ray.y : 2.999104 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.304255 | ray.x : 2.304125 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000847 | ray.y : 2.999855 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.305336 | ray.x : 2.305207 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000607 | ray.y : 2.999615 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.306778 | ray.x : 2.306650 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000366 | ray.y : 2.999374 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.308220 | ray.x : 2.308093 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000366 | ray.y : 2.999374 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.309662 | ray.x : 2.309536 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000126 | ray.y : 2.999134 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.310869 | ray.x : 2.310743 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000878 | ray.y : 2.999886 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.312310 | ray.x : 2.312185 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000638 | ray.y : 2.999645 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.313751 | ray.x : 2.313627 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000638 | ray.y : 2.999645 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.315192 | ray.x : 2.315069 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000397 | ray.y : 2.999405 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.316272 | ray.x : 2.316151 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000157 | ray.y : 2.999165 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.317834 | ray.x : 2.317713 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000910 | ray.y : 2.999917 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.319274 | ray.x : 2.319154 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000910 | ray.y : 2.999917 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.320714 | ray.x : 2.320595 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000670 | ray.y : 2.999677 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.321794 | ray.x : 2.321676 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000430 | ray.y : 2.999437 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.323234 | ray.x : 2.323117 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000430 | ray.y : 2.999437 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.324674 | ray.x : 2.324558 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000190 | ray.y : 2.999197 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.326114 | ray.x : 2.325999 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000190 | ray.y : 2.999197 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.327668 | ray.x : 2.327554 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000943 | ray.y : 2.999950 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.328748 | ray.x : 2.328634 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000703 | ray.y : 2.999710 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.330187 | ray.x : 2.330074 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000463 | ray.y : 2.999470 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.331626 | ray.x : 2.331514 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000463 | ray.y : 2.999470 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.333065 | ray.x : 2.332954 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000224 | ray.y : 2.999230 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.334144 | ray.x : 2.334034 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000224 | ray.y : 2.999230 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.335692 | ray.x : 2.335583 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000978 | ray.y : 2.999984 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.337131 | ray.x : 2.337023 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000738 | ray.y : 2.999744 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.338569 | ray.x : 2.338462 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000738 | ray.y : 2.999744 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.339647 | ray.x : 2.339541 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000498 | ray.y : 2.999504 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.341085 | ray.x : 2.340980 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000498 | ray.y : 2.999504 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.342524 | ray.x : 2.342419 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000259 | ray.y : 2.999264 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.343962 | ray.x : 2.343858 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000019 | ray.y : 2.999024 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.345040 | ray.x : 2.344938 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000019 | ray.y : 2.999024 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.346580 | ray.x : 2.346478 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000774 | ray.y : 2.999779 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.348017 | ray.x : 2.347917 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000774 | ray.y : 2.999779 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.349455 | ray.x : 2.349355 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000535 | ray.y : 2.999540 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.350533 | ray.x : 2.350433 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000295 | ray.y : 2.999300 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.351970 | ray.x : 2.351871 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000295 | ray.y : 2.999300 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.353407 | ray.x : 2.353310 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000295 | ray.y : 2.999300 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.354844 | ray.x : 2.354748 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000056 | ray.y : 2.999060 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.356377 | ray.x : 2.356281 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000812 | ray.y : 2.999816 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.357454 | ray.x : 2.357359 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000572 | ray.y : 2.999577 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.358890 | ray.x : 2.358796 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000572 | ray.y : 2.999577 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.360326 | ray.x : 2.360234 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000572 | ray.y : 2.999577 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.361763 | ray.x : 2.361671 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000333 | ray.y : 2.999337 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.362840 | ray.x : 2.362749 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000333 | ray.y : 2.999337 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.364276 | ray.x : 2.364186 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000094 | ray.y : 2.999098 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.365801 | ray.x : 2.365712 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000850 | ray.y : 2.999854 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.367237 | ray.x : 2.367148 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000850 | ray.y : 2.999854 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.368313 | ray.x : 2.368226 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000850 | ray.y : 2.999854 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.369748 | ray.x : 2.369662 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000611 | ray.y : 2.999614 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.371184 | ray.x : 2.371098 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000611 | ray.y : 2.999614 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.372619 | ray.x : 2.372534 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000372 | ray.y : 2.999376 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.374054 | ray.x : 2.373971 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000133 | ray.y : 2.999136 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.375131 | ray.x : 2.375048 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000133 | ray.y : 2.999136 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.376566 | ray.x : 2.376484 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000133 | ray.y : 2.999136 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.378001 | ray.x : 2.377920 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000133 | ray.y : 2.999136 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.379517 | ray.x : 2.379436 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000890 | ray.y : 2.999893 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.380592 | ray.x : 2.380513 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000651 | ray.y : 2.999654 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.382027 | ray.x : 2.381948 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000651 | ray.y : 2.999654 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.383461 | ray.x : 2.383384 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000412 | ray.y : 2.999415 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.384895 | ray.x : 2.384819 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000412 | ray.y : 2.999415 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.385971 | ray.x : 2.385895 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000412 | ray.y : 2.999415 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.387405 | ray.x : 2.387331 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000173 | ray.y : 2.999176 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.388840 | ray.x : 2.388766 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000173 | ray.y : 2.999176 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.390347 | ray.x : 2.390274 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000931 | ray.y : 2.999934 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.391780 | ray.x : 2.391708 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000931 | ray.y : 2.999934 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.392855 | ray.x : 2.392784 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000692 | ray.y : 2.999695 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.394289 | ray.x : 2.394218 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000692 | ray.y : 2.999695 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.395722 | ray.x : 2.395653 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000692 | ray.y : 2.999695 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.397156 | ray.x : 2.397087 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000692 | ray.y : 2.999695 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.398231 | ray.x : 2.398163 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000453 | ray.y : 2.999456 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.399664 | ray.x : 2.399597 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000453 | ray.y : 2.999456 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.401097 | ray.x : 2.401031 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000215 | ray.y : 2.999217 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.402531 | ray.x : 2.402466 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000215 | ray.y : 2.999217 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.404028 | ray.x : 2.403964 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000974 | ray.y : 2.999976 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.405102 | ray.x : 2.405039 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000974 | ray.y : 2.999976 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.406535 | ray.x : 2.406472 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000974 | ray.y : 2.999976 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.407967 | ray.x : 2.407906 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000974 | ray.y : 2.999976 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.409400 | ray.x : 2.409339 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000735 | ray.y : 2.999737 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.410474 | ray.x : 2.410414 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000735 | ray.y : 2.999737 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.411906 | ray.x : 2.411848 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000496 | ray.y : 2.999498 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.413339 | ray.x : 2.413281 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000496 | ray.y : 2.999498 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.414771 | ray.x : 2.414714 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000257 | ray.y : 2.999259 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.416203 | ray.x : 2.416148 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000257 | ray.y : 2.999259 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.417278 | ray.x : 2.417223 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000257 | ray.y : 2.999259 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.418710 | ray.x : 2.418656 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000257 | ray.y : 2.999259 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.420143 | ray.x : 2.420089 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000257 | ray.y : 2.999259 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.421575 | ray.x : 2.421523 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000019 | ray.y : 2.999020 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.422649 | ray.x : 2.422598 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000019 | ray.y : 2.999020 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.424082 | ray.x : 2.424031 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000019 | ray.y : 2.999020 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.425564 | ray.x : 2.425514 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000779 | ray.y : 2.999780 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.426995 | ray.x : 2.426947 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000779 | ray.y : 2.999780 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.428427 | ray.x : 2.428379 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000540 | ray.y : 2.999541 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.429500 | ray.x : 2.429453 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000540 | ray.y : 2.999541 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.430932 | ray.x : 2.430886 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000540 | ray.y : 2.999541 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.432363 | ray.x : 2.432318 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000540 | ray.y : 2.999541 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.433795 | ray.x : 2.433751 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000540 | ray.y : 2.999541 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.434868 | ray.x : 2.434825 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000540 | ray.y : 2.999541 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.436300 | ray.x : 2.436257 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000302 | ray.y : 2.999302 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.437731 | ray.x : 2.437690 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000302 | ray.y : 2.999302 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.439163 | ray.x : 2.439122 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000302 | ray.y : 2.999302 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.440594 | ray.x : 2.440555 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000063 | ray.y : 2.999064 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.441668 | ray.x : 2.441629 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000063 | ray.y : 2.999064 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.443099 | ray.x : 2.443061 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000063 | ray.y : 2.999064 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.444531 | ray.x : 2.444494 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000063 | ray.y : 2.999064 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.445998 | ray.x : 2.445962 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000824 | ray.y : 2.999825 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.447071 | ray.x : 2.447036 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000824 | ray.y : 2.999825 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.448502 | ray.x : 2.448467 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000824 | ray.y : 2.999825 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.449932 | ray.x : 2.449899 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000824 | ray.y : 2.999825 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.451363 | ray.x : 2.451330 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000824 | ray.y : 2.999825 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.452793 | ray.x : 2.452762 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000824 | ray.y : 2.999825 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.453866 | ray.x : 2.453835 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000824 | ray.y : 2.999825 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.455297 | ray.x : 2.455267 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000824 | ray.y : 2.999825 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.456727 | ray.x : 2.456698 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000586 | ray.y : 2.999586 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.458158 | ray.x : 2.458130 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000586 | ray.y : 2.999586 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.459588 | ray.x : 2.459561 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000586 | ray.y : 2.999586 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.460661 | ray.x : 2.460635 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000586 | ray.y : 2.999586 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.462091 | ray.x : 2.462066 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000586 | ray.y : 2.999586 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.463522 | ray.x : 2.463498 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000347 | ray.y : 2.999347 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.464952 | ray.x : 2.464929 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000347 | ray.y : 2.999347 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.466025 | ray.x : 2.466003 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000347 | ray.y : 2.999347 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.467456 | ray.x : 2.467434 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000347 | ray.y : 2.999347 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.468886 | ray.x : 2.468866 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000347 | ray.y : 2.999347 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.470317 | ray.x : 2.470297 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000347 | ray.y : 2.999347 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.471747 | ray.x : 2.471729 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000109 | ray.y : 2.999109 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.472820 | ray.x : 2.472802 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000109 | ray.y : 2.999109 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.474251 | ray.x : 2.474234 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000109 | ray.y : 2.999109 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.475681 | ray.x : 2.475665 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000109 | ray.y : 2.999109 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.477112 | ray.x : 2.477097 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000109 | ray.y : 2.999109 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.478185 | ray.x : 2.478170 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000109 | ray.y : 2.999109 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.479615 | ray.x : 2.479602 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000109 | ray.y : 2.999109 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.481046 | ray.x : 2.481033 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000109 | ray.y : 2.999109 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.482476 | ray.x : 2.482465 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000109 | ray.y : 2.999109 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.483907 | ray.x : 2.483896 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000109 | ray.y : 2.999109 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.484980 | ray.x : 2.484970 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000109 | ray.y : 2.999109 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.486410 | ray.x : 2.486401 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000109 | ray.y : 2.999109 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.487841 | ray.x : 2.487833 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000109 | ray.y : 2.999109 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.489271 | ray.x : 2.489264 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000109 | ray.y : 2.999109 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.490702 | ray.x : 2.490695 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000109 | ray.y : 2.999109 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.491775 | ray.x : 2.491769 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000109 | ray.y : 2.999109 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.493205 | ray.x : 2.493201 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000109 | ray.y : 2.999109 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.494636 | ray.x : 2.494632 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000109 | ray.y : 2.999109 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.496066 | ray.x : 2.496063 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000109 | ray.y : 2.999109 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.497139 | ray.x : 2.497137 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000109 | ray.y : 2.999109 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.498569 | ray.x : 2.498569 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000109 | ray.y : 2.999109 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.500000 | ray.x : 2.500000 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000109 | ray.y : 2.999109 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.501431 | ray.x : 2.501431 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000109 | ray.y : 2.999109 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.502861 | ray.x : 2.502863 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000109 | ray.y : 2.999109 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.503934 | ray.x : 2.503937 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000109 | ray.y : 2.999109 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.505364 | ray.x : 2.505368 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000109 | ray.y : 2.999109 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.506795 | ray.x : 2.506799 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000109 | ray.y : 2.999109 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.508225 | ray.x : 2.508231 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000109 | ray.y : 2.999109 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.509298 | ray.x : 2.509305 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000109 | ray.y : 2.999109 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.510729 | ray.x : 2.510736 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000109 | ray.y : 2.999109 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.512159 | ray.x : 2.512167 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000109 | ray.y : 2.999109 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.513590 | ray.x : 2.513599 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000109 | ray.y : 2.999109 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.515020 | ray.x : 2.515030 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000109 | ray.y : 2.999109 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.516093 | ray.x : 2.516104 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000109 | ray.y : 2.999109 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.517524 | ray.x : 2.517535 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000109 | ray.y : 2.999109 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.518954 | ray.x : 2.518967 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000109 | ray.y : 2.999109 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.520385 | ray.x : 2.520398 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000109 | ray.y : 2.999109 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.521815 | ray.x : 2.521830 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000109 | ray.y : 2.999109 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.522888 | ray.x : 2.522903 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000109 | ray.y : 2.999109 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.524319 | ray.x : 2.524335 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000109 | ray.y : 2.999109 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.525749 | ray.x : 2.525766 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000109 | ray.y : 2.999109 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.527180 | ray.x : 2.527198 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000109 | ray.y : 2.999109 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.528253 | ray.x : 2.528271 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000109 | ray.y : 2.999109 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.529683 | ray.x : 2.529703 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000347 | ray.y : 2.999347 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.531114 | ray.x : 2.531134 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000347 | ray.y : 2.999347 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.532544 | ray.x : 2.532566 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000347 | ray.y : 2.999347 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.533975 | ray.x : 2.533997 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000347 | ray.y : 2.999347 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.535048 | ray.x : 2.535071 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000347 | ray.y : 2.999347 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.536478 | ray.x : 2.536502 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000347 | ray.y : 2.999347 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.537909 | ray.x : 2.537934 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000586 | ray.y : 2.999586 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.539339 | ray.x : 2.539365 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000586 | ray.y : 2.999586 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.540412 | ray.x : 2.540439 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000586 | ray.y : 2.999586 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.541842 | ray.x : 2.541870 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000586 | ray.y : 2.999586 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.543273 | ray.x : 2.543302 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000586 | ray.y : 2.999586 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.544703 | ray.x : 2.544733 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000824 | ray.y : 2.999825 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.546134 | ray.x : 2.546165 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000824 | ray.y : 2.999825 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.547207 | ray.x : 2.547238 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000824 | ray.y : 2.999825 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.548637 | ray.x : 2.548670 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000824 | ray.y : 2.999825 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.550068 | ray.x : 2.550101 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000824 | ray.y : 2.999825 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.551498 | ray.x : 2.551533 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000824 | ray.y : 2.999825 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.552929 | ray.x : 2.552964 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000824 | ray.y : 2.999825 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.554002 | ray.x : 2.554038 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000824 | ray.y : 2.999825 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.555469 | ray.x : 2.555506 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000063 | ray.y : 2.999064 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.556901 | ray.x : 2.556939 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000063 | ray.y : 2.999064 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.558332 | ray.x : 2.558371 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000063 | ray.y : 2.999064 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.559406 | ray.x : 2.559445 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000063 | ray.y : 2.999064 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.560837 | ray.x : 2.560878 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000302 | ray.y : 2.999302 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.562269 | ray.x : 2.562310 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000302 | ray.y : 2.999302 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.563700 | ray.x : 2.563743 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000302 | ray.y : 2.999302 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.565132 | ray.x : 2.565175 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000540 | ray.y : 2.999541 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.566205 | ray.x : 2.566249 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000540 | ray.y : 2.999541 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.567637 | ray.x : 2.567682 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000540 | ray.y : 2.999541 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.569068 | ray.x : 2.569114 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000540 | ray.y : 2.999541 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.570500 | ray.x : 2.570547 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000540 | ray.y : 2.999541 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.571573 | ray.x : 2.571621 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000540 | ray.y : 2.999541 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.573005 | ray.x : 2.573053 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000779 | ray.y : 2.999780 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.574436 | ray.x : 2.574486 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000779 | ray.y : 2.999780 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.575918 | ray.x : 2.575969 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000019 | ray.y : 2.999020 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.577351 | ray.x : 2.577402 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000019 | ray.y : 2.999020 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.578425 | ray.x : 2.578477 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000019 | ray.y : 2.999020 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.579857 | ray.x : 2.579911 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000257 | ray.y : 2.999259 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.581290 | ray.x : 2.581344 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000257 | ray.y : 2.999259 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.582722 | ray.x : 2.582777 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000257 | ray.y : 2.999259 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.583797 | ray.x : 2.583852 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000257 | ray.y : 2.999259 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.585229 | ray.x : 2.585286 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000257 | ray.y : 2.999259 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.586661 | ray.x : 2.586719 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000496 | ray.y : 2.999498 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.588094 | ray.x : 2.588152 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000496 | ray.y : 2.999498 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.589526 | ray.x : 2.589586 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000735 | ray.y : 2.999737 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.590600 | ray.x : 2.590661 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000735 | ray.y : 2.999737 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.592033 | ray.x : 2.592094 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000974 | ray.y : 2.999976 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.593465 | ray.x : 2.593528 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000974 | ray.y : 2.999976 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.594898 | ray.x : 2.594961 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000974 | ray.y : 2.999976 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.595972 | ray.x : 2.596036 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000974 | ray.y : 2.999976 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.597469 | ray.x : 2.597534 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000215 | ray.y : 2.999217 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.598903 | ray.x : 2.598969 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000215 | ray.y : 2.999217 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.600336 | ray.x : 2.600403 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000453 | ray.y : 2.999456 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.601769 | ray.x : 2.601837 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000453 | ray.y : 2.999456 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.602844 | ray.x : 2.602913 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000692 | ray.y : 2.999695 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.604278 | ray.x : 2.604347 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000692 | ray.y : 2.999695 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.605711 | ray.x : 2.605782 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000692 | ray.y : 2.999695 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.607145 | ray.x : 2.607216 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000692 | ray.y : 2.999695 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.608220 | ray.x : 2.608292 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000931 | ray.y : 2.999934 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.609653 | ray.x : 2.609726 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000931 | ray.y : 2.999934 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.611160 | ray.x : 2.611234 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000173 | ray.y : 2.999176 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.612595 | ray.x : 2.612669 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000173 | ray.y : 2.999176 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.614029 | ray.x : 2.614105 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000412 | ray.y : 2.999415 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.615105 | ray.x : 2.615181 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000412 | ray.y : 2.999415 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.616539 | ray.x : 2.616616 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000412 | ray.y : 2.999415 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.617973 | ray.x : 2.618052 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000651 | ray.y : 2.999654 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.619408 | ray.x : 2.619487 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000651 | ray.y : 2.999654 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.620483 | ray.x : 2.620564 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000890 | ray.y : 2.999893 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.621999 | ray.x : 2.622080 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000133 | ray.y : 2.999136 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.623434 | ray.x : 2.623516 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000133 | ray.y : 2.999136 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.624869 | ray.x : 2.624952 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000133 | ray.y : 2.999136 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.625946 | ray.x : 2.626029 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000133 | ray.y : 2.999136 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.627381 | ray.x : 2.627466 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000372 | ray.y : 2.999376 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.628816 | ray.x : 2.628902 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000611 | ray.y : 2.999614 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.630252 | ray.x : 2.630338 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000611 | ray.y : 2.999614 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.631687 | ray.x : 2.631774 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000850 | ray.y : 2.999854 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.632763 | ray.x : 2.632852 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000850 | ray.y : 2.999854 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.634199 | ray.x : 2.634288 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000850 | ray.y : 2.999854 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.635724 | ray.x : 2.635814 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000094 | ray.y : 2.999098 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.637160 | ray.x : 2.637251 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000333 | ray.y : 2.999337 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.638237 | ray.x : 2.638329 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000333 | ray.y : 2.999337 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.639674 | ray.x : 2.639766 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000572 | ray.y : 2.999577 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.641110 | ray.x : 2.641204 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000572 | ray.y : 2.999577 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.642546 | ray.x : 2.642641 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000572 | ray.y : 2.999577 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.643623 | ray.x : 2.643719 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000812 | ray.y : 2.999816 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.645156 | ray.x : 2.645252 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000056 | ray.y : 2.999060 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.646593 | ray.x : 2.646690 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000295 | ray.y : 2.999300 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.648030 | ray.x : 2.648129 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000295 | ray.y : 2.999300 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.649467 | ray.x : 2.649567 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000295 | ray.y : 2.999300 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.650545 | ray.x : 2.650645 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000535 | ray.y : 2.999540 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.651983 | ray.x : 2.652083 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000774 | ray.y : 2.999779 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.653420 | ray.x : 2.653522 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000774 | ray.y : 2.999779 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.654960 | ray.x : 2.655062 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000019 | ray.y : 2.999024 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.656038 | ray.x : 2.656142 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000019 | ray.y : 2.999024 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.657476 | ray.x : 2.657581 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000259 | ray.y : 2.999264 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.658915 | ray.x : 2.659020 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000498 | ray.y : 2.999504 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.660353 | ray.x : 2.660459 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000498 | ray.y : 2.999504 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.661431 | ray.x : 2.661538 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000738 | ray.y : 2.999744 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.662869 | ray.x : 2.662977 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000738 | ray.y : 2.999744 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.664308 | ray.x : 2.664417 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000978 | ray.y : 2.999984 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.665856 | ray.x : 2.665966 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000224 | ray.y : 2.999230 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.666935 | ray.x : 2.667046 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000224 | ray.y : 2.999230 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.668374 | ray.x : 2.668486 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000463 | ray.y : 2.999470 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.669813 | ray.x : 2.669926 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000463 | ray.y : 2.999470 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.671252 | ray.x : 2.671366 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000703 | ray.y : 2.999710 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.672332 | ray.x : 2.672446 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000943 | ray.y : 2.999950 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.673886 | ray.x : 2.674001 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000190 | ray.y : 2.999197 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.675326 | ray.x : 2.675442 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000190 | ray.y : 2.999197 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.676766 | ray.x : 2.676883 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000430 | ray.y : 2.999437 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.678206 | ray.x : 2.678324 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000430 | ray.y : 2.999437 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.679286 | ray.x : 2.679405 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000670 | ray.y : 2.999677 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.680726 | ray.x : 2.680846 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000910 | ray.y : 2.999917 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.682166 | ray.x : 2.682287 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000910 | ray.y : 2.999917 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.683728 | ray.x : 2.683849 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000157 | ray.y : 2.999165 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.684808 | ray.x : 2.684931 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000397 | ray.y : 2.999405 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.686249 | ray.x : 2.686373 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000638 | ray.y : 2.999645 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.687690 | ray.x : 2.687815 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000638 | ray.y : 2.999645 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.689131 | ray.x : 2.689257 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000878 | ray.y : 2.999886 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.690338 | ray.x : 2.690464 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000126 | ray.y : 2.999134 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.691780 | ray.x : 2.691907 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000366 | ray.y : 2.999374 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.693222 | ray.x : 2.693350 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000366 | ray.y : 2.999374 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.694664 | ray.x : 2.694793 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000607 | ray.y : 2.999615 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.695745 | ray.x : 2.695875 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000847 | ray.y : 2.999855 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.697318 | ray.x : 2.697448 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000096 | ray.y : 2.999104 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.698761 | ray.x : 2.698892 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000096 | ray.y : 2.999104 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.700204 | ray.x : 2.700336 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000336 | ray.y : 2.999345 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.701286 | ray.x : 2.701419 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000577 | ray.y : 2.999586 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.702729 | ray.x : 2.702863 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000817 | ray.y : 2.999826 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.704172 | ray.x : 2.704307 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000817 | ray.y : 2.999826 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.705750 | ray.x : 2.705886 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000067 | ray.y : 2.999077 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.706833 | ray.x : 2.706970 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000308 | ray.y : 2.999317 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.708277 | ray.x : 2.708415 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000548 | ray.y : 2.999558 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.709721 | ray.x : 2.709860 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000548 | ray.y : 2.999558 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.711165 | ray.x : 2.711304 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000789 | ray.y : 2.999799 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.712388 | ray.x : 2.712528 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000040 | ray.y : 2.999049 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.713833 | ray.x : 2.713974 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000280 | ray.y : 2.999290 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.715278 | ray.x : 2.715420 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000280 | ray.y : 2.999290 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.716722 | ray.x : 2.716866 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000521 | ray.y : 2.999532 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.717806 | ray.x : 2.717950 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000762 | ray.y : 2.999772 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.719396 | ray.x : 2.719540 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000013 | ray.y : 2.999024 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.720841 | ray.x : 2.720987 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000013 | ray.y : 2.999024 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.722287 | ray.x : 2.722434 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000254 | ray.y : 2.999265 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.723372 | ray.x : 2.723519 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000736 | ray.y : 2.999747 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.724817 | ray.x : 2.724966 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000736 | ray.y : 2.999747 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.726263 | ray.x : 2.726412 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000977 | ray.y : 2.999989 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.727497 | ray.x : 2.727647 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000229 | ray.y : 2.999241 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.728944 | ray.x : 2.729095 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000471 | ray.y : 2.999482 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.730391 | ray.x : 2.730543 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000471 | ray.y : 2.999482 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.731838 | ray.x : 2.731990 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000712 | ray.y : 2.999724 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.733076 | ray.x : 2.733230 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000206 | ray.y : 2.999218 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.734524 | ray.x : 2.734678 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000206 | ray.y : 2.999218 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.735971 | ray.x : 2.736127 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000447 | ray.y : 2.999460 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.737419 | ray.x : 2.737576 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000689 | ray.y : 2.999701 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.738505 | ray.x : 2.738662 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000930 | ray.y : 2.999942 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.739953 | ray.x : 2.740111 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000930 | ray.y : 2.999942 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.741559 | ray.x : 2.741718 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000425 | ray.y : 2.999438 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.743008 | ray.x : 2.743168 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000667 | ray.y : 2.999680 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.744094 | ray.x : 2.744255 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000667 | ray.y : 2.999680 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.745543 | ray.x : 2.745705 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000908 | ray.y : 2.999921 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.747154 | ray.x : 2.747317 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000163 | ray.y : 2.999176 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.748604 | ray.x : 2.748767 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000404 | ray.y : 2.999418 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.749691 | ray.x : 2.749855 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000646 | ray.y : 2.999660 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.751141 | ray.x : 2.751306 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000888 | ray.y : 2.999901 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.752756 | ray.x : 2.752923 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000143 | ray.y : 2.999157 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.753844 | ray.x : 2.754011 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000385 | ray.y : 2.999399 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.755295 | ray.x : 2.755463 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000627 | ray.y : 2.999641 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.756745 | ray.x : 2.756914 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000868 | ray.y : 2.999883 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.758366 | ray.x : 2.758535 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000125 | ray.y : 2.999139 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.759454 | ray.x : 2.759625 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000366 | ray.y : 2.999381 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.760906 | ray.x : 2.761077 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000608 | ray.y : 2.999623 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.762357 | ray.x : 2.762530 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000608 | ray.y : 2.999623 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.763982 | ray.x : 2.764155 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000107 | ray.y : 2.999122 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.765071 | ray.x : 2.765245 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000350 | ray.y : 2.999365 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.766524 | ray.x : 2.766699 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000350 | ray.y : 2.999365 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.767976 | ray.x : 2.768152 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000834 | ray.y : 2.999849 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.769242 | ray.x : 2.769419 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000092 | ray.y : 2.999107 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.770696 | ray.x : 2.770873 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000092 | ray.y : 2.999107 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.772149 | ray.x : 2.772328 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000576 | ray.y : 2.999592 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.773602 | ray.x : 2.773782 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000818 | ray.y : 2.999835 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.774693 | ray.x : 2.774873 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000818 | ray.y : 2.999835 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.776327 | ray.x : 2.776508 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000319 | ray.y : 2.999336 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.777781 | ray.x : 2.777964 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000562 | ray.y : 2.999578 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.779236 | ray.x : 2.779419 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000804 | ray.y : 2.999821 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.780510 | ray.x : 2.780694 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000063 | ray.y : 2.999080 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.781966 | ray.x : 2.782151 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000306 | ray.y : 2.999323 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.783421 | ray.x : 2.783607 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000549 | ray.y : 2.999566 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.784513 | ray.x : 2.784699 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000791 | ray.y : 2.999809 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.786155 | ray.x : 2.786343 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000051 | ray.y : 2.999069 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.787611 | ray.x : 2.787800 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000294 | ray.y : 2.999312 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.789068 | ray.x : 2.789257 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000537 | ray.y : 2.999555 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.790160 | ray.x : 2.790350 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000780 | ray.y : 2.999798 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.791807 | ray.x : 2.791998 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000041 | ray.y : 2.999059 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.793264 | ray.x : 2.793456 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000526 | ray.y : 2.999545 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.794357 | ray.x : 2.794550 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000526 | ray.y : 2.999545 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.796008 | ray.x : 2.796202 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000031 | ray.y : 2.999050 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.797466 | ray.x : 2.797661 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000274 | ray.y : 2.999293 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.798924 | ray.x : 2.799120 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000517 | ray.y : 2.999537 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.800018 | ray.x : 2.800214 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000760 | ray.y : 2.999780 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.801673 | ray.x : 2.801871 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000023 | ray.y : 2.999043 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.803133 | ray.x : 2.803331 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000266 | ray.y : 2.999286 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.804227 | ray.x : 2.804426 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000752 | ray.y : 2.999773 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.805686 | ray.x : 2.805886 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000752 | ray.y : 2.999773 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.807346 | ray.x : 2.807547 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000259 | ray.y : 2.999279 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.808806 | ray.x : 2.809008 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000503 | ray.y : 2.999523 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.809901 | ray.x : 2.810103 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000746 | ray.y : 2.999767 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.811564 | ray.x : 2.811768 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000010 | ray.y : 2.999031 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.813025 | ray.x : 2.813230 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000254 | ray.y : 2.999275 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.814121 | ray.x : 2.814326 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000497 | ray.y : 2.999519 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.815788 | ray.x : 2.815994 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000006 | ray.y : 2.999027 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.817250 | ray.x : 2.817457 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000006 | ray.y : 2.999027 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.818347 | ray.x : 2.818554 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000493 | ray.y : 2.999515 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.819809 | ray.x : 2.820017 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000737 | ray.y : 2.999759 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.821480 | ray.x : 2.821690 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000003 | ray.y : 2.999025 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.822943 | ray.x : 2.823154 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000490 | ray.y : 2.999513 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.824040 | ray.x : 2.824252 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000490 | ray.y : 2.999513 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.825716 | ray.x : 2.825928 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000000 | ray.y : 2.999023 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.827179 | ray.x : 2.827393 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000245 | ray.y : 2.999268 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.828277 | ray.x : 2.828491 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000489 | ray.y : 2.999512 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.829956 | ray.x : 2.830171 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000000 | ray.y : 2.999023 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.831421 | ray.x : 2.831637 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000000 | ray.y : 2.999023 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.832520 | ray.x : 2.832736 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000488 | ray.y : 2.999512 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.833984 | ray.x : 2.834202 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000732 | ray.y : 2.999756 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.835668 | ray.x : 2.835886 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000001 | ray.y : 2.999025 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.836767 | ray.x : 2.836986 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000489 | ray.y : 2.999514 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.838233 | ray.x : 2.838453 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000734 | ray.y : 2.999758 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.839920 | ray.x : 2.840141 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000002 | ray.y : 2.999027 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.841386 | ray.x : 2.841608 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000247 | ray.y : 2.999272 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.842486 | ray.x : 2.842709 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000736 | ray.y : 2.999761 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.844177 | ray.x : 2.844400 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000006 | ray.y : 2.999031 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.845644 | ray.x : 2.845869 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000250 | ray.y : 2.999276 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.846745 | ray.x : 2.846971 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000740 | ray.y : 2.999765 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.848213 | ray.x : 2.848439 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000740 | ray.y : 2.999765 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.849908 | ray.x : 2.850135 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000255 | ray.y : 2.999281 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.851009 | ray.x : 2.851237 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000500 | ray.y : 2.999526 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.852707 | ray.x : 2.852936 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000016 | ray.y : 2.999042 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.854177 | ray.x : 2.854406 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000261 | ray.y : 2.999288 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.855279 | ray.x : 2.855509 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000506 | ray.y : 2.999533 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.856980 | ray.x : 2.857211 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000023 | ray.y : 2.999050 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.858450 | ray.x : 2.858683 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000268 | ray.y : 2.999295 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.859553 | ray.x : 2.859787 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000513 | ray.y : 2.999541 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.861024 | ray.x : 2.861258 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000758 | ray.y : 2.999786 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.862730 | ray.x : 2.862965 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000276 | ray.y : 2.999304 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.863833 | ray.x : 2.864069 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000522 | ray.y : 2.999550 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.865305 | ray.x : 2.865541 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000767 | ray.y : 2.999795 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.867014 | ray.x : 2.867252 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000286 | ray.y : 2.999315 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.868486 | ray.x : 2.868725 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000532 | ray.y : 2.999561 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.869830 | ray.x : 2.870070 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000051 | ray.y : 2.999081 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.871304 | ray.x : 2.871544 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000297 | ray.y : 2.999326 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.872777 | ray.x : 2.873018 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000543 | ray.y : 2.999572 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.873882 | ray.x : 2.874124 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000788 | ray.y : 2.999818 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.875598 | ray.x : 2.875841 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000309 | ray.y : 2.999339 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.877073 | ray.x : 2.877317 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000555 | ray.y : 2.999585 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.878423 | ray.x : 2.878668 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000077 | ray.y : 2.999107 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.879899 | ray.x : 2.880144 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000323 | ray.y : 2.999353 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.881374 | ray.x : 2.881620 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000815 | ray.y : 2.999846 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.882728 | ray.x : 2.882975 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000092 | ray.y : 2.999123 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.884204 | ray.x : 2.884452 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000338 | ray.y : 2.999369 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.885680 | ray.x : 2.885929 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000830 | ray.y : 2.999861 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.887037 | ray.x : 2.887287 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000108 | ray.y : 2.999139 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.888515 | ray.x : 2.888765 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000600 | ray.y : 2.999632 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.889992 | ray.x : 2.890244 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000846 | ray.y : 2.999878 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.891352 | ray.x : 2.891605 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000371 | ray.y : 2.999403 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.892830 | ray.x : 2.893084 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000618 | ray.y : 2.999650 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.894563 | ray.x : 2.894817 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000143 | ray.y : 2.999176 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.895672 | ray.x : 2.895927 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000390 | ray.y : 2.999423 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.897151 | ray.x : 2.897408 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000636 | ray.y : 2.999669 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.898261 | ray.x : 2.898518 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000883 | ray.y : 2.999916 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.899998 | ray.x : 2.900255 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000409 | ray.y : 2.999443 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.901478 | ray.x : 2.901736 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000656 | ray.y : 2.999690 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.902847 | ray.x : 2.903107 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000184 | ray.y : 2.999218 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.904328 | ray.x : 2.904589 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000431 | ray.y : 2.999465 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.905809 | ray.x : 2.906071 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000924 | ray.y : 2.999959 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.907182 | ray.x : 2.907444 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000206 | ray.y : 2.999241 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.908664 | ray.x : 2.908927 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000700 | ray.y : 2.999735 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.910146 | ray.x : 2.910410 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000947 | ray.y : 2.999982 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.911522 | ray.x : 2.911787 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000477 | ray.y : 2.999512 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.913005 | ray.x : 2.913271 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000724 | ray.y : 2.999760 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.914755 | ray.x : 2.915021 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000254 | ray.y : 2.999290 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.915868 | ray.x : 2.916135 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000502 | ray.y : 2.999538 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.917620 | ray.x : 2.917888 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000033 | ray.y : 2.999069 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.919105 | ray.x : 2.919374 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000280 | ray.y : 2.999317 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.920218 | ray.x : 2.920488 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000775 | ray.y : 2.999812 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.921974 | ray.x : 2.922245 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000060 | ray.y : 2.999097 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.923460 | ray.x : 2.923732 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000555 | ray.y : 2.999593 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.924574 | ray.x : 2.924847 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000803 | ray.y : 2.999841 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.926334 | ray.x : 2.926607 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000584 | ray.y : 2.999622 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.927449 | ray.x : 2.927723 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000832 | ray.y : 2.999871 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.929211 | ray.x : 2.929486 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000366 | ray.y : 2.999405 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.930698 | ray.x : 2.930974 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000614 | ray.y : 2.999653 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.932091 | ray.x : 2.932368 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000149 | ray.y : 2.999188 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.933580 | ray.x : 2.933857 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000397 | ray.y : 2.999437 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.935068 | ray.x : 2.935347 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000894 | ray.y : 2.999933 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.936464 | ray.x : 2.936744 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000182 | ray.y : 2.999222 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.937954 | ray.x : 2.938234 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000678 | ray.y : 2.999718 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.939444 | ray.x : 2.939725 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000926 | ray.y : 2.999967 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.940843 | ray.x : 2.941125 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000463 | ray.y : 2.999504 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.942616 | ray.x : 2.942899 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000001 | ray.y : 2.999042 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.943735 | ray.x : 2.944019 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000250 | ray.y : 2.999291 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.945227 | ray.x : 2.945511 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000747 | ray.y : 2.999788 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.947004 | ray.x : 2.947289 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000037 | ray.y : 2.999079 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.948123 | ray.x : 2.948410 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000535 | ray.y : 2.999576 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.949616 | ray.x : 2.949903 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000783 | ray.y : 2.999825 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.951396 | ray.x : 2.951685 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000572 | ray.y : 2.999615 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.952517 | ray.x : 2.952806 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000821 | ray.y : 2.999864 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.954300 | ray.x : 2.954590 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000362 | ray.y : 2.999405 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.955421 | ray.x : 2.955711 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000611 | ray.y : 2.999654 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.957207 | ray.x : 2.957498 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000153 | ray.y : 2.999196 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.958702 | ray.x : 2.958995 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000651 | ray.y : 2.999695 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.959824 | ray.x : 2.960117 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000900 | ray.y : 2.999944 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.961613 | ray.x : 2.961907 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000443 | ray.y : 2.999487 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.962735 | ray.x : 2.963030 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000692 | ray.y : 2.999737 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.964528 | ray.x : 2.964823 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000485 | ray.y : 2.999530 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.966025 | ray.x : 2.966322 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000735 | ray.y : 2.999780 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.967445 | ray.x : 2.967743 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000279 | ray.y : 2.999325 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.968944 | ray.x : 2.969242 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000529 | ray.y : 2.999575 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.970741 | ray.x : 2.971041 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000074 | ray.y : 2.999120 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.971866 | ray.x : 2.972166 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000574 | ray.y : 2.999620 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.973365 | ray.x : 2.973666 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000824 | ray.y : 2.999870 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.974791 | ray.x : 2.975093 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000370 | ray.y : 2.999417 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.976291 | ray.x : 2.976594 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000870 | ray.y : 2.999918 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.978095 | ray.x : 2.978399 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000418 | ray.y : 2.999465 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.979221 | ray.x : 2.979525 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000668 | ray.y : 2.999716 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.981027 | ray.x : 2.981333 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000216 | ray.y : 2.999264 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.982154 | ray.x : 2.982460 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000717 | ray.y : 2.999765 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.983963 | ray.x : 2.984270 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000015 | ray.y : 2.999063 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.985466 | ray.x : 2.985774 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000767 | ray.y : 2.999815 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.986902 | ray.x : 2.987211 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000066 | ray.y : 2.999115 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.988406 | ray.x : 2.988716 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000567 | ray.y : 2.999617 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.989844 | ray.x : 2.990155 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000118 | ray.y : 2.999168 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.991349 | ray.x : 2.991661 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000369 | ray.y : 2.999419 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.992854 | ray.x : 2.993166 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000871 | ray.y : 2.999921 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.994296 | ray.x : 2.994609 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000423 | ray.y : 2.999473 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.995802 | ray.x : 2.996116 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000925 | ray.y : 2.999975 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.997246 | ray.x : 2.997561 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000226 | ray.y : 2.999277 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 2.998753 | ray.x : 2.999068 | prev_mapX : 2 | mapX : 2
+
+prev_ray.y : 3.000729 | ray.y : 2.999780 | prev_mapY : 3 | mapY : 2
+
+prev_ray.x : 3.668011 | ray.x : 3.668327 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000617 | ray.y : 0.999668 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.670967 | ray.x : 3.671284 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000925 | ray.y : 0.999977 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.675122 | ray.x : 3.675441 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000034 | ray.y : 0.999086 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.677763 | ray.x : 3.678082 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000915 | ray.y : 0.999967 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.681924 | ray.x : 3.682244 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000026 | ray.y : 0.999078 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.684887 | ray.x : 3.685207 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000211 | ray.y : 0.999264 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.688732 | ray.x : 3.689054 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000523 | ray.y : 0.999576 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.692580 | ray.x : 3.692902 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000709 | ray.y : 0.999762 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.695547 | ray.x : 3.695870 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000770 | ray.y : 0.999824 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.699398 | ray.x : 3.699722 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000580 | ray.y : 0.999634 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.702369 | ray.x : 3.702694 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000768 | ray.y : 0.999822 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.706549 | ray.x : 3.706875 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000138 | ray.y : 0.999192 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.710407 | ray.x : 3.710733 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000327 | ray.y : 0.999382 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.713383 | ray.x : 3.713710 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000391 | ray.y : 0.999446 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.717244 | ray.x : 3.717572 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000330 | ray.y : 0.999385 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.720223 | ray.x : 3.720552 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000900 | ray.y : 0.999956 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.724087 | ray.x : 3.724418 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000840 | ray.y : 0.999896 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.727070 | ray.x : 3.727401 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000906 | ray.y : 0.999962 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.731270 | ray.x : 3.731602 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000156 | ray.y : 0.999213 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.735141 | ray.x : 3.735474 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000477 | ray.y : 0.999534 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.738129 | ray.x : 3.738462 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000671 | ray.y : 0.999729 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.742003 | ray.x : 3.742338 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000740 | ray.y : 0.999798 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.744994 | ray.x : 3.745329 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000683 | ray.y : 0.999741 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.749208 | ray.x : 3.749545 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000318 | ray.y : 0.999376 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.752203 | ray.x : 3.752540 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000515 | ray.y : 0.999574 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.756086 | ray.x : 3.756424 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000461 | ray.y : 0.999519 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.760309 | ray.x : 3.760648 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000098 | ray.y : 0.999157 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.763309 | ray.x : 3.763649 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000045 | ray.y : 0.999104 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.767199 | ray.x : 3.767539 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000118 | ray.y : 0.999178 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.770202 | ray.x : 3.770543 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000319 | ray.y : 0.999379 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.774095 | ray.x : 3.774437 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000648 | ray.y : 0.999708 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.777101 | ray.x : 3.777444 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000850 | ray.y : 0.999910 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.781341 | ray.x : 3.781685 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000113 | ray.y : 0.999174 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.784351 | ray.x : 3.784696 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000444 | ray.y : 0.999506 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.788252 | ray.x : 3.788598 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000648 | ray.y : 0.999710 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.791265 | ray.x : 3.791612 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000726 | ray.y : 0.999788 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.795517 | ray.x : 3.795864 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000248 | ray.y : 0.999310 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.799424 | ray.x : 3.799772 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000455 | ray.y : 0.999517 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.802443 | ray.x : 3.802792 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000535 | ray.y : 0.999598 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.806354 | ray.x : 3.806704 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000488 | ray.y : 0.999551 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.809726 | ray.x : 3.810077 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000269 | ray.y : 0.999332 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.813642 | ray.x : 3.813993 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000351 | ray.y : 0.999415 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.816667 | ray.x : 3.817019 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000306 | ray.y : 0.999370 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.820939 | ray.x : 3.821292 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000091 | ray.y : 0.999155 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.823969 | ray.x : 3.824323 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000175 | ray.y : 0.999239 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.827892 | ray.x : 3.828247 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000132 | ray.y : 0.999197 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.830925 | ray.x : 3.831280 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000854 | ray.y : 0.999920 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.835208 | ray.x : 3.835565 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000006 | ray.y : 0.999072 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.839138 | ray.x : 3.839496 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000476 | ray.y : 0.999542 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.842176 | ray.x : 3.842535 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000690 | ray.y : 0.999757 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.846110 | ray.x : 3.846469 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000778 | ray.y : 0.999845 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.849511 | ray.x : 3.849871 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000317 | ray.y : 0.999384 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.853449 | ray.x : 3.853810 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000534 | ray.y : 0.999601 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.856494 | ray.x : 3.856855 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000752 | ray.y : 0.999819 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.860798 | ray.x : 3.861160 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000166 | ray.y : 0.999234 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.863847 | ray.x : 3.864210 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000385 | ray.y : 0.999454 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.867793 | ray.x : 3.868157 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000605 | ray.y : 0.999674 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.871210 | ray.x : 3.871574 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000151 | ray.y : 0.999220 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.875160 | ray.x : 3.875526 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000244 | ray.y : 0.999313 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.878582 | ray.x : 3.878949 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000048 | ray.y : 0.999118 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.882538 | ray.x : 3.882905 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000015 | ray.y : 0.999085 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.885597 | ray.x : 3.885965 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000239 | ray.y : 0.999309 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.889925 | ray.x : 3.890294 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000047 | ray.y : 0.999117 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.892988 | ray.x : 3.893358 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000144 | ray.y : 0.999215 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.896952 | ray.x : 3.897322 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000626 | ray.y : 0.999698 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.900018 | ray.x : 3.900390 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000853 | ray.y : 0.999925 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.904357 | ray.x : 3.904730 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000152 | ray.y : 0.999224 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.907428 | ray.x : 3.907801 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000638 | ray.y : 0.999710 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.911399 | ray.x : 3.911773 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000738 | ray.y : 0.999810 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.914847 | ray.x : 3.915222 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000554 | ray.y : 0.999627 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.918823 | ray.x : 3.919199 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000785 | ray.y : 0.999858 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.921901 | ray.x : 3.922277 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000759 | ray.y : 0.999832 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.926257 | ray.x : 3.926635 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000579 | ray.y : 0.999653 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.930240 | ray.x : 3.930618 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000812 | ray.y : 0.999886 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.933702 | ray.x : 3.934081 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000377 | ray.y : 0.999452 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.937688 | ray.x : 3.938068 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000483 | ray.y : 0.999558 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.941156 | ray.x : 3.941536 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000308 | ray.y : 0.999384 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.945147 | ray.x : 3.945529 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000544 | ray.y : 0.999620 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.948620 | ray.x : 3.949002 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000115 | ray.y : 0.999191 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.951712 | ray.x : 3.952096 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000352 | ray.y : 0.999429 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.955710 | ray.x : 3.956094 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000590 | ray.y : 0.999667 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.959190 | ray.x : 3.959575 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000165 | ray.y : 0.999242 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.963192 | ray.x : 3.963578 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000404 | ray.y : 0.999482 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.966678 | ray.x : 3.967065 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000239 | ray.y : 0.999317 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.970685 | ray.x : 3.971072 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000481 | ray.y : 0.999559 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.973788 | ray.x : 3.974176 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000852 | ray.y : 0.999931 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.978188 | ray.x : 3.978577 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000174 | ray.y : 0.999252 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.981684 | ray.x : 3.982074 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000014 | ray.y : 0.999093 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.985700 | ray.x : 3.986091 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000259 | ray.y : 0.999338 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.988811 | ray.x : 3.989202 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000763 | ray.y : 0.999843 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.993223 | ray.x : 3.993615 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000089 | ray.y : 0.999169 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.996337 | ray.x : 3.996731 | prev_mapX : 3 | mapX : 3
+
+prev_ray.y : 1.000855 | ray.y : 0.999935 | prev_mapY : 1 | mapY : 0
+
+prev_ray.x : 3.999967 | ray.x : 4.000361 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.002021 | ray.y : 1.001102 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999926 | ray.x : 4.000320 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.009879 | ray.y : 1.008960 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999987 | ray.x : 4.000382 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.019308 | ray.y : 1.018390 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999922 | ray.x : 4.000319 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.027414 | ray.y : 1.026496 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999953 | ray.x : 4.000350 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.036831 | ray.y : 1.035914 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999865 | ray.x : 4.000263 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.044668 | ray.y : 1.043750 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999866 | ray.x : 4.000265 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.054072 | ray.y : 1.053155 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999755 | ray.x : 4.000154 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.062158 | ray.y : 1.061241 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999725 | ray.x : 4.000125 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.071550 | ray.y : 1.070634 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999992 | ray.x : 4.000394 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.078449 | ray.y : 1.077533 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999933 | ray.x : 4.000336 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.087830 | ray.y : 1.086914 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999777 | ray.x : 4.000180 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.095894 | ray.y : 1.094979 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999610 | ray.x : 4.000014 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.103433 | ray.y : 1.102518 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999913 | ray.x : 4.000318 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.112142 | ray.y : 1.111228 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999724 | ray.x : 4.000130 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.119785 | ray.y : 1.118871 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999999 | ray.x : 4.000405 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.128742 | ray.y : 1.127829 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999787 | ray.x : 4.000195 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.136259 | ray.y : 1.135346 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999626 | ray.x : 4.000034 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.145858 | ray.y : 1.144945 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999801 | ray.x : 4.000210 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.152451 | ray.y : 1.151538 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999610 | ray.x : 4.000020 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.162299 | ray.y : 1.161386 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999764 | ray.x : 4.000175 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.169405 | ray.y : 1.168493 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999956 | ray.x : 4.000367 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.177807 | ray.y : 1.176896 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999677 | ray.x : 4.000089 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.185554 | ray.y : 1.184643 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999802 | ray.x : 4.000215 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.192123 | ray.y : 1.191213 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999954 | ray.x : 4.000368 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.201138 | ray.y : 1.200227 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999644 | ray.x : 4.000059 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.208606 | ray.y : 1.207697 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999769 | ray.x : 4.000185 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.217242 | ray.y : 1.216333 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999853 | ray.x : 4.000269 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.223791 | ray.y : 1.222882 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999951 | ray.x : 4.000368 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.232678 | ray.y : 1.231770 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999597 | ray.x : 4.000015 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.240652 | ray.y : 1.239743 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999667 | ray.x : 4.000086 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.249003 | ray.y : 1.248095 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999710 | ray.x : 4.000130 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.255894 | ray.y : 1.254986 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999744 | ray.x : 4.000165 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.262418 | ray.y : 1.261511 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999777 | ray.x : 4.000198 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.271278 | ray.y : 1.270371 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999791 | ray.x : 4.000213 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.278320 | ray.y : 1.277413 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999797 | ray.x : 4.000220 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.286643 | ray.y : 1.285737 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999791 | ray.x : 4.000215 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.293506 | ray.y : 1.292600 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999770 | ray.x : 4.000195 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.301817 | ray.y : 1.300912 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999744 | ray.x : 4.000170 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.308840 | ray.y : 1.307935 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999710 | ray.x : 4.000136 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.315858 | ray.y : 1.314954 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999651 | ray.x : 4.000078 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.324154 | ray.y : 1.323250 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999597 | ray.x : 4.000024 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.330988 | ray.y : 1.330084 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999939 | ray.x : 4.000368 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.338369 | ray.y : 1.337465 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999866 | ray.x : 4.000295 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.345368 | ray.y : 1.344465 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999784 | ray.x : 4.000214 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.352364 | ray.y : 1.351462 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999660 | ray.x : 4.000092 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.360717 | ray.y : 1.359815 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999990 | ray.x : 4.000422 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.366537 | ray.y : 1.365635 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999841 | ray.x : 4.000274 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.375323 | ray.y : 1.374421 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999720 | ray.x : 4.000153 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.381771 | ray.y : 1.380870 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999979 | ray.x : 4.000413 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.389726 | ray.y : 1.388825 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999838 | ray.x : 4.000273 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.396694 | ray.y : 1.395794 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999688 | ray.x : 4.000124 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.403129 | ray.y : 1.402229 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999912 | ray.x : 4.000349 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.410802 | ray.y : 1.409902 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999743 | ray.x : 4.000181 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.417226 | ray.y : 1.416327 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999943 | ray.x : 4.000382 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.425075 | ray.y : 1.424176 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999755 | ray.x : 4.000195 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.432096 | ray.y : 1.431198 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999999 | ray.x : 4.000439 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.437609 | ray.y : 1.436711 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999724 | ray.x : 4.000165 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.446341 | ray.y : 1.445444 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999949 | ray.x : 4.000391 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.452184 | ray.y : 1.451287 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999649 | ray.x : 4.000092 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.460374 | ray.y : 1.459477 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999857 | ray.x : 4.000300 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.466400 | ray.y : 1.465504 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999614 | ray.x : 4.000058 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.473390 | ray.y : 1.472494 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999721 | ray.x : 4.000166 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.481200 | ray.y : 1.480304 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999904 | ray.x : 4.000350 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.486682 | ray.y : 1.485787 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999988 | ray.x : 4.000435 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.494284 | ray.y : 1.493390 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999707 | ray.x : 4.000154 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.501185 | ray.y : 1.500291 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999866 | ray.x : 4.000314 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.506721 | ray.y : 1.505827 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999916 | ray.x : 4.000365 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.514506 | ray.y : 1.513613 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999608 | ray.x : 4.000057 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.521394 | ray.y : 1.520501 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999741 | ray.x : 4.000192 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.526914 | ray.y : 1.526022 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999758 | ray.x : 4.000209 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.534686 | ray.y : 1.533793 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999874 | ray.x : 4.000326 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.540463 | ray.y : 1.539571 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999867 | ray.x : 4.000320 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.547690 | ray.y : 1.546798 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999967 | ray.x : 4.000421 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.553664 | ray.y : 1.552773 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999605 | ray.x : 4.000060 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.560585 | ray.y : 1.559694 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999565 | ray.x : 4.000020 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.568333 | ray.y : 1.567442 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999640 | ray.x : 4.000096 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.573816 | ray.y : 1.572927 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999707 | ray.x : 4.000164 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.579775 | ray.y : 1.578886 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999634 | ray.x : 4.000092 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.587296 | ray.y : 1.586407 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999685 | ray.x : 4.000143 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.593246 | ray.y : 1.592358 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999728 | ray.x : 4.000187 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.598711 | ray.y : 1.597822 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999622 | ray.x : 4.000082 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.606429 | ray.y : 1.605541 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999649 | ray.x : 4.000110 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.612420 | ray.y : 1.611533 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999981 | ray.x : 4.000443 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.619242 | ray.y : 1.618355 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999991 | ray.x : 4.000454 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.624686 | ray.y : 1.623799 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999995 | ray.x : 4.000458 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.630613 | ray.y : 1.629727 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999833 | ray.x : 4.000298 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.638088 | ray.y : 1.637202 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999820 | ray.x : 4.000285 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.644007 | ray.y : 1.643121 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999799 | ray.x : 4.000265 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.649431 | ray.y : 1.648546 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999605 | ray.x : 4.000071 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.657111 | ray.y : 1.656227 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999567 | ray.x : 4.000034 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.663064 | ray.y : 1.662180 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999990 | ray.x : 4.000458 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.668084 | ray.y : 1.667200 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999764 | ray.x : 4.000233 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.675255 | ray.y : 1.674372 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999703 | ray.x : 4.000173 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.681150 | ray.y : 1.680267 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999635 | ray.x : 4.000105 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.686815 | ray.y : 1.685932 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999847 | ray.x : 4.000318 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.693585 | ray.y : 1.692703 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999763 | ray.x : 4.000235 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.698969 | ray.y : 1.698088 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999671 | ray.x : 4.000144 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.704889 | ray.y : 1.704008 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999854 | ray.x : 4.000327 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.711646 | ray.y : 1.710765 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999746 | ray.x : 4.000220 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.717557 | ray.y : 1.716677 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999631 | ray.x : 4.000106 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.723426 | ray.y : 1.722546 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999784 | ray.x : 4.000260 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.729665 | ray.y : 1.728785 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999653 | ray.x : 4.000130 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.735561 | ray.y : 1.734682 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999992 | ray.x : 4.000470 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.740540 | ray.y : 1.739661 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999638 | ray.x : 4.000116 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.747913 | ray.y : 1.747035 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999963 | ray.x : 4.000442 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.752884 | ray.y : 1.752006 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999802 | ray.x : 4.000282 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.758763 | ray.y : 1.757886 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999897 | ray.x : 4.000378 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.764970 | ray.y : 1.764093 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999720 | ray.x : 4.000201 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.770807 | ray.y : 1.769931 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999535 | ray.x : 4.000018 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.776672 | ray.y : 1.775796 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999601 | ray.x : 4.000084 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.783407 | ray.y : 1.782532 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999884 | ray.x : 4.000368 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.788358 | ray.y : 1.787483 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999677 | ray.x : 4.000162 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.793664 | ray.y : 1.792789 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999714 | ray.x : 4.000199 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.800384 | ray.y : 1.799510 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999977 | ray.x : 4.000463 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.805325 | ray.y : 1.804451 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999748 | ray.x : 4.000235 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.810889 | ray.y : 1.810016 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999999 | ray.x : 4.000486 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.815849 | ray.y : 1.814976 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999999 | ray.x : 4.000487 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.822525 | ray.y : 1.821652 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999746 | ray.x : 4.000236 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.828348 | ray.y : 1.827476 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999977 | ray.x : 4.000467 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.832748 | ray.y : 1.831877 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999949 | ray.x : 4.000440 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.839412 | ray.y : 1.838541 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999674 | ray.x : 4.000165 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.845222 | ray.y : 1.844351 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999884 | ray.x : 4.000377 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.850156 | ray.y : 1.849286 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999827 | ray.x : 4.000320 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.856827 | ray.y : 1.855957 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999529 | ray.x : 4.000023 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.862603 | ray.y : 1.861734 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999720 | ray.x : 4.000215 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.867526 | ray.y : 1.866657 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999904 | ray.x : 4.000400 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.871896 | ray.y : 1.871027 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999810 | ray.x : 4.000307 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.878546 | ray.y : 1.877678 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999981 | ray.x : 4.000478 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.883440 | ray.y : 1.882572 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999648 | ray.x : 4.000146 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.889214 | ray.y : 1.888347 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999525 | ray.x : 4.000024 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.895575 | ray.y : 1.894708 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999676 | ray.x : 4.000175 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.900472 | ray.y : 1.899606 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999820 | ray.x : 4.000321 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.905353 | ray.y : 1.904487 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999959 | ray.x : 4.000461 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.910244 | ray.y : 1.909378 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999801 | ray.x : 4.000303 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.916860 | ray.y : 1.915995 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999926 | ray.x : 4.000429 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.921190 | ray.y : 1.920326 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999542 | ray.x : 4.000046 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.926932 | ray.y : 1.926068 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999655 | ray.x : 4.000160 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.931796 | ray.y : 1.930933 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999965 | ray.x : 4.000471 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.937530 | ray.y : 1.936666 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999559 | ray.x : 4.000065 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.943258 | ray.y : 1.942396 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999653 | ray.x : 4.000160 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.948120 | ray.y : 1.947258 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999741 | ray.x : 4.000248 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.952978 | ray.y : 1.952116 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999510 | ray.x : 4.000018 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.959555 | ray.y : 1.958694 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999584 | ray.x : 4.000093 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.964399 | ray.y : 1.963538 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999652 | ray.x : 4.000162 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.969245 | ray.y : 1.968385 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999904 | ray.x : 4.000415 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.974948 | ray.y : 1.974088 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999959 | ray.x : 4.000471 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.979786 | ray.y : 1.978927 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999496 | ray.x : 4.000009 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.984924 | ray.y : 1.984065 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999539 | ray.x : 4.000052 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.989754 | ray.y : 1.988895 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999759 | ray.x : 4.000273 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 1.995438 | ray.y : 1.994580 | prev_mapY : 1 | mapY : 1
+
+prev_ray.x : 3.999789 | ray.x : 4.000303 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 2.000259 | ray.y : 1.999402 | prev_mapY : 2 | mapY : 1
+
+prev_ray.x : 3.999813 | ray.x : 4.000328 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 2.005078 | ray.y : 2.004221 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 3.999831 | ray.x : 4.000347 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 2.009892 | ray.y : 2.009036 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 3.999844 | ray.x : 4.000360 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 2.014704 | ray.y : 2.013847 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 3.999507 | ray.x : 4.000024 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 2.021222 | ray.y : 2.020366 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 3.999506 | ray.x : 4.000024 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 2.026024 | ray.y : 2.025169 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 3.999499 | ray.x : 4.000018 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 2.030823 | ray.y : 2.029968 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 3.999486 | ray.x : 4.000006 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 2.035338 | ray.y : 2.034484 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 3.999634 | ray.x : 4.000154 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 2.040983 | ray.y : 2.040129 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 3.999608 | ray.x : 4.000129 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 2.045769 | ray.y : 2.044916 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 3.999577 | ray.x : 4.000099 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 2.050552 | ray.y : 2.049699 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 3.999539 | ray.x : 4.000062 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 2.055331 | ray.y : 2.054478 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 3.999655 | ray.x : 4.000179 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 2.060958 | ray.y : 2.060106 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 3.999605 | ray.x : 4.000130 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 2.065728 | ray.y : 2.064877 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 3.999549 | ray.x : 4.000074 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 2.070495 | ray.y : 2.069644 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 3.999487 | ray.x : 4.000013 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 2.075258 | ray.y : 2.074408 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 3.999947 | ray.x : 4.000473 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 2.079167 | ray.y : 2.078317 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 3.999497 | ray.x : 4.000024 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 2.085622 | ray.y : 2.084773 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 3.999945 | ray.x : 4.000473 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 2.089525 | ray.y : 2.088675 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 3.999859 | ray.x : 4.000388 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 2.094272 | ray.y : 2.093424 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 3.999768 | ray.x : 4.000298 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 2.099016 | ray.y : 2.098168 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 3.999671 | ray.x : 4.000201 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 2.103756 | ray.y : 2.102909 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 3.999710 | ray.x : 4.000241 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 2.109340 | ray.y : 2.108493 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 3.999599 | ray.x : 4.000132 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 2.114072 | ray.y : 2.113225 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 3.999484 | ray.x : 4.000017 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 2.118800 | ray.y : 2.117954 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 3.999896 | ray.x : 4.000429 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 2.122679 | ray.y : 2.121833 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 3.999904 | ray.x : 4.000438 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 2.128245 | ray.y : 2.127400 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 3.999770 | ray.x : 4.000305 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 2.132962 | ray.y : 2.132117 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 3.999630 | ray.x : 4.000166 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 2.137675 | ray.y : 2.136831 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 3.999485 | ray.x : 4.000021 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 2.142384 | ray.y : 2.141540 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 3.999871 | ray.x : 4.000408 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 2.146246 | ray.y : 2.145403 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 3.999715 | ray.x : 4.000253 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 2.151231 | ray.y : 2.150388 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 3.999677 | ray.x : 4.000216 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 2.156771 | ray.y : 2.155929 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 3.999508 | ray.x : 4.000048 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 2.161466 | ray.y : 2.160624 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 3.999873 | ray.x : 4.000414 | prev_mapX : 3 | mapX : 4
+
+prev_ray.y : 2.165314 | ray.y : 2.164473 | prev_mapY : 2 | mapY : 2
+
+prev_ray.x : 3.999693 | ray.x : 4.000235 | prev
