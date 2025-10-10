@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 14:16:45 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/09 14:52:18 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/10/10 02:02:42 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	render_floor_ceilling(t_img *img, t_texture *textures)
 	return ;
 }
 
-void	render_wall(float wall_height, t_game *cube, int x)
+void	render_wall(float wall_height, t_game *cube, int x, int color)
 {
 	int	start_y;
 	int	j;
@@ -78,11 +78,11 @@ void	render_wall(float wall_height, t_game *cube, int x)
 	j = draw_start;
 	while (j <= draw_end)
 	{
-		img_pixel_put(cube->img, x, j, WHITE);
+		img_pixel_put(cube->img, x, j, color);
 		j++;
 	}
 }
-// void	launch_rayon(t_game *cube)
+// void	raycast(t_game *cube)
 // {
 // 	t_vector	dir;
 // 	int			x;
@@ -161,14 +161,22 @@ void	render_wall(float wall_height, t_game *cube, int x)
 // 			}
 // 		}
 // 		if (side == 0)
-//             distance = (mapX - cube->player->pos_x + (1 - stepX) / 2)
-// / dir.x;
+// 		{
+// 			distance = (mapX - cube->player->pos_x + (1 - stepX) / 2) / dir.x;
+// 		}
 //         else
-//             distance = (mapY - cube->player->pos_y + (1 - stepY) / 2)
-// / dir.y;
+// 			distance = (mapY - cube->player->pos_y + (1 - stepY) / 2) / dir.y;
 // 		no_fish_distance = distance * cos(angle - cube->player->angle);
 // 		wall_height = (base_height * d_plan) / no_fish_distance;
-// 		render_wall(wall_height, cube, x);
+// 		if (dir.x > 0 && side == 0)
+// 			render_wall(wall_height, cube, x, BLUE);
+// 		else if (dir.x < 0 && side == 0)
+// 			render_wall(wall_height, cube, x, RED);
+// 		else if (dir.y > 0 && side == 1)		
+// 			render_wall(wall_height, cube, x, GREEN);
+// 		else if (dir.y < 0 && side == 1)		
+// 			render_wall(wall_height, cube, x, PURPLE);
+// 		//render_wall(wall_height, cube, x, PURPLE);
 // 		x++;
 // 	}
 // 	return ;
@@ -195,13 +203,18 @@ static void	get_distance_and_wallheight(t_game *cube, t_vector rayon)
 void	raycast(t_game *cube, t_raycast *raycast)
 {
 	t_vector	ray;
+	t_vector prev_ray;
 	t_vector	dir;
 	int			x;
+	int mapX;
+	int mapY;
+	int prev_mapX;
+	int prev_mapY;
 
 	cube->raycast->dir = &dir;
 	init_raycast(cube);
 	x = 0;
-	while (x <= WIDTH)
+	while (x <= WIDTH) 
 	{
 		raycast->angle = cube->player->angle - (x - WIDTH * 0.5) * raycast->R_H;
 		dir.x = cos(raycast->angle) * 0.001;
@@ -210,11 +223,35 @@ void	raycast(t_game *cube, t_raycast *raycast)
 		ray.y = cube->player->pos_y;
 		while (cube->map->final_grid[(int)ray.y][(int)ray.x] != '1')
 		{
+			prev_ray = ray;
 			ray.x += dir.x;
 			ray.y += dir.y;
 		}
+		mapX = (int)ray.x;
+		mapY = (int)ray.y;
+		prev_mapX = (int)prev_ray.x;
+		prev_mapY = (int)prev_ray.y;
 		get_distance_and_wallheight(cube, ray);
-		render_wall(raycast->wall_height, cube, x);
+		if (prev_mapX != mapX)
+		{
+			if (dir.x > 0)
+			{
+				render_wall(raycast->wall_height, cube, x, BLUE);
+			}
+			else
+				render_wall(raycast->wall_height, cube, x, RED);
+		}
+		if (prev_mapY != mapY)
+		{
+			if (dir.y > 0)
+			{
+				render_wall(raycast->wall_height, cube, x, GREEN);
+			}
+			else
+				render_wall(raycast->wall_height, cube, x, PURPLE);
+		}
+	// render_wall(raycast->wall_height, cube, x, WHITE);
+	// 	render_wall(raycast->wall_height, cube, x, RED);
 		x++;
 	}
 	return ;
@@ -224,5 +261,6 @@ void	render(t_game *cube)
 {
 	render_floor_ceilling(cube->img, cube->textures);
 	raycast(cube, cube->raycast);
+	// raycast(cube);
 	mlx_put_image_to_window(cube->mlx, cube->windows, cube->img->img_ptr, 0, 0);
 }

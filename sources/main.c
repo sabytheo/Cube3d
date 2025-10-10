@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 17:46:21 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/09 15:55:19 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/10/09 20:44:29 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,53 +28,55 @@ int	init(t_game *cube)
 	return (0);
 }
 
-int	load_textures(t_game *cube)
-{
-	cube->textures->NO_img.width = 255;
-	cube->textures->NO_img.height = 255;
-	cube->textures->NO_img.img_ptr = mlx_xpm_file_to_image(cube->mlx,
-			cube->textures->NO, &cube->textures->NO_img.width,
-			&cube->textures->NO_img.height);
-	printf("%p",cube->textures->NO_img.img_ptr);
-	if (!cube->textures->NO_img.img_ptr )
-	{
-		printf("cscds");
-		return (-1);
-	}
-	cube->textures->NO_img.addr = mlx_get_data_addr(cube->textures->NO_img.img_ptr,
-			&cube->textures->NO_img.bits_per_pixel,
-			&cube->textures->NO_img.size_line, &cube->textures->NO_img.endian);
-	cube->textures->SO_img.img_ptr = mlx_xpm_file_to_image(cube->mlx,
-			cube->textures->SO, &cube->textures->SO_img.width,
-			&cube->textures->SO_img.height);
-	if (!cube->textures->SO_img.img_ptr )
-		return (-1);
-	cube->textures->SO_img.addr = mlx_get_data_addr(cube->textures->SO_img.img_ptr,
-			&cube->textures->SO_img.bits_per_pixel,
-			&cube->textures->SO_img.size_line, &cube->textures->SO_img.endian);
-	cube->textures->EA_img.img_ptr = mlx_xpm_file_to_image(cube->mlx,
-			cube->textures->EA, &cube->textures->EA_img.width,
-			&cube->textures->EA_img.height);
-	if (!cube->textures->EA_img.img_ptr )
-		return (-1);
-	cube->textures->EA_img.addr = mlx_get_data_addr(cube->textures->EA_img.img_ptr,
-			&cube->textures->EA_img.bits_per_pixel,
-			&cube->textures->EA_img.size_line, &cube->textures->EA_img.endian);
-	cube->textures->WE_img.img_ptr = mlx_xpm_file_to_image(cube->mlx,
-			cube->textures->WE, &cube->textures->WE_img.width,
-			&cube->textures->WE_img.height);
-	if (!cube->textures->WE_img.img_ptr )
-		return (-1);
-	cube->textures->WE_img.addr = mlx_get_data_addr(cube->textures->WE_img.img_ptr,
-			&cube->textures->WE_img.bits_per_pixel,
-			&cube->textures->WE_img.size_line, &cube->textures->WE_img.endian);
-	return(0);
-}
+// int	load_textures(t_game *cube)
+// {
+// 	cube->textures->NO_img.width = 255;
+// 	cube->textures->NO_img.height = 255;
+// 	cube->textures->NO_img.img_ptr = mlx_xpm_file_to_image(cube->mlx,
+// 			cube->textures->NO, &cube->textures->NO_img.width,
+// 			&cube->textures->NO_img.height);
+// 	printf("%p",cube->textures->NO_img.img_ptr);
+// 	if (!cube->textures->NO_img.img_ptr )
+// 	{
+// 		printf("cscds");
+// 		return (-1);
+// 	}
+// 	cube->textures->NO_img.addr = mlx_get_data_addr(cube->textures->NO_img.img_ptr,
+// 			&cube->textures->NO_img.bits_per_pixel,
+// 			&cube->textures->NO_img.size_line, &cube->textures->NO_img.endian);
+// 	cube->textures->SO_img.img_ptr = mlx_xpm_file_to_image(cube->mlx,
+// 			cube->textures->SO, &cube->textures->SO_img.width,
+// 			&cube->textures->SO_img.height);
+// 	if (!cube->textures->SO_img.img_ptr )
+// 		return (-1);
+// 	cube->textures->SO_img.addr = mlx_get_data_addr(cube->textures->SO_img.img_ptr,
+// 			&cube->textures->SO_img.bits_per_pixel,
+// 			&cube->textures->SO_img.size_line, &cube->textures->SO_img.endian);
+// 	cube->textures->EA_img.img_ptr = mlx_xpm_file_to_image(cube->mlx,
+// 			cube->textures->EA, &cube->textures->EA_img.width,
+// 			&cube->textures->EA_img.height);
+// 	if (!cube->textures->EA_img.img_ptr )
+// 		return (-1);
+// 	cube->textures->EA_img.addr = mlx_get_data_addr(cube->textures->EA_img.img_ptr,
+// 			&cube->textures->EA_img.bits_per_pixel,
+// 			&cube->textures->EA_img.size_line, &cube->textures->EA_img.endian);
+// 	cube->textures->WE_img.img_ptr = mlx_xpm_file_to_image(cube->mlx,
+// 			cube->textures->WE, &cube->textures->WE_img.width,
+// 			&cube->textures->WE_img.height);
+// 	if (!cube->textures->WE_img.img_ptr )
+// 		return (-1);
+// 	cube->textures->WE_img.addr = mlx_get_data_addr(cube->textures->WE_img.img_ptr,
+// 			&cube->textures->WE_img.bits_per_pixel,
+// 			&cube->textures->WE_img.size_line, &cube->textures->WE_img.endian);
+// 	return(0);
+// }
 
 int	main(int argc, char **argv)
 {
 	t_game	cube;
 
+
+	
 	if (argc != 2)
 	{
 		write(2, "Number of arguments invalid\n", 28);
@@ -87,8 +89,8 @@ int	main(int argc, char **argv)
 	cube.mlx = mlx_init();
 	if (!cube.mlx)
 		return (0);
-	if (load_textures(&cube) <0 )
-		free_exit(&cube);
+	// if (load_textures(&cube) <0 )
+	// 	free_exit(&cube);
 	cube.windows = mlx_new_window(cube.mlx, WIDTH, HEIGHT, "CUB3D");
 	cube.img->img_ptr = mlx_new_image(cube.mlx, WIDTH, HEIGHT);
 	cube.img->addr = mlx_get_data_addr(cube.img->img_ptr,

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cube.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/09 14:53:50 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/10/10 01:41:21 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ typedef struct s_raycast
 	float		angle;
 	float		distance;
 	float		corrected_distance;
-	int			wall_height;
+	float			wall_height;
 	int			base_height;
 	float		d_plan;
 	t_vector	*dir;
@@ -157,6 +157,7 @@ typedef struct s_game
 
 void			render(t_game *cube);
 void			raycast(t_game *cube,t_raycast *raycast);
+// void			raycast(t_game *cube);
 int	define_control(int keypress, t_game *cube);
 
 // Debug
