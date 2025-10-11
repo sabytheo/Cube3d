@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 14:16:45 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/09 14:52:18 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/10/10 17:07:05 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -197,13 +197,16 @@ void	raycast(t_game *cube, t_raycast *raycast)
 	t_vector	ray;
 	t_vector	dir;
 	int			x;
+	float		camera_x;
 
 	cube->raycast->dir = &dir;
 	init_raycast(cube);
 	x = 0;
 	while (x <= WIDTH)
 	{
-		raycast->angle = cube->player->angle - (x - WIDTH * 0.5) * raycast->R_H;
+		camera_x = 2 * x / (float)WIDTH - 1;
+		raycast->angle = cube->player->angle + atan(camera_x
+				* tan(cube->player->fov / 2));
 		dir.x = cos(raycast->angle) * 0.001;
 		dir.y = -sin(raycast->angle) * 0.001;
 		ray.x = cube->player->pos_x;
