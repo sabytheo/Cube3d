@@ -3,27 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   parse_grid.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
+/*   By: teatime <teatime@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 14:33:21 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/10 01:00:08 by egache           ###   ########.fr       */
+/*   Updated: 2025/10/13 17:38:27 by teatime          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cube.h"
 #include <math.h>
 
-static int	copy_grid(t_game *cube)
+static int copy_grid(t_game *cube)
 {
-	char	**grid;
-	int		i;
-	int		j;
+	char **grid;
+	int i;
+	int j;
 
 	grid = cube->map->grid;
 	i = cube->map->grid_start;
 	j = 0;
-	cube->map->final_grid = malloc((cube->map->grid_height + 1)
-			* sizeof(char *));
+	cube->map->final_grid = malloc((cube->map->grid_height + 1) * sizeof(char *));
 	if (!cube->map->final_grid)
 		return (-1);
 	while (grid[i] && j < cube->map->grid_height)
@@ -40,11 +39,11 @@ static int	copy_grid(t_game *cube)
 	return (1);
 }
 
-static int	check_char_validity(t_game *cube)
+static int check_char_validity(t_game *cube)
 {
-	size_t	i;
-	size_t	j;
-	char	**grid;
+	size_t i;
+	size_t j;
+	char **grid;
 
 	i = cube->map->grid_start;
 	j = 0;
@@ -66,17 +65,17 @@ static int	check_char_validity(t_game *cube)
 void get_angle(t_game *cube, char c)
 {
 	if (c == 'N')
-		cube->player->angle =   M_PI / 2 ;
+		cube->player->angle = M_PI / 2;
 	else if (c == 'S')
-		cube->player->angle =   - M_PI / 2 ;
+		cube->player->angle = -M_PI / 2;
 	else if (c == 'W')
-		cube->player->angle =  M_PI ;
+		cube->player->angle = M_PI;
 	else if (c == 'E')
-		cube->player->angle =   0 ;
-	return ;
+		cube->player->angle = 0;
+	return;
 }
 
-static void	set_player_info(int i, int j, t_game *cube)
+static void set_player_info(int i, int j, t_game *cube)
 {
 	cube->player->direction = cube->map->grid[i][j];
 	get_angle(cube, cube->player->direction);
@@ -86,9 +85,9 @@ static void	set_player_info(int i, int j, t_game *cube)
 	return;
 }
 
-static int	check_grid_validity(int *i, t_game *cube)
+static int check_grid_validity(int *i, t_game *cube)
 {
-	int	j;
+	int j;
 
 	while (cube->map->grid[*i])
 	{
@@ -98,11 +97,11 @@ static int	check_grid_validity(int *i, t_game *cube)
 			if (is_a_player(cube->map->grid[*i][j]))
 			{
 				set_player_info(*i, j, cube);
-				flood_fill(*i, j, cube);
 				if (copy_grid(cube) < 0)
 					return (-1);
 				if (vlood_vill(*i - cube->map->grid_start, j, cube) < 0)
 				{
+					print_map(cube->map->final_grid);
 					ft_printf_fd(2, E_BAD_GRID_PARSING);
 					return (-1);
 				}
@@ -115,7 +114,7 @@ static int	check_grid_validity(int *i, t_game *cube)
 	return (0);
 }
 
-int	parse_grid(int *i, char **grid, t_game *cube)
+int parse_grid(int *i, char **grid, t_game *cube)
 {
 	while (grid[*i] && is_only_whitespace(i, grid))
 		(*i)++;
