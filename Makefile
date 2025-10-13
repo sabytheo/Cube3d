@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+         #
+#    By: teatime <teatime@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: Invalid date        by                   #+#    #+#              #
-#    Updated: 2025/10/09 12:39:21 by tsaby            ###   ########.fr        #
+#    Updated: 2025/10/13 16:02:54 by teatime          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,7 @@ SRCS		:=		main.c \
 					parse_grid_flood_fill.c \
 					bindings.c \
 					reef.c \
+					vector.c \
 					render.c \
 					debug.c
 

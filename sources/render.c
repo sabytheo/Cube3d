@@ -3,24 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   render.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
+/*   By: teatime <teatime@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 14:16:45 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/10 02:02:42 by egache           ###   ########.fr       */
+/*   Updated: 2025/10/13 15:22:15 by teatime          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cube.h"
 
-static int	get_color(int red, int green, int blue)
+static int get_color(int red, int green, int blue)
 {
 	return (red << 16 | green << 8 | blue);
 }
 
-void	img_pixel_put(t_img *img, int x, int y, int color)
+void img_pixel_put(t_img *img, int x, int y, int color)
 {
-	char	*pixel;
-	int		i;
+	char *pixel;
+	int i;
 
 	i = img->bits_per_pixel - 8;
 	pixel = img->addr + (y * img->size_line + x * (img->bits_per_pixel / 8));
@@ -33,10 +33,10 @@ void	img_pixel_put(t_img *img, int x, int y, int color)
 		i -= 8;
 	}
 }
-void	render_floor_ceilling(t_img *img, t_texture *textures)
+void render_floor_ceilling(t_img *img, t_texture *textures)
 {
-	int	i;
-	int	j;
+	int i;
+	int j;
 
 	i = 0;
 	while (i < WIDTH)
@@ -44,28 +44,26 @@ void	render_floor_ceilling(t_img *img, t_texture *textures)
 		j = 0;
 		while (j < HEIGHT / 2)
 		{
-			img_pixel_put(img, i, j, get_color(textures->ceiling[0],
-					textures->ceiling[1], textures->ceiling[2]));
+			img_pixel_put(img, i, j, get_color(textures->ceiling[0], textures->ceiling[1], textures->ceiling[2]));
 			j++;
 		}
 		j = HEIGHT / 2;
 		while (j < HEIGHT)
 		{
-			img_pixel_put(img, i, j, get_color(textures->floor[0],
-					textures->floor[1], textures->floor[2]));
+			img_pixel_put(img, i, j, get_color(textures->floor[0], textures->floor[1], textures->floor[2]));
 			j++;
 		}
 		i++;
 	}
-	return ;
+	return;
 }
 
-void	render_wall(float wall_height, t_game *cube, int x, int color)
+void render_wall(float wall_height, t_game *cube, int x, int color)
 {
-	int	start_y;
-	int	j;
-	int	draw_start;
-	int	draw_end;
+	int start_y;
+	int j;
+	int draw_start;
+	int draw_end;
 
 	printf(" x = %d wall height = %f\n", x, wall_height);
 	start_y = HEIGHT / 2;
@@ -172,9 +170,9 @@ void	render_wall(float wall_height, t_game *cube, int x, int color)
 // 			render_wall(wall_height, cube, x, BLUE);
 // 		else if (dir.x < 0 && side == 0)
 // 			render_wall(wall_height, cube, x, RED);
-// 		else if (dir.y > 0 && side == 1)		
+// 		else if (dir.y > 0 && side == 1)
 // 			render_wall(wall_height, cube, x, GREEN);
-// 		else if (dir.y < 0 && side == 1)		
+// 		else if (dir.y < 0 && side == 1)
 // 			render_wall(wall_height, cube, x, PURPLE);
 // 		//render_wall(wall_height, cube, x, PURPLE);
 // 		x++;
@@ -182,30 +180,27 @@ void	render_wall(float wall_height, t_game *cube, int x, int color)
 // 	return ;
 // }
 
-static void	init_raycast(t_game *cube)
+static void init_raycast(t_game *cube)
 {
 	cube->raycast->base_height = 1;
 	cube->raycast->R_H = 2 * tan(cube->player->fov * 0.5) / WIDTH;
 	cube->raycast->d_plan = WIDTH / (2 * tan(cube->player->fov * 0.5));
-	return ;
+	return;
 }
 
-static void	get_distance_and_wallheight(t_game *cube, t_vector rayon)
+static void get_distance_and_wallheight(t_game *cube, t_vector rayon)
 {
-	cube->raycast->distance = sqrt(pow(rayon.x - cube->player->pos_x, 2)
-			+ pow(rayon.y - cube->player->pos_y, 2));
-	cube->raycast->corrected_distance = cube->raycast->distance
-		* cos(cube->raycast->angle - cube->player->angle);
-	cube->raycast->wall_height = (cube->raycast->base_height
-			* cube->raycast->d_plan) / cube->raycast->corrected_distance;
+	cube->raycast->distance = sqrt(pow(rayon.x - cube->player->pos_x, 2) + pow(rayon.y - cube->player->pos_y, 2));
+	cube->raycast->corrected_distance = cube->raycast->distance * cos(cube->raycast->angle - cube->player->angle);
+	cube->raycast->wall_height = (cube->raycast->base_height * cube->raycast->d_plan) / cube->raycast->corrected_distance;
 }
 
-void	raycast(t_game *cube, t_raycast *raycast)
+void raycast(t_game *cube, t_raycast *raycast)
 {
-	t_vector	ray;
+	t_vector ray;
 	t_vector prev_ray;
-	t_vector	dir;
-	int			x;
+	t_vector dir;
+	int x;
 	int mapX;
 	int mapY;
 	int prev_mapX;
@@ -214,7 +209,7 @@ void	raycast(t_game *cube, t_raycast *raycast)
 	cube->raycast->dir = &dir;
 	init_raycast(cube);
 	x = 0;
-	while (x <= WIDTH) 
+	while (x <= WIDTH)
 	{
 		raycast->angle = cube->player->angle - (x - WIDTH * 0.5) * raycast->R_H;
 		dir.x = cos(raycast->angle) * 0.001;
@@ -250,14 +245,14 @@ void	raycast(t_game *cube, t_raycast *raycast)
 			else
 				render_wall(raycast->wall_height, cube, x, PURPLE);
 		}
-	// render_wall(raycast->wall_height, cube, x, WHITE);
-	// 	render_wall(raycast->wall_height, cube, x, RED);
+		// render_wall(raycast->wall_height, cube, x, WHITE);
+		// 	render_wall(raycast->wall_height, cube, x, RED);
 		x++;
 	}
-	return ;
+	return;
 }
 
-void	render(t_game *cube)
+void render(t_game *cube)
 {
 	render_floor_ceilling(cube->img, cube->textures);
 	raycast(cube, cube->raycast);
