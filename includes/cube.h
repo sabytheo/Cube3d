@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cube.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/09 14:53:50 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/10/13 17:17:07 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@
 # define WIDTH 1280
 # define HEIGHT 720
 
+# define SPEED 0.5
+
 # define BEFORE_FF false
 # define AFTER_FF true
 
@@ -54,7 +56,9 @@ enum
 	S = 115,
 	D = 100,
 	A = 97,
-	ESCAPE = 65307
+	ESCAPE = 65307,
+	A_LEFT = 65361,
+	A_RIGHT = 65363
 };
 typedef struct s_vector
 {
