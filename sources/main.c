@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: teatime <teatime@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 17:46:21 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/09 17:29:22 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/10/13 16:11:11 by teatime          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cube.h"
 
-int	init(t_game *cube)
+int init(t_game *cube)
 {
 	ft_bzero(cube, sizeof(t_game));
 	cube->map = (t_map *)ft_calloc(1, sizeof(t_map));
@@ -71,9 +71,9 @@ int	init(t_game *cube)
 // 	return(0);
 // }
 
-int	main(int argc, char **argv)
+int main(int argc, char **argv)
 {
-	t_game	cube;
+	t_game cube;
 
 	if (argc != 2)
 	{
@@ -92,9 +92,10 @@ int	main(int argc, char **argv)
 	cube.windows = mlx_new_window(cube.mlx, WIDTH, HEIGHT, "CUB3D");
 	cube.img->img_ptr = mlx_new_image(cube.mlx, WIDTH, HEIGHT);
 	cube.img->addr = mlx_get_data_addr(cube.img->img_ptr,
-			&cube.img->bits_per_pixel, &cube.img->size_line, &cube.img->endian);
+									   &cube.img->bits_per_pixel, &cube.img->size_line, &cube.img->endian);
 	render(&cube);
-	mlx_key_hook(cube.windows, define_control, &cube);
+	mlx_hook(cube.windows, 2, 1L << 0, define_control, &cube);
+	// mlx_key_hook(cube.windows, define_control, &cube);
 	mlx_hook(cube.windows, ON_DESTROY, BUTTON_PRESS_MASK, free_exit, &cube);
 	mlx_loop(cube.mlx);
 	return (1);
