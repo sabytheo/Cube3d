@@ -6,7 +6,7 @@
 /*   By: tsaby <tsaby@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 12:31:12 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/13 17:50:16 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/10/13 17:52:44 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,8 @@ static void	press_A_D(int keypress, t_game *cube, float newpos_x,
 {
 	if (keypress == A)
 	{
-		newpos_x += cos(cube->player->angle - (M_PI * 0.5)) * SPEED;
-		newpos_y += -sin(cube->player->angle - (M_PI * 0.5)) * SPEED;
+		newpos_x += cos(cube->player->angle + (M_PI * 0.5)) * SPEED;
+		newpos_y += -sin(cube->player->angle + (M_PI * 0.5)) * SPEED;
 		if (is_valid_coordinate((int)newpos_x, (int)newpos_y, cube) == 0)
 		{
 			cube->player->pos_x = newpos_x;
@@ -67,8 +67,8 @@ static void	press_A_D(int keypress, t_game *cube, float newpos_x,
 	}
 	if (keypress == D)
 	{
-		newpos_x += cos(cube->player->angle + (M_PI * 0.5)) * SPEED;
-		newpos_y += -sin(cube->player->angle + (M_PI * 0.5)) * SPEED;
+		newpos_x += cos(cube->player->angle - (M_PI * 0.5)) * SPEED;
+		newpos_y += -sin(cube->player->angle - (M_PI * 0.5)) * SPEED;
 		if (is_valid_coordinate((int)newpos_x, (int)newpos_y, cube) == 0)
 		{
 			cube->player->pos_x = newpos_x;
