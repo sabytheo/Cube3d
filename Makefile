@@ -6,7 +6,7 @@
 #    By: teatime <teatime@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: Invalid date        by                   #+#    #+#              #
-#    Updated: 2025/10/13 16:02:54 by teatime          ###   ########.fr        #
+#    Updated: 2025/10/13 16:50:50 by teatime          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,8 +28,8 @@ SRCS		:=		main.c \
 					parse_grid_flood_fill.c \
 					bindings.c \
 					reef.c \
-					vector.c \
 					render.c \
+					vector_maths.c \
 					debug.c
 
 #SRCS_BONUS	:=

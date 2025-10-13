@@ -1,7 +1,7 @@
-WE ../assets/prototype_blue.xpm
-NO ../assets/prototype_green.xpm
-EA ../assets/prototype_red.xpm
-SO ../assets/prototype_yellow.xpm
+WE ./assets/prototype_blue.xpm
+NO ./assets/prototype_green.xpm
+EA ./assets/prototype_red.xpm
+SO ./assets/prototype_yellow.xpm
 
 C 253,108,158
 F 248,142,85

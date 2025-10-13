@@ -6,7 +6,7 @@
 /*   By: teatime <teatime@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 14:16:45 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/13 15:22:15 by teatime          ###   ########.fr       */
+/*   Updated: 2025/10/13 16:55:59 by teatime          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void render_wall(float wall_height, t_game *cube, int x, int color)
 	int draw_start;
 	int draw_end;
 
-	printf(" x = %d wall height = %f\n", x, wall_height);
+	// printf(" x = %d wall height = %f\n", x, wall_height);
 	start_y = HEIGHT / 2;
 	draw_start = (start_y - (wall_height * 0.5));
 	if (draw_start < 0)
@@ -211,7 +211,8 @@ void raycast(t_game *cube, t_raycast *raycast)
 	x = 0;
 	while (x <= WIDTH)
 	{
-		raycast->angle = cube->player->angle - (x - WIDTH * 0.5) * raycast->R_H;
+		float camera_x = 2 * x / (float)WIDTH - 1;
+		raycast->angle = cube->player->angle + atan(camera_x * tan(cube->player->fov / 2));
 		dir.x = cos(raycast->angle) * 0.001;
 		dir.y = -sin(raycast->angle) * 0.001;
 		ray.x = cube->player->pos_x;
@@ -246,7 +247,7 @@ void raycast(t_game *cube, t_raycast *raycast)
 				render_wall(raycast->wall_height, cube, x, PURPLE);
 		}
 		// render_wall(raycast->wall_height, cube, x, WHITE);
-		// 	render_wall(raycast->wall_height, cube, x, RED);
+		//     render_wall(raycast->wall_height, cube, x, RED);
 		x++;
 	}
 	return;
