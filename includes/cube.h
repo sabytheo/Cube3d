@@ -3,44 +3,56 @@
 /*                                                        :::      ::::::::   */
 /*   cube.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
+<<<<<<< HEAD
 /*   By: tsaby <tsaby@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
 /*   Updated: 2025/10/13 17:17:07 by tsaby            ###   ########.fr       */
+=======
+/*   By: teatime <teatime@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
+/*   Updated: 2025/10/13 16:22:12 by teatime          ###   ########.fr       */
+>>>>>>> 59df8765d79b3a7876319de7f6c34a4d9276276d
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CUBE_H
-# define CUBE_H
+#define CUBE_H
 
-# include "error.h"
-# include "ft_printf.h"
-# include "ft_printf_fd.h"
-# include "get_next_line.h"
-# include "libft.h"
-# include "mlx.h"
-# include <fcntl.h>
-# include <math.h>
-# include <stdbool.h>
-# include <stdio.h>
+#include "error.h"
+#include "ft_printf.h"
+#include "ft_printf_fd.h"
+#include "get_next_line.h"
+#include "libft.h"
+#include "mlx.h"
+#include <fcntl.h>
+#include <math.h>
+#include <stdbool.h>
+#include <stdio.h>
 
-# define _GNU_SOURCE
+#define _GNU_SOURCE
 
-# define WHITE 0x00FFFFFF
-# define BLACK 0x00000000
-# define RED 0x00FF0000
-# define GREEN 0x0000FF00
-# define BLUE 0x000000FF
-# define YELLOW 0x00FFFF00
-# define PURPLE 0x00FF00FF
+#define WHITE 0x00FFFFFF
+#define BLACK 0x00000000
+#define RED 0x00FF0000
+#define GREEN 0x0000FF00
+#define BLUE 0x000000FF
+#define YELLOW 0x00FFFF00
+#define PURPLE 0x00FF00FF
 
-# define WIDTH 1280
-# define HEIGHT 720
+#define WIDTH 1280
+#define HEIGHT 720
 
+<<<<<<< HEAD
 # define SPEED 0.5
 
 # define BEFORE_FF false
 # define AFTER_FF true
+=======
+#define BEFORE_FF false
+#define AFTER_FF true
+>>>>>>> 59df8765d79b3a7876319de7f6c34a4d9276276d
 
 enum
 {
@@ -62,9 +74,9 @@ enum
 };
 typedef struct s_vector
 {
-	float		x;
-	float		y;
-}				t_vector;
+	float x;
+	float y;
+} t_vector;
 
 typedef struct s_raycast
 {
