@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 17:46:21 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/14 14:36:40 by egache           ###   ########.fr       */
+/*   Updated: 2025/10/14 16:30:34 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int init(t_game *cube)
 	cube->raycast = (t_raycast *)ft_calloc(1, sizeof(t_raycast));
 	cube->raycast->dir = (t_vector *)ft_calloc(1, sizeof(t_vector));
 	cube->textures = (t_texture *)ft_calloc(1, sizeof(t_texture));
+	cube->key = (t_key*)ft_calloc(1,sizeof(t_key));
 	if (!cube->map || !cube->player || !cube->img || !cube->raycast || !cube->raycast->dir || !cube->textures)
 	{
 		ft_printf_fd(2, "Error:\n Failed to allocate cube->map\n");
@@ -95,7 +96,9 @@ int main(int argc, char **argv)
 	cube.img->addr = mlx_get_data_addr(cube.img->img_ptr,
 									   &cube.img->bits_per_pixel, &cube.img->size_line, &cube.img->endian);
 	render(&cube);
-	mlx_hook(cube.windows, 2, 1L << 0, define_control, &cube);
+	mlx_hook(cube.windows, 2, 1L << 0, press_key, &cube);
+	mlx_hook(cube.windows, 3, 1L << 1, release_key, &cube);
+	mlx_loop_hook(cube.mlx,&define_control,&cube);
 	// mlx_key_hook(cube.windows, define_control, &cube);
 	mlx_hook(cube.windows, ON_DESTROY, BUTTON_PRESS_MASK, free_exit, &cube);
 	mlx_loop(cube.mlx);

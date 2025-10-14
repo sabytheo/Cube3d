@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 14:16:45 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/14 15:36:00 by egache           ###   ########.fr       */
+/*   Updated: 2025/10/14 16:03:56 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ void render_wall(float wall_height, t_game *cube, int x, int color)
 void	init_raycast_values(t_game *cube, t_raycast *raycast, int x)
 {
 	float camera_x;
-	
+
 	camera_x = 2 * x / (float)WIDTH - 1;
 	raycast->angle = cube->player->angle + atan(camera_x * tan(cube->player->fov / 2));
 	raycast->dir->x = cos(raycast->angle);
@@ -105,7 +105,10 @@ static void init_height_dplan(t_game *cube)
 static void get_distance_and_wallheight(t_game *cube)
 {
 	cube->raycast->corrected_distance = cube->raycast->distance * cos(cube->raycast->angle - cube->player->angle);
+	if (cube->raycast->corrected_distance <= 0)
+		cube->raycast->corrected_distance = 0.001;
 	cube->raycast->wall_height = (cube->raycast->base_height * cube->raycast->d_plan) / cube->raycast->corrected_distance;
+	// printf("wallheight = %d\n dplan = %f\n corrected distance = %f\n",cube->raycast->wall_height,cube->raycast->d_plan, cube->raycast->corrected_distance);
 }
 
 void	init_raycast_direction(t_game *cube, t_raycast *raycast)
@@ -136,7 +139,7 @@ int ray_displacement(t_game *cube, t_raycast *raycast)
 {
 	bool hit;
 	int side;
-	
+
 	hit = false;
 	while (hit == false)
 	{
@@ -156,7 +159,7 @@ int ray_displacement(t_game *cube, t_raycast *raycast)
 		{
 			hit = true;
 			return (side);
-			// printf("Rayon %d: mur trouvé à (%.2f, %.2f)\n", x, cube->player->pos_x, cube->player->pos_y);
+			// printf(": mur trouvé à (%.2f, %.2f)\n", cube->player->pos_x, cube->player->pos_y);
 		}
 	}
 	return (0);

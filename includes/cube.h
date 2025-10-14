@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cube.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/14 14:31:45 by egache           ###   ########.fr       */
+/*   Updated: 2025/10/14 16:40:29 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,6 +110,18 @@ typedef struct s_map
 
 } t_map;
 
+typedef struct s_key
+{
+	bool w;
+	bool s;
+	bool a;
+	bool d;
+	bool left;
+	bool right;
+	bool escape;
+
+} t_key;
+
 enum direction
 {
 	NO,
@@ -162,12 +174,15 @@ typedef struct s_game
 	t_player *player;
 	t_raycast *raycast;
 	t_texture *textures;
+	t_key *key;
 
 } t_game;
 
 void render(t_game *cube);
 void raycast(t_game *cube, t_raycast *raycast);
-int define_control(int keypress, t_game *cube);
+int define_control(t_game *cube);
+int release_key(int keypress, t_game *cube);
+int press_key(int keypress, t_game *cube);
 
 // Debug
 void print_map(char **map);
