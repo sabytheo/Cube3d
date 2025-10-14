@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: teatime <teatime@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 14:16:45 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/13 16:43:36 by teatime          ###   ########.fr       */
+/*   Updated: 2025/10/14 11:27:29 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,8 +84,8 @@ void raycast(t_game *cube)
 {
 	t_vector dir;
 	int x;
-	float R_H;
-	float angle;
+	// float R_H;
+	// float angle;
 	float distance;
 	float no_fish_distance;
 	float wall_height;
@@ -104,15 +104,16 @@ void raycast(t_game *cube)
 
 	base_height = 1;
 	side = 0;
-	R_H = 2 * tan(cube->player->fov * 0.5) / WIDTH;
 	d_plan = WIDTH / (2 * tan(cube->player->fov * 0.5));
 	x = 0;
 	while (x <= WIDTH)
 	{
 		hit = false;
-		angle = cube->player->angle - (x - WIDTH * 0.5) * R_H;
-		dir.x = cos(angle);
-		dir.y = -sin(angle);
+		// angle = cube->player->angle - (x - WIDTH * 0.5) * R_H;
+		float camera_x = 2 * x / (float)WIDTH - 1;
+        cube->raycast->angle = cube->player->angle + atan(camera_x * tan(cube->player->fov / 2));
+		dir.x = cos(cube->raycast->angle);
+		dir.y = -sin( cube->raycast->angle);
 		deltaDistX = fabs(1 / dir.x);
 		deltaDistY = fabs(1 / dir.y);
 		mapX = (int)cube->player->pos_x;
@@ -159,12 +160,11 @@ void raycast(t_game *cube)
 		}
 		if (side == 0)
 		{
-
 			distance = (mapX - cube->player->pos_x + (1 - stepX) / 2) / dir.x;
 		}
 		else
 			distance = (mapY - cube->player->pos_y + (1 - stepY) / 2) / dir.y;
-		no_fish_distance = distance * cos(angle - cube->player->angle);
+		no_fish_distance = distance * cos(cube->raycast->angle - cube->player->angle);
 		wall_height = (base_height * d_plan) / no_fish_distance;
 		render_wall(wall_height, cube, x, WHITE);
 		x++;
@@ -205,8 +205,8 @@ void raycast(t_game *cube)
 // 	{
 // 		float camera_x = 2 * x / (float)WIDTH - 1;
 // 		raycast->angle = cube->player->angle + atan(camera_x * tan(cube->player->fov / 2));
-// 		dir.x = cos(raycast->angle) * 0.001;
-// 		dir.y = -sin(raycast->angle) * 0.001;
+// 		dir.x = cos(raycast->angle) * 0.01;
+// 		dir.y = -sin(raycast->angle) * 0.01;
 // 		ray.x = cube->player->pos_x;
 // 		ray.y = cube->player->pos_y;
 // 		while (cube->map->final_grid[(int)ray.y][(int)ray.x] != '1')
@@ -222,7 +222,7 @@ void raycast(t_game *cube)
 // 		get_distance_and_wallheight(cube, ray);
 // 		if (prev_mapX != mapX)
 // 		{
-// 			if (dir.x > 0)
+// 			if (dir.x >= 0)
 // 			{
 // 				render_wall(raycast->wall_height, cube, x, BLUE);
 // 			}
@@ -231,7 +231,7 @@ void raycast(t_game *cube)
 // 		}
 // 		if (prev_mapY != mapY)
 // 		{
-// 			if (dir.y > 0)
+// 			if (dir.y >= 0)
 // 			{
 // 				render_wall(raycast->wall_height, cube, x, GREEN);
 // 			}
@@ -251,4 +251,5 @@ void render(t_game *cube)
 	// raycast(cube, cube->raycast);
 	raycast(cube);
 	mlx_put_image_to_window(cube->mlx, cube->windows, cube->img->img_ptr, 0, 0);
+
 }
