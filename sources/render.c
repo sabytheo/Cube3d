@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 14:16:45 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/14 14:54:00 by egache           ###   ########.fr       */
+/*   Updated: 2025/10/14 15:36:00 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -180,7 +180,14 @@ void raycast(t_game *cube, t_raycast *raycast)
 		else
 			raycast->distance = (raycast->mapY - cube->player->pos_y + (1 - raycast->stepY) / 2) / raycast->dir->y;
 		get_distance_and_wallheight(cube);
-		render_wall(cube->raycast->wall_height, cube, x, WHITE);
+				if (raycast->dir->x > 0 && side == 0)
+			render_wall(raycast->wall_height, cube, x, BLUE);
+		else if (raycast->dir->x < 0 && side == 0)
+			render_wall(raycast->wall_height, cube, x, RED);
+		else if (raycast->dir->y > 0 && side == 1)
+			render_wall(raycast->wall_height, cube, x, GREEN);
+		else if (raycast->dir->y < 0 && side == 1)
+			render_wall(raycast->wall_height, cube, x, PURPLE);
 		x++;
 	}
 	return;
