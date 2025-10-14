@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: teatime <teatime@student.42.fr>            +#+  +:+       +#+        */
+/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 17:46:21 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/13 16:11:11 by teatime          ###   ########.fr       */
+/*   Updated: 2025/10/14 14:36:40 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,9 @@ int init(t_game *cube)
 	cube->player = (t_player *)ft_calloc(1, sizeof(t_player));
 	cube->img = (t_img *)ft_calloc(1, sizeof(t_img));
 	cube->raycast = (t_raycast *)ft_calloc(1, sizeof(t_raycast));
+	cube->raycast->dir = (t_vector *)ft_calloc(1, sizeof(t_vector));
 	cube->textures = (t_texture *)ft_calloc(1, sizeof(t_texture));
-	if (!cube->map)
+	if (!cube->map || !cube->player || !cube->img || !cube->raycast || !cube->raycast->dir || !cube->textures)
 	{
 		ft_printf_fd(2, "Error:\n Failed to allocate cube->map\n");
 		return (-1);

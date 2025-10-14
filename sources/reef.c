@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   reef.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 15:37:43 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/07 13:25:31 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/10/14 14:41:27 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,5 +73,12 @@ int	free_exit(t_game *cube)
 		free(cube->map);
 	if (cube->player)
 		free(cube->player);
+	if (cube->img)
+		free(cube->img);
+	if (cube->raycast->dir)
+		free(cube->raycast->dir);	
+	if (cube->raycast)
+		free(cube->raycast);
+	
 	exit(0);
 }
