@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cube.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/14 16:40:29 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/10/15 17:36:47 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,8 +80,10 @@ typedef struct s_raycast
 	float sideDistY;
 	int stepY;
 	int stepX;
-	int mapX;
-	int mapY;
+	int intX;
+	int intY;
+	float floatX;
+	float floatY;
 	float camera_x;
 	t_vector *dir;
 } t_raycast;
@@ -162,6 +164,8 @@ typedef struct s_texture
 	t_img EA_img;
 	int ceiling[3];
 	int floor[3];
+	float	y;
+	float	x;
 
 } t_texture;
 

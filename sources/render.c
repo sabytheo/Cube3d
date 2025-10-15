@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 14:16:45 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/14 16:03:56 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/10/15 22:02:47 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void img_pixel_put(t_img *img, int x, int y, int color)
 		i -= 8;
 	}
 }
+
 void render_floor_ceilling(t_img *img, t_texture *textures)
 {
 	int i;
@@ -58,13 +59,28 @@ void render_floor_ceilling(t_img *img, t_texture *textures)
 	return;
 }
 
-void render_wall(float wall_height, t_game *cube, int x, int color)
+
+unsigned int	get_texture_pixel(t_game *cube, t_texture *textures, float text_y)
+{
+	int	pixel_offset;
+	unsigned int	color;
+	float	text_x;
+	text_x = textures->x * 256;
+	pixel_offset = text_y * cube->textures->EA_img.size_line + (int)text_x * (textures->EA_img.bits_per_pixel / 8);
+	color = *(unsigned int *)(cube->textures->EA_img.addr + pixel_offset);
+	return(color);
+	
+}
+
+void render_wall(float wall_height, t_game *cube, int x)
 {
 	int start_y;
 	int j;
 	int draw_start;
 	int draw_end;
-
+	float text_y;
+	cube->textures->y =  256 / cube->raycast->wall_height;
+	text_y = 0.0;
 	// printf(" x = %d wall height = %f\n", x, wall_height);
 	start_y = HEIGHT / 2;
 	draw_start = (start_y - (wall_height * 0.5));
@@ -76,7 +92,8 @@ void render_wall(float wall_height, t_game *cube, int x, int color)
 	j = draw_start;
 	while (j <= draw_end)
 	{
-		img_pixel_put(cube->img, x, j, color);
+		text_y += cube->textures->y;
+		img_pixel_put(cube->img, x, j, get_texture_pixel(cube, cube->textures, text_y));
 		j++;
 	}
 }
@@ -91,8 +108,10 @@ void	init_raycast_values(t_game *cube, t_raycast *raycast, int x)
 	raycast->dir->y = -sin(raycast->angle);
 	raycast->deltaDistX = fabs(1 / raycast->dir->x);
 	raycast->deltaDistY = fabs(1 / raycast->dir->y);
-	raycast->mapX = (int)cube->player->pos_x;
-	raycast->mapY = (int)cube->player->pos_y;
+	raycast->intX = (int)cube->player->pos_x;
+	raycast->intY = (int)cube->player->pos_y;
+	raycast->floatX = cube->player->pos_x;
+	raycast->floatY = cube->player->pos_y;
 }
 
 static void init_height_dplan(t_game *cube)
@@ -116,22 +135,22 @@ void	init_raycast_direction(t_game *cube, t_raycast *raycast)
 	if (raycast->dir->x < 0)
 	{
 		raycast->stepX = -1;
-		raycast->sideDistX = (cube->player->pos_x - raycast->mapX) * raycast->deltaDistX;
+		raycast->sideDistX = (cube->player->pos_x - raycast->intX) * raycast->deltaDistX;
 	}
 	else
 	{
 		raycast->stepX = 1;
-		raycast->sideDistX = (raycast->mapX + 1.0 - cube->player->pos_x) * raycast->deltaDistX;
+		raycast->sideDistX = (raycast->intX + 1.0 - cube->player->pos_x) * raycast->deltaDistX;
 	}
 	if (raycast->dir->y < 0)
 	{
 		raycast->stepY = -1;
-		raycast->sideDistY = (cube->player->pos_y - raycast->mapY) * raycast->deltaDistY;
+		raycast->sideDistY = (cube->player->pos_y - raycast->intY) * raycast->deltaDistY;
 	}
 	else
 	{
 		raycast->stepY = 1;
-		raycast->sideDistY = (raycast->mapY + 1.0 - cube->player->pos_y) * raycast->deltaDistY;
+		raycast->sideDistY = (raycast->intY + 1.0 - cube->player->pos_y) * raycast->deltaDistY;
 	}
 }
 
@@ -146,25 +165,46 @@ int ray_displacement(t_game *cube, t_raycast *raycast)
 		if (raycast->sideDistX < raycast->sideDistY)
 		{
 			raycast->sideDistX += raycast->deltaDistX;
-			raycast->mapX += raycast->stepX;
+			raycast->intX += raycast->stepX;
 			side = 0;
 		}
 		else
 		{
 			raycast->sideDistY += raycast->deltaDistY;
-			raycast->mapY += raycast->stepY;
+			raycast->intY += raycast->stepY;
 			side = 1;
 		}
-		if (cube->map->final_grid[raycast->mapY][raycast->mapX] == '1')
+		if (cube->map->final_grid[raycast->intY][raycast->intX] == '1')
 		{
+			if (!side)
+			{
+				raycast->floatX = cube->player->pos_x + raycast->dir->x * (raycast->sideDistX - raycast->deltaDistX);
+				raycast->floatY = cube->player->pos_y + raycast->dir->y * (raycast->sideDistX - raycast->deltaDistX);
+				cube->textures->x = raycast->floatY - floor(raycast->floatY);
+				printf("textures->x avant ratio : %.4f - %f = %.4f\n", raycast->floatY, floor(raycast->floatY), cube->textures->x);
+			}
+			else
+			{
+				raycast->floatX = cube->player->pos_x + raycast->dir->x * (raycast->sideDistY - raycast->deltaDistY);
+				raycast->floatY = cube->player->pos_y + raycast->dir->y * (raycast->sideDistY - raycast->deltaDistY);
+				cube->textures->x = raycast->floatX - floor(raycast->floatX);
+				printf("textures->x avant ratio : %.4f - %f = %.4f\n", raycast->floatX, floor(raycast->floatX), cube->textures->x);
+			}
 			hit = true;
+			printf("deltaDistY : %.2f || sideDistY : %.2f || intY : %d || floatY : %.2f\n", raycast->deltaDistY, raycast->sideDistY, raycast->intY, raycast->floatY);
+			printf("deltaDistX : %.2f || sideDistX : %.f  || intX : %d || floatX : %.2f\n", raycast->deltaDistX, raycast->sideDistX, raycast->intX, raycast->floatX);
 			return (side);
-			// printf(": mur trouvé à (%.2f, %.2f)\n", cube->player->pos_x, cube->player->pos_y);
 		}
 	}
 	return (0);
 }
 
+/*
+
+trouver le ratio (si on avance )
+taille en rapport avec la distance
+
+*/
 void raycast(t_game *cube, t_raycast *raycast)
 {
 	int x;
@@ -179,18 +219,19 @@ void raycast(t_game *cube, t_raycast *raycast)
 		init_raycast_direction(cube, raycast);
 		side = ray_displacement(cube, raycast);
 		if (side == 0)
-			raycast->distance = (raycast->mapX - cube->player->pos_x + (1 - raycast->stepX) / 2) / raycast->dir->x;
+			raycast->distance = (raycast->intX - cube->player->pos_x + (1 - raycast->stepX) / 2) / raycast->dir->x;
 		else
-			raycast->distance = (raycast->mapY - cube->player->pos_y + (1 - raycast->stepY) / 2) / raycast->dir->y;
+			raycast->distance = (raycast->intY - cube->player->pos_y + (1 - raycast->stepY) / 2) / raycast->dir->y;
 		get_distance_and_wallheight(cube);
-				if (raycast->dir->x > 0 && side == 0)
-			render_wall(raycast->wall_height, cube, x, BLUE);
+		cube->textures->y =  256 / cube->raycast->wall_height;
+		if (raycast->dir->x > 0 && side == 0)
+			render_wall(raycast->wall_height, cube, x);
 		else if (raycast->dir->x < 0 && side == 0)
-			render_wall(raycast->wall_height, cube, x, RED);
+			render_wall(raycast->wall_height, cube, x);
 		else if (raycast->dir->y > 0 && side == 1)
-			render_wall(raycast->wall_height, cube, x, GREEN);
+			render_wall(raycast->wall_height, cube, x);
 		else if (raycast->dir->y < 0 && side == 1)
-			render_wall(raycast->wall_height, cube, x, PURPLE);
+			render_wall(raycast->wall_height, cube, x);
 		x++;
 	}
 	return;

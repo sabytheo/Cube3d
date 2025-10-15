@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42lyon.fr>            +#+  +:+       +#+        */
+/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 16:05:21 by tsaby             #+#    #+#             */
-/*   Updated: 2024/12/13 13:00:17 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/10/15 18:38:53 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*ft_strdup(char *src)
 		dest[i] = '\0';
 		return (dest);
 	}
-	while (src[i])
+	while (src[i] && src[i] != '\n')
 	{
 		dest[i] = src[i];
 		i++;
