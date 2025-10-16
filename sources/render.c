@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: teatime <teatime@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 14:16:45 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/16 00:35:42 by teatime          ###   ########.fr       */
+/*   Updated: 2025/10/16 18:18:55 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,18 +59,18 @@ void render_floor_ceilling(t_img *img, t_texture *textures)
 	return;
 }
 
-unsigned int get_texture_pixel(t_game *cube, t_texture *textures, float text_y)
+unsigned int get_texture_pixel( t_texture *textures, float text_y,t_img *img)
 {
 	int pixel_offset;
 	unsigned int color;
 	int text_x;
 	text_x = (int)(textures->x * 256);
-	pixel_offset = (int)text_y * cube->textures->EA_img.size_line + text_x * (textures->EA_img.bits_per_pixel / 8);
-	color = *(unsigned int *)(cube->textures->EA_img.addr + pixel_offset);
+	pixel_offset = (int)text_y * img->size_line + text_x * (img->bits_per_pixel / 8);
+	color = *(unsigned int *)(img->addr + pixel_offset);
 	return (color);
 }
 
-void render_wall(float wall_height, t_game *cube, int x)
+void render_wall(float wall_height, t_game *cube, int x, t_img *img)
 {
 	int start_y;
 	int j;
@@ -79,7 +79,7 @@ void render_wall(float wall_height, t_game *cube, int x)
 	float text_y;
 	cube->textures->y = (float)256 / cube->raycast->wall_height;
 	printf("cube->textures->y : %.2f\n", cube->textures->y);
-	text_y = 0.0;
+	text_y = 0;
 	// printf(" x = %d wall height = %f\n", x, wall_height);
 	start_y = HEIGHT / 2;
 	draw_start = (start_y - (wall_height * 0.5));
@@ -87,12 +87,14 @@ void render_wall(float wall_height, t_game *cube, int x)
 		draw_start = 0;
 	draw_end = (start_y + (wall_height * 0.5));
 	if (draw_end >= HEIGHT)
+	{
 		draw_end = HEIGHT - 1;
+	}
 	j = draw_start;
-	while (j <= draw_end)
+	while (j < draw_end)
 	{
 		text_y += cube->textures->y;
-		img_pixel_put(cube->img, x, j, get_texture_pixel(cube, cube->textures, text_y));
+		img_pixel_put(cube->img, x, j, get_texture_pixel(cube->textures, text_y,img));
 		j++;
 	}
 }
@@ -126,6 +128,10 @@ static void get_distance_and_wallheight(t_game *cube)
 	if (cube->raycast->corrected_distance <= 0)
 		cube->raycast->corrected_distance = 0.001;
 	cube->raycast->wall_height = (cube->raycast->base_height * cube->raycast->d_plan) / cube->raycast->corrected_distance;
+	// if (cube->raycast->wall_height < 0)
+	// 	cube->raycast->wall_height = 0;
+	// if (cube->raycast->wall_height > HEIGHT)
+	// 	cube->raycast->wall_height = HEIGHT -1;
 	// printf("wallheight = %d\n dplan = %f\n corrected distance = %f\n",cube->raycast->wall_height,cube->raycast->d_plan, cube->raycast->corrected_distance);
 }
 
@@ -224,13 +230,13 @@ void raycast(t_game *cube, t_raycast *raycast)
 		get_distance_and_wallheight(cube);
 		cube->textures->y = 256 / cube->raycast->wall_height;
 		if (raycast->dir->x > 0 && side == 0)
-			render_wall(raycast->wall_height, cube, x);
+			render_wall(raycast->wall_height, cube, x,&cube->textures->EA_img);
 		else if (raycast->dir->x < 0 && side == 0)
-			render_wall(raycast->wall_height, cube, x);
+			render_wall(raycast->wall_height, cube, x,&cube->textures->WE_img);
 		else if (raycast->dir->y > 0 && side == 1)
-			render_wall(raycast->wall_height, cube, x);
+			render_wall(raycast->wall_height, cube, x,&cube->textures->NO_img);
 		else if (raycast->dir->y < 0 && side == 1)
-			render_wall(raycast->wall_height, cube, x);
+			render_wall(raycast->wall_height, cube, x,&cube->textures->SO_img);
 		x++;
 	}
 	return;

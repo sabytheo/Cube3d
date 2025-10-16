@@ -6,7 +6,7 @@
 /*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 20:21:37 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/07 13:24:25 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/10/16 09:24:20 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,10 @@ void	print_texture(t_texture *textures)
 	int	i;
 
 	i = 0;
-	printf("texture NO : %s\n", textures->NO);
-	printf("texture SO : %s\n", textures->SO);
-	printf("texture WE : %s\n", textures->WE);
-	printf("texture EA : %s\n", textures->EA);
+	printf("texture NO : |%s|\n", textures->NO);
+	printf("texture SO : |%s|\n", textures->SO);
+	printf("texture WE : |%s|\n", textures->WE);
+	printf("texture EA : |%s|\n", textures->EA);
 	while (i < 3)
 	{
 		printf("texture C : %d\n", textures->ceiling[i]);

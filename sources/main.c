@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 17:46:21 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/15 18:41:59 by egache           ###   ########.fr       */
+/*   Updated: 2025/10/16 09:23:53 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,6 @@ int init(t_game *cube)
 
 int	load_textures(t_game *cube)
 {
-	// cube->textures->NO_img.width = 256;
-	// cube->textures->NO_img.height = 256;
 	cube->textures->NO_img.img_ptr = mlx_xpm_file_to_image(cube->mlx,
 			cube->textures->NO, &cube->textures->NO_img.width,
 			&cube->textures->NO_img.height);

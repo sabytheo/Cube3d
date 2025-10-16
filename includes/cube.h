@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cube.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/15 17:36:47 by egache           ###   ########.fr       */
+/*   Updated: 2025/10/16 18:01:23 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@
 #define YELLOW 0x00FFFF00
 #define PURPLE 0x00FF00FF
 
-#define WIDTH 1280
-#define HEIGHT 720
+#define WIDTH 1920
+#define HEIGHT 1080
 
 # define SPEED 0.25
 
@@ -71,7 +71,7 @@ typedef struct s_raycast
 	float angle;
 	float distance;
 	float corrected_distance;
-	int wall_height;
+	float wall_height;
 	int base_height;
 	float d_plan;
 	float deltaDistY;
