@@ -6,7 +6,7 @@
 /*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 14:16:45 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/16 18:18:55 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/10/16 19:13:01 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,10 @@ void render_wall(float wall_height, t_game *cube, int x, t_img *img)
 	start_y = HEIGHT / 2;
 	draw_start = (start_y - (wall_height * 0.5));
 	if (draw_start < 0)
+	{
+		text_y = (0 - draw_start) * cube->textures->y;
 		draw_start = 0;
+	}
 	draw_end = (start_y + (wall_height * 0.5));
 	if (draw_end >= HEIGHT)
 	{
@@ -93,8 +96,8 @@ void render_wall(float wall_height, t_game *cube, int x, t_img *img)
 	j = draw_start;
 	while (j < draw_end)
 	{
-		text_y += cube->textures->y;
 		img_pixel_put(cube->img, x, j, get_texture_pixel(cube->textures, text_y,img));
+		text_y += cube->textures->y;
 		j++;
 	}
 }
@@ -126,13 +129,8 @@ static void get_distance_and_wallheight(t_game *cube)
 {
 	cube->raycast->corrected_distance = cube->raycast->distance * cos(cube->raycast->angle - cube->player->angle);
 	if (cube->raycast->corrected_distance <= 0)
-		cube->raycast->corrected_distance = 0.001;
+		cube->raycast->corrected_distance = 0.1;
 	cube->raycast->wall_height = (cube->raycast->base_height * cube->raycast->d_plan) / cube->raycast->corrected_distance;
-	// if (cube->raycast->wall_height < 0)
-	// 	cube->raycast->wall_height = 0;
-	// if (cube->raycast->wall_height > HEIGHT)
-	// 	cube->raycast->wall_height = HEIGHT -1;
-	// printf("wallheight = %d\n dplan = %f\n corrected distance = %f\n",cube->raycast->wall_height,cube->raycast->d_plan, cube->raycast->corrected_distance);
 }
 
 void init_raycast_direction(t_game *cube, t_raycast *raycast)
