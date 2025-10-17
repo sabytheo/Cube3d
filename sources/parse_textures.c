@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_textures.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 12:42:42 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/17 12:28:21 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/10/17 13:59:05 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,10 @@ static int	get_textures(char *str, t_texture *textures, int i)
 	if (i == 3)
 	{
 		if (!textures->NO || !textures->SO || !textures->WE || !textures->EA)
+		{
+			printf("allo\n");
 			return (-1);
+		}
 	}
 	return (0);
 }
@@ -72,7 +75,7 @@ int	init_textures(int *i, char **grid, t_game *cube)
 				3) == 0 || ft_strncmp("EA ", grid[*i], 3) == 0
 			|| ft_strncmp("WE ", grid[*i], 3) == 0)
 		{
-			if (get_textures(grid[*i], cube->textures, count) < 0)
+			if (get_textures(grid[*i], &cube->textures, count) < 0)
 				return (-1);
 			count++;
 		}

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_colors.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 13:29:30 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/07 13:31:20 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/10/17 14:03:51 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,7 +118,7 @@ int	init_colors(int *i, char **grid, t_game *cube)
 		if (ft_strncmp("F ", grid[*i], 2) == 0 || ft_strncmp("C ", grid[*i],
 				2) == 0)
 		{
-			if (get_colors(grid[*i], cube->textures) < 0)
+			if (get_colors(grid[*i], &cube->textures) < 0)
 				return (-1);
 			count++;
 		}
