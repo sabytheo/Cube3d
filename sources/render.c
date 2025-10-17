@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 14:16:45 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/17 13:55:07 by egache           ###   ########.fr       */
+/*   Updated: 2025/10/17 15:54:01 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,13 +63,7 @@ void render_floor_ceilling(t_img *img, t_texture *textures)
 
 unsigned int get_texture_pixel( t_texture *textures, float text_y,t_img *img)
 {
-	int pixel_offset;
-	unsigned int color;
-	int text_x;
-	text_x = (int)(textures->x * 256);
-	pixel_offset = (int)text_y * img->size_line + text_x * (img->bits_per_pixel / 8);
-	color = *(unsigned int *)(img->addr + pixel_offset);
-	return (color);
+	return (*(unsigned int *)(img->addr + ((int)text_y * img->size_line + ((int)(textures->x * 256)) * (img->bits_per_pixel / 8))));
 }
 
 void render_wall(float wall_height, t_game *cube, int x, t_img *img)
@@ -238,6 +232,7 @@ void raycast(t_game *cube, t_raycast *raycast)
 		if (raycast->dir->x > 0 && side == 0)
 		{
 			cube->textures.y = cube->textures.EA_img.height / cube->raycast->wall_height;
+			cube->textures.x = 1 - cube->textures.x;
 			render_wall(raycast->wall_height, cube, x, &cube->textures.EA_img);
 		}
 		else if (raycast->dir->x < 0 && side == 0)
@@ -253,6 +248,7 @@ void raycast(t_game *cube, t_raycast *raycast)
 		else if (raycast->dir->y < 0 && side == 1)
 		{
 			cube->textures.y = cube->textures.SO_img.height / cube->raycast->wall_height;
+			cube->textures.x = 1 - cube->textures.x;
 			render_wall(raycast->wall_height, cube, x, &cube->textures.SO_img);
 		}
 		x++;

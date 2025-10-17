@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bindings.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 12:31:12 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/14 16:41:30 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/10/17 16:09:05 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ static void	press_W_S( t_game *cube, float newpos_x,
 		{
 			cube->player->pos_x = newpos_x;
 			cube->player->pos_y = newpos_y;
-			render(cube);
 		}
 	}
 	if (cube->key->s == true)
@@ -45,7 +44,6 @@ static void	press_W_S( t_game *cube, float newpos_x,
 		{
 			cube->player->pos_x = newpos_x;
 			cube->player->pos_y = newpos_y;
-			render(cube);
 		}
 	}
 	return ;
@@ -62,7 +60,6 @@ static void	press_A_D( t_game *cube, float newpos_x,
 		{
 			cube->player->pos_x = newpos_x;
 			cube->player->pos_y = newpos_y;
-			render(cube);
 		}
 	}
 	if (cube->key->d == true)
@@ -73,7 +70,6 @@ static void	press_A_D( t_game *cube, float newpos_x,
 		{
 			cube->player->pos_x = newpos_x;
 			cube->player->pos_y = newpos_y;
-			render(cube);
 		}
 	}
 	return ;
@@ -132,14 +128,9 @@ int	define_control(t_game *cube)
 	if (cube->key->a == true || cube->key->d == true)
 		press_A_D(cube, newpos_x, newpos_y);
 	if (cube->key->left == true)
-	{
 		cube->player->angle -= DEG_TO_RAD * 2;
-		render(cube);
-	}
 	if (cube->key->right == true)
-	{
 		cube->player->angle += DEG_TO_RAD * 2;
-		render(cube);
-	}
-	return (0) ;
+	render(cube);
+	return (0);
 }
