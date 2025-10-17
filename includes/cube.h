@@ -6,7 +6,7 @@
 /*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/16 18:01:23 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/10/17 12:50:19 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,6 @@ typedef struct s_raycast
 	int intY;
 	float floatX;
 	float floatY;
-	float camera_x;
 	t_vector *dir;
 } t_raycast;
 
@@ -164,8 +163,8 @@ typedef struct s_texture
 	t_img EA_img;
 	int ceiling[3];
 	int floor[3];
-	float	y;
-	float	x;
+	double	y;
+	double	x;
 
 } t_texture;
 
@@ -183,6 +182,7 @@ typedef struct s_game
 } t_game;
 
 void render(t_game *cube);
+void render_floor_ceilling(t_img *img, t_texture *textures);
 void raycast(t_game *cube, t_raycast *raycast);
 int define_control(t_game *cube);
 int release_key(int keypress, t_game *cube);

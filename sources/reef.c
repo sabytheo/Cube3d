@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   reef.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 15:37:43 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/14 14:41:27 by egache           ###   ########.fr       */
+/*   Updated: 2025/10/17 12:24:38 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,11 +48,16 @@ int	free_exit(t_game *cube)
 {
 	if (cube->windows)
 		mlx_destroy_window(cube->mlx, cube->windows);
-	if (cube->mlx)
-	{
-		mlx_destroy_display(cube->mlx);
-		free(cube->mlx);
-	}
+	if (cube->textures->EA_img.img_ptr)
+		mlx_destroy_image(cube->mlx, cube->textures->EA_img.img_ptr);
+	if (cube->img->img_ptr)
+		mlx_destroy_image(cube->mlx, cube->img->img_ptr);
+	if (cube->textures->NO_img.img_ptr)
+		mlx_destroy_image(cube->mlx, cube->textures->NO_img.img_ptr);
+	if (cube->textures->SO_img.img_ptr)
+		mlx_destroy_image(cube->mlx, cube->textures->SO_img.img_ptr);
+	if (cube->textures->WE_img.img_ptr)
+		mlx_destroy_image(cube->mlx, cube->textures->WE_img.img_ptr);
 	if (cube->map->grid)
 		free_tab(cube->map->grid);
 	if (cube->map->final_grid)
@@ -76,9 +81,15 @@ int	free_exit(t_game *cube)
 	if (cube->img)
 		free(cube->img);
 	if (cube->raycast->dir)
-		free(cube->raycast->dir);	
+		free(cube->raycast->dir);
 	if (cube->raycast)
 		free(cube->raycast);
-	
+	if (cube->key)
+		free(cube->key);
+	if (cube->mlx)
+	{
+		mlx_destroy_display(cube->mlx);
+		free(cube->mlx);
+	}
 	exit(0);
 }

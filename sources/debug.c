@@ -6,7 +6,7 @@
 /*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 20:21:37 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/16 09:24:20 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/10/17 12:28:55 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	print_map(char **map)
 	while (map[i])
 	{
 		// ft_printf("[%d] :", i);
-		ft_printf("%s", map[i]);
+		ft_printf("%s\n", map[i]);
 		i++;
 	}
 }

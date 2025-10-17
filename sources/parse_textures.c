@@ -6,7 +6,7 @@
 /*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 12:42:42 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/07 13:34:17 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/10/17 12:28:21 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,8 @@ static int	get_textures(char *str, t_texture *textures, int i)
 
 int	init_textures(int *i, char **grid, t_game *cube)
 {
-	t_texture	*textures;
 	int			count;
 
-	textures = (t_texture *)ft_calloc(1, sizeof(t_texture));
 	count = 0;
 	while (grid[*i])
 	{
@@ -74,12 +72,11 @@ int	init_textures(int *i, char **grid, t_game *cube)
 				3) == 0 || ft_strncmp("EA ", grid[*i], 3) == 0
 			|| ft_strncmp("WE ", grid[*i], 3) == 0)
 		{
-			if (get_textures(grid[*i], textures, count) < 0)
+			if (get_textures(grid[*i], cube->textures, count) < 0)
 				return (-1);
 			count++;
 		}
 		(*i)++;
-		cube->textures = textures;
 		if (count == TEXTURES_FOUND)
 		{
 			return (0);
