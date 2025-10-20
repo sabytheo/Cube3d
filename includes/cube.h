@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cube.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42lyon.fr>            +#+  +:+       +#+        */
+/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/19 17:16:06 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/10/20 17:18:29 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,7 @@ typedef struct s_player
 	float pos_y;
 	double angle;
 	float fov;
+	float tan_fov_2;
 } t_player;
 
 typedef struct s_map
@@ -203,7 +204,8 @@ void	free_fps_counter(t_fps *fps);
 void	draw_debug_info_cardinal(t_game *cube);
 
 void render(t_game *cube);
-void render_floor_ceilling(t_img *img, t_texture *textures);
+// void render_floor_ceilling(t_img *img, t_texture *textures);
+void render_floor_ceilling(t_img *img, t_texture *textures, int x, int draw_start, int draw_end);
 void raycast(t_game *cube, t_raycast *raycast);
 int define_control(t_game *cube);
 int release_key(int keypress, t_game *cube);

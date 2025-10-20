@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42lyon.fr>            +#+  +:+       +#+        */
+/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 14:16:45 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/20 16:44:08 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/10/20 17:18:38 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,29 +34,50 @@ void img_pixel_put(t_img *img, int x, int y, int color)
 	}
 }
 
-void render_floor_ceilling(t_img *img, t_texture *textures)
+// void render_floor_ceilling(t_img *img, t_texture *textures)
+// {
+// 	int i;
+// 	int j;
+
+// 	i = 0;
+// 	int c_color = get_color(textures->ceiling[0], textures->ceiling[1], textures->ceiling[2]);
+// 	int f_color = get_color(textures->floor[0], textures->floor[1], textures->floor[2]);
+// 	while (i < WIDTH)
+// 	{
+// 		j = 0;
+// 		while (j < HEIGHT / 2)
+// 		{
+// 			img_pixel_put(img, i, j, c_color);
+// 			j++;
+// 		}
+// 		j = HEIGHT / 2;
+// 		while (j < HEIGHT)
+// 		{
+// 			img_pixel_put(img, i, j, f_color);
+// 			j++;
+// 		}
+// 		i++;
+// 	}
+// 	return;
+// }
+
+void render_floor_ceilling(t_img *img, t_texture *textures, int x, int draw_start, int draw_end)
 {
-	int i;
 	int j;
 
-	i = 0;
 	int c_color = get_color(textures->ceiling[0], textures->ceiling[1], textures->ceiling[2]);
 	int f_color = get_color(textures->floor[0], textures->floor[1], textures->floor[2]);
-	while (i < WIDTH)
+	j = 0;
+	while (j < draw_start)
 	{
-		j = 0;
-		while (j < HEIGHT / 2)
-		{
-			img_pixel_put(img, i, j, c_color);
-			j++;
-		}
-		j = HEIGHT / 2;
-		while (j < HEIGHT)
-		{
-			img_pixel_put(img, i, j, f_color);
-			j++;
-		}
-		i++;
+		img_pixel_put(img, x, j, c_color);
+		j++;
+	}
+	j = draw_end + 1;
+	while (j < HEIGHT)
+	{
+		img_pixel_put(img, x, j, f_color);
+		j++;
 	}
 	return;
 }
@@ -73,9 +94,6 @@ void render_wall(float wall_height, t_game *cube, int x, t_img *img)
 	int draw_start;
 	int draw_end;
 	float text_y;
-	// if (wall_height > 2 * HEIGHT)
-	// 	wall_height *= 0.5;
-	// printf("%f\n",wall_height);
 	cube->textures.y = (float)256 / cube->raycast->wall_height;
 	if (cube->textures.y <= 0)
 		cube->textures.y = 0.01;
@@ -91,9 +109,9 @@ void render_wall(float wall_height, t_game *cube, int x, t_img *img)
 	}
 	draw_end = (start_y + (wall_height * 0.5));
 	if (draw_end >= HEIGHT)
-	{
 		draw_end = HEIGHT - 1;
-	}
+	else
+		render_floor_ceilling(cube->img, &cube->textures, x, draw_start, draw_end);
 	j = draw_start;
 	while (j < draw_end)
 	{
@@ -108,7 +126,7 @@ void init_raycast_values(t_game *cube, t_raycast *raycast, int x)
 	float camera_x;
 
 	camera_x = 2 * x / (float)WIDTH - 1;
-	raycast->angle = cube->player->angle + atan(camera_x * tan(cube->player->fov / 2));
+	raycast->angle = cube->player->angle + atan(camera_x * cube->player->tan_fov_2);
 	raycast->dir->x = cos(raycast->angle);
 	raycast->dir->y = -sin(raycast->angle);
 	raycast->deltaDistX = fabs(1 / raycast->dir->x);
@@ -258,7 +276,7 @@ void raycast(t_game *cube, t_raycast *raycast)
 
 void render(t_game *cube)
 {
-	render_floor_ceilling(cube->img, &cube->textures);
+	// render_floor_ceilling(cube->img, &cube->textures);
 	update_fps_counter(cube);
 	raycast(cube, cube->raycast);
 	mlx_put_image_to_window(cube->mlx, cube->windows, cube->img->img_ptr, 0, 0);
