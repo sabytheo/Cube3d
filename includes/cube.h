@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cube.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/17 17:37:59 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/10/19 17:16:06 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 #include <math.h>
 #include <stdbool.h>
 #include <stdio.h>
+#include <sys/time.h>
 
 #define _GNU_SOURCE
 
@@ -168,18 +169,38 @@ typedef struct s_texture
 
 } t_texture;
 
+typedef struct s_fps
+{
+	int frame_count;
+	double fps;
+	struct timeval last_fps_update;
+	char fps_string[32];
+}	t_fps;
+
 typedef struct s_game
 {
 	void *mlx;
 	void *windows;
+	struct timeval last_frame;  // Timer pour limiter les FPS
+	int frame_limit;             // Limite en microsecondes (16666 = 60 FPS)
 	t_map *map;
 	t_img *img;
 	t_player *player;
 	t_raycast *raycast;
 	t_texture textures;
+	t_fps *fps_counter;
 	t_key *key;
 
 } t_game;
+
+void img_pixel_put(t_img *img, int x, int y, int color);
+t_fps	*init_fps_counter(void);
+void	update_fps_counter(t_game *cube);
+void	draw_fps_counter(t_game *cube);
+void	draw_fps_counter_with_bg(t_game *cube);
+void	draw_debug_info(t_game *cube);
+void	free_fps_counter(t_fps *fps);
+void	draw_debug_info_cardinal(t_game *cube);
 
 void render(t_game *cube);
 void render_floor_ceilling(t_img *img, t_texture *textures);
