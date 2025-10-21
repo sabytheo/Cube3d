@@ -12,7 +12,7 @@ Notion [https://www.notion.so/Cub3d-1d21ecf7d7e080cb82d0d190dbe112e7]
 
 URGENT
 =======
-PARSING
+**PARSING**
 -----------
 Handle tabs apres les noms des textures ET colors (tout enft)
 Voir pour limiter taille de la map (floodfill avec recursivité)
@@ -20,7 +20,7 @@ Voir GNL (differenciation erreur de malloc et fin de read)
 
 BONUS
 =======
-OPTIMISATION
+**OPTIMISATION**
 -----------
 ## Multithreading
 ## Scaling
@@ -28,7 +28,7 @@ OPTIMISATION
 ## HUD
 
 
-CONTENU
+**CONTENU**
 -----------
 ## Portes
 ## Collisions 
