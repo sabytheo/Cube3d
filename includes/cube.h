@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/20 17:18:29 by egache           ###   ########.fr       */
+/*   Updated: 2025/10/21 14:05:04 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@
 #define HEIGHT 1080
 
 # define SPEED 0.25
+# define XBOX 0.2
 
 # define BEFORE_FF false
 # define AFTER_FF true

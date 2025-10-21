@@ -3,20 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   bindings.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 12:31:12 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/21 13:30:47 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/10/21 14:04:49 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cube.h"
 
-int	is_valid_coordinate(int x, int y, t_game *cube)
+int	is_hitting(float x, float y, t_game *cube, char c)
 {
-	if (cube->map->final_grid[y][x] == 'V')
+	if (cube->map->final_grid[(int)(y +	XBOX)][(int)(x + XBOX)] == c)
 	{
-		return (0);
+		if (cube->map->final_grid[(int)(y + XBOX)][(int)(x - XBOX)] == c)
+		{
+			if (cube->map->final_grid[(int)(y - XBOX)][(int)(x + XBOX)] == c)
+			{
+				if (cube->map->final_grid[(int)(y - XBOX)][(int)(x - XBOX)] == c)
+				{
+					return (0);
+				}
+				return (-1);
+			}
+			return (-1);
+		}
+		return (-1);
 	}
 	return (-1);
 }
@@ -34,18 +46,18 @@ static void	press_W_S( t_game *cube, float newpos_x,
 		// printf(" cos mes couilles %f\n",cos(cube->player->angle) * SPEED);
 		newpos_x += step_x;
 		newpos_y += step_y;
-		if (is_valid_coordinate((int)(newpos_x), (int)(newpos_y), cube) == 0)
+		if (is_hitting(newpos_x, newpos_y, cube, 'V') == 0)
 		{
 			cube->player->pos_x = newpos_x ;
 			cube->player->pos_y = newpos_y ;
 		}
 		else
 		{
-			if (is_valid_coordinate((int)cube->player->pos_x, (int)(newpos_y), cube) == 0)
+			if (is_hitting(cube->player->pos_x, newpos_y, cube, 'V') == 0)
 				cube->player->pos_y = newpos_y ;
 			else
 			{
-				if (is_valid_coordinate((int)(newpos_x), cube->player->pos_y, cube) == 0)
+				if (is_hitting(newpos_x, cube->player->pos_y, cube, 'V') == 0)
 					cube->player->pos_x = newpos_x ;
 			}
 		}
@@ -55,18 +67,18 @@ static void	press_W_S( t_game *cube, float newpos_x,
 		// printf(" cos mes couilles %f\n",cos(cube->player->angle) * SPEED);
 		newpos_x -= cos(cube->player->angle) * SPEED;
 		newpos_y -= -sin(cube->player->angle) * SPEED;
-		if (is_valid_coordinate((int)(newpos_x), (int)(newpos_y), cube) == 0)
+		if (is_hitting(newpos_x, newpos_y, cube, 'V') == 0)
 		{
 			cube->player->pos_x = newpos_x;
 			cube->player->pos_y = newpos_y;
 		}
 		else
 		{
-			if (is_valid_coordinate((int)cube->player->pos_x, (int)(newpos_y), cube) == 0)
+			if (is_hitting(cube->player->pos_x, newpos_y, cube, 'V') == 0)
 				cube->player->pos_y = newpos_y ;
 			else
 			{
-				if (is_valid_coordinate((int)(newpos_x), cube->player->pos_y, cube) == 0)
+				if (is_hitting(newpos_x, cube->player->pos_y, cube, 'V') == 0)
 					cube->player->pos_x = newpos_x ;
 			}
 		}
@@ -86,18 +98,18 @@ static void	press_A_D( t_game *cube, float newpos_x,
 		step_y = -sin(cube->player->angle - (M_PI * 0.5)) * SPEED;
 		newpos_x += step_x;
 		newpos_y += step_y;
-		if (is_valid_coordinate((int)(newpos_x ), (int)(newpos_y ), cube) == 0)
+		if (is_hitting(newpos_x, newpos_y, cube, 'V') == 0)
 		{
 			cube->player->pos_x = newpos_x;
 			cube->player->pos_y = newpos_y;
 		}
 		else
 		{
-			if (is_valid_coordinate((int)cube->player->pos_x, (int)(newpos_y), cube) == 0)
+			if (is_hitting(cube->player->pos_x, newpos_y, cube, 'V') == 0)
 				cube->player->pos_y = newpos_y ;
 			else
 			{
-				if (is_valid_coordinate((int)(newpos_x), cube->player->pos_y, cube) == 0)
+				if (is_hitting(newpos_x, cube->player->pos_y, cube, 'V') == 0)
 					cube->player->pos_x = newpos_x ;
 			}
 		}
@@ -108,18 +120,18 @@ static void	press_A_D( t_game *cube, float newpos_x,
 		step_y = -sin(cube->player->angle + (M_PI * 0.5)) * SPEED;
 		newpos_x += step_x;
 		newpos_y += step_y;
-		if (is_valid_coordinate((int)(newpos_x), (int)(newpos_y ), cube) == 0)
+		if (is_hitting(newpos_x , newpos_y, cube, 'V') == 0)
 		{
 			cube->player->pos_x = newpos_x;
 			cube->player->pos_y = newpos_y;
 		}
 		else
 		{
-			if (is_valid_coordinate((int)cube->player->pos_x, (int)(newpos_y), cube) == 0)
+			if (is_hitting(cube->player->pos_x, newpos_y, cube, 'V') == 0)
 				cube->player->pos_y = newpos_y ;
 			else
 			{
-				if (is_valid_coordinate((int)(newpos_x), cube->player->pos_y, cube) == 0)
+				if (is_hitting(newpos_x, cube->player->pos_y, cube, 'V') == 0)
 					cube->player->pos_x = newpos_x ;
 			}
 		}
