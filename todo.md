@@ -22,7 +22,7 @@ BONUS
 =======
 **OPTIMISATION**
 -----------
-## Multithreading
+## Multithreading - E
 ## Scaling
 ## Penombre
 ## HUD
@@ -30,14 +30,16 @@ BONUS
 
 **CONTENU**
 -----------
-## Portes
+## Portes - T
 ## Collisions 
 	- Supprimer du mandatory et ajouter dans bonus
 	- Attention au segfault hors de la map
-## Textures
+## Textures - T
+## Skybox - T
 ## Animations
-## Minimap
-## Sprint
-## Ennemis
+## Minimap - E
+## Sprint - E
+## Collectibles bonus/malus
+## Ennemis 
 
 
