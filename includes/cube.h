@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/21 14:05:04 by egache           ###   ########.fr       */
+/*   Updated: 2025/10/21 17:16:29 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -179,6 +179,8 @@ typedef struct s_fps
 	char fps_string[32];
 }	t_fps;
 
+
+// Enlever pointeur pour eviter calloc
 typedef struct s_game
 {
 	void *mlx;
