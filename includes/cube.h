@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cube.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/21 14:05:04 by egache           ###   ########.fr       */
+/*   Updated: 2025/10/22 16:33:35 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,8 @@ enum
 	S = 115,
 	D = 100,
 	A = 97,
+	E = 101,
+	F = 102,
 	ESCAPE = 65307,
 	A_LEFT = 65361,
 	A_RIGHT = 65363
@@ -111,6 +113,7 @@ typedef struct s_map
 	int start_x;
 	int start_y;
 	char start_dir;
+	bool door_found;
 
 } t_map;
 
@@ -120,6 +123,8 @@ typedef struct s_key
 	bool s;
 	bool a;
 	bool d;
+	bool e;
+	bool f;
 	bool left;
 	bool right;
 	bool escape;
@@ -132,6 +137,7 @@ enum direction
 	SO,
 	WE,
 	EA,
+	DO,
 	TEXTURES_FOUND
 };
 
@@ -160,10 +166,12 @@ typedef struct s_texture
 	char *SO;
 	char *WE;
 	char *EA;
+	char *DO;
 	t_img NO_img;
 	t_img SO_img;
 	t_img WE_img;
 	t_img EA_img;
+	t_img DO_img;
 	int ceiling[3];
 	int floor[3];
 	double	y;

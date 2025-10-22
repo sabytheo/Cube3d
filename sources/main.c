@@ -53,7 +53,14 @@ int	load_textures(t_game *cube)
 	cube->textures.NO_img.addr = mlx_get_data_addr(cube->textures.NO_img.img_ptr,
 			&cube->textures.NO_img.bits_per_pixel,
 			&cube->textures.NO_img.size_line, &cube->textures.NO_img.endian);
-
+	cube->textures.DO_img.img_ptr = mlx_xpm_file_to_image(cube->mlx,
+			cube->textures.DO, &cube->textures.DO_img.width,
+			&cube->textures.DO_img.height);
+	if (!cube->textures.DO_img.img_ptr)
+		return (-1);
+	cube->textures.DO_img.addr = mlx_get_data_addr(cube->textures.DO_img.img_ptr,
+			&cube->textures.DO_img.bits_per_pixel,
+			&cube->textures.DO_img.size_line, &cube->textures.DO_img.endian);
 	cube->textures.SO_img.img_ptr = mlx_xpm_file_to_image(cube->mlx,
 			cube->textures.SO, &cube->textures.SO_img.width,
 			&cube->textures.SO_img.height);
@@ -62,7 +69,6 @@ int	load_textures(t_game *cube)
 	cube->textures.SO_img.addr = mlx_get_data_addr(cube->textures.SO_img.img_ptr,
 			&cube->textures.SO_img.bits_per_pixel,
 			&cube->textures.SO_img.size_line, &cube->textures.SO_img.endian);
-
 	cube->textures.EA_img.img_ptr = mlx_xpm_file_to_image(cube->mlx,
 			cube->textures.EA, &cube->textures.EA_img.width,
 			&cube->textures.EA_img.height);
@@ -80,7 +86,6 @@ int	load_textures(t_game *cube)
 	cube->textures.WE_img.addr = mlx_get_data_addr(cube->textures.WE_img.img_ptr,
 			&cube->textures.WE_img.bits_per_pixel,
 			&cube->textures.WE_img.size_line, &cube->textures.WE_img.endian);
-
 	return (0);
 }
 

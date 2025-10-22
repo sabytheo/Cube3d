@@ -6,7 +6,7 @@
 /*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 12:47:21 by egache            #+#    #+#             */
-/*   Updated: 2025/10/07 13:27:58 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/10/22 14:45:12 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ bool	is_only_whitespace(int *i, char **grid)
 
 bool	is_a_wall(char c)
 {
-	if (c == '1')
+	if (c == '1' || c == 'C')
 		return (true);
 	return (false);
 }
@@ -58,7 +58,7 @@ bool	is_a_valid_char(char c, bool state)
 	}
 	if (state == AFTER_FF)
 	{
-		if (c == 'F' || c == '2' || c == '3')
+		if (c == 'F' || c == 'C' || c == '3')
 			return (true);
 		return (false);
 	}
