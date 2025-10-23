@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 14:16:45 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/22 17:48:54 by egache           ###   ########.fr       */
+/*   Updated: 2025/10/23 19:16:55 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,170 @@ void img_pixel_put(t_img *img, int x, int y, int color)
 // 	return;
 // }
 
+// void	render_player_minimap(t_img *img, t_game *cube)
+// {
+// 	printf("player->pos_x : %f\n", cube->player->pos_x);
+// 	printf("player->pos_y : %f\n", cube->player->pos_y);
+// 		img_pixel_put(img, cube->player->pos_x, cube->player->pos_y, get_color(0, 0, 0));
+// 		img_pixel_put(img, cube->player->pos_x, cube->player->pos_y * 0.2 + 1, get_color(0, 0, 0));
+// 		img_pixel_put(img, cube->player->pos_x * 0.2, cube->player->pos_y * 0.2 - 1, get_color(0, 0, 0));
+// 		img_pixel_put(img, cube->player->pos_x * 0.2 + 1, cube->player->pos_y * 0.2, get_color(0, 0, 0));
+// 		img_pixel_put(img, cube->player->pos_x * 0.2 - 1, cube->player->pos_y * 0.2, get_color(0, 0, 0));
+// }
+
+void	render_minimap(t_img *img, t_game *cube)
+{
+	int x;
+	int y;
+	int offset_x;
+	int offset_y;
+	int step_x;
+	int step_y;
+	int mm_width;
+	int tile_width;
+	int tile_height;
+
+	x = 0;
+	y = 0;
+	offset_y = 0;
+	step_x = 0;
+	step_y = 0;
+	mm_width = WIDTH * 0.8;
+	tile_width = mm_width / cube->map->max_width;
+	tile_height = tile_width;
+
+	//Trouver la position du joueur en comparant x et y au floor de x et y du joueur. 
+	//Si vrai put pixel au ratio de la partie fractionnaire de la positon du joueur (si 17.5 -> 0.5 donc a la moitie de la size de la tile + )  
+	while (cube->map->final_grid[y])
+	{
+		x = 0;
+		offset_x = 0;
+		while (cube->map->final_grid[y][x])
+		{
+			if (y == (int)cube->player->pos_y && x == (int)cube->player->pos_x)
+			{
+				float draw_x = tile_width * (int)cube->player->pos_x + (tile_width * (cube->player->pos_x - floor(cube->player->pos_x)));
+				float draw_y = tile_width * (int)cube->player->pos_y + (tile_width * (cube->player->pos_y - floor(cube->player->pos_y)));
+
+				//rond
+				// img_pixel_put(img, (int)draw_x, (int)draw_y, get_color(0, 0, 255));
+				// img_pixel_put(img, (int)draw_x + 1, (int)draw_y, get_color(0, 255, 0));
+				// img_pixel_put(img, (int)draw_x - 1, (int)draw_y, get_color(0, 255, 0));
+				// img_pixel_put(img, (int)draw_x + 2, (int)draw_y, get_color(0, 255, 0));
+				// img_pixel_put(img, (int)draw_x - 2, (int)draw_y, get_color(0, 255, 0));
+				// img_pixel_put(img, (int)draw_x + 3, (int)draw_y, get_color(0, 255, 0));
+				// img_pixel_put(img, (int)draw_x - 3, (int)draw_y, get_color(0, 255, 0));
+				// img_pixel_put(img, (int)draw_x, (int)draw_y - 1, get_color(0, 255, 0));
+				// img_pixel_put(img, (int)draw_x, (int)draw_y + 1, get_color(0, 255, 0));
+				// img_pixel_put(img, (int)draw_x, (int)draw_y - 2, get_color(0, 255, 0));
+				// img_pixel_put(img, (int)draw_x, (int)draw_y + 2, get_color(0, 255, 0));
+				// img_pixel_put(img, (int)draw_x, (int)draw_y - 3, get_color(0, 255, 0));
+				// img_pixel_put(img, (int)draw_x, (int)draw_y + 3, get_color(0, 255, 0));
+				
+				// img_pixel_put(img, (int)draw_x + 1, (int)draw_y + 1, get_color(0, 255, 0));
+				// img_pixel_put(img, (int)draw_x - 1, (int)draw_y + 1, get_color(0, 255, 0));
+				// img_pixel_put(img, (int)draw_x + 1, (int)draw_y - 1, get_color(0, 255, 0));
+				// img_pixel_put(img, (int)draw_x - 1, (int)draw_y - 1, get_color(0, 255, 0));
+				
+				// img_pixel_put(img, (int)draw_x + 1, (int)draw_y + 2, get_color(0, 255, 0));
+				// img_pixel_put(img, (int)draw_x - 1, (int)draw_y + 2, get_color(0, 255, 0));
+				// img_pixel_put(img, (int)draw_x + 1, (int)draw_y - 2, get_color(0, 255, 0));
+				// img_pixel_put(img, (int)draw_x - 1, (int)draw_y - 2, get_color(0, 255, 0));
+
+				// img_pixel_put(img, (int)draw_x + 2, (int)draw_y + 1, get_color(0, 255, 0));
+				// img_pixel_put(img, (int)draw_x - 2, (int)draw_y + 1, get_color(0, 255, 0));
+				// img_pixel_put(img, (int)draw_x + 2, (int)draw_y - 1, get_color(0, 255, 0));
+				// img_pixel_put(img, (int)draw_x - 2, (int)draw_y - 1, get_color(0, 255, 0));
+
+				// img_pixel_put(img, (int)draw_x + 2, (int)draw_y + 2, get_color(0, 255, 0));
+				// img_pixel_put(img, (int)draw_x - 2, (int)draw_y + 2, get_color(0, 255, 0));
+				// img_pixel_put(img, (int)draw_x + 2, (int)draw_y - 2, get_color(0, 255, 0));
+				// img_pixel_put(img, (int)draw_x - 2, (int)draw_y - 2, get_color(0, 255, 0));
+				//rond
+				//carre
+				img_pixel_put(img, (int)draw_x, (int)draw_y, get_color(0, 0, 255));
+				img_pixel_put(img, (int)draw_x + 1, (int)draw_y, get_color(0, 255, 0));
+				img_pixel_put(img, (int)draw_x - 1, (int)draw_y, get_color(0, 255, 0));
+				img_pixel_put(img, (int)draw_x + 2, (int)draw_y, get_color(0, 255, 0));
+				img_pixel_put(img, (int)draw_x - 2, (int)draw_y, get_color(0, 255, 0));
+				img_pixel_put(img, (int)draw_x + 3, (int)draw_y, get_color(0, 255, 0));
+				img_pixel_put(img, (int)draw_x - 3, (int)draw_y, get_color(0, 255, 0));
+				img_pixel_put(img, (int)draw_x, (int)draw_y - 1, get_color(0, 255, 0));
+				img_pixel_put(img, (int)draw_x, (int)draw_y + 1, get_color(0, 255, 0));
+				img_pixel_put(img, (int)draw_x, (int)draw_y - 2, get_color(0, 255, 0));
+				img_pixel_put(img, (int)draw_x, (int)draw_y + 2, get_color(0, 255, 0));
+				img_pixel_put(img, (int)draw_x, (int)draw_y - 3, get_color(0, 255, 0));
+				img_pixel_put(img, (int)draw_x, (int)draw_y + 3, get_color(0, 255, 0));
+				
+				img_pixel_put(img, (int)draw_x + 1, (int)draw_y + 1, get_color(0, 255, 0));
+				img_pixel_put(img, (int)draw_x - 1, (int)draw_y + 1, get_color(0, 255, 0));
+				img_pixel_put(img, (int)draw_x + 1, (int)draw_y - 1, get_color(0, 255, 0));
+				img_pixel_put(img, (int)draw_x - 1, (int)draw_y - 1, get_color(0, 255, 0));
+				
+				img_pixel_put(img, (int)draw_x + 1, (int)draw_y + 2, get_color(0, 255, 0));
+				img_pixel_put(img, (int)draw_x - 1, (int)draw_y + 2, get_color(0, 255, 0));
+				img_pixel_put(img, (int)draw_x + 1, (int)draw_y - 2, get_color(0, 255, 0));
+				img_pixel_put(img, (int)draw_x - 1, (int)draw_y - 2, get_color(0, 255, 0));
+
+				img_pixel_put(img, (int)draw_x + 2, (int)draw_y + 1, get_color(0, 255, 0));
+				img_pixel_put(img, (int)draw_x - 2, (int)draw_y + 1, get_color(0, 255, 0));
+				img_pixel_put(img, (int)draw_x + 2, (int)draw_y - 1, get_color(0, 255, 0));
+				img_pixel_put(img, (int)draw_x - 2, (int)draw_y - 1, get_color(0, 255, 0));
+
+				img_pixel_put(img, (int)draw_x + 2, (int)draw_y + 2, get_color(0, 255, 0));
+				img_pixel_put(img, (int)draw_x - 2, (int)draw_y + 2, get_color(0, 255, 0));
+				img_pixel_put(img, (int)draw_x + 2, (int)draw_y - 2, get_color(0, 255, 0));
+				img_pixel_put(img, (int)draw_x - 2, (int)draw_y - 2, get_color(0, 255, 0));
+				
+				img_pixel_put(img, (int)draw_x + 2, (int)draw_y + 3, get_color(0, 255, 0));
+				img_pixel_put(img, (int)draw_x - 2, (int)draw_y + 3, get_color(0, 255, 0));
+				img_pixel_put(img, (int)draw_x + 2, (int)draw_y - 3, get_color(0, 255, 0));
+				img_pixel_put(img, (int)draw_x - 2, (int)draw_y - 3, get_color(0, 255, 0));
+
+				img_pixel_put(img, (int)draw_x + 3, (int)draw_y + 2, get_color(0, 255, 0));
+				img_pixel_put(img, (int)draw_x - 3, (int)draw_y + 2, get_color(0, 255, 0));
+				img_pixel_put(img, (int)draw_x + 3, (int)draw_y - 2, get_color(0, 255, 0));
+				img_pixel_put(img, (int)draw_x - 3, (int)draw_y - 2, get_color(0, 255, 0));
+
+				img_pixel_put(img, (int)draw_x + 3, (int)draw_y + 3, get_color(0, 255, 0));
+				img_pixel_put(img, (int)draw_x - 3, (int)draw_y + 3, get_color(0, 255, 0));
+				img_pixel_put(img, (int)draw_x + 3, (int)draw_y - 3, get_color(0, 255, 0));
+				img_pixel_put(img, (int)draw_x - 3, (int)draw_y - 3, get_color(0, 255, 0));
+				
+				img_pixel_put(img, (int)draw_x + 3, (int)draw_y + 1, get_color(0, 255, 0));
+				img_pixel_put(img, (int)draw_x - 3, (int)draw_y + 1, get_color(0, 255, 0));
+				img_pixel_put(img, (int)draw_x + 3, (int)draw_y - 1, get_color(0, 255, 0));
+				img_pixel_put(img, (int)draw_x - 3, (int)draw_y - 1, get_color(0, 255, 0));
+
+				img_pixel_put(img, (int)draw_x + 1, (int)draw_y + 3, get_color(0, 255, 0));
+				img_pixel_put(img, (int)draw_x - 1, (int)draw_y + 3, get_color(0, 255, 0));
+				img_pixel_put(img, (int)draw_x + 1, (int)draw_y - 3, get_color(0, 255, 0));
+				img_pixel_put(img, (int)draw_x - 1, (int)draw_y - 3, get_color(0, 255, 0));
+			}
+			if (cube->map->final_grid[y][x] == '1')
+			{
+				step_x = 0;
+				while (step_x < tile_width)
+				{
+					step_y = 0;
+					while (step_y < tile_height)
+					{
+						img_pixel_put(img, offset_x + step_x, offset_y + step_y, get_color(255, 255, 255));
+						step_y++;
+					}
+					step_x++;
+				}
+				offset_x += tile_width;
+			}
+			else
+				offset_x += tile_width;
+			x++;
+		}
+		y++;
+		offset_y += tile_height;
+	}
+	
+}
 
 void render_floor_ceilling(t_img *img, t_texture *textures, int x, int draw_start, int draw_end)
 {
@@ -280,7 +444,8 @@ void render(t_game *cube)
 	// render_floor_ceilling(cube->img, &cube->textures);
 	// update_fps_counter(cube);
 	raycast(cube, cube->raycast);
-	// render_minimap(cube->img, cube);
+	render_minimap(cube->img, cube);
+	// render_player_minimap(cube->img, cube);
 	mlx_put_image_to_window(cube->mlx, cube->windows, cube->img->img_ptr, 0, 0);
 	// draw_debug_info_cardinal(cube);
 }
