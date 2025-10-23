@@ -6,7 +6,7 @@
 /*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 12:31:12 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/22 17:06:09 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/10/23 16:10:59 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,7 +140,6 @@ static void	press_A_D( t_game *cube, float newpos_x,
 }
 int press_key(int keypress, t_game *cube)
 {
-	printf("%d\n",keypress);
 	if (keypress == W)
 		cube->key->w = true;
 	if (keypress == S)
@@ -193,7 +192,9 @@ void press_E_F(t_game *cube)
 	if (cube->key->e == true)
 	{
 		if (cube->map->final_grid[(int)(cube->player->pos_y + step_y)][(int)cube->player->pos_x] == 'C')
+		{
 			cube->map->final_grid[(int)(cube->player->pos_y + step_y)][(int)cube->player->pos_x] = 'O';
+		}
 		else if (cube->map->final_grid[(int)cube->player->pos_y][(int)(cube->player->pos_x + step_x)] == 'C')
 			cube->map->final_grid[(int)cube->player->pos_y][(int)(cube->player->pos_x + step_x)] = 'O';
 	}
