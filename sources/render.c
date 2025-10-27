@@ -6,7 +6,7 @@
 /*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 14:16:45 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/23 19:37:14 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/10/23 23:11:58 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,33 +98,38 @@ void render_textured_floor_ceiling(t_game *cube, int x, float draw_start, float 
 	float t_y;
 	float text_x;
 	float text_y;
+	float correction;
 
 	y = 0;
+
+	correction = cos(cube->raycast->angle - cube->player->angle);
+	if (correction < 0.0001)
+		correction = 0.0001;
 	while(y < draw_start)
 	{
 		p = HEIGHT / 2 - y ;
-		row_distance = ((cube->raycast->d_plan * 0.5) / p) ;
+		row_distance = ((cube->raycast->d_plan * 0.5) / p) / correction ;
 		floor_x = cube->player->pos_x + cube->raycast->dir->x * row_distance;
 		floor_y = cube->player->pos_y + cube->raycast->dir->y * row_distance;
 		t_x = floor_x - floor(floor_x);
 		t_y = floor_y - floor(floor_y);
 		text_x = t_x;
 		text_y = t_y  * 256;
-		img_pixel_put(cube->img, x, y, get_texture_pixel(text_y,&cube->textures.DO_img,text_x));
+		img_pixel_put(cube->img, x, y, get_texture_pixel(text_y,&cube->textures.CE_img,text_x));
 		y++;
 	}
 	y = draw_end + 1;
 	while (y < HEIGHT)
 	{
 		p = y - HEIGHT / 2 ;
-		row_distance = (cube->raycast->d_plan * 0.5) / p ;
+		row_distance = ((cube->raycast->d_plan * 0.5) / p) / correction ;
 		floor_x = cube->player->pos_x + cube->raycast->dir->x * row_distance;
 		floor_y = cube->player->pos_y + cube->raycast->dir->y * row_distance;
 		t_x = floor_x - floor(floor_x);
 		t_y = floor_y - floor(floor_y);
 		text_x = t_x;
 		text_y = t_y  * 256;
-		img_pixel_put(cube->img, x, y, get_texture_pixel(text_y,&cube->textures.DO_img,text_x));
+		img_pixel_put(cube->img, x, y, get_texture_pixel(text_y,&cube->textures.FL_img,text_x));
 		y++;
 	}
 
@@ -195,8 +200,6 @@ static void get_distance_and_wallheight(t_game *cube)
 		cube->raycast->corrected_distance = 0.1;
 	cube->raycast->wall_height = (cube->raycast->base_height * cube->raycast->d_plan) / cube->raycast->corrected_distance;
 }
-
-
 
 void init_raycast_direction(t_game *cube, t_raycast *raycast)
 {

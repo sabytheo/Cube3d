@@ -2,7 +2,9 @@ NO ./assets/Brick_nord.xpm
 SO 					./assets/Brick_sud.xpm
 WE ./assets/Brick_west.xpm
 EA ./assets/Brick_est.xpm
-DO ./assets/Brick.xpm
+DO ./assets/prototype_blue.xpm
+FL ./assets/Brick.xpm
+CE ./assets/prototype_green.xpm
 
 C 255,0,0
 

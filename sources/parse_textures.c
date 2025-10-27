@@ -6,7 +6,7 @@
 /*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 12:42:42 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/22 11:09:10 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/10/23 23:06:29 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,16 @@ int	copy_textures(char *str, t_texture *textures)
 		skip_textures_identifier(&str);
 		textures->DO = ft_strdup(str);
 	}
+	else if (ft_strncmp(str, "FL ", 3) == 0 && !textures->FL)
+	{
+		skip_textures_identifier(&str);
+		textures->FL = ft_strdup(str);
+	}
+	else if (ft_strncmp(str, "CE ", 3) == 0 && !textures->CE)
+	{
+		skip_textures_identifier(&str);
+		textures->CE = ft_strdup(str);
+	}
 	else
 		return (-1);
 	return (0);
@@ -58,9 +68,9 @@ static int	get_textures(char *str, t_texture *textures, int i)
 		ft_printf(E_ALREADY_FOUND);
 		return (-1);
 	}
-	if (i == 4)
+	if (i == 6)
 	{
-		if (!textures->NO || !textures->SO || !textures->WE || !textures->EA || !textures->DO)
+		if (!textures->NO || !textures->SO || !textures->WE || !textures->EA || !textures->DO || !textures->FL || !textures->CE)
 		{
 			printf("allo\n");
 			return (-1);
@@ -78,7 +88,7 @@ int	init_textures(int *i, char **grid, t_game *cube)
 	{
 		if (ft_strncmp("NO ", grid[*i], 3) == 0 || ft_strncmp("SO ", grid[*i],
 				3) == 0 || ft_strncmp("EA ", grid[*i], 3) == 0
-			|| ft_strncmp("WE ", grid[*i], 3) == 0 || ft_strncmp("DO ", grid[*i], 3) == 0)
+			|| ft_strncmp("WE ", grid[*i], 3) == 0 || ft_strncmp("DO ", grid[*i], 3) == 0 || ft_strncmp("FL ", grid[*i], 3) == 0 || ft_strncmp("CE ", grid[*i], 3) == 0)
 		{
 			if (get_textures(grid[*i], &cube->textures, count) < 0)
 				return (-1);

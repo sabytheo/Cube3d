@@ -6,7 +6,7 @@
 /*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/22 16:33:35 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/10/23 23:17:00 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,6 +138,8 @@ enum direction
 	WE,
 	EA,
 	DO,
+	FL,
+	CE,
 	TEXTURES_FOUND
 };
 
@@ -167,11 +169,15 @@ typedef struct s_texture
 	char *WE;
 	char *EA;
 	char *DO;
+	char *FL;
+	char *CE;
 	t_img NO_img;
 	t_img SO_img;
 	t_img WE_img;
 	t_img EA_img;
 	t_img DO_img;
+	t_img FL_img;
+	t_img CE_img;
 	int ceiling[3];
 	int floor[3];
 	double	y;
