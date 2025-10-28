@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 14:16:45 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/24 16:00:02 by egache           ###   ########.fr       */
+/*   Updated: 2025/10/28 14:53:37 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,27 +105,84 @@ void	render_minimap(t_img *img, t_game *cube)
 			{
 				float draw_x = tile_width * (int)cube->player->pos_x + (tile_width * (cube->player->pos_x - floor(cube->player->pos_x)));
 				float draw_y = tile_width * (int)cube->player->pos_y + (tile_width * (cube->player->pos_y - floor(cube->player->pos_y)));
-				//triangle
-					//base(joueur)
+				// //TRIANGLE
+				// //position exacte joueur
+				// img_pixel_put(img, (int)draw_x, (int)draw_y, get_color(0, 0, 255));
+				// //base right
+				// img_pixel_put(img, (int)draw_x + 5 * cos(cube->player->angle + M_PI + M_PI_2), (int)draw_y - 5 * sin(cube->player->angle + M_PI + M_PI_2), get_color(255, 255, 0));
+				// img_pixel_put(img, (int)draw_x + 4 * cos(cube->player->angle + M_PI + M_PI_2), (int)draw_y - 4 * sin(cube->player->angle + M_PI + M_PI_2), get_color(255, 255, 0));
+				// img_pixel_put(img, (int)draw_x + 3 * cos(cube->player->angle + M_PI + M_PI_2), (int)draw_y - 3 * sin(cube->player->angle + M_PI + M_PI_2), get_color(255, 255, 0));
+				// img_pixel_put(img, (int)draw_x + 2 * cos(cube->player->angle + M_PI + M_PI_2), (int)draw_y - 2 * sin(cube->player->angle + M_PI + M_PI_2), get_color(255, 255, 0));
+				// img_pixel_put(img, (int)draw_x + 1 * cos(cube->player->angle + M_PI + M_PI_2), (int)draw_y - 1 * sin(cube->player->angle + M_PI + M_PI_2), get_color(255, 255, 0));
+				// //base left
+				// img_pixel_put(img, (int)draw_x - 5 * cos(cube->player->angle + M_PI + M_PI_2), (int)draw_y + 5 * sin(cube->player->angle + M_PI + M_PI_2), get_color(0, 255, 255));
+				// img_pixel_put(img, (int)draw_x - 4 * cos(cube->player->angle + M_PI + M_PI_2), (int)draw_y + 4 * sin(cube->player->angle + M_PI + M_PI_2), get_color(0, 255, 255));
+				// img_pixel_put(img, (int)draw_x - 3 * cos(cube->player->angle + M_PI + M_PI_2), (int)draw_y + 3 * sin(cube->player->angle + M_PI + M_PI_2), get_color(0, 255, 255));
+				// img_pixel_put(img, (int)draw_x - 2 * cos(cube->player->angle + M_PI + M_PI_2), (int)draw_y + 2 * sin(cube->player->angle + M_PI + M_PI_2), get_color(0, 255, 255));
+				// img_pixel_put(img, (int)draw_x - 1 * cos(cube->player->angle + M_PI + M_PI_2), (int)draw_y + 1 * sin(cube->player->angle + M_PI + M_PI_2), get_color(0, 255, 255));
+				// //pointe arriere
+				// img_pixel_put(img, (int)draw_x + 1 * cos(cube->player->angle + M_PI), (int)draw_y - 1 * sin(cube->player->angle + M_PI), get_color(255, 0, 0));
+				// img_pixel_put(img, (int)draw_x + 2 * cos(cube->player->angle + M_PI), (int)draw_y - 2 * sin(cube->player->angle + M_PI), get_color(255, 0, 0));
+				// img_pixel_put(img, (int)draw_x + 3 * cos(cube->player->angle + M_PI), (int)draw_y - 3 * sin(cube->player->angle + M_PI), get_color(255, 0, 0));
+				// img_pixel_put(img, (int)draw_x + 4 * cos(cube->player->angle + M_PI), (int)draw_y - 4 * sin(cube->player->angle + M_PI), get_color(255, 0, 0));
+				// img_pixel_put(img, (int)draw_x + 5 * cos(cube->player->angle + M_PI), (int)draw_y - 5 * sin(cube->player->angle + M_PI), get_color(255, 0, 0));
+				// //pointe avant
+				// img_pixel_put(img, (int)draw_x - 1 * cos(cube->player->angle + M_PI), (int)draw_y + 1 * sin(cube->player->angle + M_PI), get_color(0, 255, 0));
+				// img_pixel_put(img, (int)draw_x - 2 * cos(cube->player->angle + M_PI), (int)draw_y + 2 * sin(cube->player->angle + M_PI), get_color(0, 255, 0));
+				// img_pixel_put(img, (int)draw_x - 3 * cos(cube->player->angle + M_PI), (int)draw_y + 3 * sin(cube->player->angle + M_PI), get_color(0, 255, 0));
+				// img_pixel_put(img, (int)draw_x - 4 * cos(cube->player->angle + M_PI), (int)draw_y + 4 * sin(cube->player->angle + M_PI), get_color(0, 255, 0));
+				// img_pixel_put(img, (int)draw_x - 5 * cos(cube->player->angle + M_PI), (int)draw_y + 5 * sin(cube->player->angle + M_PI), get_color(0, 255, 0));
 				img_pixel_put(img, (int)draw_x, (int)draw_y, get_color(0, 0, 255));
-				img_pixel_put(img, (int)draw_x + 5 * cos(cube->player->angle + M_PI + M_PI_2), (int)draw_y - 5 * sin(cube->player->angle + M_PI + M_PI_2), get_color(255, 255, 0));
-				img_pixel_put(img, (int)draw_x + 5 * cos(cube->player->angle + M_PI + M_PI_2), (int)draw_y + 5 * sin(cube->player->angle + M_PI + M_PI_2), get_color(255, 255, 0));
-				img_pixel_put(img, (int)draw_x - 10 * cos(cube->player->angle + M_PI + M_PI_2), (int)draw_y + 10 * sin(cube->player->angle + M_PI + M_PI_2), get_color(255, 255, 0));
 				
-					//pointe
-				img_pixel_put(img, (int)draw_x + 1 * cos(cube->player->angle + M_PI), (int)draw_y - 1 * sin(cube->player->angle + M_PI), get_color(0, 255, 0));
-				img_pixel_put(img, (int)draw_x + 2 * cos(cube->player->angle + M_PI), (int)draw_y - 2 * sin(cube->player->angle + M_PI), get_color(0, 255, 0));
-				img_pixel_put(img, (int)draw_x + 3 * cos(cube->player->angle + M_PI), (int)draw_y - 3 * sin(cube->player->angle + M_PI), get_color(0, 255, 0));
-				img_pixel_put(img, (int)draw_x + 4 * cos(cube->player->angle + M_PI), (int)draw_y - 4 * sin(cube->player->angle + M_PI), get_color(0, 255, 0));
-				img_pixel_put(img, (int)draw_x + 5 * cos(cube->player->angle + M_PI), (int)draw_y - 5 * sin(cube->player->angle + M_PI), get_color(0, 255, 0));
-				img_pixel_put(img, (int)draw_x + 7 * cos(cube->player->angle + M_PI), (int)draw_y - 6 * sin(cube->player->angle + M_PI), get_color(0, 255, 0));
-				img_pixel_put(img, (int)draw_x + 7 * cos(cube->player->angle + M_PI), (int)draw_y - 7 * sin(cube->player->angle + M_PI), get_color(0, 255, 0));
-				img_pixel_put(img, (int)draw_x + 8 * cos(cube->player->angle + M_PI), (int)draw_y - 8 * sin(cube->player->angle + M_PI), get_color(0, 255, 0));
-				img_pixel_put(img, (int)draw_x + 9 * cos(cube->player->angle + M_PI), (int)draw_y - 9 * sin(cube->player->angle + M_PI), get_color(0, 255, 0));
-				img_pixel_put(img, (int)draw_x + 10 * cos(cube->player->angle + M_PI), (int)draw_y - 10 * sin(cube->player->angle + M_PI), get_color(0, 255, 0));
+				//pointe arriere
+				img_pixel_put(img, (int)draw_x + 1 * cos(cube->player->angle + M_PI), (int)draw_y - 1 * sin(cube->player->angle + M_PI), get_color(255, 0, 0));
+				img_pixel_put(img, (int)draw_x + 2 * cos(cube->player->angle + M_PI), (int)draw_y - 2 * sin(cube->player->angle + M_PI), get_color(255, 0, 0));
+				img_pixel_put(img, (int)draw_x + 3 * cos(cube->player->angle + M_PI), (int)draw_y - 3 * sin(cube->player->angle + M_PI), get_color(255, 0, 0));
+				img_pixel_put(img, (int)draw_x + 4 * cos(cube->player->angle + M_PI), (int)draw_y - 4 * sin(cube->player->angle + M_PI), get_color(255, 0, 0));
+				img_pixel_put(img, (int)draw_x + 5 * cos(cube->player->angle + M_PI), (int)draw_y - 5 * sin(cube->player->angle + M_PI), get_color(255, 0, 0));
 				
+				//base right (depuis le dernier pixel de pointe arriere)
+				img_pixel_put(img, (int)(draw_x + 5 * cos(cube->player->angle + M_PI) + 5 * cos(cube->player->angle + M_PI + M_PI_2)), (int)(draw_y - 5 * sin(cube->player->angle + M_PI) - 5 * sin(cube->player->angle + M_PI + M_PI_2)), get_color(255, 255, 0));
+				img_pixel_put(img, (int)(draw_x + 5 * cos(cube->player->angle + M_PI) + 4 * cos(cube->player->angle + M_PI + M_PI_2)), (int)(draw_y - 5 * sin(cube->player->angle + M_PI) - 4 * sin(cube->player->angle + M_PI + M_PI_2)), get_color(255, 255, 0));
+				img_pixel_put(img, (int)(draw_x + 5 * cos(cube->player->angle + M_PI) + 3 * cos(cube->player->angle + M_PI + M_PI_2)), (int)(draw_y - 5 * sin(cube->player->angle + M_PI) - 3 * sin(cube->player->angle + M_PI + M_PI_2)), get_color(255, 255, 0));
+				img_pixel_put(img, (int)(draw_x + 5 * cos(cube->player->angle + M_PI) + 2 * cos(cube->player->angle + M_PI + M_PI_2)), (int)(draw_y - 5 * sin(cube->player->angle + M_PI) - 2 * sin(cube->player->angle + M_PI + M_PI_2)), get_color(255, 255, 0));
+				img_pixel_put(img, (int)(draw_x + 5 * cos(cube->player->angle + M_PI) + 1 * cos(cube->player->angle + M_PI + M_PI_2)), (int)(draw_y - 5 * sin(cube->player->angle + M_PI) - 1 * sin(cube->player->angle + M_PI + M_PI_2)), get_color(255, 255, 0));
+				
+				//base left (depuis le dernier pixel de pointe arriere)
+				img_pixel_put(img, (int)(draw_x + 5 * cos(cube->player->angle + M_PI) - 5 * cos(cube->player->angle + M_PI + M_PI_2)), (int)(draw_y - 5 * sin(cube->player->angle + M_PI) + 5 * sin(cube->player->angle + M_PI + M_PI_2)), get_color(0, 255, 255));
+				img_pixel_put(img, (int)(draw_x + 5 * cos(cube->player->angle + M_PI) - 4 * cos(cube->player->angle + M_PI + M_PI_2)), (int)(draw_y - 5 * sin(cube->player->angle + M_PI) + 4 * sin(cube->player->angle + M_PI + M_PI_2)), get_color(0, 255, 255));
+				img_pixel_put(img, (int)(draw_x + 5 * cos(cube->player->angle + M_PI) - 3 * cos(cube->player->angle + M_PI + M_PI_2)), (int)(draw_y - 5 * sin(cube->player->angle + M_PI) + 3 * sin(cube->player->angle + M_PI + M_PI_2)), get_color(0, 255, 255));
+				img_pixel_put(img, (int)(draw_x + 5 * cos(cube->player->angle + M_PI) - 2 * cos(cube->player->angle + M_PI + M_PI_2)), (int)(draw_y - 5 * sin(cube->player->angle + M_PI) + 2 * sin(cube->player->angle + M_PI + M_PI_2)), get_color(0, 255, 255));
+				img_pixel_put(img, (int)(draw_x + 5 * cos(cube->player->angle + M_PI) - 1 * cos(cube->player->angle + M_PI + M_PI_2)), (int)(draw_y - 5 * sin(cube->player->angle + M_PI) + 1 * sin(cube->player->angle + M_PI + M_PI_2)), get_color(0, 255, 255));
+				
+				//pointe avant
+				img_pixel_put(img, (int)draw_x - 1 * cos(cube->player->angle + M_PI), (int)draw_y + 1 * sin(cube->player->angle + M_PI), get_color(0, 255, 0));
+				img_pixel_put(img, (int)draw_x - 2 * cos(cube->player->angle + M_PI), (int)draw_y + 2 * sin(cube->player->angle + M_PI), get_color(0, 255, 0));
+				img_pixel_put(img, (int)draw_x - 3 * cos(cube->player->angle + M_PI), (int)draw_y + 3 * sin(cube->player->angle + M_PI), get_color(0, 255, 0));
+				img_pixel_put(img, (int)draw_x - 4 * cos(cube->player->angle + M_PI), (int)draw_y + 4 * sin(cube->player->angle + M_PI), get_color(0, 255, 0));
+				img_pixel_put(img, (int)draw_x - 5 * cos(cube->player->angle + M_PI), (int)draw_y + 5 * sin(cube->player->angle + M_PI), get_color(0, 255, 0));
+			
+				//ligne diagonale vers base left
+				img_pixel_put(img, (int)(draw_x - 5 * cos(cube->player->angle + M_PI) - 1 * cos(cube->player->angle + M_PI + M_PI_2)), (int)(draw_y + 5 * sin(cube->player->angle + M_PI) + 1 * sin(cube->player->angle + M_PI + M_PI_2)), get_color(255, 0, 255));
+				img_pixel_put(img, (int)(draw_x - 5 * cos(cube->player->angle + M_PI) - 2 * cos(cube->player->angle + M_PI + M_PI_2)), (int)(draw_y + 5 * sin(cube->player->angle + M_PI) + 2 * sin(cube->player->angle + M_PI + M_PI_2)), get_color(255, 0, 255));
+				img_pixel_put(img, (int)(draw_x - 5 * cos(cube->player->angle + M_PI) - 3 * cos(cube->player->angle + M_PI + M_PI_2)), (int)(draw_y + 5 * sin(cube->player->angle + M_PI) + 3 * sin(cube->player->angle + M_PI + M_PI_2)), get_color(255, 0, 255));
+				img_pixel_put(img, (int)(draw_x - 5 * cos(cube->player->angle + M_PI) - 4 * cos(cube->player->angle + M_PI + M_PI_2)), (int)(draw_y + 5 * sin(cube->player->angle + M_PI) + 4 * sin(cube->player->angle + M_PI + M_PI_2)), get_color(255, 0, 255));
+				img_pixel_put(img, (int)(draw_x - 5 * cos(cube->player->angle + M_PI) - 5 * cos(cube->player->angle + M_PI + M_PI_2)), (int)(draw_y + 5 * sin(cube->player->angle + M_PI) + 5 * sin(cube->player->angle + M_PI + M_PI_2)), get_color(255, 0, 255));
 
-				//rond
+				img_pixel_put(img, (int)(draw_x - 4 * cos(cube->player->angle + M_PI) - 1 * cos(cube->player->angle + M_PI + M_PI_2)), (int)(draw_y + 4 * sin(cube->player->angle + M_PI) + 1 * sin(cube->player->angle + M_PI + M_PI_2)), get_color(255, 0, 255));
+				img_pixel_put(img, (int)(draw_x - 4 * cos(cube->player->angle + M_PI) - 2 * cos(cube->player->angle + M_PI + M_PI_2)), (int)(draw_y + 4 * sin(cube->player->angle + M_PI) + 2 * sin(cube->player->angle + M_PI + M_PI_2)), get_color(255, 0, 255));
+				img_pixel_put(img, (int)(draw_x - 4 * cos(cube->player->angle + M_PI) - 3 * cos(cube->player->angle + M_PI + M_PI_2)), (int)(draw_y + 4 * sin(cube->player->angle + M_PI) + 3 * sin(cube->player->angle + M_PI + M_PI_2)), get_color(255, 0, 255));
+				img_pixel_put(img, (int)(draw_x - 4 * cos(cube->player->angle + M_PI) - 4 * cos(cube->player->angle + M_PI + M_PI_2)), (int)(draw_y + 4 * sin(cube->player->angle + M_PI) + 4 * sin(cube->player->angle + M_PI + M_PI_2)), get_color(255, 0, 255));
+				img_pixel_put(img, (int)(draw_x - 4 * cos(cube->player->angle + M_PI) - 5 * cos(cube->player->angle + M_PI + M_PI_2)), (int)(draw_y + 4 * sin(cube->player->angle + M_PI) + 5 * sin(cube->player->angle + M_PI + M_PI_2)), get_color(255, 0, 255));
+
+				//ligne diagonale vers base right
+				img_pixel_put(img, (int)(draw_x - 5 * cos(cube->player->angle + M_PI) + 1 * cos(cube->player->angle + M_PI + M_PI_2)), (int)(draw_y + 5 * sin(cube->player->angle + M_PI) - 1 * sin(cube->player->angle + M_PI + M_PI_2)), get_color(255, 165, 0));
+				img_pixel_put(img, (int)(draw_x - 5 * cos(cube->player->angle + M_PI) + 2 * cos(cube->player->angle + M_PI + M_PI_2)), (int)(draw_y + 5 * sin(cube->player->angle + M_PI) - 2 * sin(cube->player->angle + M_PI + M_PI_2)), get_color(255, 165, 0));
+				img_pixel_put(img, (int)(draw_x - 5 * cos(cube->player->angle + M_PI) + 3 * cos(cube->player->angle + M_PI + M_PI_2)), (int)(draw_y + 5 * sin(cube->player->angle + M_PI) - 3 * sin(cube->player->angle + M_PI + M_PI_2)), get_color(255, 165, 0));
+				img_pixel_put(img, (int)(draw_x - 5 * cos(cube->player->angle + M_PI) + 4 * cos(cube->player->angle + M_PI + M_PI_2)), (int)(draw_y + 5 * sin(cube->player->angle + M_PI) - 4 * sin(cube->player->angle + M_PI + M_PI_2)), get_color(255, 165, 0));
+				img_pixel_put(img, (int)(draw_x - 5 * cos(cube->player->angle + M_PI) + 5 * cos(cube->player->angle + M_PI + M_PI_2)), (int)(draw_y + 5 * sin(cube->player->angle + M_PI) - 5 * sin(cube->player->angle + M_PI + M_PI_2)), get_color(255, 165, 0));
+
+				//ROND
 				// img_pixel_put(img, (int)draw_x, (int)draw_y, get_color(0, 0, 255));
 				// img_pixel_put(img, (int)draw_x + 1, (int)draw_y, get_color(0, 255, 0));
 				// img_pixel_put(img, (int)draw_x - 1, (int)draw_y, get_color(0, 255, 0));
@@ -159,8 +216,8 @@ void	render_minimap(t_img *img, t_game *cube)
 				// img_pixel_put(img, (int)draw_x - 2, (int)draw_y + 2, get_color(0, 255, 0));
 				// img_pixel_put(img, (int)draw_x + 2, (int)draw_y - 2, get_color(0, 255, 0));
 				// img_pixel_put(img, (int)draw_x - 2, (int)draw_y - 2, get_color(0, 255, 0));
-				//rond
-				//carre
+
+				//CARRE
 				// img_pixel_put(img, (int)draw_x, (int)draw_y, get_color(0, 0, 255));
 				// img_pixel_put(img, (int)draw_x + 1, (int)draw_y, get_color(0, 255, 0));
 				// img_pixel_put(img, (int)draw_x - 1, (int)draw_y, get_color(0, 255, 0));
