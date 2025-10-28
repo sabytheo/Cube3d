@@ -6,7 +6,7 @@
 /*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 12:49:13 by egache            #+#    #+#             */
-/*   Updated: 2025/10/22 14:43:45 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/10/28 14:11:08 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	vlood_vill(int i, int j, t_game *cube)
 		return (-1);
 	if (is_a_wall(cube->map->final_grid[i][j]))
 		return (0);
-	if (cube->map->final_grid[i][j] == 'V' || cube->map->final_grid[i][j] == 'O')
+	if (cube->map->final_grid[i][j] == 'V' || cube->map->final_grid[i][j] == 'O' || cube->map->final_grid[i][j] == 'L')
 		return (0);
 	if (cube->map->final_grid[i][j] == ' '
 		|| cube->map->final_grid[i][j] == '0')

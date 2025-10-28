@@ -27,7 +27,7 @@ int init(t_game *cube)
 	cube->raycast = (t_raycast *)ft_calloc(1, sizeof(t_raycast));
 	cube->raycast->dir = (t_vector *)ft_calloc(1, sizeof(t_vector));
 	cube->key = (t_key*)ft_calloc(1,sizeof(t_key));
-
+	cube->player->speed = 0.25;
 	cube->fps_counter = init_fps_counter();
 	if (!cube->map || !cube->player || !cube->img || !cube->raycast ||
 		!cube->raycast->dir || !cube->key)
@@ -35,7 +35,6 @@ int init(t_game *cube)
 		ft_printf_fd(2, "Error:\n Failed to allocate memory\n");
 		return (-1);
 	}
-
 	// Initialiser le timer
 	gettimeofday(&cube->last_frame, NULL);
 	cube->frame_limit = 16666; // ~60 FPS (16.666ms par frame)
@@ -45,6 +44,14 @@ int init(t_game *cube)
 
 int	load_textures(t_game *cube)
 {
+	cube->textures.SP_img.img_ptr = mlx_xpm_file_to_image(cube->mlx,
+			cube->textures.SP, &cube->textures.SP_img.width,
+			&cube->textures.SP_img.height);
+	if (!cube->textures.SP_img.img_ptr)
+		return (-1);
+	cube->textures.SP_img.addr = mlx_get_data_addr(cube->textures.SP_img.img_ptr,
+			&cube->textures.SP_img.bits_per_pixel,
+			&cube->textures.SP_img.size_line, &cube->textures.SP_img.endian);
 	cube->textures.CE_img.img_ptr = mlx_xpm_file_to_image(cube->mlx,
 			cube->textures.CE, &cube->textures.CE_img.width,
 			&cube->textures.CE_img.height);

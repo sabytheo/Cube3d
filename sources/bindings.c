@@ -6,7 +6,7 @@
 /*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 12:31:12 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/23 16:10:59 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/10/28 14:19:42 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,11 @@ static void	press_W_S( t_game *cube, float newpos_x,
 	float step_x;
 	float step_y;
 
-	step_x = cos(cube->player->angle) * SPEED;
-	step_y = -sin(cube->player->angle) * SPEED;
+	step_x = cos(cube->player->angle) * cube->player->speed;
+	step_y = -sin(cube->player->angle) * cube->player->speed;
 	if (cube->key->w == true)
 	{
-		// printf(" cos mes couilles %f\n",cos(cube->player->angle) * SPEED);
+		// printf(" cos mes couilles %f\n",cos(cube->player->angle) * cube->player->speed);
 		newpos_x += step_x;
 		newpos_y += step_y;
 		if (is_hitting(newpos_x, newpos_y, cube, '1') == 0 && is_hitting(newpos_x, newpos_y, cube, 'C') == 0)
@@ -64,9 +64,9 @@ static void	press_W_S( t_game *cube, float newpos_x,
 	}
 	if (cube->key->s == true)
 	{
-		// printf(" cos mes couilles %f\n",cos(cube->player->angle) * SPEED);
-		newpos_x -= cos(cube->player->angle) * SPEED;
-		newpos_y -= -sin(cube->player->angle) * SPEED;
+		// printf(" cos mes couilles %f\n",cos(cube->player->angle) * cube->player->speed);
+		newpos_x -= cos(cube->player->angle) * cube->player->speed;
+		newpos_y -= -sin(cube->player->angle) * cube->player->speed;
 		if (is_hitting(newpos_x, newpos_y, cube, '1') == 0 && is_hitting(newpos_x, newpos_y, cube, 'C') == 0)
 		{
 			cube->player->pos_x = newpos_x;
@@ -94,8 +94,8 @@ static void	press_A_D( t_game *cube, float newpos_x,
 
 	if (cube->key->a == true)
 	{
-		step_x = cos(cube->player->angle - (M_PI * 0.5)) * SPEED;
-		step_y = -sin(cube->player->angle - (M_PI * 0.5)) * SPEED;
+		step_x = cos(cube->player->angle - (M_PI * 0.5)) * cube->player->speed;
+		step_y = -sin(cube->player->angle - (M_PI * 0.5)) * cube->player->speed;
 		newpos_x += step_x;
 		newpos_y += step_y;
 		if (is_hitting(newpos_x, newpos_y, cube, '1') == 0 && is_hitting(newpos_x, newpos_y, cube, 'C') == 0)
@@ -116,8 +116,8 @@ static void	press_A_D( t_game *cube, float newpos_x,
 	}
 	if (cube->key->d == true)
 	{
-		step_x = cos(cube->player->angle + (M_PI * 0.5)) * SPEED;
-		step_y = -sin(cube->player->angle + (M_PI * 0.5)) * SPEED;
+		step_x = cos(cube->player->angle + (M_PI * 0.5)) * cube->player->speed;
+		step_y = -sin(cube->player->angle + (M_PI * 0.5)) * cube->player->speed;
 		newpos_x += step_x;
 		newpos_y += step_y;
 		if (is_hitting(newpos_x , newpos_y, cube, '1') == 0 && is_hitting(newpos_x, newpos_y, cube, 'C') == 0)

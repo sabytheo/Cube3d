@@ -6,7 +6,7 @@
 /*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 12:47:21 by egache            #+#    #+#             */
-/*   Updated: 2025/10/22 14:45:12 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/10/28 14:03:06 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ bool	is_a_valid_char(char c, bool state)
 
 	if (state == BEFORE_FF)
 	{
-		if (c == '0' || c == '1' || c == 'D' || c == ' ')
+		if (c == '0' || c == '1' || c == 'D' || c == ' ' || c == 'L')
 			return (true);
 		else if (is_a_player(c) && found_player == false)
 		{

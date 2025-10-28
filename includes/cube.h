@@ -6,7 +6,7 @@
 /*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/23 23:17:00 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/10/28 17:29:22 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@
 #define WIDTH 1920
 #define HEIGHT 1080
 
-# define SPEED 0.25
+// # define SPEED 0.25
 # define XBOX 0.2
 
 # define BEFORE_FF false
@@ -99,6 +99,7 @@ typedef struct s_player
 	double angle;
 	float fov;
 	float tan_fov_2;
+	double speed;
 } t_player;
 
 typedef struct s_map
@@ -140,6 +141,7 @@ enum direction
 	DO,
 	FL,
 	CE,
+	SP,
 	TEXTURES_FOUND
 };
 
@@ -171,6 +173,7 @@ typedef struct s_texture
 	char *DO;
 	char *FL;
 	char *CE;
+	char *SP;
 	t_img NO_img;
 	t_img SO_img;
 	t_img WE_img;
@@ -178,6 +181,7 @@ typedef struct s_texture
 	t_img DO_img;
 	t_img FL_img;
 	t_img CE_img;
+	t_img SP_img;
 	int ceiling[3];
 	int floor[3];
 	double	y;
