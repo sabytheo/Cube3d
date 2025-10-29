@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cube.h                                             :+:      :+:    :+:   */
+/*   cube_bonus.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsaby <tsaby@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/29 17:57:19 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/10/29 17:37:21 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUBE_H
-#define CUBE_H
+#ifndef CUBE_BONUS_H
+#define CUBE_BONUS_H
 
 #include "error.h"
 #include "ft_printf.h"
@@ -114,6 +114,8 @@ typedef struct s_map
 	int start_x;
 	int start_y;
 	char start_dir;
+	bool door_found;
+
 } t_map;
 
 typedef struct s_key
@@ -136,6 +138,10 @@ enum direction
 	SO,
 	WE,
 	EA,
+	DO,
+	FL,
+	CE,
+	SP,
 	TEXTURES_FOUND
 };
 
@@ -164,10 +170,18 @@ typedef struct s_texture
 	char *SO;
 	char *WE;
 	char *EA;
+	char *DO;
+	char *FL;
+	char *CE;
+	char *SP;
 	t_img NO_img;
 	t_img SO_img;
 	t_img WE_img;
 	t_img EA_img;
+	t_img DO_img;
+	t_img FL_img;
+	t_img CE_img;
+	t_img SP_img;
 	int ceiling[3];
 	int floor[3];
 	double	y;
@@ -183,6 +197,14 @@ typedef struct s_fps
 	char fps_string[32];
 }	t_fps;
 
+typedef struct s_hit_info
+{
+    float distance;
+    int side;
+    float texture_x;
+    char hit_type;
+} t_hit_info;
+
 typedef struct s_game
 {
 	void *mlx;
@@ -194,12 +216,14 @@ typedef struct s_game
 	t_player *player;
 	t_raycast *raycast;
 	t_texture textures;
+	t_hit_info *hit_info;
 	t_fps *fps_counter;
 	t_key *key;
 
 } t_game;
 
 void img_pixel_put(t_img *img, int x, int y, int color);
+unsigned int	get_texture_pixel(float text_y, t_img *img, float text_x);
 t_fps	*init_fps_counter(void);
 void	update_fps_counter(t_game *cube);
 void	draw_fps_counter(t_game *cube);
@@ -208,10 +232,22 @@ void	draw_debug_info(t_game *cube);
 void	free_fps_counter(t_fps *fps);
 void	draw_debug_info_cardinal(t_game *cube);
 
-void render(t_game *cube);
-// void render_floor_ceilling(t_img *img, t_texture *textures);
-void render_floor_ceilling(t_img *img, t_texture *textures, int x, int draw_start, int draw_end);
+// Render
+void	render_textured_floor_ceiling(t_game *cube, int x, float draw_start,float draw_end);
+void	render_wall(float wall_height, t_game *cube, int x, t_img *img);
+void	render(t_game *cube);
+
+// Raycast
 void raycast(t_game *cube, t_raycast *raycast);
+
+// Raycast_values
+int	init_hit_char(t_game *cube, t_raycast *raycast, t_hit_info **new_hit);
+void	init_raycast_direction(t_game *cube, t_raycast *raycast);
+void	get_distance_and_wallheight(t_game *cube);
+void	init_height_dplan(t_game *cube);
+void	init_raycast_values(t_game *cube, t_raycast *raycast, int x);
+
+// Bindings
 int define_control(t_game *cube);
 int release_key(int keypress, t_game *cube);
 int press_key(int keypress, t_game *cube);

@@ -6,11 +6,11 @@
 /*   By: tsaby <tsaby@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 12:49:13 by egache            #+#    #+#             */
-/*   Updated: 2025/10/29 18:00:48 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/10/29 17:35:13 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cube.h"
+#include "cube_bonus.h"
 
 void	flood_fill(int i, int j, t_game *cube)
 {
@@ -21,6 +21,8 @@ void	flood_fill(int i, int j, t_game *cube)
 		j++;
 	if (is_a_player(cube->map->grid[i][j]))
 		cube->map->grid[i][j] = '3';
+	else if (cube->map->grid[i][j] == 'D')
+		cube->map->grid[i][j] = 'C';
 	else if (cube->map->grid[i][j] == '0')
 		cube->map->grid[i][j] = 'F';
 	else
@@ -40,7 +42,7 @@ int	vlood_vill(int i, int j, t_game *cube)
 		return (-1);
 	if (is_a_wall(cube->map->final_grid[i][j]))
 		return (0);
-	if (cube->map->final_grid[i][j] == 'V')
+	if (cube->map->final_grid[i][j] == 'V' || cube->map->final_grid[i][j] == 'O' || cube->map->final_grid[i][j] == 'L')
 		return (0);
 	if (cube->map->final_grid[i][j] == ' '
 		|| cube->map->final_grid[i][j] == '0')

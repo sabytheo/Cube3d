@@ -6,12 +6,12 @@
 #    By: tsaby <tsaby@student.42lyon.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: Invalid date        by                   #+#    #+#              #
-#    Updated: 2025/10/19 16:59:16 by tsaby            ###   ########.fr        #
+#    Updated: 2025/10/29 17:41:11 by tsaby            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-.PHONY: all bonus clean fclean re re_bonus run lib
+.PHONY: all bonus clean fclean re re_bonus run lib runb
 
 YELLOW	:= \033[0;33m
 RED	:= \033[31m
@@ -30,32 +30,49 @@ SRCS		:=		main.c \
 					reef.c \
 					render.c \
 					vector_maths.c \
-					 fps_counter.c \
+					fps_counter.c \
 					debug.c
 
-#SRCS_BONUS	:=
+SRCS_BONUS	:=		main.c \
+					parse_map.c \
+					parse_textures.c \
+					parse_colors.c \
+					parse_grid.c \
+					parse_grid_utils.c \
+					parse_grid_flood_fill.c \
+					bindings.c \
+					reef.c \
+					render.c \
+					render_utils.c \
+					raycast.c \
+					raycast_values.c \
+					vector_maths.c \
+					fps_counter.c \
+					debug.c
+
 
 #*------------------------------------------------------------------------------*
 
 SRCS_D		:=	sources/
 
-#SRCS_B		:=	sources/bonus/
+SRCS_B		:=	sources_bonus/
 
 OBJS_D		:=	objs/
 
-#OBJS_B_D	:=	objs_bonus/
+OBJS_B_D	:=	objs_bonus/
 
 #*------------------------------------------------------------------------------*
 
 OBJS		:=	$(SRCS:%.c=$(OBJS_D)%.o)
 
-#OBJS_B		:=	$(SRCS_BONUS:%.c=$(OBJS_B_D)%.o)
+OBJS_B		:=	$(SRCS_BONUS:%.c=$(OBJS_B_D)%.o)
 
 #*------------------------------------------------------------------------------*
 
 HEAD		:=	includes/cube.h \
 
-#HEAD_BONUS	:=	includes/minishell_bonus.h \
+HEAD_BONUS	:=	includes/cube_bonus.h \
+				includes/error_bonus.h
 
 HEAD_D		:=	.
 
@@ -69,7 +86,7 @@ NAME		:=	cube
 
 VFLAGS		=	--leak-check=full --show-leak-kinds=all
 
-#NAME_B		:=	minishell_bonus
+NAME_B		:=	cube_bonus
 
 #*------------------------------------------------------------------------------*
 
@@ -98,26 +115,26 @@ all			:	lib
 lib			:
 				$(MAKE) --no-print-directory -C $(MLX_D)
 
-#bonus		:
-#				@$(MAKE) --no-print-directory $(NAME_B)
+bonus		:	lib
+				@$(MAKE) --no-print-directory $(NAME_B)
 
 #*------------------------------------------------------------------------------*
 
 $(NAME)		:	$(OBJS_D) $(OBJS) $(MLX_A) $(LIBFT_A) $(HEAD)
-				@$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(MLX_A) $(MLX_F) -Lft_ex $(LIBFT_A) -lreadline
+				@$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(MLX_A) $(MLX_F) -Lft_ex $(LIBFT_A)
 				@echo "$(YELLOW)$(NAME) successfully built!$(NC)"
 
-#$(NAME_B)	:	$(OBJS_B_D) $(OBJS_B) $(LIBFT_A) $(HEAD_BONUS)
-#				@$(CC)  -o $(NAME_B) $(OBJS_B)  -Lft_ex $(LIBFT_A)
-#				@echo "$(YELLOW)$(NAME_B) successfully built!$(NC)"
+$(NAME_B)		:$(OBJS_B_D) $(OBJS_B) $(MLX_A) $(LIBFT_A) $(HEAD_BONUS)
+				@$(CC) $(CFLAGS) -o $(NAME_B) $(OBJS_B) $(MLX_A) $(MLX_F) -Lft_ex $(LIBFT_A)
+				@echo "$(YELLOW)$(NAME_B) successfully built!$(NC)"
 
 $(OBJS)		:	$(OBJS_D)%.o: $(SRCS_D)%.c $(HEAD) $(MLX_H)
 				@echo "$(YELLOW)Compiling $<, depends on $(HEAD)...$(NC)"
 				@$(CC) $(CFLAGS) -Iincludes -I$(LIBFT)/includes -c $< -o $@
 
-#$(OBJS_B)	:	$(OBJS_B_D)%.o: $(SRCS_B)%.c $(HEAD_BONUS)
-#				@echo "$(YELLOW)Compiling $<, depends on $(HEAD_BONUS)...$(NC)"
-#				@$(CC) $(CFLAGS) -Iincludes -I$(LIBFT)/includes -c $< -o $@
+$(OBJS_B)	:	$(OBJS_B_D)%.o: $(SRCS_B)%.c $(HEAD_BONUS) $(MLX_H)
+				@echo "$(YELLOW)Compiling $<, depends on $(HEAD_BONUS)...$(NC)"
+				@$(CC) $(CFLAGS) -Iincludes -I$(LIBFT)/includes -c $< -o $@
 
 $(LIBFT_A):
 				@$(MAKE) -s --no-print-directory -C $(LIBFT)
@@ -125,8 +142,8 @@ $(LIBFT_A):
 $(OBJS_D)	:
 				@mkdir -p $(dir $(OBJS))
 
-#$(OBJS_B_D)	:
-#				@mkdir -p $(OBJS_B_D)
+$(OBJS_B_D)	:
+				@mkdir -p $(OBJS_B_D)
 
 #*------------------------------------------------------------------------------*
 
@@ -148,9 +165,15 @@ re			:	fclean all
 valgrind	:
 				make && valgrind $(VFLAGS) ./$(NAME) maps/map.cub
 
+valgrindb	:
+				make bonus && valgrind $(VFLAGS) ./$(NAME_B) maps/map_bonus.cub
+
 run:
 				make && ./$(NAME) maps/map.cub
 
-#re_bonus	:	fclean bonus
+runb:
+				make bonus && ./$(NAME_B) maps/map_bonus.cub
+
+re_bonus	:	fclean bonus
 
 

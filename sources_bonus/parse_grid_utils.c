@@ -6,11 +6,11 @@
 /*   By: tsaby <tsaby@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 12:47:21 by egache            #+#    #+#             */
-/*   Updated: 2025/10/29 18:01:39 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/10/29 17:35:16 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cube.h"
+#include "cube_bonus.h"
 
 bool	is_only_whitespace(int *i, char **grid)
 {
@@ -28,7 +28,7 @@ bool	is_only_whitespace(int *i, char **grid)
 
 bool	is_a_wall(char c)
 {
-	if (c == '1')
+	if (c == '1' || c == 'C')
 		return (true);
 	return (false);
 }
@@ -46,7 +46,7 @@ bool	is_a_valid_char(char c, bool state)
 
 	if (state == BEFORE_FF)
 	{
-		if (c == '0' || c == '1' || c == ' ' )
+		if (c == '0' || c == '1' || c == 'D' || c == ' ' || c == 'L')
 			return (true);
 		else if (is_a_player(c) && found_player == false)
 		{
