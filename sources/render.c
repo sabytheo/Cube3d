@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 14:16:45 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/29 18:59:13 by egache           ###   ########.fr       */
+/*   Updated: 2025/10/30 16:06:53 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ void	render_minimap(t_img *img, t_game *cube)
 	offset_y = 0;
 	step_x = 0;
 	step_y = 0;
-	mm_width = WIDTH * 0.8;
+	mm_width = WIDTH * 0.2;
 	tile_width = mm_width / cube->map->max_width;
 	tile_height = tile_width;
 
@@ -108,7 +108,7 @@ void	render_minimap(t_img *img, t_game *cube)
 				img_pixel_put(img, ceil(draw_x), ceil(draw_y), get_color(0, 0, 255));
 			
 				int offset_pos = 1;
-				while (offset_pos <= 13)
+				while (offset_pos <= 5)
 				{					
 					int offset_sin_cos = 1;
 					while (offset_sin_cos <= offset_pos)
@@ -285,8 +285,8 @@ void	render_minimap(t_img *img, t_game *cube)
 			}
 			// printf("(unsigned int)(%d - %d) = %d\n",x, (int)cube->player->pos_x, (unsigned int)(x - (int)cube->player->pos_x));
 			// printf("(unsigned int)(%d - %d) = %d\n", y, (int)cube->player->pos_y, (unsigned int)(y - (int)cube->player->pos_y));
-			// if (cube->map->final_grid[y][x] == '1' && ((unsigned int)(x - (int)cube->player->pos_x) < 5 && (unsigned int)(y - (int)cube->player->pos_y) < 5))
-			if (cube->map->final_grid[y][x] == '1')
+			if (cube->map->final_grid[y][x] == '1' && (abs((x - (int)cube->player->pos_x)) < 3  && abs((y - (int)cube->player->pos_y)) < 3))
+			// if (cube->map->final_grid[y][x] == '1')
 			{
 				step_x = 0;
 				while (step_x < tile_width)
