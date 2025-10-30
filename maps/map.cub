@@ -1,7 +1,7 @@
 NO ./assets/Brick_nord.xpm
-SO ./assets/Brick_sud.xpm
-WE ./assets/Brick_west.xpm
-EA ./assets/Brick_est.xpm
+SO ./assets/Brick_sud.xpm		
+WE ./assets/Brick_west.xpm		
+EA ./assets/Brick_est.xpm       
 
 C 255,0,0
 F 104,104,104

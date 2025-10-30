@@ -68,7 +68,6 @@ int	load_textures(t_game *cube)
 	cube->textures.EA_img.addr = mlx_get_data_addr(cube->textures.EA_img.img_ptr,
 			&cube->textures.EA_img.bits_per_pixel,
 			&cube->textures.EA_img.size_line, &cube->textures.EA_img.endian);
-
 	cube->textures.WE_img.img_ptr = mlx_xpm_file_to_image(cube->mlx,
 			cube->textures.WE, &cube->textures.WE_img.width,
 			&cube->textures.WE_img.height);
@@ -89,34 +88,24 @@ int main(int argc, char **argv)
 		write(2, "Number of arguments invalid\n", 28);
 		exit(0);
 	}
-
 	if (init(&cube))
 		exit(1);
-
 	if (parse_map(&cube, argv))
 		free_exit(&cube);
-
 	cube.mlx = mlx_init();
 	if (!cube.mlx)
 		return (0);
-
 	if (load_textures(&cube) < 0)
 		free_exit(&cube);
-
 	cube.windows = mlx_new_window(cube.mlx, WIDTH, HEIGHT, "CUB3D");
 	cube.img->img_ptr = mlx_new_image(cube.mlx, WIDTH, HEIGHT);
 	cube.img->addr = mlx_get_data_addr(cube.img->img_ptr,
 		&cube.img->bits_per_pixel, &cube.img->size_line, &cube.img->endian);
-
-	// Premier rendu
 	render(&cube);
-
-	// Hooks
 	mlx_hook(cube.windows, 2, 1L << 0, press_key, &cube);
 	mlx_hook(cube.windows, 3, 1L << 1, release_key, &cube);
 	mlx_loop_hook(cube.mlx, define_control, &cube);
 	mlx_hook(cube.windows, ON_DESTROY, 0, free_exit, &cube);
-
 	mlx_loop(cube.mlx);
 	return (0);
 }

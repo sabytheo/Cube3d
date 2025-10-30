@@ -6,7 +6,7 @@
 /*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 16:05:21 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/16 10:51:31 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/10/30 08:48:17 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*ft_strdup(char *src)
 		dest[i] = '\0';
 		return (dest);
 	}
-	while (src[i] && src[i] != '\n')
+	while (src[i] && src[i] != '\n' && src[i] != ' ' && src[i] != '\t')
 	{
 		dest[i] = src[i];
 		i++;
