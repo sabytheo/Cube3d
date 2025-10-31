@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cube.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42lyon.fr>            +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/29 17:57:19 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/10/31 13:03:09 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -148,14 +148,13 @@ enum
 
 typedef struct s_img
 {
-	void *img_ptr;
+	void *img;
 	char *addr;
-	int bits_per_pixel;
-	int size_line;
-	int endian;
-	int width;
-	int height;
-
+	int bpp;
+	int sl;
+	int en;
+	int wh;
+	int ht;
 } t_img;
 
 typedef struct s_texture

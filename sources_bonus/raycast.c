@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycast.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42lyon.fr>            +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 16:23:49 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/29 17:35:32 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/10/31 13:15:04 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,7 @@ static void render_from_last_wall(t_game* cube,t_raycast *raycast,int x)
 		get_distance_and_wallheight(cube);
 		if (texture)
 		{
-			cube->textures.y = texture->height / cube->raycast->wall_height;
+			cube->textures.y = texture->ht / cube->raycast->wall_height;
 			render_wall(raycast->wall_height, cube, x, texture);
 		}
 		i--;

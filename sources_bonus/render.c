@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42lyon.fr>            +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 14:16:45 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/29 17:35:42 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/10/31 13:14:04 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void	render_wall(float wall_height, t_game *cube, int x, t_img *img)
 	float			text_y;
 	unsigned int	color;
 
-	cube->textures.y = (float)img->height / cube->raycast->wall_height;
+	cube->textures.y = (float)img->ht / cube->raycast->wall_height;
 	if (cube->textures.y <= 0)
 		cube->textures.y = 0.01;
 	text_y = 0;
@@ -106,6 +106,6 @@ void	render(t_game *cube)
 {
 	update_fps_counter(cube);
 	raycast(cube, cube->raycast);
-	mlx_put_image_to_window(cube->mlx, cube->windows, cube->img->img_ptr, 0, 0);
+	mlx_put_image_to_window(cube->mlx, cube->windows, cube->img->img, 0, 0);
 	draw_debug_info_cardinal(cube);
 }
