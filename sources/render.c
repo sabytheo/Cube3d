@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 14:16:45 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/31 15:50:26 by egache           ###   ########.fr       */
+/*   Updated: 2025/10/31 15:54:35 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,44 +34,6 @@ void img_pixel_put(t_img *img, int x, int y, int color)
 	}
 }
 
-// void render_floor_ceilling(t_img *img, t_texture *textures)
-// {
-// 	int i;
-// 	int j;
-
-// 	i = 0;
-// 	int c_color = get_color(textures->ceiling[0], textures->ceiling[1], textures->ceiling[2]);
-// 	int f_color = get_color(textures->floor[0], textures->floor[1], textures->floor[2]);
-// 	while (i < WIDTH)
-// 	{
-// 		j = 0;
-// 		while (j < HEIGHT / 2)
-// 		{
-// 			img_pixel_put(img, i, j, c_color);
-// 			j++;
-// 		}
-// 		j = HEIGHT / 2;
-// 		while (j < HEIGHT)
-// 		{
-// 			img_pixel_put(img, i, j, f_color);
-// 			j++;
-// 		}
-// 		i++;
-// 	}
-// 	return;
-// }
-
-// void	render_player_minimap(t_img *img, t_game *cube)
-// {
-// 	printf("player->pos_x : %f\n", cube->player->pos_x);
-// 	printf("player->pos_y : %f\n", cube->player->pos_y);
-// 		img_pixel_put(img, cube->player->pos_x, cube->player->pos_y, get_color(0, 0, 0));
-// 		img_pixel_put(img, cube->player->pos_x, cube->player->pos_y * 0.2 + 1, get_color(0, 0, 0));
-// 		img_pixel_put(img, cube->player->pos_x * 0.2, cube->player->pos_y * 0.2 - 1, get_color(0, 0, 0));
-// 		img_pixel_put(img, cube->player->pos_x * 0.2 + 1, cube->player->pos_y * 0.2, get_color(0, 0, 0));
-// 		img_pixel_put(img, cube->player->pos_x * 0.2 - 1, cube->player->pos_y * 0.2, get_color(0, 0, 0));
-// }
-
 void	render_mapmap(t_img *minimap, t_game *cube)
 {
 	
@@ -79,7 +41,6 @@ void	render_mapmap(t_img *minimap, t_game *cube)
 	int height_center = (WIDTH * 0.2) * 0.5;
 	int vision_range = 5;
 	int mm_width = (WIDTH * 0.2);
-	// int mm_height = WIDTH * 0.2;
 	int tile_width = mm_width / (vision_range * 2);
 	int tile_height = tile_width;
 	float player_offset_x = (cube->player->pos_x - floor(cube->player->pos_x)) * tile_width;
@@ -113,7 +74,6 @@ void	render_mapmap(t_img *minimap, t_game *cube)
 	{
 		x = start_x;
 		offset_x = 0;
-		// printf("width[y] : %d\n", cube->map->width[y]);
 		while (x < start_x + (vision_range * 2))
 		{
 			if (y >= 0 && y < cube->map->grid_height && x >= 0 && x < cube->map->max_width 
@@ -265,9 +225,7 @@ void render_wall(float wall_height, t_game *cube, int x, t_img *img)
 	cube->textures.y = (float)256 / cube->raycast->wall_height;
 	if (cube->textures.y <= 0)
 		cube->textures.y = 0.01;
-	// printf("cube->textures.y : %.2f\n", cube->textures.y);
 	text_y = 0;
-	// printf(" x = %d wall height = %f\n", x, wall_height);
 	start_y = HEIGHT / 2;
 	draw_start = (start_y - (wall_height * 0.5));
 	if (draw_start < 0)
@@ -391,12 +349,6 @@ int ray_displacement(t_game *cube, t_raycast *raycast)
 	return (0);
 }
 
-/*
-
-trouver le ratio (si on avance )
-taille en rapport avec la distance
-
-*/
 void raycast(t_game *cube, t_raycast *raycast)
 {
 	int x;
@@ -405,7 +357,6 @@ void raycast(t_game *cube, t_raycast *raycast)
 	init_height_dplan(cube);
 	side = 0;
 	x = 0;
-	//do inversion
 	while (x <= WIDTH)
 	{
 		init_raycast_values(cube, raycast, x);
