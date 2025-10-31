@@ -1,9 +1,6 @@
 NO ./assets/Brick_nord.xpm
-SO 					./assets/Brick_sud.xpm
+SO ./assets/Brick_sud.xpm
 WE ./assets/Brick_west.xpm
-
-EA ./assets/Brick_est.xpm
-
 EA ./assets/Brick_est.xpm
 
 C 55,55,55

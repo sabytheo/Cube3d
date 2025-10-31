@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   parse_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 19:35:31 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/30 08:46:45 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/10/29 17:35:22 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cube.h"
+#include "cube_bonus.h"
 
 static int	copy_line(t_game *cube, char *line)
 {
@@ -119,7 +119,13 @@ int	parse_map(t_game *cube, char **argv)
 	if (init_colors(&i, cube->map->grid, cube) < 0)
 		return (-1);
 	if (parse_grid(&i, cube->map->grid, cube) < 0)
+	{
+		// print_texture(cube->textures);
+		// print_map(cube->map->grid);
 		return (-1);
+	}
+	// print_texture(cube->textures);
+	// print_width(cube);
 	print_map(cube->map->final_grid);
 	return (0);
 }

@@ -30,16 +30,15 @@ BONUS
 
 **CONTENU**
 -----------
-## Portes - T
-## Collisions 
+## Portes - T - _done_
+## Collisions
 	- Supprimer du mandatory et ajouter dans bonus
 	- Attention au segfault hors de la map
-## Textures - T
-## Skybox - T
+## Textures - T _done_(besoin de faire les vraies)
 ## Animations
 ## Minimap - E
 ## Sprint - E
 ## Collectibles bonus/malus
-## Ennemis 
+## Ennemis
 
 

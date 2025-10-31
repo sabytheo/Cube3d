@@ -6,11 +6,11 @@
 /*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 15:37:43 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/31 15:00:51 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/10/31 15:00:29 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cube.h"
+#include "cube_bonus.h"
 
 void	free_tab(char **tab)
 {
@@ -56,6 +56,14 @@ static void destroy_image(t_game *cube)
 		mlx_destroy_image(cube->mlx, cube->textures.SO_img.img);
 	if (cube->textures.WE_img.img)
 		mlx_destroy_image(cube->mlx, cube->textures.WE_img.img);
+	if (cube->textures.DO_img.img)
+		mlx_destroy_image(cube->mlx, cube->textures.DO_img.img);
+	if (cube->textures.FL_img.img)
+		mlx_destroy_image(cube->mlx, cube->textures.FL_img.img);
+	if (cube->textures.CE_img.img)
+		mlx_destroy_image(cube->mlx, cube->textures.CE_img.img);
+	if (cube->textures.SP_img.img)
+		mlx_destroy_image(cube->mlx, cube->textures.SP_img.img);
 	return;
 }
 static void clean_textures(t_game *cube)
@@ -68,8 +76,17 @@ static void clean_textures(t_game *cube)
 		free(cube->textures.WE);
 	if (cube->textures.EA)
 		free(cube->textures.EA);
+	if (cube->textures.DO)
+		free(cube->textures.DO);
+	if (cube->textures.FL)
+		free(cube->textures.FL);
+	if (cube->textures.SP)
+		free(cube->textures.SP);
+	if (cube->textures.CE)
+		free(cube->textures.CE);
 	return;
 }
+
 static void clean_struct(t_game *cube)
 {
 	if (cube->map)
