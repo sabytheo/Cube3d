@@ -100,7 +100,7 @@ int	main(int argc, char **argv)
 	cube.img->img = mlx_new_image(cube.mlx, WIDTH, HEIGHT);
 	cube.img->addr = mlx_get_data_addr(cube.img->img,
 			&cube.img->bpp, &cube.img->sl, &cube.img->en);
-	cube.minimap->img = mlx_new_image(cube.mlx, WIDTH, HEIGHT);
+	cube.minimap->img = mlx_new_image(cube.mlx, WIDTH * 0.2, WIDTH * 0.2);
 	cube.minimap->addr = mlx_get_data_addr(cube.minimap->img,
 			&cube.minimap->bpp, &cube.minimap->sl, &cube.minimap->en);
 	render(&cube);

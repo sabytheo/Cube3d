@@ -6,7 +6,7 @@
 #    By: egache <egache@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: Invalid date        by                   #+#    #+#              #
-#    Updated: 2025/10/31 15:56:50 by egache           ###   ########.fr        #
+#    Updated: 2025/10/31 17:04:06 by egache           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -169,7 +169,7 @@ valgrindb	:
 				make bonus && valgrind $(VFLAGS) ./$(NAME_B) maps/map_bonus.cub
 
 run:
-				make && ./$(NAME) maps/dsadas.cub
+				make && ./$(NAME) maps/map.cub
 
 runb:
 				make bonus && ./$(NAME_B) maps/map_bonus.cub

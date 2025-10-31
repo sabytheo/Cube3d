@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 14:16:45 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/31 16:03:14 by egache           ###   ########.fr       */
+/*   Updated: 2025/10/31 17:04:23 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,13 @@ void	img_pixel_put(t_img *img, int x, int y, int color)
 	}
 }
 
+
 void	render_mapmap(t_img *minimap, t_game *cube)
 {
 	
 	int width_center = (WIDTH * 0.2) * 0.5;
 	int height_center = (WIDTH * 0.2) * 0.5;
-	int vision_range = 5;
+	int vision_range = 3;
 	int mm_width = (WIDTH * 0.2);
 	int tile_width = mm_width / (vision_range * 2);
 	int tile_height = tile_width;
@@ -54,8 +55,7 @@ void	render_mapmap(t_img *minimap, t_game *cube)
 	int start_y = (int)cube->player->pos_y - vision_range;
 	int start_x = (int)cube->player->pos_x - vision_range;
 
-	
-	int i;
+		int i;
 	int j;
 
 	j = 0;
@@ -69,6 +69,7 @@ void	render_mapmap(t_img *minimap, t_game *cube)
 		}
 		j++;
 	}
+
 	y = start_y;
 	while (y < start_y + (vision_range * 2))
 	{
@@ -79,15 +80,15 @@ void	render_mapmap(t_img *minimap, t_game *cube)
 			if (y >= 0 && y < cube->map->grid_height && x >= 0 && x < cube->map->max_width 
 				&& cube->map->final_grid[y][x] == '1')
 			{
-				step_x = 0;
+				step_x = tile_width * 0.15;
 				while (step_x < tile_width)
 				{
-					step_y = 0;
+					step_y = tile_width * 0.15;
 					while (step_y < tile_height)
 					{
-						int final_x = offset_x + step_x - (int)player_offset_x;
-						int final_y = offset_y + step_y - (int)player_offset_y;
-						if (final_x >= 0 && final_x < mm_width && final_y >= 0 && final_y < mm_width)
+						float final_x = offset_x + step_x - player_offset_x;
+						float final_y = offset_y + step_y - player_offset_y;
+						if (final_x > tile_width * 0.1 && final_x <= mm_width + 1 && final_y > tile_width * 0.1 && final_y <= mm_width + 1)
 							img_pixel_put(minimap, final_x, final_y, get_color(255, 255, 255));
 						step_y++;
 					}
@@ -113,6 +114,18 @@ void	render_mapmap(t_img *minimap, t_game *cube)
 			offset_sin_cos++;
 		}
 		offset_pos++;
+	}
+	j = 0;
+	while (j < mm_width)
+	{
+		i = 0;
+		while (i < mm_width)
+		{
+			if (i > mm_width - (tile_width * 0.2) || i < (tile_width * 0.2) || j < (tile_width * 0.2) || j > mm_width - (tile_width * 0.2))
+				img_pixel_put(minimap, i, j, get_color(255, 0, 255));
+			i++;
+		}
+		j++;
 	}
 }
 
