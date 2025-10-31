@@ -24,12 +24,13 @@ int init(t_game *cube)
 	cube->map = (t_map *)ft_calloc(1, sizeof(t_map));
 	cube->player = (t_player *)ft_calloc(1, sizeof(t_player));
 	cube->img = (t_img *)ft_calloc(1, sizeof(t_img));
+	cube->minimap = (t_img *)ft_calloc(1, sizeof(t_img));
 	cube->raycast = (t_raycast *)ft_calloc(1, sizeof(t_raycast));
 	cube->raycast->dir = (t_vector *)ft_calloc(1, sizeof(t_vector));
 	cube->key = (t_key*)ft_calloc(1,sizeof(t_key));
 
 	cube->fps_counter = init_fps_counter();
-	if (!cube->map || !cube->player || !cube->img || !cube->raycast ||
+	if (!cube->map || !cube->player || !cube->img || !cube->minimap || !cube->raycast ||
 		!cube->raycast->dir || !cube->key)
 	{
 		ft_printf_fd(2, "Error:\n Failed to allocate memory\n");
@@ -111,6 +112,9 @@ int main(int argc, char **argv)
 	cube.img->img_ptr = mlx_new_image(cube.mlx, WIDTH, HEIGHT);
 	cube.img->addr = mlx_get_data_addr(cube.img->img_ptr,
 		&cube.img->bits_per_pixel, &cube.img->size_line, &cube.img->endian);
+	cube.minimap->img_ptr = mlx_new_image(cube.mlx, WIDTH * 0.2, WIDTH * 0.2);
+	cube.minimap->addr = mlx_get_data_addr(cube.minimap->img_ptr,
+		&cube.minimap->bits_per_pixel, &cube.minimap->size_line, &cube.minimap->endian);
 
 	// Premier rendu
 	render(&cube);

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tsaby <tsaby@student.42lyon.fr>            +#+  +:+       +#+         #
+#    By: egache <egache@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: Invalid date        by                   #+#    #+#              #
-#    Updated: 2025/10/19 16:59:16 by tsaby            ###   ########.fr        #
+#    Updated: 2025/10/30 18:50:29 by egache           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -149,7 +149,7 @@ valgrind	:
 				make && valgrind $(VFLAGS) ./$(NAME) maps/map.cub
 
 run:
-				make && ./$(NAME) maps/map.cub
+				make && ./$(NAME) maps/dsadas.cub
 
 #re_bonus	:	fclean bonus
 
