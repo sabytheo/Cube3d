@@ -2,10 +2,10 @@ NO ./assets/Brick_nord.xpm
 SO 					./assets/Brick_sud.xpm
 WE ./assets/Brick_west.xpm
 EA ./assets/Brick_est.xpm
-DO ./assets/white_open.xpm
-FL ./assets/Brick.xpm
-CE ./assets/prototype_green.xpm
-SP ./assets/doorcancel.xpm
+DO ./assets/Door_open2.xpm
+FL ./assets/floor2.xpm
+CE ./assets/ceiling.xpm
+SP ./assets/Door_closed2.xpm
 
 C 255,0,0
 
