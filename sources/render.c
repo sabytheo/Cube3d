@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42lyon.fr>            +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 14:16:45 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/29 18:05:23 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/10/31 15:19:56 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,14 @@ void	img_pixel_put(t_img *img, int x, int y, int color)
 	char	*pixel;
 	int		i;
 
-	i = img->bits_per_pixel - 8;
-	pixel = img->addr + (y * img->size_line + x * (img->bits_per_pixel / 8));
+	i = img->bpp - 8;
+	pixel = img->addr + (y * img->sl + x * (img->bpp / 8));
 	while (i > 0)
 	{
-		if (img->endian != 0)
+		if (img->en != 0)
 			*pixel++ = (color >> i) & 0xFF;
 		else
-			*pixel++ = (color >> (img->bits_per_pixel - 8 - i)) & 0xFF;
+			*pixel++ = (color >> (img->bpp - 8 - i)) & 0xFF;
 		i -= 8;
 	}
 }
@@ -60,7 +60,7 @@ void render_floor_ceilling(t_img *img, t_texture *textures, int x,
 
 unsigned int	get_texture_pixel(float text_y, t_img *img, float text_x)
 {
-	return (*(unsigned int *)(img->addr + ((int)text_y * img->size_line + ((int)(text_x * img->height)) * (img->bits_per_pixel / 8))));
+	return (*(unsigned int *)(img->addr + ((int)text_y * img->sl + ((int)(text_x * img->ht)) * (img->bpp / 8))));
 }
 void	render_wall(float wall_height, t_game *cube, int x, t_img *img)
 {
@@ -70,7 +70,7 @@ void	render_wall(float wall_height, t_game *cube, int x, t_img *img)
 	int				draw_end;
 	float			text_y;
 
-	cube->textures.y = (float)img->height / cube->raycast->wall_height;
+	cube->textures.y = (float)img->ht / cube->raycast->wall_height;
 	if (cube->textures.y <= 0)
 		cube->textures.y = 0.01;
 	text_y = 0;
@@ -100,7 +100,7 @@ void	init_raycast_values(t_game *cube, t_raycast *raycast, int x)
 	float	camera_x;
 
 	camera_x = 2 * x / (float)WIDTH - 1;
-	raycast->angle = cube->player->angle + atan(camera_x
+	raycast->angle = cube->player->angle - atan(camera_x
 			* cube->player->tan_fov_2);
 	raycast->dir->x = cos(raycast->angle);
 	raycast->dir->y = -sin(raycast->angle);
@@ -222,23 +222,23 @@ void raycast(t_game *cube, t_raycast *raycast)
 		get_distance_and_wallheight(cube);
 		if (raycast->dir->x > 0 && side == 0)
 		{
-			cube->textures.y = cube->textures.EA_img.height / cube->raycast->wall_height;
+			cube->textures.y = cube->textures.EA_img.ht / cube->raycast->wall_height;
 			cube->textures.x = 1 - cube->textures.x;
 			render_wall(raycast->wall_height, cube, x, &cube->textures.EA_img);
 		}
 		else if (raycast->dir->x < 0 && side == 0)
 		{
-			cube->textures.y = cube->textures.WE_img.height / cube->raycast->wall_height;
+			cube->textures.y = cube->textures.WE_img.ht / cube->raycast->wall_height;
 			render_wall(raycast->wall_height, cube, x, &cube->textures.WE_img);
 		}
 		else if (raycast->dir->y > 0 && side == 1)
 		{
-			cube->textures.y = cube->textures.NO_img.height / cube->raycast->wall_height;
+			cube->textures.y = cube->textures.NO_img.ht / cube->raycast->wall_height;
 			render_wall(raycast->wall_height, cube, x, &cube->textures.NO_img);
 		}
 		else if (raycast->dir->y < 0 && side == 1)
 		{
-			cube->textures.y = cube->textures.SO_img.height / cube->raycast->wall_height;
+			cube->textures.y = cube->textures.SO_img.ht / cube->raycast->wall_height;
 			cube->textures.x = 1 - cube->textures.x;
 			render_wall(raycast->wall_height, cube, x, &cube->textures.SO_img);
 		}
@@ -251,6 +251,6 @@ void	render(t_game *cube)
 	// render_floor_ceilling(cube->img, &cube->textures);
 	update_fps_counter(cube);
 	raycast(cube, cube->raycast);
-	mlx_put_image_to_window(cube->mlx, cube->windows, cube->img->img_ptr, 0, 0);
+	mlx_put_image_to_window(cube->mlx, cube->windows, cube->img->img, 0, 0);
 	draw_debug_info_cardinal(cube);
 }

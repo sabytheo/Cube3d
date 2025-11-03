@@ -6,7 +6,7 @@
 /*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 12:31:12 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/28 14:19:42 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/10/31 15:41:51 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,42 +43,40 @@ static void	press_W_S( t_game *cube, float newpos_x,
 	step_y = -sin(cube->player->angle) * cube->player->speed;
 	if (cube->key->w == true)
 	{
-		// printf(" cos mes couilles %f\n",cos(cube->player->angle) * cube->player->speed);
 		newpos_x += step_x;
 		newpos_y += step_y;
-		if (is_hitting(newpos_x, newpos_y, cube, '1') == 0 && is_hitting(newpos_x, newpos_y, cube, 'C') == 0)
+		if (is_hitting(newpos_x, newpos_y, cube, '1') == 0)
 		{
 			cube->player->pos_x = newpos_x ;
 			cube->player->pos_y = newpos_y ;
 		}
 		else
 		{
-			if (is_hitting(cube->player->pos_x, newpos_y, cube, '1') == 0 && is_hitting(cube->player->pos_x, newpos_y, cube, 'C') == 0)
+			if (is_hitting(cube->player->pos_x, newpos_y, cube, '1') == 0)
 				cube->player->pos_y = newpos_y ;
 			else
 			{
-				if (is_hitting(newpos_x, cube->player->pos_y, cube, '1') == 0 && is_hitting(newpos_x, cube->player->pos_y, cube, 'C') == 0)
+				if (is_hitting(newpos_x, cube->player->pos_y, cube, '1') == 0)
 					cube->player->pos_x = newpos_x ;
 			}
 		}
 	}
 	if (cube->key->s == true)
 	{
-		// printf(" cos mes couilles %f\n",cos(cube->player->angle) * cube->player->speed);
 		newpos_x -= cos(cube->player->angle) * cube->player->speed;
 		newpos_y -= -sin(cube->player->angle) * cube->player->speed;
-		if (is_hitting(newpos_x, newpos_y, cube, '1') == 0 && is_hitting(newpos_x, newpos_y, cube, 'C') == 0)
+		if (is_hitting(newpos_x, newpos_y, cube, '1') == 0)
 		{
 			cube->player->pos_x = newpos_x;
 			cube->player->pos_y = newpos_y;
 		}
 		else
 		{
-			if (is_hitting(cube->player->pos_x, newpos_y, cube, '1') == 0 &&  is_hitting(cube->player->pos_x, newpos_y, cube, 'C') == 0)
+			if (is_hitting(cube->player->pos_x, newpos_y, cube, '1') == 0)
 				cube->player->pos_y = newpos_y ;
 			else
 			{
-				if (is_hitting(newpos_x, cube->player->pos_y, cube, '1') == 0 && is_hitting(newpos_x, cube->player->pos_y, cube, 'C') == 0)
+				if (is_hitting(newpos_x, cube->player->pos_y, cube, '1') == 0)
 					cube->player->pos_x = newpos_x ;
 			}
 		}
@@ -92,46 +90,46 @@ static void	press_A_D( t_game *cube, float newpos_x,
 	float step_x;
 	float step_y;
 
-	if (cube->key->a == true)
+	if (cube->key->d == true)
 	{
 		step_x = cos(cube->player->angle - (M_PI * 0.5)) * cube->player->speed;
 		step_y = -sin(cube->player->angle - (M_PI * 0.5)) * cube->player->speed;
 		newpos_x += step_x;
 		newpos_y += step_y;
-		if (is_hitting(newpos_x, newpos_y, cube, '1') == 0 && is_hitting(newpos_x, newpos_y, cube, 'C') == 0)
+		if (is_hitting(newpos_x, newpos_y, cube, '1') == 0)
 		{
 			cube->player->pos_x = newpos_x;
 			cube->player->pos_y = newpos_y;
 		}
 		else
 		{
-			if (is_hitting(cube->player->pos_x, newpos_y, cube, '1') == 0 && is_hitting(cube->player->pos_x, newpos_y, cube, 'C') == 0)
+			if (is_hitting(cube->player->pos_x, newpos_y, cube, '1') == 0)
 				cube->player->pos_y = newpos_y ;
 			else
 			{
-				if (is_hitting(newpos_x, cube->player->pos_y, cube, '1') == 0 && is_hitting(newpos_x, cube->player->pos_y, cube, 'C') == 0)
+				if (is_hitting(newpos_x, cube->player->pos_y, cube, '1') == 0)
 					cube->player->pos_x = newpos_x ;
 			}
 		}
 	}
-	if (cube->key->d == true)
+	if (cube->key->a == true)
 	{
 		step_x = cos(cube->player->angle + (M_PI * 0.5)) * cube->player->speed;
 		step_y = -sin(cube->player->angle + (M_PI * 0.5)) * cube->player->speed;
 		newpos_x += step_x;
 		newpos_y += step_y;
-		if (is_hitting(newpos_x , newpos_y, cube, '1') == 0 && is_hitting(newpos_x, newpos_y, cube, 'C') == 0)
+		if (is_hitting(newpos_x , newpos_y, cube, '1') == 0)
 		{
 			cube->player->pos_x = newpos_x;
 			cube->player->pos_y = newpos_y;
 		}
 		else
 		{
-			if (is_hitting(cube->player->pos_x, newpos_y, cube, '1') == 0 && is_hitting(cube->player->pos_x, newpos_y, cube, 'C') == 0)
+			if (is_hitting(cube->player->pos_x, newpos_y, cube, '1') == 0)
 				cube->player->pos_y = newpos_y ;
 			else
 			{
-				if (is_hitting(newpos_x, cube->player->pos_y, cube, '1') == 0 && is_hitting(newpos_x, cube->player->pos_y, cube, 'C') == 0)
+				if (is_hitting(newpos_x, cube->player->pos_y, cube, '1') == 0)
 					cube->player->pos_x = newpos_x ;
 			}
 		}
@@ -184,32 +182,6 @@ int release_key(int keypress, t_game *cube)
 	return (0);
 }
 
-void press_E_F(t_game *cube)
-{
-	float step_y = -sin(cube->player->angle);
-	float step_x = cos(cube->player->angle);
-
-	if (cube->key->e == true)
-	{
-		if (cube->map->final_grid[(int)(cube->player->pos_y + step_y)][(int)cube->player->pos_x] == 'C')
-		{
-			cube->map->final_grid[(int)(cube->player->pos_y + step_y)][(int)cube->player->pos_x] = 'O';
-		}
-		else if (cube->map->final_grid[(int)cube->player->pos_y][(int)(cube->player->pos_x + step_x)] == 'C')
-			cube->map->final_grid[(int)cube->player->pos_y][(int)(cube->player->pos_x + step_x)] = 'O';
-	}
-	else if (cube->key->f == true)
-	{
-		if (cube->map->final_grid[(int)cube->player->pos_y][(int)(cube->player->pos_x)] != 'O')
-		{
-			if (cube->map->final_grid[(int)(cube->player->pos_y + step_y)][(int)cube->player->pos_x] == 'O')
-			cube->map->final_grid[(int)(cube->player->pos_y + step_y)][(int)cube->player->pos_x] = 'C';
-			else if (cube->map->final_grid[(int)cube->player->pos_y][(int)(cube->player->pos_x + step_x)] == 'O')
-			cube->map->final_grid[(int)cube->player->pos_y][(int)(cube->player->pos_x + step_x)] = 'C';
-		}
-	}
-}
-
 int	define_control(t_game *cube)
 {
 	float			newpos_x;
@@ -224,11 +196,9 @@ int	define_control(t_game *cube)
 		press_W_S(cube, newpos_x, newpos_y);
 	if (cube->key->a == true || cube->key->d == true)
 		press_A_D(cube, newpos_x, newpos_y);
-	if(cube->key->e == true || cube->key->f == true)
-		press_E_F(cube);
-	if (cube->key->left == true)
-		cube->player->angle -= DEG_TO_RAD * 5;
 	if (cube->key->right == true)
+		cube->player->angle -= DEG_TO_RAD * 5;
+	if (cube->key->left == true)
 		cube->player->angle += DEG_TO_RAD * 5;
 	render(cube);
 	return (0);
