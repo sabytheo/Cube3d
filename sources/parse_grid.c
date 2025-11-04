@@ -6,7 +6,7 @@
 /*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 14:33:21 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/23 23:17:32 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/04 15:29:55 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,6 @@ static int	copy_grid(t_game *cube)
 		j++;
 	}
 	cube->map->final_grid[j] = NULL;
-	printf("\n---------------------------------\n");
-	print_map(cube->map->final_grid);
-	printf("\n---------------------------------\n");
 	return (1);
 }
 
@@ -63,8 +60,12 @@ static int	check_char_validity(t_game *cube)
 	return (0);
 }
 
-void	get_angle(t_game *cube, char c)
+static void	set_player_info(int i, int j, t_game *cube)
 {
+	char	c;
+
+	cube->player->direction = cube->map->grid[i][j];
+	c = cube->player->direction;
 	if (c == 'N')
 		cube->player->angle = M_PI / 2;
 	else if (c == 'S')
@@ -73,13 +74,6 @@ void	get_angle(t_game *cube, char c)
 		cube->player->angle = M_PI;
 	else if (c == 'E')
 		cube->player->angle = 0;
-	return ;
-}
-
-static void	set_player_info(int i, int j, t_game *cube)
-{
-	cube->player->direction = cube->map->grid[i][j];
-	get_angle(cube, cube->player->direction);
 	cube->player->fov = M_PI / 3;
 	cube->player->tan_fov_2 = tan(cube->player->fov * 0.5);
 	cube->player->pos_y = (i - cube->map->grid_start) + 0.5;

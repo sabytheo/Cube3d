@@ -6,7 +6,7 @@
 #    By: egache <egache@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: Invalid date        by                   #+#    #+#              #
-#    Updated: 2025/11/04 17:46:57 by egache           ###   ########.fr        #
+#    Updated: 2025/11/04 18:05:30 by egache           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,8 +27,12 @@ SRCS		:=		main.c \
 					parse_grid_utils.c \
 					parse_grid_flood_fill.c \
 					bindings.c \
+					bindings_utils.c \
 					reef.c \
 					render.c \
+					render_utils.c \
+					raycast.c \
+					raycast_value.c \
 					vector_maths.c \
 					fps_counter.c \
 					debug.c

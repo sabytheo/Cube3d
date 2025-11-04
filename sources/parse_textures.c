@@ -6,7 +6,7 @@
 /*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 12:42:42 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/30 16:31:33 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/04 15:25:32 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ static int	get_textures(char *str, t_texture *textures, int i)
 	}
 	if (i == 3)
 	{
-		if (!textures->NO || !textures->SO || !textures->WE || !textures->EA )
+		if (!textures->NO || !textures->SO || !textures->WE || !textures->EA)
 		{
 			printf("allo\n");
 			return (-1);
@@ -66,14 +66,14 @@ static int	get_textures(char *str, t_texture *textures, int i)
 
 int	init_textures(int *i, char **grid, t_game *cube)
 {
-	int			count;
+	int	count;
 
 	count = 0;
 	while (grid[*i])
 	{
 		if (ft_strncmp("NO ", grid[*i], 3) == 0 || ft_strncmp("SO ", grid[*i],
 				3) == 0 || ft_strncmp("EA ", grid[*i], 3) == 0
-			|| ft_strncmp("WE ", grid[*i], 3) == 0 )
+			|| ft_strncmp("WE ", grid[*i], 3) == 0)
 		{
 			if (get_textures(grid[*i], &cube->textures, count) < 0)
 				return (-1);
