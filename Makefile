@@ -6,7 +6,7 @@
 #    By: egache <egache@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: Invalid date        by                   #+#    #+#              #
-#    Updated: 2025/10/31 17:04:06 by egache           ###   ########.fr        #
+#    Updated: 2025/11/04 17:46:57 by egache           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,6 +44,7 @@ SRCS_BONUS	:=		main.c \
 					reef.c \
 					render.c \
 					render_utils.c \
+					render_minimap.c \
 					raycast.c \
 					raycast_values.c \
 					vector_maths.c \

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render_utils.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 16:39:56 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/31 13:14:54 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/04 18:00:06 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,9 @@ unsigned int	get_texture_pixel(float text_y, t_img *img, float text_x)
 {
 	return (*(unsigned int *)(img->addr + ((int)text_y * img->sl
 				+ ((int)(text_x * img->ht)) * (img->bpp / 8))));
+}
+
+int	get_color(int red, int green, int blue)
+{
+	return (red << 16 | green << 8 | blue);
 }

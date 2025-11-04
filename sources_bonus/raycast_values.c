@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycast_values.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42lyon.fr>            +#+  +:+       +#+        */
+/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 16:26:36 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/29 17:37:07 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/04 18:03:13 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	init_raycast_values(t_game *cube, t_raycast *raycast, int x)
 	float	camera_x;
 
 	camera_x = 2 * x / (float)WIDTH - 1;
-	raycast->angle = cube->player->angle + atan(camera_x
+	raycast->angle = cube->player->angle - atan(camera_x
 			* cube->player->tan_fov_2);
 	raycast->dir->x = cos(raycast->angle);
 	raycast->dir->y = -sin(raycast->angle);

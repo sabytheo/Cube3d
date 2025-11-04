@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cube_bonus.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/31 12:52:06 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/04 17:55:36 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -213,6 +213,7 @@ typedef struct s_game
 	int frame_limit;             // Limite en microsecondes (16666 = 60 FPS)
 	t_map *map;
 	t_img *img;
+	t_img *minimap;
 	t_player *player;
 	t_raycast *raycast;
 	t_texture textures;
@@ -236,6 +237,12 @@ void	draw_debug_info_cardinal(t_game *cube);
 void	render_textured_floor_ceiling(t_game *cube, int x, float draw_start,float draw_end);
 void	render_wall(float wall_height, t_game *cube, int x, t_img *img);
 void	render(t_game *cube);
+
+// Render_utils
+int	get_color(int red, int green, int blue);
+
+// Render_minimap
+void	render_mapmap(t_img *minimap, t_game *cube);
 
 // Raycast
 void raycast(t_game *cube, t_raycast *raycast);

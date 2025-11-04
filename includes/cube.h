@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/31 17:56:44 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/04 17:46:05 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -192,7 +192,6 @@ typedef struct s_game
 	int frame_limit;             // Limite en microsecondes (16666 = 60 FPS)
 	t_map *map;
 	t_img *img;
-	t_img *minimap;
 	t_player *player;
 	t_raycast *raycast;
 	t_texture textures;
