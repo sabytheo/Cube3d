@@ -6,7 +6,7 @@
 /*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/31 13:03:09 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/04 15:35:35 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,12 @@
 #define WIDTH 1920
 #define HEIGHT 1080
 
-// # define SPEED 0.25
 # define XBOX 0.2
+# define DEG_TO_RAD (1.0 / 180.0) * M_PI
 
 # define BEFORE_FF false
 # define AFTER_FF true
+
 
 enum
 {
@@ -207,13 +208,34 @@ void	draw_debug_info(t_game *cube);
 void	free_fps_counter(t_fps *fps);
 void	draw_debug_info_cardinal(t_game *cube);
 
-void render(t_game *cube);
+
 // void render_floor_ceilling(t_img *img, t_texture *textures);
 void render_floor_ceilling(t_img *img, t_texture *textures, int x, int draw_start, int draw_end);
+
+
+// Raycast_value
+void	init_raycast_values(t_game *cube, t_raycast *raycast, int x);
+void	init_height_dplan(t_game *cube);
+void	init_raycast_direction(t_game *cube, t_raycast *raycast);
+void	get_distance_and_wallheight(t_game *cube,t_raycast *raycast, int side);
+
+// raycast
 void raycast(t_game *cube, t_raycast *raycast);
+
+// Render_utils
+unsigned int	get_texture_pixel(float text_y, t_img *img, float text_x);
+void	img_pixel_put(t_img *img, int x, int y, int color);
+int	get_color(int red, int green, int blue);
+
+// Render
+void render(t_game *cube);
+void	render_wall(float wall_height, t_game *cube, int x, t_img *img);
+
+// Binding
 int define_control(t_game *cube);
 int release_key(int keypress, t_game *cube);
 int press_key(int keypress, t_game *cube);
+int	is_hitting(float x, float y, t_game *cube, char c);
 
 // Debug
 void print_map(char **map);

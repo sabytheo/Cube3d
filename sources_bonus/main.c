@@ -1,23 +1,17 @@
-//
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_fixed.c                                       :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: optimization                                +#+  +:+
-	+#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/19 00:00:00 by optim             #+#    #+#             */
-/*   Updated: 2025/10/19 00:00:00 by optim            ###   ########.fr       */
+/*   Created: 2025/11/04 15:45:45 by tsaby             #+#    #+#             */
+/*   Updated: 2025/11/04 15:46:01 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cube_bonus.h"
 #include <sys/time.h>
-
-// Ajout dans cube.h dans la structure t_game :
-// struct timeval last_frame;
-// int frame_limit;
 
 int	init(t_game *cube)
 {

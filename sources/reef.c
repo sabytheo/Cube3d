@@ -6,7 +6,7 @@
 /*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 15:37:43 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/31 15:00:51 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/04 15:31:29 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	free_tab(char **tab)
 // 	}
 // }
 
-static void destroy_image(t_game *cube)
+static void	destroy_image(t_game *cube)
 {
 	if (cube->textures.EA_img.img)
 		mlx_destroy_image(cube->mlx, cube->textures.EA_img.img);
@@ -56,9 +56,10 @@ static void destroy_image(t_game *cube)
 		mlx_destroy_image(cube->mlx, cube->textures.SO_img.img);
 	if (cube->textures.WE_img.img)
 		mlx_destroy_image(cube->mlx, cube->textures.WE_img.img);
-	return;
+	return ;
 }
-static void clean_textures(t_game *cube)
+
+static void	clean_textures(t_game *cube)
 {
 	if (cube->textures.NO)
 		free(cube->textures.NO);
@@ -68,9 +69,10 @@ static void clean_textures(t_game *cube)
 		free(cube->textures.WE);
 	if (cube->textures.EA)
 		free(cube->textures.EA);
-	return;
+	return ;
 }
-static void clean_struct(t_game *cube)
+
+static void	clean_struct(t_game *cube)
 {
 	if (cube->map)
 		free(cube->map);
@@ -84,7 +86,7 @@ static void clean_struct(t_game *cube)
 		free(cube->raycast);
 	if (cube->key)
 		free(cube->key);
-	return;
+	return ;
 }
 
 int	free_exit(t_game *cube)

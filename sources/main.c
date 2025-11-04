@@ -1,23 +1,17 @@
-//
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_fixed.c                                       :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: optimization                                +#+  +:+
-	+#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/19 00:00:00 by optim             #+#    #+#             */
-/*   Updated: 2025/10/19 00:00:00 by optim            ###   ########.fr       */
+/*   Created: 2025/11/04 15:46:14 by tsaby             #+#    #+#             */
+/*   Updated: 2025/11/04 15:46:23 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cube.h"
 #include <sys/time.h>
-
-// Ajout dans cube.h dans la structure t_game :
-// struct timeval last_frame;
-// int frame_limit;
 
 int	init(t_game *cube)
 {
@@ -97,8 +91,8 @@ int	main(int argc, char **argv)
 		free_exit(&cube);
 	cube.windows = mlx_new_window(cube.mlx, WIDTH, HEIGHT, "CUB3D");
 	cube.img->img = mlx_new_image(cube.mlx, WIDTH, HEIGHT);
-	cube.img->addr = mlx_get_data_addr(cube.img->img,
-			&cube.img->bpp, &cube.img->sl, &cube.img->en);
+	cube.img->addr = mlx_get_data_addr(cube.img->img, &cube.img->bpp,
+			&cube.img->sl, &cube.img->en);
 	render(&cube);
 	mlx_hook(cube.windows, 2, 1L << 0, press_key, &cube);
 	mlx_hook(cube.windows, 3, 1L << 1, release_key, &cube);

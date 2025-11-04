@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tsaby <tsaby@student.42lyon.fr>            +#+  +:+       +#+         #
+#    By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: Invalid date        by                   #+#    #+#              #
-#    Updated: 2025/10/29 17:41:11 by tsaby            ###   ########.fr        #
+#    Updated: 2025/11/04 15:22:54 by tsaby            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,8 +27,12 @@ SRCS		:=		main.c \
 					parse_grid_utils.c \
 					parse_grid_flood_fill.c \
 					bindings.c \
+					bindings_utils.c \
 					reef.c \
 					render.c \
+					render_utils.c \
+					raycast.c \
+					raycast_value.c \
 					vector_maths.c \
 					fps_counter.c \
 					debug.c
