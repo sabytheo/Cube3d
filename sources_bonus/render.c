@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 14:16:45 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/04 17:48:45 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/04 23:32:41 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,8 +106,9 @@ void	render(t_game *cube)
 {
 	update_fps_counter(cube);
 	raycast(cube, cube->raycast);
-	render_mapmap(cube->minimap, cube);
+	render_mapmap(cube->minimap_img, cube);
+	// render_minimap(cube->img, cube);
 	mlx_put_image_to_window(cube->mlx, cube->windows, cube->img->img, 0, 0);
-	mlx_put_image_to_window(cube->mlx, cube->windows, cube->minimap->img, 0, 0);
-	draw_debug_info_cardinal(cube);
+	mlx_put_image_to_window(cube->mlx, cube->windows, cube->minimap_img->img, 0, 0);
+	// draw_debug_info_cardinal(cube);
 }

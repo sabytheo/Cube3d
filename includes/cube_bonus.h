@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/04 17:55:36 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/04 23:18:26 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,6 +118,32 @@ typedef struct s_map
 
 } t_map;
 
+typedef struct s_minimap
+{
+	int		mm_width;
+	int		vision_range;
+	int		tile_width;
+	int		tile_height;
+	float	player_offset_x;
+	float	player_offset_y;
+	int		offset_y;
+	int		offset_x;
+	int		step_x; // tiles border size kinda
+	int		step_y; //tiles border size kinda
+	int		grid_x; //x
+	int		grid_y; //y
+	int		grid_x_check; //check_x
+	int		grid_y_check; //check_y
+	int		grid_y_start; //grid_y_start to check if wall in grid
+	int		grid_x_start; //grid_x_start to check if wall in grid
+	int		grid_y_end; //start_x + (vision_range * 2) + 1
+	int		grid_x_end; //start_x + (vision_range * 2) + 1
+	int		pixel_x; //final_x
+	int		pixel_y; //final_y
+	char 	c;
+
+} t_minimap;
+
 typedef struct s_key
 {
 	bool w;
@@ -213,7 +239,8 @@ typedef struct s_game
 	int frame_limit;             // Limite en microsecondes (16666 = 60 FPS)
 	t_map *map;
 	t_img *img;
-	t_img *minimap;
+	t_img *minimap_img;
+	t_minimap *minimap_values;
 	t_player *player;
 	t_raycast *raycast;
 	t_texture textures;
@@ -243,8 +270,9 @@ int	get_color(int red, int green, int blue);
 
 // Render_minimap
 void	render_mapmap(t_img *minimap, t_game *cube);
+void	render_minimap(t_img *img, t_game *cube);
 
-// Raycast
+// Raycast44h2
 void raycast(t_game *cube, t_raycast *raycast);
 
 // Raycast_values

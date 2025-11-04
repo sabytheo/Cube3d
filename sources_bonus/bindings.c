@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 12:31:12 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/04 18:03:59 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/04 18:16:56 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ static void	press_A_D( t_game *cube, float newpos_x,
 	float step_x;
 	float step_y;
 
-	if (cube->key->a == true)
+	if (cube->key->d == true)
 	{
 		step_x = cos(cube->player->angle - (M_PI * 0.5)) * cube->player->speed;
 		step_y = -sin(cube->player->angle - (M_PI * 0.5)) * cube->player->speed;
@@ -114,7 +114,7 @@ static void	press_A_D( t_game *cube, float newpos_x,
 			}
 		}
 	}
-	if (cube->key->d == true)
+	if (cube->key->a == true)
 	{
 		step_x = cos(cube->player->angle + (M_PI * 0.5)) * cube->player->speed;
 		step_y = -sin(cube->player->angle + (M_PI * 0.5)) * cube->player->speed;
@@ -226,9 +226,9 @@ int	define_control(t_game *cube)
 		press_A_D(cube, newpos_x, newpos_y);
 	if(cube->key->e == true || cube->key->f == true)
 		press_E_F(cube);
-	if (cube->key->left == true)
-		cube->player->angle -= DEG_TO_RAD * 5;
 	if (cube->key->right == true)
+		cube->player->angle -= DEG_TO_RAD * 5;
+	if (cube->key->left == true)
 		cube->player->angle += DEG_TO_RAD * 5;
 	render(cube);
 	return (0);

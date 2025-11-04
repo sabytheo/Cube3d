@@ -6,7 +6,7 @@
 #    By: egache <egache@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: Invalid date        by                   #+#    #+#              #
-#    Updated: 2025/11/04 18:12:08 by egache           ###   ########.fr        #
+#    Updated: 2025/11/04 19:18:54 by egache           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -177,7 +177,7 @@ run:
 				make && ./$(NAME) maps/map.cub
 
 runb:
-				make bonus && ./$(NAME_B) maps/map_bonus.cub
+				make bonus && ./$(NAME_B) maps/map.cub
 
 re_bonus	:	fclean bonus
 
