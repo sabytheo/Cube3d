@@ -36,7 +36,7 @@ BONUS
 	- Attention au segfault hors de la map
 ## Textures - T _done_(besoin de faire les vraies)
 ## Animations
-## Minimap - E
+## Minimap - E _done?_
 ## Sprint - E
 ## Collectibles bonus/malus
 ## Ennemis

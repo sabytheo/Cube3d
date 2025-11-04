@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 14:16:45 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/31 18:29:33 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/04 11:19:19 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,10 @@ void	img_pixel_put(t_img *img, int x, int y, int color)
 	void	render_mapmap(t_img *minimap, t_game *cube)
 	{
 		
-		int width_center = (WIDTH * 0.2) * 0.5;
-		int height_center = (WIDTH * 0.2) * 0.5;
-		int vision_range = 3;
 		int mm_width = (WIDTH * 0.2);
+		int width_center = mm_width * 0.5;
+		int height_center = mm_width * 0.5;
+		int vision_range = 3;
 		int tile_width = mm_width / (vision_range * 2);
 		int tile_height = tile_width;
 		float player_offset_x = (cube->player->pos_x - floor(cube->player->pos_x)) * tile_width;
@@ -57,9 +57,11 @@ void	img_pixel_put(t_img *img, int x, int y, int color)
 		int start_y = (int)cube->player->pos_y - vision_range;
 		int start_x = (int)cube->player->pos_x - vision_range;
 
-			int i;
+		int i;
 		int j;
 
+
+		// print background
 		j = 0;
 		while (j < mm_width)
 		{
@@ -71,7 +73,8 @@ void	img_pixel_put(t_img *img, int x, int y, int color)
 			}
 			j++;
 		}
-
+		// print background
+		// print walls
 		y = start_y;
 		while (y < start_y + (vision_range * 2) + 1)
 		{
@@ -111,6 +114,9 @@ void	img_pixel_put(t_img *img, int x, int y, int color)
 			check_y = y;
 			offset_y += tile_height;
 		}
+		//print walls
+
+		//print player arrow
 		int offset_pos = 1;
 		while (offset_pos <= 10)
 		{					
@@ -123,6 +129,9 @@ void	img_pixel_put(t_img *img, int x, int y, int color)
 			}
 			offset_pos++;
 		}
+		//print player arrow
+
+		//print borders
 		j = 0;
 		while (j <= mm_width)
 		{
@@ -135,6 +144,7 @@ void	img_pixel_put(t_img *img, int x, int y, int color)
 			}
 			j++;
 		}
+		//print borders
 	}
 
 void	render_minimap(t_img *img, t_game *cube)
