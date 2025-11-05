@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_grid.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 14:33:21 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/04 15:29:55 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/05 19:48:43 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ static int	check_char_validity(t_game *cube)
 		j = 0;
 		while (grid[i][j] && grid[i][j] != '\n')
 		{
-			if (!is_a_valid_char(grid[i][j], BEFORE_FF))
+			if (!is_a_valid_char(grid[i][j], CHAR_CHECK))
 				return (-1);
 			j++;
 		}
@@ -60,20 +60,23 @@ static int	check_char_validity(t_game *cube)
 	return (0);
 }
 
-static void	set_player_info(int i, int j, t_game *cube)
+static void	get_angle(t_game *cube, char c)
 {
-	char	c;
-
-	cube->player->direction = cube->map->grid[i][j];
-	c = cube->player->direction;
 	if (c == 'N')
 		cube->player->angle = M_PI / 2;
 	else if (c == 'S')
-		cube->player->angle = -M_PI / 2;
+		cube->player->angle = - M_PI / 2;
 	else if (c == 'W')
 		cube->player->angle = M_PI;
 	else if (c == 'E')
 		cube->player->angle = 0;
+	return ;
+}
+
+static void	set_player_info(int i, int j, t_game *cube)
+{
+	cube->player->direction = cube->map->grid[i][j];
+	get_angle(cube, cube->player->direction);
 	cube->player->fov = M_PI / 3;
 	cube->player->tan_fov_2 = tan(cube->player->fov * 0.5);
 	cube->player->pos_y = (i - cube->map->grid_start) + 0.5;
@@ -93,10 +96,9 @@ static int	check_grid_validity(int *i, t_game *cube)
 			if (is_a_player(cube->map->grid[*i][j]))
 			{
 				set_player_info(*i, j, cube);
-				flood_fill(*i, j, cube);
 				if (copy_grid(cube) < 0)
 					return (-1);
-				if (vlood_vill(*i - cube->map->grid_start, j, cube) < 0)
+				if (flood_fill(*i - cube->map->grid_start, j, cube) < 0)
 				{
 					ft_printf_fd(2, E_BAD_GRID_PARSING);
 					return (-1);

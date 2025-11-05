@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/05 14:47:47 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/05 19:33:06 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,8 @@
 // # define SPEED 0.25
 # define XBOX 0.2
 
-# define BEFORE_FF false
-# define AFTER_FF true
+# define CHAR_CHECK false
+# define GRID_CHECK true
 
 enum
 {
@@ -330,7 +330,6 @@ bool is_a_player(char c);
 bool is_a_valid_char(char c, bool state);
 
 // Parse_grid_flood_fill
-void flood_fill(int i, int j, t_game *cube);
-int vlood_vill(int i, int j, t_game *cube);
+int flood_fill(int i, int j, t_game *cube);
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_grid_utils.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42lyon.fr>            +#+  +:+       +#+        */
+/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 12:47:21 by egache            #+#    #+#             */
-/*   Updated: 2025/10/29 17:35:16 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/05 19:42:17 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ bool	is_only_whitespace(int *i, char **grid)
 
 bool	is_a_wall(char c)
 {
-	if (c == '1' || c == 'C')
+	if (c == '1')
 		return (true);
 	return (false);
 }
@@ -44,7 +44,7 @@ bool	is_a_valid_char(char c, bool state)
 {
 	static bool	found_player = 0;
 
-	if (state == BEFORE_FF)
+	if (state == CHAR_CHECK)
 	{
 		if (c == '0' || c == '1' || c == 'D' || c == ' ' || c == 'L')
 			return (true);
@@ -56,9 +56,9 @@ bool	is_a_valid_char(char c, bool state)
 		else
 			return (false);
 	}
-	if (state == AFTER_FF)
+	if (state == GRID_CHECK)
 	{
-		if (c == 'F' || c == 'C' || c == '3')
+		if (c == 'D' || c == '0' || c == '1' || is_a_player(c))
 			return (true);
 		return (false);
 	}

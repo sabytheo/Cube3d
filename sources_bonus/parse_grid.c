@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_grid.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42lyon.fr>            +#+  +:+       +#+        */
+/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 14:33:21 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/29 17:35:19 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/05 19:37:25 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ static int	check_char_validity(t_game *cube)
 		j = 0;
 		while (grid[i][j] && grid[i][j] != '\n')
 		{
-			if (!is_a_valid_char(grid[i][j], BEFORE_FF))
+			if (!is_a_valid_char(grid[i][j], CHAR_CHECK))
 				return (-1);
 			j++;
 		}
@@ -63,7 +63,7 @@ static int	check_char_validity(t_game *cube)
 	return (0);
 }
 
-void	get_angle(t_game *cube, char c)
+static void	get_angle(t_game *cube, char c)
 {
 	if (c == 'N')
 		cube->player->angle = M_PI / 2;
@@ -99,10 +99,9 @@ static int	check_grid_validity(int *i, t_game *cube)
 			if (is_a_player(cube->map->grid[*i][j]))
 			{
 				set_player_info(*i, j, cube);
-				flood_fill(*i, j, cube);
 				if (copy_grid(cube) < 0)
 					return (-1);
-				if (vlood_vill(*i - cube->map->grid_start, j, cube) < 0)
+				if (flood_fill(*i - cube->map->grid_start, j, cube) < 0)
 				{
 					ft_printf_fd(2, E_BAD_GRID_PARSING);
 					return (-1);

@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/04 18:12:17 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/05 19:44:24 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,8 @@
 # define XBOX 0.2
 # define DEG_TO_RAD (1.0 / 180.0) * M_PI
 
-# define BEFORE_FF false
-# define AFTER_FF true
+# define CHAR_CHECK false
+# define GRID_CHECK true
 
 
 enum
@@ -267,7 +267,7 @@ bool is_a_player(char c);
 bool is_a_valid_char(char c, bool state);
 
 // Parse_grid_flood_fill
-void flood_fill(int i, int j, t_game *cube);
-int vlood_vill(int i, int j, t_game *cube);
+// void flood_fill(int i, int j, t_game *cube);
+int flood_fill(int i, int j, t_game *cube);
 
 #endif
