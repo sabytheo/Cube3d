@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/04 23:18:26 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/05 14:47:47 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,19 +128,25 @@ typedef struct s_minimap
 	float	player_offset_y;
 	int		offset_y;
 	int		offset_x;
-	int		step_x; // tiles border size kinda
-	int		step_y; //tiles border size kinda
-	int		grid_x; //x
-	int		grid_y; //y
-	int		grid_x_check; //check_x
-	int		grid_y_check; //check_y
-	int		grid_y_start; //grid_y_start to check if wall in grid
-	int		grid_x_start; //grid_x_start to check if wall in grid
-	int		grid_y_end; //start_x + (vision_range * 2) + 1
-	int		grid_x_end; //start_x + (vision_range * 2) + 1
-	int		pixel_x; //final_x
-	int		pixel_y; //final_y
+	int		step_x;
+	int		step_y;
+	int		grid_x;
+	int		grid_y;
+	int		grid_x_check;
+	int		grid_y_check;
+	int		grid_y_start;
+	int		grid_x_start;
+	int		grid_y_end;
+	int		grid_x_end;
+	int		pixel_x;
+	int		pixel_y;
 	char 	c;
+
+	//player triangle
+	float	center_line_x;
+	float	width_offset_x;
+	float	center_line_y;
+	float	width_offset_y;
 
 } t_minimap;
 
@@ -270,7 +276,16 @@ int	get_color(int red, int green, int blue);
 
 // Render_minimap
 void	render_mapmap(t_img *minimap, t_game *cube);
-void	render_minimap(t_img *img, t_game *cube);
+//void	render_minimap(t_img *img, t_game *cube);
+
+// Render_minimap_closed_door
+void	draw_closed_door_tile(t_game *cube, t_minimap *mmv);
+
+// Render_minimap_elements
+void	draw_minimap_background(t_img *minimap_img);
+void	draw_minimap_player(t_img *minimap_img, t_game *cube, t_minimap *mmv);
+void	draw_minimap_borders(t_img *minimap_img, int mm_width, int tile_width);
+void	draw_wall_tile(t_game *cube, t_minimap *mmv);
 
 // Raycast44h2
 void raycast(t_game *cube, t_raycast *raycast);

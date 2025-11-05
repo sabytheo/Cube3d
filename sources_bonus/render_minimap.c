@@ -6,101 +6,13 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 17:47:04 by egache            #+#    #+#             */
-/*   Updated: 2025/11/04 23:35:43 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/05 14:50:12 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cube_bonus.h"
 
-void	draw_minimap_background(t_img *minimap_img)
-{
-	int	i;
-	int	j;
-	int	mm_width;
-
-	mm_width = WIDTH * 0.2;
-	j = 0;
-	while (j < mm_width)
-	{
-		i = 0;
-		while (i < mm_width)
-		{
-			img_pixel_put(minimap_img, i, j, get_color(0, 0, 0));
-			i++;
-		}
-		j++;
-	}
-}
-
-void	draw_minimap_player(t_img *minimap_img, t_game *cube)
-{
-	int	mm_width;
-	int	width_center;
-	int	height_center;
-	int	offset_pos;
-	int	offset_sin_cos;
-
-	mm_width = WIDTH * 0.2;
-	offset_pos = 1;
-	width_center = mm_width * 0.5;
-	height_center = width_center;
-	while (offset_pos <= 10)
-	{
-		offset_sin_cos = 1;
-		while (offset_sin_cos <= offset_pos)
-		{
-			img_pixel_put(minimap_img, (int)(width_center + offset_pos
-					* cos(cube->player->angle + M_PI) + offset_sin_cos
-					* cos(cube->player->angle + M_PI + M_PI_2)),
-				(int)(height_center - offset_pos * sin(cube->player->angle
-						+ M_PI) - offset_sin_cos * sin(cube->player->angle
-						+ M_PI + M_PI_2)), get_color(255, 255, 0));
-			img_pixel_put(minimap_img, (int)(width_center + offset_pos
-					* cos(cube->player->angle + M_PI) - offset_sin_cos
-					* cos(cube->player->angle + M_PI + M_PI_2)),
-				(int)(height_center - offset_pos * sin(cube->player->angle
-						+ M_PI) + offset_sin_cos * sin(cube->player->angle
-						+ M_PI + M_PI_2)), get_color(0, 255, 255));
-			offset_sin_cos++;
-		}
-		offset_pos++;
-	}
-}
-
-void	draw_minimap_borders(t_img *minimap_img, int mm_width, int tile_width)
-{
-	int	j;
-	int	i;
-
-	j = 0;
-	while (j <= mm_width)
-	{
-		i = 0;
-		while (i <= mm_width)
-		{
-			if (i > mm_width - (tile_width * 0.2) || i < (tile_width * 0.2)
-				|| j < (tile_width * 0.2) || j > mm_width - (tile_width * 0.2))
-			{
-				img_pixel_put(minimap_img, i, j, get_color(255, 141, 161));
-			}
-			i++;
-		}
-		j++;
-	}
-	// j = (tile_width * 0.2) * 0.2;
-	// while (j < ((tile_width * 0.2) - ((tile_width * 0.2) * 0.2)))
-	// {
-	// 	i = (tile_width * 0.2) * 0.2;
-	// 	while (i < mm_width - (tile_width * 0.2) * 0.2)
-	// 	{
-	// 		img_pixel_put(minimap_img, i, j, get_color(255, 0, 255));
-	// 		i++;
-	// 	}
-	// 	j++;
-	// }
-}
-
-void	init_minimap_values(t_minimap *mmv, t_game *cube)
+static void	init_minimap_values(t_minimap *mmv, t_game *cube)
 {
 	mmv->mm_width = WIDTH * 0.2;
 	mmv->vision_range = 3;
@@ -120,6 +32,14 @@ void	init_minimap_values(t_minimap *mmv, t_game *cube)
 	mmv->step_x = mmv->step_y;
 }
 
+static void	draw_one_tile(t_game *cube, t_minimap *mmv, char c)
+{
+	if (c == '1')
+		draw_wall_tile(cube, mmv);
+	if (c == 'C')
+		draw_closed_door_tile(cube, mmv);
+}
+
 static char	minimap_item_check(t_game *cube, t_minimap *mmv, int grid_x,
 		int grid_y)
 {
@@ -135,140 +55,7 @@ static char	minimap_item_check(t_game *cube, t_minimap *mmv, int grid_x,
 	return ('0');
 }
 
-static void	draw_wall_tile(t_game *cube, t_minimap *mmv)
-{
-	mmv->step_x = mmv->tile_width * 0.1;
-	while (mmv->step_x < mmv->tile_width)
-	{
-		mmv->step_y = mmv->tile_width * 0.1;
-		while (mmv->step_y < mmv->tile_height)
-		{
-			mmv->pixel_x = mmv->offset_x + mmv->step_x
-				- (int)mmv->player_offset_x;
-			mmv->pixel_y = mmv->offset_y + mmv->step_y
-				- (int)mmv->player_offset_y;
-			if (mmv->pixel_x > mmv->tile_width * 0.1
-				&& mmv->pixel_x < mmv->mm_width
-				&& mmv->pixel_y > mmv->tile_width * 0.1
-				&& mmv->pixel_y < mmv->mm_width)
-				img_pixel_put(cube->minimap_img, mmv->pixel_x, mmv->pixel_y,
-					get_color(255, 255, 255));
-			mmv->step_y++;
-		}
-		mmv->step_x++;
-	}
-}
-
-static void	draw_top_closed_door_tile(t_game *cube, t_minimap *mmv)
-{
-	mmv->step_y = mmv->tile_width * 0.1;
-	while (mmv->step_y < mmv->tile_height * 0.5)
-	{
-		mmv->pixel_x = mmv->offset_x + mmv->step_x - (int)mmv->player_offset_x;
-		mmv->pixel_y = mmv->offset_y + mmv->step_y - (int)mmv->player_offset_y;
-		if (mmv->pixel_x > mmv->tile_width * 0.1 && mmv->pixel_x < mmv->mm_width
-			&& mmv->pixel_y > mmv->tile_width * 0.1
-			&& mmv->pixel_y < mmv->mm_width)
-			img_pixel_put(cube->minimap_img, mmv->pixel_x, mmv->pixel_y,
-				get_color(255, 255, 255));
-		mmv->step_y++;
-	}
-}
-
-static void	draw_bottom_closed_door_tile(t_game *cube, t_minimap *mmv)
-{
-	mmv->step_y = mmv->tile_width * 0.1 + mmv->tile_height * 0.5;
-	while (mmv->step_y < mmv->tile_height)
-	{
-		mmv->pixel_x = mmv->offset_x + mmv->step_x - (int)mmv->player_offset_x;
-		mmv->pixel_y = mmv->offset_y + mmv->step_y - (int)mmv->player_offset_y;
-		if (mmv->pixel_x > mmv->tile_width * 0.1 && mmv->pixel_x < mmv->mm_width
-			&& mmv->pixel_y > mmv->tile_width * 0.1
-			&& mmv->pixel_y < mmv->mm_width)
-			img_pixel_put(cube->minimap_img, mmv->pixel_x, mmv->pixel_y,
-				get_color(255, 255, 255));
-		mmv->step_y++;
-	}
-}
-
-static void	draw_left_closed_door_tile(t_game *cube, t_minimap *mmv)
-{
-	mmv->step_x = mmv->tile_width * 0.1;
-	while (mmv->step_x < mmv->tile_width * 0.5)
-	{
-		mmv->step_y = mmv->tile_width * 0.1;
-		while (mmv->step_y < mmv->tile_height)
-		{
-			mmv->pixel_x = mmv->offset_x + mmv->step_x
-				- (int)mmv->player_offset_x;
-			mmv->pixel_y = mmv->offset_y + mmv->step_y
-				- (int)mmv->player_offset_y;
-			if (mmv->pixel_x > mmv->tile_width * 0.1
-				&& mmv->pixel_x < mmv->mm_width
-				&& mmv->pixel_y > mmv->tile_width * 0.1
-				&& mmv->pixel_y < mmv->mm_width)
-				img_pixel_put(cube->minimap_img, mmv->pixel_x, mmv->pixel_y,
-					get_color(255, 255, 255));
-			mmv->step_y++;
-		}
-		mmv->step_x++;
-	}
-}
-
-static void	draw_right_closed_door_tile(t_game *cube, t_minimap *mmv)
-{
-	mmv->step_x = mmv->tile_width * 0.1 + mmv->tile_height * 0.5;
-	while (mmv->step_x < mmv->tile_width)
-	{
-		mmv->step_y = mmv->tile_width * 0.1;
-		while (mmv->step_y < mmv->tile_height)
-		{
-			mmv->pixel_x = mmv->offset_x + mmv->step_x
-				- (int)mmv->player_offset_x;
-			mmv->pixel_y = mmv->offset_y + mmv->step_y
-				- (int)mmv->player_offset_y;
-			if (mmv->pixel_x > mmv->tile_width * 0.1
-				&& mmv->pixel_x < mmv->mm_width
-				&& mmv->pixel_y > mmv->tile_width * 0.1
-				&& mmv->pixel_y < mmv->mm_width)
-				img_pixel_put(cube->minimap_img, mmv->pixel_x, mmv->pixel_y,
-					get_color(255, 255, 255));
-			mmv->step_y++;
-		}
-		mmv->step_x++;
-	}
-}
-
-static void	draw_closed_door_tile(t_game *cube, t_minimap *mmv)
-{
-	if (cube->map->final_grid[mmv->grid_y][mmv->grid_x + 1] == '1'
-		&& cube->map->final_grid[mmv->grid_y][mmv->grid_x - 1] == '1')
-	{
-		mmv->step_x = mmv->tile_width * 0.1;
-		while (mmv->step_x < mmv->tile_width)
-		{
-			draw_top_closed_door_tile(cube, mmv);
-			draw_bottom_closed_door_tile(cube, mmv);
-			mmv->step_x++;
-		}
-	}
-	else if (cube->map->final_grid[mmv->grid_y + 1][mmv->grid_x] == '1'
-		&& cube->map->final_grid[mmv->grid_y - 1][mmv->grid_x] == '1')
-	{
-		draw_left_closed_door_tile(cube, mmv);
-		draw_right_closed_door_tile(cube, mmv);
-	}
-}
-
-static void	draw_one_tile(t_game *cube, t_minimap *mmv, char c)
-{
-	if (c == '1')
-		draw_wall_tile(cube, mmv);
-	if (c == 'C')
-		draw_closed_door_tile(cube, mmv);
-}
-
-void	draw_minimap_tiles(t_game *cube, t_minimap *mmv)
+static void	draw_minimap_tiles(t_game *cube, t_minimap *mmv)
 {
 	mmv->offset_y = 0;
 	mmv->grid_y = mmv->grid_y_start;
@@ -305,7 +92,7 @@ void	render_mapmap(t_img *minimap_img, t_game *cube)
 	init_minimap_values(cube->minimap_values, cube);
 	draw_minimap_background(minimap_img);
 	draw_minimap_tiles(cube, mmv);
-	draw_minimap_player(minimap_img, cube);
+	draw_minimap_player(minimap_img, cube, mmv);
 	draw_minimap_borders(minimap_img, mmv->mm_width, mmv->tile_width);
 }
 
@@ -322,8 +109,8 @@ void	render_mapmap(t_img *minimap_img, t_game *cube)
 // 	int		tile_height;
 // 	float	draw_x;
 // 	float	draw_y;
-// 	int		offset_pos;
-// 	int		offset_sin_cos;
+// 	int		triangle_base_size;
+// 	int		width_offset_pixel;
 
 // 	x = 0;
 // 	y = 0;
@@ -333,9 +120,6 @@ void	render_mapmap(t_img *minimap_img, t_game *cube)
 // 	mm_width = WIDTH * 0.8;
 // 	tile_width = mm_width / cube->map->max_width;
 // 	tile_height = tile_width;
-// 	// Trouver la position du joueur en comparant x et y au floor de x et y du joueur.
-// 	// Si vrai put pixel au ratio de la partie fractionnaire de la positon du joueur (si 17.5
-// 	//	-> 0.5 donc a la moitie de la size de la tile + )
 // 	while (cube->map->final_grid[y])
 // 	{
 // 		x = 0;
@@ -350,29 +134,31 @@ void	render_mapmap(t_img *minimap_img, t_game *cube)
 // 						* (cube->player->pos_y - floor(cube->player->pos_y)));
 // 				img_pixel_put(img, ceil(draw_x), ceil(draw_y), get_color(0, 0,
 // 						255));
-// 				offset_pos = 1;
-// 				while (offset_pos <= 5)
+// 				triangle_base_size = 1;
+// 				while (triangle_base_size <= 5)
 // 				{
-// 					offset_sin_cos = 1;
-// 					while (offset_sin_cos <= offset_pos)
+// 					width_offset_pixel = 1;
+// 					while (width_offset_pixel <= triangle_base_size)
 // 					{
-// 						img_pixel_put(img, (int)(draw_x + offset_pos
+// 						img_pixel_put(img, (int)(draw_x + triangle_base_size
 // 								* cos(cube->player->angle + M_PI)
-// 								+ offset_sin_cos * cos(cube->player->angle
-// 									+ M_PI + M_PI_2)), (int)(draw_y - offset_pos
+// 								+ width_offset_pixel * cos(cube->player->angle
+// 									+ M_PI + M_PI_2)), (int)(draw_y
+//										- triangle_base_size
 // 								* sin(cube->player->angle + M_PI)
-// 								- offset_sin_cos * sin(cube->player->angle
+// 								- width_offset_pixel * sin(cube->player->angle
 // 									+ M_PI + M_PI_2)), get_color(255, 255, 0));
-// 						img_pixel_put(img, (int)(draw_x + offset_pos
+// 						img_pixel_put(img, (int)(draw_x + triangle_base_size
 // 								* cos(cube->player->angle + M_PI)
-// 								- offset_sin_cos * cos(cube->player->angle
-// 									+ M_PI + M_PI_2)), (int)(draw_y - offset_pos
+// 								- width_offset_pixel * cos(cube->player->angle
+// 									+ M_PI + M_PI_2)), (int)(draw_y
+//										- triangle_base_size
 // 								* sin(cube->player->angle + M_PI)
-// 								+ offset_sin_cos * sin(cube->player->angle
+// 								+ width_offset_pixel * sin(cube->player->angle
 // 									+ M_PI + M_PI_2)), get_color(0, 255, 255));
-// 						offset_sin_cos++;
+// 						width_offset_pixel++;
 // 					}
-// 					offset_pos++;
+// 					triangle_base_size++;
 // 				}
 // 			}
 // 			if (cube->map->final_grid[y][x] == '1')
@@ -401,14 +187,16 @@ void	render_mapmap(t_img *minimap_img, t_game *cube)
 // 						step_y = tile_width * 0.15;
 // 						while (step_y < tile_height * 0.5)
 // 						{
-// 							img_pixel_put(img, offset_x + step_x, offset_y + step_y,
+// 							img_pixel_put(img, offset_x + step_x, offset_y
+//	+ step_y,
 // 								get_color(255, 255, 255));
 // 							step_y++;
 // 						}
 // 						step_y = tile_width * 0.15 + tile_height * 0.5;
 // 						while (step_y < tile_height)
 // 						{
-// 							img_pixel_put(img, offset_x + step_x, offset_y + step_y,
+// 							img_pixel_put(img, offset_x + step_x, offset_y
+//	+ step_y,
 // 								get_color(255, 255, 255));
 // 							step_y++;
 // 						}
@@ -424,7 +212,8 @@ void	render_mapmap(t_img *minimap_img, t_game *cube)
 // 						step_y = tile_width * 0.15;
 // 						while (step_y < tile_height)
 // 						{
-// 							img_pixel_put(img, offset_x + step_x, offset_y + step_y,
+// 							img_pixel_put(img, offset_x + step_x, offset_y
+//	+ step_y,
 // 								get_color(255, 255, 255));
 // 							step_y++;
 // 						}
@@ -436,7 +225,8 @@ void	render_mapmap(t_img *minimap_img, t_game *cube)
 // 						step_y = tile_width * 0.15;
 // 						while (step_y < tile_height)
 // 						{
-// 							img_pixel_put(img, offset_x + step_x, offset_y + step_y,
+// 							img_pixel_put(img, offset_x + step_x, offset_y
+//	+ step_y,
 // 								get_color(255, 255, 255));
 // 							step_y++;
 // 						}

@@ -31,12 +31,10 @@ BONUS
 **CONTENU**
 -----------
 ## Portes - T - _done_
-## Collisions
-	- Supprimer du mandatory et ajouter dans bonus
-	- Attention au segfault hors de la map
+## Collisions _done_
 ## Textures - T _done_(besoin de faire les vraies)
 ## Animations
-## Minimap - E _done?_
+## Minimap - E _done?_ | Diviser en fichiers
 ## Sprint - E
 ## Collectibles bonus/malus
 ## Ennemis
