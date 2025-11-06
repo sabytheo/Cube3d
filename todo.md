@@ -47,3 +47,8 @@ BONUS
 ## BAD STRUCTURES è_é
 - t_hit_info *hits
 - t_img *texture
+
+
+delta_time pour rotation.
+
+cache_miss et afficher horizontalement plutot que verticalement.
