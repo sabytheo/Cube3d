@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 14:16:45 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/06 19:23:34 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/06 19:40:23 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,6 +117,7 @@ void	render(t_game *cube)
 	i = 0;
 	while (i < cube->nb_cores)
 	{
+		printf("\n%d\n", i);
 		cube_thread[i] = malloc(1 * sizeof(t_cube_thread));
 		if (i == 0)
 			cube_thread[i]->width_start = column_start;
@@ -131,6 +132,10 @@ void	render(t_game *cube)
 		{
 			cube_thread[i]->map.final_grid[j] = ft_strdup(cube->map.final_grid[j]);
 		}
+		// printf("CACA\n\n\n\n\n");
+		// print_map(cube->map.final_grid);
+		// printf("PIPI %p\n\n\n\n\n", &cube_thread[i]->map.final_grid);
+		// print_map(cube_thread[i]->map.final_grid);
 		// printf("cube address :%p || cube_thread->cube address : %p || cube.map : %p || cube_thread->cube.map : %p\n", &cube, &cube_thread[i]->cube, &cube->map, &cube_thread[i]->cube->map);
 		if (pthread_create(&cube_thread[i]->thread, NULL, &raycast, &cube_thread[i]))
 		{

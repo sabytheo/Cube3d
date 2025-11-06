@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 16:26:36 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/06 19:15:42 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/06 19:30:01 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ void	init_raycast_direction(t_game *cube, t_raycast *raycast)
 	}
 }
 
-int	init_hit_char(t_game *cube, t_raycast *raycast, t_hit_info **new_hit)
+int	init_hit_char(t_cube_thread *cube_thread, t_raycast *raycast, t_hit_info **new_hit)
 {
 	int	side;
 
@@ -95,7 +95,7 @@ int	init_hit_char(t_game *cube, t_raycast *raycast, t_hit_info **new_hit)
 	*new_hit = malloc(sizeof(t_hit_info));
 	if (!*new_hit)
 		return (-1);
-	(*new_hit)->hit_type = cube->map.final_grid[raycast->intY][raycast->intX];
+	(*new_hit)->hit_type = cube_thread->map.final_grid[raycast->intY][raycast->intX];
 	return (side);
 }
 

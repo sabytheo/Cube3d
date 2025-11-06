@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 16:23:49 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/06 19:14:28 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/06 19:31:28 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static void	get_texture_coord_and_distance(t_game *cube, t_raycast *raycast,
 	return ;
 }
 
-static void	collect_hits(t_game *cube, t_raycast *raycast, t_hit_info **hits,
+static void	collect_hits(t_cube_thread *cube_thread, t_raycast *raycast, t_hit_info **hits,
 		int *hit_count)
 {
 	int			side;
@@ -51,13 +51,13 @@ static void	collect_hits(t_game *cube, t_raycast *raycast, t_hit_info **hits,
 	hit_wall = false;
 	while (!hit_wall)
 	{
-		side = init_hit_char(cube, raycast, &new_hit);
+		side = init_hit_char(cube_thread, raycast, &new_hit);
 		if (side == -1)
 			return (free(new_hit)) ;
 		if (new_hit->hit_type == '1' || new_hit->hit_type == 'C'
 			|| new_hit->hit_type == 'O')
 		{
-			get_texture_coord_and_distance(cube, raycast, &new_hit, side);
+			get_texture_coord_and_distance(cube_thread->cube, raycast, &new_hit, side);
 			*hits = realloc(*hits, sizeof(t_hit_info) * (*hit_count + 1));
 			(*hits)[*hit_count] = *new_hit;
 			(*hit_count)++;
@@ -93,7 +93,7 @@ void assign_texture_and_current_hit(t_game *cube,t_raycast *raycast, t_hit_info 
 	cube->textures.x = current_hit->texture_x;
 }
 
-static void render_from_last_wall(t_game* cube,t_raycast *raycast,int x)
+static void render_from_last_wall(t_cube_thread *cube_thread, t_game *cube ,t_raycast *raycast,int x)
 {
 	int			hit_count;
 	t_hit_info	*hits;
@@ -101,7 +101,7 @@ static void render_from_last_wall(t_game* cube,t_raycast *raycast,int x)
 
 	hit_count = 0;
 	hits = NULL;
-	collect_hits(cube, raycast, &hits, &hit_count);
+	collect_hits(cube_thread, raycast, &hits, &hit_count);
 	i = hit_count - 1;
 	while (i >= 0)
 	{
@@ -131,7 +131,7 @@ void	*raycast(void *arg)
 	{
 		init_raycast_values(cube_thread->cube, &cube_thread->raycast, cube_thread->width_start);
 		init_raycast_direction(cube_thread->cube,  &cube_thread->raycast);
-		render_from_last_wall(cube_thread->cube,  &cube_thread->raycast, cube_thread->width_start);
+		render_from_last_wall(cube_thread, cube_thread->cube, &cube_thread->raycast, cube_thread->width_start);
 		cube_thread->width_start++;
 	}
 	return (NULL);

@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/06 19:18:23 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/06 19:30:17 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -315,7 +315,7 @@ void	draw_wall_tile(t_game *cube, t_minimap *mmv);
 void *raycast(void *arg);
 
 // Raycast_values
-int	init_hit_char(t_game *cube, t_raycast *raycast, t_hit_info **new_hit);
+int	init_hit_char(t_cube_thread *cube_thread, t_raycast *raycast, t_hit_info **new_hit);
 void	init_raycast_direction(t_game *cube, t_raycast *raycast);
 void	get_distance_and_wallheight(t_game *cube);
 void	init_height_dplan(t_game *cube);
