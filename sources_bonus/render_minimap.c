@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 17:47:04 by egache            #+#    #+#             */
-/*   Updated: 2025/11/06 15:23:56 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/06 15:35:39 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,14 +86,14 @@ static void	draw_minimap_tiles(t_game *cube, t_minimap *mmv)
 
 void	render_mapmap(t_img *minimap_img, t_game *cube)
 {
-	t_minimap	*mmv;
+	t_minimap	mmv;
 
 	mmv = cube->minimap_values;
-	init_minimap_values(cube->minimap_values, cube);
+	init_minimap_values(&mmv, cube);
 	draw_minimap_background(minimap_img);
-	draw_minimap_tiles(cube, mmv);
-	draw_minimap_player(minimap_img, cube, mmv);
-	draw_minimap_borders(minimap_img, mmv->mm_width, mmv->tile_width);
+	draw_minimap_tiles(cube, &mmv);
+	draw_minimap_player(minimap_img, cube, &mmv);
+	draw_minimap_borders(minimap_img, mmv.mm_width, mmv.tile_width);
 }
 
 // void	render_minimap(t_img *img, t_game *cube)

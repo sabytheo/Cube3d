@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/06 15:28:36 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/06 15:33:18 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -249,7 +249,7 @@ typedef struct s_game
 	t_map *map;
 	t_img *img;
 	t_img *minimap_img;
-	t_minimap *minimap_values;
+	t_minimap minimap_values;
 	t_player player;
 	t_raycast *raycast;
 	t_texture textures;
