@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:45:45 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/06 17:40:15 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/06 21:03:07 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,16 @@ int	init(t_game *cube)
 	cube->img = (t_img *)ft_calloc(1, sizeof(t_img));
 	cube->minimap_img = (t_img *)ft_calloc(1, sizeof(t_img));
 	// cube->hit_info = (t_hit_info*)ft_calloc(1,sizeof(t_hit_info));
-	cube->player.speed = 0.25;
-	// cube->fps_counter = init_fps_counter();
+	cube->player.speed = 0.1;
+	cube->fps_counter = init_fps_counter();
 	if (!cube->img || !cube->minimap_img)
 	{
 		ft_printf_fd(2, "Error:\n Failed to allocate memory\n");
 		return (-1);
 	}
 	// // Initialiser le timer
-	// gettimeofday(&cube->last_frame, NULL);
-	// cube->frame_limit = 16666; // ~60 FPS (16.666ms par frame)
+	gettimeofday(&cube->last_frame, NULL);
+	cube->frame_limit = 16666; // ~60 FPS (16.666ms par frame)
 	return (0);
 }
 

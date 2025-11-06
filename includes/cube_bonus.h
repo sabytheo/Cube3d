@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/06 19:30:17 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/06 21:00:24 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -270,6 +270,7 @@ typedef struct s_cube_thread
 	int width_end;
 	int id;
 	pthread_t		thread;
+	t_textures textures;
 
 } t_cube_thread;
 
@@ -290,8 +291,8 @@ int	press_key(int keypress, t_game *cube);
 int	release_key(int keypress, t_game *cube);
 
 // Render
-void	render_textured_floor_ceiling(t_game *cube, int x, float draw_start,float draw_end);
-void	render_wall(float wall_height, t_game *cube, int x);
+void	render_textured_floor_ceiling(t_raycast *raycast, t_cube_thread *cube_thread, int x, float draw_start,float draw_end);
+void	render_wall(float wall_height, t_cube_thread *cube_thread, int x, t_raycast *raycast);
 void	render(t_game *cube);
 
 // Render_utils
@@ -317,8 +318,8 @@ void *raycast(void *arg);
 // Raycast_values
 int	init_hit_char(t_cube_thread *cube_thread, t_raycast *raycast, t_hit_info **new_hit);
 void	init_raycast_direction(t_game *cube, t_raycast *raycast);
-void	get_distance_and_wallheight(t_game *cube);
-void	init_height_dplan(t_game *cube);
+void	get_distance_and_wallheight(t_game *cube, t_raycast *raycast);
+void	init_height_dplan(t_game *cube, t_raycast *raycast);
 void	init_raycast_values(t_game *cube, t_raycast *raycast, int x);
 
 // Bindings

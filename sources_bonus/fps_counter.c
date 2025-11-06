@@ -282,7 +282,7 @@ void	draw_debug_info_cardinal(t_game *cube)
 	}
 
 	// FPS
-	mlx_string_put(cube->mlx, cube->windows, 10, y_offset, 0x00FFFFFF,
+	mlx_string_put(cube->mlx, cube->windows, 10, y_offset, RED,
 		cube->fps_counter->fps_string);
 
 	// Position
