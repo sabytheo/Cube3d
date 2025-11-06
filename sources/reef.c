@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   reef.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 15:37:43 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/04 15:31:29 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/06 15:25:16 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,8 +76,8 @@ static void	clean_struct(t_game *cube)
 {
 	if (cube->map)
 		free(cube->map);
-	if (cube->player)
-		free(cube->player);
+	// if (cube->player)
+	// 	free(cube->player);
 	if (cube->img)
 		free(cube->img);
 	if (cube->raycast->dir)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 14:16:45 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/06 14:43:14 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/06 15:23:56 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ static void	render_ceil(t_game *cube, float draw_start, int x, float correction)
 	{
 		p = HEIGHT / 2 - y;
 		row_distance = ((cube->raycast->d_plan * 0.5) / p) / correction;
-		floor_x = cube->player->pos_x + cube->raycast->dir->x * row_distance;
-		floor_y = cube->player->pos_y + cube->raycast->dir->y * row_distance;
+		floor_x = cube->player.pos_x + cube->raycast->dir->x * row_distance;
+		floor_y = cube->player.pos_y + cube->raycast->dir->y * row_distance;
 		img_pixel_put(cube->img, x, y, get_texture_pixel((floor_y
 					- floor(floor_y)) * cube->textures.CE_img.ht,
 				&cube->textures.CE_img, floor_x - floor(floor_x)));
@@ -47,8 +47,8 @@ static void	render_floor(t_game *cube, float draw_end, int x, float correction)
 	{
 		p = y - HEIGHT / 2;
 		row_distance = ((cube->raycast->d_plan * 0.5) / p) / correction;
-		floor_x = cube->player->pos_x + cube->raycast->dir->x * row_distance;
-		floor_y = cube->player->pos_y + cube->raycast->dir->y * row_distance;
+		floor_x = cube->player.pos_x + cube->raycast->dir->x * row_distance;
+		floor_y = cube->player.pos_y + cube->raycast->dir->y * row_distance;
 		img_pixel_put(cube->img, x, y, get_texture_pixel((floor_y
 					- floor(floor_y)) * cube->textures.FL_img.ht,
 				&cube->textures.FL_img, floor_x - floor(floor_x)));
@@ -61,7 +61,7 @@ void	render_textured_floor_ceiling(t_game *cube, int x, float draw_start,
 {
 	float	correction;
 
-	correction = cos(cube->raycast->angle - cube->player->angle);
+	correction = cos(cube->raycast->angle - cube->player.angle);
 	if (correction < 0.01)
 		correction = 0.01;
 	render_ceil(cube, draw_start, x, correction);

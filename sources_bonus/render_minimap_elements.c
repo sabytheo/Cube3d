@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 14:45:08 by egache            #+#    #+#             */
-/*   Updated: 2025/11/05 14:49:23 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/06 15:23:56 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,11 @@ static void	calculate_triangle_offset(t_game *cube, t_minimap *mmv,
 	int	center;
 
 	center = mmv->mm_width * 0.5;
-	mmv->center_line_x = center + base_size * cos(cube->player->angle + M_PI);
-	mmv->width_offset_x = width_offset * cos(cube->player->angle + M_PI
+	mmv->center_line_x = center + base_size * cos(cube->player.angle + M_PI);
+	mmv->width_offset_x = width_offset * cos(cube->player.angle + M_PI
 			+ M_PI_2);
-	mmv->center_line_y = center - base_size * sin(cube->player->angle + M_PI);
-	mmv->width_offset_y = width_offset * sin(cube->player->angle + M_PI
+	mmv->center_line_y = center - base_size * sin(cube->player.angle + M_PI);
+	mmv->width_offset_y = width_offset * sin(cube->player.angle + M_PI
 			+ M_PI_2);
 }
 

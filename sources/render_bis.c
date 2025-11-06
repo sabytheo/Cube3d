@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 14:53:07 by egache            #+#    #+#             */
-/*   Updated: 2025/10/14 14:53:44 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/06 15:23:56 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,15 @@
 // static void init_raycast(t_game *cube)
 // {
 // 	cube->raycast->base_height = 1;
-// 	cube->raycast->R_H = 2 * tan(cube->player->fov * 0.5) / WIDTH;
-// 	cube->raycast->d_plan = WIDTH / (2 * tan(cube->player->fov * 0.5));
+// 	cube->raycast->R_H = 2 * tan(cube->player.fov * 0.5) / WIDTH;
+// 	cube->raycast->d_plan = WIDTH / (2 * tan(cube->player.fov * 0.5));
 // 	return;
 // }
 
 // static void get_distance_and_wallheight(t_game *cube, t_vector rayon)
 // {
-// 	cube->raycast->distance = sqrt(pow(rayon.x - cube->player->pos_x, 2) + pow(rayon.y - cube->player->pos_y, 2));
-// 	cube->raycast->corrected_distance = cube->raycast->distance * cos(cube->raycast->angle - cube->player->angle);
+// 	cube->raycast->distance = sqrt(pow(rayon.x - cube->player.pos_x, 2) + pow(rayon.y - cube->player.pos_y, 2));
+// 	cube->raycast->corrected_distance = cube->raycast->distance * cos(cube->raycast->angle - cube->player.angle);
 // 	cube->raycast->wall_height = (cube->raycast->base_height * cube->raycast->d_plan) / cube->raycast->corrected_distance;
 // }
 
@@ -45,11 +45,11 @@
 // 	while (x <= WIDTH)
 // 	{
 // 		float camera_x = 2 * x / (float)WIDTH - 1;
-// 		raycast->angle = cube->player->angle + atan(camera_x * tan(cube->player->fov / 2));
+// 		raycast->angle = cube->player.angle + atan(camera_x * tan(cube->player.fov / 2));
 // 		dir.x = cos(raycast->angle) * 0.01;
 // 		dir.y = -sin(raycast->angle) * 0.01;
-// 		ray.x = cube->player->pos_x;
-// 		ray.y = cube->player->pos_y;
+// 		ray.x = cube->player.pos_x;
+// 		ray.y = cube->player.pos_y;
 // 		while (cube->map->final_grid[(int)ray.y][(int)ray.x] != '1')
 // 		{
 // 			prev_ray = ray;

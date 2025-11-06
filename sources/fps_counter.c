@@ -176,7 +176,7 @@ void	draw_debug_info(t_game *cube)
 		return;
 
 	y_offset = 20;
-	angle_deg = normalize_angle_360(cube->player->angle);
+	angle_deg = normalize_angle_360(cube->player.angle);
 
 	// Fond noir pour toutes les infos
 	int i = 5;
@@ -198,7 +198,7 @@ void	draw_debug_info(t_game *cube)
 	// Position
 	y_offset += 20;
 	snprintf(pos_str, 64, "Pos: (%.2f, %.2f)",
-		cube->player->pos_x, cube->player->pos_y);
+		cube->player.pos_x, cube->player.pos_y);
 	mlx_string_put(cube->mlx, cube->windows, 10, y_offset, 0x00FFFF00, pos_str);
 
 	// Angle (0-360°)
@@ -220,7 +220,7 @@ void	draw_debug_info_180(t_game *cube)
 		return;
 
 	y_offset = 20;
-	angle_deg = normalize_angle_180(cube->player->angle);
+	angle_deg = normalize_angle_180(cube->player.angle);
 
 	// Fond noir
 	int i = 5;
@@ -242,7 +242,7 @@ void	draw_debug_info_180(t_game *cube)
 	// Position
 	y_offset += 20;
 	snprintf(pos_str, 64, "Pos: (%.2f, %.2f)",
-		cube->player->pos_x, cube->player->pos_y);
+		cube->player.pos_x, cube->player.pos_y);
 	mlx_string_put(cube->mlx, cube->windows, 10, y_offset, 0x00FFFF00, pos_str);
 
 	// Angle (-180 à 180°)
@@ -265,8 +265,8 @@ void	draw_debug_info_cardinal(t_game *cube)
 		return;
 
 	y_offset = 20;
-	angle_deg = normalize_angle_360(cube->player->angle);
-	direction = get_cardinal_direction(cube->player->angle);
+	angle_deg = normalize_angle_360(cube->player.angle);
+	direction = get_cardinal_direction(cube->player.angle);
 
 	// Fond noir
 	int i = 5;
@@ -288,7 +288,7 @@ void	draw_debug_info_cardinal(t_game *cube)
 	// Position
 	y_offset += 20;
 	snprintf(pos_str, 64, "Pos: (%.2f, %.2f)",
-		cube->player->pos_x, cube->player->pos_y);
+		cube->player.pos_x, cube->player.pos_y);
 	mlx_string_put(cube->mlx, cube->windows, 10, y_offset, 0x00FFFF00, pos_str);
 
 	// Angle avec direction cardinale

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:45:45 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/06 14:43:02 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/06 15:24:43 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	init(t_game *cube)
 {
 	ft_bzero(cube, sizeof(t_game));
 	cube->map = (t_map *)ft_calloc(1, sizeof(t_map));
-	cube->player = (t_player *)ft_calloc(1, sizeof(t_player));
+	//cube->player = (t_player *)ft_calloc(1, sizeof(t_player));
 	cube->img = (t_img *)ft_calloc(1, sizeof(t_img));
 	cube->minimap_img = (t_img *)ft_calloc(1, sizeof(t_img));
 	cube->raycast = (t_raycast *)ft_calloc(1, sizeof(t_raycast));
@@ -25,9 +25,9 @@ int	init(t_game *cube)
 	cube->key = (t_key *)ft_calloc(1, sizeof(t_key));
 	cube->minimap_values = (t_minimap *)ft_calloc(1, sizeof(t_minimap));
 	// cube->hit_info = (t_hit_info*)ft_calloc(1,sizeof(t_hit_info));
-	cube->player->speed = 0.25;
+	cube->player.speed = 0.25;
 	// cube->fps_counter = init_fps_counter();
-	if (!cube->map || !cube->player || !cube->img || !cube->minimap_img || !cube->raycast
+	if (!cube->map || !cube->img || !cube->minimap_img || !cube->raycast
 		|| !cube->raycast->dir || !cube->key)
 	{
 		ft_printf_fd(2, "Error:\n Failed to allocate memory\n");

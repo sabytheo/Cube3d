@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 17:47:04 by egache            #+#    #+#             */
-/*   Updated: 2025/11/05 14:50:12 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/06 15:23:56 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ static void	init_minimap_values(t_minimap *mmv, t_game *cube)
 	mmv->vision_range = 3;
 	mmv->tile_width = mmv->mm_width / (mmv->vision_range * 2);
 	mmv->tile_height = mmv->tile_width;
-	mmv->player_offset_x = (cube->player->pos_x - floor(cube->player->pos_x))
+	mmv->player_offset_x = (cube->player.pos_x - floor(cube->player.pos_x))
 		* mmv->tile_width;
-	mmv->player_offset_y = (cube->player->pos_y - floor(cube->player->pos_y))
+	mmv->player_offset_y = (cube->player.pos_y - floor(cube->player.pos_y))
 		* mmv->tile_height;
-	mmv->grid_y_start = (int)cube->player->pos_y - mmv->vision_range;
-	mmv->grid_x_start = (int)cube->player->pos_x - mmv->vision_range;
+	mmv->grid_y_start = (int)cube->player.pos_y - mmv->vision_range;
+	mmv->grid_x_start = (int)cube->player.pos_x - mmv->vision_range;
 	mmv->grid_y_end = mmv->grid_y_start + (mmv->vision_range * 2) + 1;
 	mmv->grid_x_end = mmv->grid_x_start + (mmv->vision_range * 2) + 1;
 	mmv->grid_y_check = mmv->grid_y_start;
@@ -126,12 +126,12 @@ void	render_mapmap(t_img *minimap_img, t_game *cube)
 // 		offset_x = WIDTH * 0.1;
 // 		while (cube->map->final_grid[y][x])
 // 		{
-// 			if (y == (int)cube->player->pos_y && x == (int)cube->player->pos_x)
+// 			if (y == (int)cube->player.pos_y && x == (int)cube->player.pos_x)
 // 			{
-// 				draw_x = tile_width * (int)cube->player->pos_x + (tile_width
-// 						* (cube->player->pos_x - floor(cube->player->pos_x)));
-// 				draw_y = tile_width * (int)cube->player->pos_y + (tile_width
-// 						* (cube->player->pos_y - floor(cube->player->pos_y)));
+// 				draw_x = tile_width * (int)cube->player.pos_x + (tile_width
+// 						* (cube->player.pos_x - floor(cube->player.pos_x)));
+// 				draw_y = tile_width * (int)cube->player.pos_y + (tile_width
+// 						* (cube->player.pos_y - floor(cube->player.pos_y)));
 // 				img_pixel_put(img, ceil(draw_x), ceil(draw_y), get_color(0, 0,
 // 						255));
 // 				triangle_base_size = 1;
@@ -141,20 +141,20 @@ void	render_mapmap(t_img *minimap_img, t_game *cube)
 // 					while (width_offset_pixel <= triangle_base_size)
 // 					{
 // 						img_pixel_put(img, (int)(draw_x + triangle_base_size
-// 								* cos(cube->player->angle + M_PI)
-// 								+ width_offset_pixel * cos(cube->player->angle
+// 								* cos(cube->player.angle + M_PI)
+// 								+ width_offset_pixel * cos(cube->player.angle
 // 									+ M_PI + M_PI_2)), (int)(draw_y
 //										- triangle_base_size
-// 								* sin(cube->player->angle + M_PI)
-// 								- width_offset_pixel * sin(cube->player->angle
+// 								* sin(cube->player.angle + M_PI)
+// 								- width_offset_pixel * sin(cube->player.angle
 // 									+ M_PI + M_PI_2)), get_color(255, 255, 0));
 // 						img_pixel_put(img, (int)(draw_x + triangle_base_size
-// 								* cos(cube->player->angle + M_PI)
-// 								- width_offset_pixel * cos(cube->player->angle
+// 								* cos(cube->player.angle + M_PI)
+// 								- width_offset_pixel * cos(cube->player.angle
 // 									+ M_PI + M_PI_2)), (int)(draw_y
 //										- triangle_base_size
-// 								* sin(cube->player->angle + M_PI)
-// 								+ width_offset_pixel * sin(cube->player->angle
+// 								* sin(cube->player.angle + M_PI)
+// 								+ width_offset_pixel * sin(cube->player.angle
 // 									+ M_PI + M_PI_2)), get_color(0, 255, 255));
 // 						width_offset_pixel++;
 // 					}

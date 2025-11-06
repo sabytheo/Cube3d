@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycast.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 14:33:01 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/04 15:25:39 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/06 15:23:56 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,17 @@ static int	if_wall_hit(t_game *cube, t_raycast *raycast, int side)
 {
 	if (!side)
 	{
-		raycast->floatX = cube->player->pos_x + raycast->dir->x
+		raycast->floatX = cube->player.pos_x + raycast->dir->x
 			* (raycast->sideDistX - raycast->deltaDistX);
-		raycast->floatY = cube->player->pos_y + raycast->dir->y
+		raycast->floatY = cube->player.pos_y + raycast->dir->y
 			* (raycast->sideDistX - raycast->deltaDistX);
 		cube->textures.x = raycast->floatY - floor(raycast->floatY);
 	}
 	else
 	{
-		raycast->floatX = cube->player->pos_x + raycast->dir->x
+		raycast->floatX = cube->player.pos_x + raycast->dir->x
 			* (raycast->sideDistY - raycast->deltaDistY);
-		raycast->floatY = cube->player->pos_y + raycast->dir->y
+		raycast->floatY = cube->player.pos_y + raycast->dir->y
 			* (raycast->sideDistY - raycast->deltaDistY);
 		cube->textures.x = raycast->floatX - floor(raycast->floatX);
 	}

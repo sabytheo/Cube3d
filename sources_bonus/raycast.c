@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycast.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 16:23:49 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/06 14:40:10 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/06 15:23:56 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,25 +17,25 @@ static void	get_texture_coord_and_distance(t_game *cube, t_raycast *raycast,
 {
 	if (!side)
 	{
-		raycast->floatX = cube->player->pos_x + raycast->dir->x
+		raycast->floatX = cube->player.pos_x + raycast->dir->x
 			* (raycast->sideDistX - raycast->deltaDistX);
-		raycast->floatY = cube->player->pos_y + raycast->dir->y
+		raycast->floatY = cube->player.pos_y + raycast->dir->y
 			* (raycast->sideDistX - raycast->deltaDistX);
 		cube->textures.x = raycast->floatY - floor(raycast->floatY);
 	}
 	else
 	{
-		raycast->floatX = cube->player->pos_x + raycast->dir->x
+		raycast->floatX = cube->player.pos_x + raycast->dir->x
 			* (raycast->sideDistY - raycast->deltaDistY);
-		raycast->floatY = cube->player->pos_y + raycast->dir->y
+		raycast->floatY = cube->player.pos_y + raycast->dir->y
 			* (raycast->sideDistY - raycast->deltaDistY);
 		cube->textures.x = raycast->floatX - floor(raycast->floatX);
 	}
 	if (side == 0)
-		(*new_hit)->distance = (raycast->intX - cube->player->pos_x + (1
+		(*new_hit)->distance = (raycast->intX - cube->player.pos_x + (1
 					- raycast->stepX) / 2) / raycast->dir->x;
 	else
-		(*new_hit)->distance = (raycast->intY - cube->player->pos_y + (1
+		(*new_hit)->distance = (raycast->intY - cube->player.pos_y + (1
 					- raycast->stepY) / 2) / raycast->dir->y;
 	(*new_hit)->side = side;
 	(*new_hit)->texture_x = cube->textures.x;
