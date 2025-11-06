@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 14:16:45 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/06 15:57:39 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/06 21:05:59 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,12 +108,12 @@ void	render_wall(float wall_height, t_game *cube, int x)
 
 void	render(t_game *cube)
 {
-	// update_fps_counter(cube);
+	update_fps_counter(cube);
 	raycast(cube, &cube->raycast);
 	render_mapmap(cube->minimap_img, cube);
 	// render_minimap(cube->img, cube);
 	mlx_put_image_to_window(cube->mlx, cube->windows, cube->img->img, 0, 0);
 	mlx_put_image_to_window(cube->mlx, cube->windows, cube->minimap_img->img, 0,
 		0);
-	// draw_debug_info_cardinal(cube);
+	draw_debug_info_cardinal(cube);
 }
