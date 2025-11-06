@@ -39,4 +39,11 @@ BONUS
 ## Collectibles bonus/malus
 ## Ennemis
 
+**MULTITHREADING**
 
+## GOOD STRUCTURES ^_^
+- Raycast
+
+## BAD STRUCTURES è_é
+- t_hit_info *hits
+- t_img *texture

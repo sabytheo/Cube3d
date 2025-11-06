@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/06 15:58:21 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/06 19:18:23 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <sys/time.h>
+# include <pthread.h>
 
 #define _GNU_SOURCE
 
@@ -199,7 +200,7 @@ enum
 };
 
 
-typedef struct s_texture
+typedef struct s_textures
 {
 	char *NO;
 	char *SO;
@@ -222,7 +223,7 @@ typedef struct s_texture
 	double	y;
 	double	x;
 
-} t_texture;
+} t_textures;
 
 typedef struct s_fps
 {
@@ -246,18 +247,31 @@ typedef struct s_game
 	void *windows;
 	struct timeval last_frame;  // Timer pour limiter les FPS
 	int frame_limit;             // Limite en microsecondes (16666 = 60 FPS)
+	long nb_cores;
 	t_map map;
 	t_img *img;
 	t_img *minimap_img;
 	t_minimap minimap_values;
 	t_player player;
 	t_raycast raycast;
-	t_texture textures;
+	t_textures textures;
 	t_hit_info *hit_info;
 	t_fps *fps_counter;
 	t_key key;
-
 } t_game;
+
+typedef struct s_cube_thread
+{
+	t_game *cube;
+	t_raycast raycast;
+	t_hit_info hit;
+	t_map map;
+	int width_start;
+	int width_end;
+	int id;
+	pthread_t		thread;
+
+} t_cube_thread;
 
 void img_pixel_put(t_img *img, int x, int y, int color);
 unsigned int	get_texture_pixel(float text_y, t_img *img, float text_x);
@@ -297,7 +311,8 @@ void	draw_minimap_borders(t_img *minimap_img, int mm_width, int tile_width);
 void	draw_wall_tile(t_game *cube, t_minimap *mmv);
 
 // Raycast44h2
-void raycast(t_game *cube, t_raycast *raycast);
+// void raycast(t_cube_thread *cube_thread, t_raycast *raycast);
+void *raycast(void *arg);
 
 // Raycast_values
 int	init_hit_char(t_game *cube, t_raycast *raycast, t_hit_info **new_hit);
@@ -314,7 +329,7 @@ int press_key(int keypress, t_game *cube);
 // Debug
 void print_map(char **map);
 void print_width(t_game *cube);
-void print_texture(t_texture *textures);
+void print_texture(t_textures *textures);
 
 // Reef
 int free_exit(t_game *cube);

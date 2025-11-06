@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/06 15:44:13 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/06 16:08:18 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -174,7 +174,7 @@ typedef struct s_texture
 	double	y;
 	double	x;
 
-} t_texture;
+} t_textures;
 
 typedef struct s_fps
 {
@@ -196,7 +196,7 @@ typedef struct s_game
 	t_img *img;
 	t_player player;
 	t_raycast raycast;
-	t_texture textures;
+	t_textures textures;
 	t_fps *fps_counter;
 	t_key key;
 
@@ -212,8 +212,8 @@ void	free_fps_counter(t_fps *fps);
 void	draw_debug_info_cardinal(t_game *cube);
 
 
-// void render_floor_ceilling(t_img *img, t_texture *textures);
-void render_floor_ceilling(t_img *img, t_texture *textures, int x, int draw_start, int draw_end);
+// void render_floor_ceilling(t_img *img, t_textures *textures);
+void render_floor_ceilling(t_img *img, t_textures *textures, int x, int draw_start, int draw_end);
 
 
 // Raycast_value
@@ -243,7 +243,7 @@ int	is_hitting(float x, float y, t_game *cube, char c);
 // Debug
 void print_map(char **map);
 void print_width(t_game *cube);
-void print_texture(t_texture *textures);
+void print_texture(t_textures *textures);
 
 // Reef
 int free_exit(t_game *cube);

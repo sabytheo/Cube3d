@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 14:33:01 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/06 15:48:48 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/06 16:41:02 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ static int	ray_displacement(t_game *cube, t_raycast *raycast)
 	return (0);
 }
 
-static t_img	*assign_texture_and_render(t_texture *textures,
+static t_img	*assign_texture_and_render(t_textures *textures,
 		t_raycast *raycast, int side)
 {
 	if (raycast->dir.x > 0 && side == 0)

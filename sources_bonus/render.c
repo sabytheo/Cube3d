@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 14:16:45 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/06 15:57:39 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/06 19:23:34 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,8 +108,45 @@ void	render_wall(float wall_height, t_game *cube, int x)
 
 void	render(t_game *cube)
 {
-	// update_fps_counter(cube);
-	raycast(cube, &cube->raycast);
+	t_cube_thread *cube_thread[cube->nb_cores];
+	int column_size = WIDTH / cube->nb_cores;
+	int column_start;
+
+	column_start = 0;
+	int i;
+	i = 0;
+	while (i < cube->nb_cores)
+	{
+		cube_thread[i] = malloc(1 * sizeof(t_cube_thread));
+		if (i == 0)
+			cube_thread[i]->width_start = column_start;
+		else
+			cube_thread[i]->width_start = column_start + 1;
+		cube_thread[i]->width_end = column_start + column_size;
+		cube_thread[i]->cube = cube;
+		cube_thread[i]->map = cube->map;
+		cube_thread[i]->id = i;
+		cube_thread[i]->map.final_grid = malloc(sizeof(char *) * cube->map.grid_height);
+		for (int j = 0; j < cube->map.grid_height; j++)
+		{
+			cube_thread[i]->map.final_grid[j] = ft_strdup(cube->map.final_grid[j]);
+		}
+		// printf("cube address :%p || cube_thread->cube address : %p || cube.map : %p || cube_thread->cube.map : %p\n", &cube, &cube_thread[i]->cube, &cube->map, &cube_thread[i]->cube->map);
+		if (pthread_create(&cube_thread[i]->thread, NULL, &raycast, &cube_thread[i]))
+		{
+			return;
+		}
+		column_start += column_size;
+		i++;
+	}
+	i = 0;
+	while (i < cube->nb_cores)
+	{
+    	if (cube_thread[i])
+			pthread_join(cube_thread[i]->thread, NULL);
+		i++;
+	}
+	//raycast(cube_thread->cube, &cube->raycast);
 	render_mapmap(cube->minimap_img, cube);
 	// render_minimap(cube->img, cube);
 	mlx_put_image_to_window(cube->mlx, cube->windows, cube->img->img, 0, 0);

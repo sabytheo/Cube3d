@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:45:45 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/06 15:52:04 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/06 17:40:15 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 int	init(t_game *cube)
 {
 	ft_bzero(cube, sizeof(t_game));
+	cube->nb_cores = sysconf(_SC_NPROCESSORS_ONLN);
 	cube->img = (t_img *)ft_calloc(1, sizeof(t_img));
 	cube->minimap_img = (t_img *)ft_calloc(1, sizeof(t_img));
 	// cube->hit_info = (t_hit_info*)ft_calloc(1,sizeof(t_hit_info));
@@ -32,7 +33,7 @@ int	init(t_game *cube)
 	return (0);
 }
 
-int	xpm_to_image(t_game *cube, t_texture *textures)
+int	xpm_to_image(t_game *cube, t_textures *textures)
 {
 	cube->textures.NO_img.img = mlx_xpm_file_to_image(cube->mlx, textures->NO,
 			&textures->NO_img.wh, &textures->NO_img.ht);
@@ -58,7 +59,7 @@ int	xpm_to_image(t_game *cube, t_texture *textures)
 	return (0);
 }
 
-static int get_data_addr_cardinal(t_texture *textures)
+static int get_data_addr_cardinal(t_textures *textures)
 {
 		textures->NO_img.addr = mlx_get_data_addr(textures->NO_img.img,
 				&textures->NO_img.bpp, &textures->NO_img.sl,
