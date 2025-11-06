@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cube_bonus.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/05 19:33:06 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/06 14:40:20 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,18 @@ typedef struct s_vector
 	float y;
 } t_vector;
 
+typedef struct s_img
+{
+	void *img;
+	char *addr;
+	int bpp;
+	int sl;
+	int en;
+	int wh;
+	int ht;
+
+} t_img;
+
 typedef struct s_raycast
 {
 	float angle;
@@ -88,6 +100,8 @@ typedef struct s_raycast
 	int intY;
 	float floatX;
 	float floatY;
+	float start_y;
+	t_img* texture_assigned;
 	t_vector *dir;
 } t_raycast;
 
@@ -184,17 +198,6 @@ enum
 	COLORS_FOUND
 };
 
-typedef struct s_img
-{
-	void *img;
-	char *addr;
-	int bpp;
-	int sl;
-	int en;
-	int wh;
-	int ht;
-
-} t_img;
 
 typedef struct s_texture
 {
@@ -266,9 +269,15 @@ void	draw_debug_info(t_game *cube);
 void	free_fps_counter(t_fps *fps);
 void	draw_debug_info_cardinal(t_game *cube);
 
+
+// bindings_utils
+int	is_hitting(float x, float y, t_game *cube);
+int	press_key(int keypress, t_game *cube);
+int	release_key(int keypress, t_game *cube);
+
 // Render
 void	render_textured_floor_ceiling(t_game *cube, int x, float draw_start,float draw_end);
-void	render_wall(float wall_height, t_game *cube, int x, t_img *img);
+void	render_wall(float wall_height, t_game *cube, int x);
 void	render(t_game *cube);
 
 // Render_utils

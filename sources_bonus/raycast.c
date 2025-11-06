@@ -6,7 +6,7 @@
 /*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 16:23:49 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/04 15:36:55 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/06 14:40:10 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ static void	collect_hits(t_game *cube, t_raycast *raycast, t_hit_info **hits,
 	{
 		side = init_hit_char(cube, raycast, &new_hit);
 		if (side == -1)
-			return ;
+			return (free(new_hit)) ;
 		if (new_hit->hit_type == '1' || new_hit->hit_type == 'C'
 			|| new_hit->hit_type == 'O')
 		{
@@ -62,7 +62,10 @@ static void	collect_hits(t_game *cube, t_raycast *raycast, t_hit_info **hits,
 			(*hits)[*hit_count] = *new_hit;
 			(*hit_count)++;
 			if (new_hit->hit_type == '1' || new_hit->hit_type == 'C')
+			{
+				free(new_hit);
 				hit_wall = true;
+			}
 		}
 	}
 }
@@ -112,7 +115,8 @@ static void render_from_last_wall(t_game* cube,t_raycast *raycast,int x)
 		if (texture)
 		{
 			cube->textures.y = texture->ht / cube->raycast->wall_height;
-			render_wall(raycast->wall_height, cube, x, texture);
+			raycast->texture_assigned = texture;
+			render_wall(raycast->wall_height, cube, x);
 		}
 		i--;
 	}

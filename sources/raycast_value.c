@@ -6,7 +6,7 @@
 /*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 14:35:08 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/04 15:25:36 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/06 13:48:02 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void	init_raycast_values(t_game *cube, t_raycast *raycast, int x)
 	raycast->intY = (int)cube->player->pos_y;
 	raycast->floatX = cube->player->pos_x;
 	raycast->floatY = cube->player->pos_y;
+	raycast->start_y = HEIGHT * 0.5;
 }
 
 void	init_height_dplan(t_game *cube)

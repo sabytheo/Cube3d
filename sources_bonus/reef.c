@@ -6,7 +6,7 @@
 /*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 15:37:43 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/31 15:00:29 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/06 14:47:00 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ static void destroy_image(t_game *cube)
 		mlx_destroy_image(cube->mlx, cube->textures.EA_img.img);
 	if (cube->img->img)
 		mlx_destroy_image(cube->mlx, cube->img->img);
+	if (cube->minimap_img->img)
+		mlx_destroy_image(cube->mlx, cube->minimap_img->img);
 	if (cube->textures.NO_img.img)
 		mlx_destroy_image(cube->mlx, cube->textures.NO_img.img);
 	if (cube->textures.SO_img.img)
@@ -93,6 +95,10 @@ static void clean_struct(t_game *cube)
 		free(cube->map);
 	if (cube->player)
 		free(cube->player);
+	if (cube->minimap_img)
+		free(cube->minimap_img);
+	if (cube->minimap_values)
+		free(cube->minimap_values);
 	if (cube->img)
 		free(cube->img);
 	if (cube->raycast->dir)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 14:16:45 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/04 18:12:58 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/06 13:48:52 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ void	render_floor_ceilling(t_img *img, t_texture *textures, int x,
 
 void	render_wall(float wall_height, t_game *cube, int x, t_img *img)
 {
-	int		start_y;
 	int		j;
 	int		draw_start;
 	int		draw_end;
@@ -50,14 +49,13 @@ void	render_wall(float wall_height, t_game *cube, int x, t_img *img)
 	if (cube->textures.y <= 0)
 		cube->textures.y = 0.01;
 	text_y = 0;
-	start_y = HEIGHT / 2;
-	draw_start = (start_y - (wall_height * 0.5));
+	draw_start = (cube->raycast->start_y - (wall_height * 0.5));
 	if (draw_start < 0)
 	{
 		text_y = (0 - draw_start) * cube->textures.y;
 		draw_start = 0;
 	}
-	draw_end = (start_y + (wall_height * 0.5));
+	draw_end = (cube->raycast->start_y + (wall_height * 0.5));
 	if (draw_end >= HEIGHT)
 		draw_end = HEIGHT - 1;
 	else
