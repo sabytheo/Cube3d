@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:46:14 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/06 15:32:02 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/06 15:38:22 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,9 @@ int	init(t_game *cube)
 {
 	ft_bzero(cube, sizeof(t_game));
 	cube->map = (t_map *)ft_calloc(1, sizeof(t_map));
-	//cube->player = (t_player *)ft_calloc(1, sizeof(t_player));
 	cube->img = (t_img *)ft_calloc(1, sizeof(t_img));
 	cube->raycast = (t_raycast *)ft_calloc(1, sizeof(t_raycast));
 	cube->raycast->dir = (t_vector *)ft_calloc(1, sizeof(t_vector));
-	//cube->key = (t_key *)ft_calloc(1, sizeof(t_key));
 	cube->player.speed = 0.25;
 	//cube->fps_counter = init_fps_counter();
 	if (!cube->map || !cube->img || !cube->raycast ||
