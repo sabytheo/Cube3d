@@ -6,7 +6,7 @@
 /*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 15:37:43 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/06 15:26:05 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/06 15:38:51 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,10 +78,6 @@ static void	clean_struct(t_game *cube)
 		free(cube->player);
 	if (cube->img)
 		free(cube->img);
-	if (cube->raycast->dir)
-		free(cube->raycast->dir);
-	if (cube->raycast)
-		free(cube->raycast);
 	if (cube->key)
 		free(cube->key);
 	return ;

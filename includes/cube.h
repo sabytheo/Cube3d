@@ -6,7 +6,7 @@
 /*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/06 15:28:23 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/06 15:32:19 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ typedef struct s_raycast
 	float floatX;
 	float floatY;
 	float start_y;
-	t_vector *dir;
+	t_vector dir;
 } t_raycast;
 
 typedef struct s_player
@@ -195,7 +195,7 @@ typedef struct s_game
 	t_map map;
 	t_img *img;
 	t_player *player;
-	t_raycast *raycast;
+	t_raycast raycast;
 	t_texture textures;
 	t_fps *fps_counter;
 	t_key *key;

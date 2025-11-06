@@ -6,7 +6,7 @@
 /*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 14:16:45 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/06 14:43:14 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/06 15:36:54 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ static void	render_ceil(t_game *cube, float draw_start, int x, float correction)
 	while (y < draw_start)
 	{
 		p = HEIGHT / 2 - y;
-		row_distance = ((cube->raycast->d_plan * 0.5) / p) / correction;
-		floor_x = cube->player->pos_x + cube->raycast->dir->x * row_distance;
-		floor_y = cube->player->pos_y + cube->raycast->dir->y * row_distance;
+		row_distance = ((cube->raycast.d_plan * 0.5) / p) / correction;
+		floor_x = cube->player->pos_x + cube->raycast.dir.x * row_distance;
+		floor_y = cube->player->pos_y + cube->raycast.dir.y * row_distance;
 		img_pixel_put(cube->img, x, y, get_texture_pixel((floor_y
 					- floor(floor_y)) * cube->textures.CE_img.ht,
 				&cube->textures.CE_img, floor_x - floor(floor_x)));
@@ -46,9 +46,9 @@ static void	render_floor(t_game *cube, float draw_end, int x, float correction)
 	while (y < HEIGHT)
 	{
 		p = y - HEIGHT / 2;
-		row_distance = ((cube->raycast->d_plan * 0.5) / p) / correction;
-		floor_x = cube->player->pos_x + cube->raycast->dir->x * row_distance;
-		floor_y = cube->player->pos_y + cube->raycast->dir->y * row_distance;
+		row_distance = ((cube->raycast.d_plan * 0.5) / p) / correction;
+		floor_x = cube->player->pos_x + cube->raycast.dir.x * row_distance;
+		floor_y = cube->player->pos_y + cube->raycast.dir.y * row_distance;
 		img_pixel_put(cube->img, x, y, get_texture_pixel((floor_y
 					- floor(floor_y)) * cube->textures.FL_img.ht,
 				&cube->textures.FL_img, floor_x - floor(floor_x)));
@@ -61,7 +61,7 @@ void	render_textured_floor_ceiling(t_game *cube, int x, float draw_start,
 {
 	float	correction;
 
-	correction = cos(cube->raycast->angle - cube->player->angle);
+	correction = cos(cube->raycast.angle - cube->player->angle);
 	if (correction < 0.01)
 		correction = 0.01;
 	render_ceil(cube, draw_start, x, correction);
@@ -86,30 +86,30 @@ void	render_wall(float wall_height, t_game *cube, int x)
 	int				draw_end;
 	float			text_y;
 
-	cube->textures.y = cube->raycast->texture_assigned->ht / cube->raycast->wall_height;
+	cube->textures.y = cube->raycast.texture_assigned->ht / cube->raycast.wall_height;
 	if (cube->textures.y <= 0)
 		cube->textures.y = 0.01;
 	text_y = 0;
-	draw_start = (cube->raycast->start_y - (wall_height * 0.5));
+	draw_start = (cube->raycast.start_y - (wall_height * 0.5));
 	if (draw_start < 0)
 	{
 		text_y = (0 - draw_start) * cube->textures.y;
 		draw_start = 0;
 	}
-	draw_end = (cube->raycast->start_y + (wall_height * 0.5));
+	draw_end = (cube->raycast.start_y + (wall_height * 0.5));
 	if (draw_end >= HEIGHT)
 		draw_end = HEIGHT - 1;
 	else
 		render_textured_floor_ceiling(cube, x, draw_start, draw_end);
 	j = draw_start;
 	while (j < draw_end)
-		render_wall_pixel(cube,x,&j,&text_y,cube->raycast->texture_assigned);
+		render_wall_pixel(cube,x,&j,&text_y,cube->raycast.texture_assigned);
 }
 
 void	render(t_game *cube)
 {
 	// update_fps_counter(cube);
-	raycast(cube, cube->raycast);
+	raycast(cube, &cube->raycast);
 	render_mapmap(cube->minimap_img, cube);
 	// render_minimap(cube->img, cube);
 	mlx_put_image_to_window(cube->mlx, cube->windows, cube->img->img, 0, 0);

@@ -6,7 +6,7 @@
 /*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 14:53:07 by egache            #+#    #+#             */
-/*   Updated: 2025/11/06 15:23:15 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/06 15:31:18 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,17 @@
 /* OTHER ALGO ----------------------   */
 // static void init_raycast(t_game *cube)
 // {
-// 	cube->raycast->base_height = 1;
-// 	cube->raycast->R_H = 2 * tan(cube->player->fov * 0.5) / WIDTH;
-// 	cube->raycast->d_plan = WIDTH / (2 * tan(cube->player->fov * 0.5));
+// 	cube->raycast.base_height = 1;
+// 	cube->raycast.R_H = 2 * tan(cube->player->fov * 0.5) / WIDTH;
+// 	cube->raycast.d_plan = WIDTH / (2 * tan(cube->player->fov * 0.5));
 // 	return;
 // }
 
 // static void get_distance_and_wallheight(t_game *cube, t_vector rayon)
 // {
-// 	cube->raycast->distance = sqrt(pow(rayon.x - cube->player->pos_x, 2) + pow(rayon.y - cube->player->pos_y, 2));
-// 	cube->raycast->corrected_distance = cube->raycast->distance * cos(cube->raycast->angle - cube->player->angle);
-// 	cube->raycast->wall_height = (cube->raycast->base_height * cube->raycast->d_plan) / cube->raycast->corrected_distance;
+// 	cube->raycast.distance = sqrt(pow(rayon.x - cube->player->pos_x, 2) + pow(rayon.y - cube->player->pos_y, 2));
+// 	cube->raycast.corrected_distance = cube->raycast.distance * cos(cube->raycast.angle - cube->player->angle);
+// 	cube->raycast.wall_height = (cube->raycast.base_height * cube->raycast.d_plan) / cube->raycast.corrected_distance;
 // }
 
 // void raycast(t_game *cube, t_raycast *raycast)
@@ -39,7 +39,7 @@
 // 	int prev_mapX;
 // 	int prev_mapY;
 
-// 	cube->raycast->dir = &dir;
+// 	cube->raycast.dir = &dir;
 // 	init_raycast(cube);
 // 	x = 0;
 // 	while (x <= WIDTH)

@@ -6,7 +6,7 @@
 /*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 15:37:43 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/06 15:25:07 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/06 15:38:01 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,8 +91,6 @@ static void clean_textures(t_game *cube)
 
 static void clean_struct(t_game *cube)
 {
-	// if (cube->map)
-	// 	free(cube->map);
 	if (cube->player)
 		free(cube->player);
 	if (cube->minimap_img)
@@ -101,10 +99,6 @@ static void clean_struct(t_game *cube)
 		free(cube->minimap_values);
 	if (cube->img)
 		free(cube->img);
-	if (cube->raycast->dir)
-		free(cube->raycast->dir);
-	if (cube->raycast)
-		free(cube->raycast);
 	if (cube->key)
 		free(cube->key);
 	return;
