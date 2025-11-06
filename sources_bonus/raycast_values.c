@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycast_values.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 16:26:36 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/04 18:03:13 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/06 14:34:46 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void	init_raycast_values(t_game *cube, t_raycast *raycast, int x)
 	raycast->intY = (int)cube->player->pos_y;
 	raycast->floatX = cube->player->pos_x;
 	raycast->floatY = cube->player->pos_y;
+	raycast->start_y = HEIGHT * 0.5;
 }
 
 void	init_height_dplan(t_game *cube)

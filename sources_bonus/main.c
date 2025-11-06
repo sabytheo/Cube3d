@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:45:45 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/04 23:16:57 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/06 14:43:02 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,16 @@ int	init(t_game *cube)
 	cube->minimap_values = (t_minimap *)ft_calloc(1, sizeof(t_minimap));
 	// cube->hit_info = (t_hit_info*)ft_calloc(1,sizeof(t_hit_info));
 	cube->player->speed = 0.25;
-	cube->fps_counter = init_fps_counter();
+	// cube->fps_counter = init_fps_counter();
 	if (!cube->map || !cube->player || !cube->img || !cube->minimap_img || !cube->raycast
 		|| !cube->raycast->dir || !cube->key)
 	{
 		ft_printf_fd(2, "Error:\n Failed to allocate memory\n");
 		return (-1);
 	}
-	// Initialiser le timer
-	gettimeofday(&cube->last_frame, NULL);
-	cube->frame_limit = 16666; // ~60 FPS (16.666ms par frame)
+	// // Initialiser le timer
+	// gettimeofday(&cube->last_frame, NULL);
+	// cube->frame_limit = 16666; // ~60 FPS (16.666ms par frame)
 	return (0);
 }
 
