@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/06 15:43:57 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/06 15:58:21 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #define CUBE_BONUS_H
 
 #include "error.h"
-#include "ft_printf.h"* texture_assigned
+#include "ft_printf.h"
 #include "ft_printf_fd.h"
 #include "get_next_line.h"
 #include "libft.h"
