@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 15:37:43 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/06 15:25:21 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/06 15:30:18 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,8 +105,8 @@ static void clean_struct(t_game *cube)
 		free(cube->raycast->dir);
 	if (cube->raycast)
 		free(cube->raycast);
-	if (cube->key)
-		free(cube->key);
+	// if (cube->key)
+	// 	free(cube->key);
 	return;
 }
 

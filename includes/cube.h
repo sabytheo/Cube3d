@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/06 15:23:29 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/06 15:28:53 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -198,7 +198,7 @@ typedef struct s_game
 	t_raycast *raycast;
 	t_texture textures;
 	t_fps *fps_counter;
-	t_key *key;
+	t_key key;
 
 } t_game;
 

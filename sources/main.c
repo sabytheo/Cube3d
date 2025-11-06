@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:46:14 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/06 15:24:48 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/06 15:32:02 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,18 +21,18 @@ int	init(t_game *cube)
 	cube->img = (t_img *)ft_calloc(1, sizeof(t_img));
 	cube->raycast = (t_raycast *)ft_calloc(1, sizeof(t_raycast));
 	cube->raycast->dir = (t_vector *)ft_calloc(1, sizeof(t_vector));
-	cube->key = (t_key *)ft_calloc(1, sizeof(t_key));
+	//cube->key = (t_key *)ft_calloc(1, sizeof(t_key));
 	cube->player.speed = 0.25;
-	cube->fps_counter = init_fps_counter();
+	//cube->fps_counter = init_fps_counter();
 	if (!cube->map || !cube->img || !cube->raycast ||
-		!cube->raycast->dir || !cube->key)
+		!cube->raycast->dir)
 	{
 		ft_printf_fd(2, "Error:\n Failed to allocate memory\n");
 		return (-1);
 	}
 	// Initialiser le timer
-	gettimeofday(&cube->last_frame, NULL);
-	cube->frame_limit = 16666; // ~60 FPS (16.666ms par frame)
+	// gettimeofday(&cube->last_frame, NULL);
+	// cube->frame_limit = 16666; // ~60 FPS (16.666ms par frame)
 	return (0);
 }
 int	xpm_to_image(t_game *cube, t_texture *textures)
