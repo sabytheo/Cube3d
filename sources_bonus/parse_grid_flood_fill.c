@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 12:49:13 by egache            #+#    #+#             */
-/*   Updated: 2025/11/05 19:40:47 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/06 12:10:15 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,15 @@ char replace_char(char c)
 	return (c);
 }
 
+bool is_surrounded(t_game *cube, int i, int j)
+{
+	if ((cube->map->final_grid[i + 1][j] == '1' && cube->map->final_grid[i
+					- 1][j] == '1') || (cube->map->final_grid[i][j + 1] == '1'
+				&& cube->map->final_grid[i][j - 1] == '1'))
+						return (true);
+	return (false);
+}
+
 int	flood_fill(int i, int j, t_game *cube)
 {
 	if (i < 0 || i >= cube->map->grid_height || !cube->map->final_grid[i])
@@ -41,8 +50,11 @@ int	flood_fill(int i, int j, t_game *cube)
 		return (0);
 	if (is_already_visited(cube->map->final_grid[i][j]))
 		return (0);
-	if (!is_a_valid_char(cube->map->final_grid[i][j], GRID_CHECK))
-		return (-1);
+	if (cube->map->final_grid[i][j] == 'D')
+	{
+		if (!is_surrounded(cube, i, j))
+			return (-1);
+	}
 	cube->map->final_grid[i][j] = replace_char(cube->map->final_grid[i][j]);
 	if (flood_fill(i + 1, j, cube) == -1)
 		return (-1);
