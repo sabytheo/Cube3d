@@ -6,7 +6,7 @@
 /*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:11:35 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/04 15:23:38 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/06 15:21:18 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 int	is_hitting(float x, float y, t_game *cube, char c)
 {
-	if (cube->map->final_grid[(int)(y + XBOX)][(int)(x + XBOX)] != c)
+	if (cube->map.final_grid[(int)(y + XBOX)][(int)(x + XBOX)] != c)
 	{
-		if (cube->map->final_grid[(int)(y + XBOX)][(int)(x - XBOX)] != c)
+		if (cube->map.final_grid[(int)(y + XBOX)][(int)(x - XBOX)] != c)
 		{
-			if (cube->map->final_grid[(int)(y - XBOX)][(int)(x + XBOX)] != c)
+			if (cube->map.final_grid[(int)(y - XBOX)][(int)(x + XBOX)] != c)
 			{
-				if (cube->map->final_grid[(int)(y - XBOX)][(int)(x
+				if (cube->map.final_grid[(int)(y - XBOX)][(int)(x
 						- XBOX)] != c)
 				{
 					return (0);

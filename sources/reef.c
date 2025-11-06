@@ -6,7 +6,7 @@
 /*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 15:37:43 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/04 15:31:29 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/06 15:26:05 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,8 +74,6 @@ static void	clean_textures(t_game *cube)
 
 static void	clean_struct(t_game *cube)
 {
-	if (cube->map)
-		free(cube->map);
 	if (cube->player)
 		free(cube->player);
 	if (cube->img)
@@ -95,12 +93,12 @@ int	free_exit(t_game *cube)
 		mlx_destroy_window(cube->mlx, cube->windows);
 	destroy_image(cube);
 	clean_textures(cube);
-	if (cube->map->grid)
-		free_tab(cube->map->grid);
-	if (cube->map->final_grid)
-		free_tab(cube->map->final_grid);
-	if (cube->map->width)
-		free(cube->map->width);
+	if (cube->map.grid)
+		free_tab(cube->map.grid);
+	if (cube->map.final_grid)
+		free_tab(cube->map.final_grid);
+	if (cube->map.width)
+		free(cube->map.width);
 	clean_struct(cube);
 	if (cube->mlx)
 	{

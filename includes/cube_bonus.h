@@ -6,7 +6,7 @@
 /*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/06 14:40:20 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/06 15:24:41 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -246,7 +246,7 @@ typedef struct s_game
 	void *windows;
 	struct timeval last_frame;  // Timer pour limiter les FPS
 	int frame_limit;             // Limite en microsecondes (16666 = 60 FPS)
-	t_map *map;
+	t_map map;
 	t_img *img;
 	t_img *minimap_img;
 	t_minimap *minimap_values;

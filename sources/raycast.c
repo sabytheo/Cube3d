@@ -6,7 +6,7 @@
 /*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 14:33:01 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/04 15:25:39 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/06 15:23:15 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ static int	ray_displacement(t_game *cube, t_raycast *raycast)
 			raycast->intY += raycast->stepY;
 			side = 1;
 		}
-		if (cube->map->final_grid[raycast->intY][raycast->intX] == '1')
+		if (cube->map.final_grid[raycast->intY][raycast->intX] == '1')
 		{
 			hit = false;
 			return (if_wall_hit(cube, raycast, side));

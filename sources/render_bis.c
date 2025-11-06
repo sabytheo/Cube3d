@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render_bis.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 14:53:07 by egache            #+#    #+#             */
-/*   Updated: 2025/10/14 14:53:44 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/06 15:23:15 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@
 // 		dir.y = -sin(raycast->angle) * 0.01;
 // 		ray.x = cube->player->pos_x;
 // 		ray.y = cube->player->pos_y;
-// 		while (cube->map->final_grid[(int)ray.y][(int)ray.x] != '1')
+// 		while (cube->map.final_grid[(int)ray.y][(int)ray.x] != '1')
 // 		{
 // 			prev_ray = ray;
 // 			ray.x += dir.x;

@@ -6,7 +6,7 @@
 /*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 12:28:58 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/06 12:29:31 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/06 15:23:15 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,18 @@ int	is_hitting(float x, float y, t_game *cube)
 {
 	static const char	c[2] = {'1', 'C'};
 
-	if (cube->map->final_grid[(int)(y + XBOX)][(int)(x + XBOX)] != c[0]
-		&& cube->map->final_grid[(int)(y + XBOX)][(int)(x + XBOX)] != c[1])
+	if (cube->map.final_grid[(int)(y + XBOX)][(int)(x + XBOX)] != c[0]
+		&& cube->map.final_grid[(int)(y + XBOX)][(int)(x + XBOX)] != c[1])
 	{
-		if (cube->map->final_grid[(int)(y + XBOX)][(int)(x - XBOX)] != c[0]
-			&& cube->map->final_grid[(int)(y + XBOX)][(int)(x - XBOX)] != c[1])
+		if (cube->map.final_grid[(int)(y + XBOX)][(int)(x - XBOX)] != c[0]
+			&& cube->map.final_grid[(int)(y + XBOX)][(int)(x - XBOX)] != c[1])
 		{
-			if (cube->map->final_grid[(int)(y - XBOX)][(int)(x + XBOX)] != c[0]
-				&& cube->map->final_grid[(int)(y - XBOX)][(int)(x
+			if (cube->map.final_grid[(int)(y - XBOX)][(int)(x + XBOX)] != c[0]
+				&& cube->map.final_grid[(int)(y - XBOX)][(int)(x
 					+ XBOX)] != c[1])
 			{
-				if (cube->map->final_grid[(int)(y - XBOX)][(int)(x
-						- XBOX)] != c[0] && cube->map->final_grid[(int)(y
+				if (cube->map.final_grid[(int)(y - XBOX)][(int)(x
+						- XBOX)] != c[0] && cube->map.final_grid[(int)(y
 						- XBOX)][(int)(x - XBOX)] != c[1])
 				{
 					return (0);

@@ -6,7 +6,7 @@
 /*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 16:26:36 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/06 14:34:46 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/06 15:23:15 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ int	init_hit_char(t_game *cube, t_raycast *raycast, t_hit_info **new_hit)
 	*new_hit = malloc(sizeof(t_hit_info));
 	if (!*new_hit)
 		return (-1);
-	(*new_hit)->hit_type = cube->map->final_grid[raycast->intY][raycast->intX];
+	(*new_hit)->hit_type = cube->map.final_grid[raycast->intY][raycast->intX];
 	return (side);
 }
 
