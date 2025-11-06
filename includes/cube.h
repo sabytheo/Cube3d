@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/06 15:28:53 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/06 15:44:13 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ typedef struct s_raycast
 	float floatX;
 	float floatY;
 	float start_y;
-	t_vector *dir;
+	t_vector dir;
 } t_raycast;
 
 typedef struct s_player
@@ -192,10 +192,10 @@ typedef struct s_game
 	void *windows;
 	struct timeval last_frame;  // Timer pour limiter les FPS
 	int frame_limit;             // Limite en microsecondes (16666 = 60 FPS)
-	t_map *map;
+	t_map map;
 	t_img *img;
 	t_player player;
-	t_raycast *raycast;
+	t_raycast raycast;
 	t_texture textures;
 	t_fps *fps_counter;
 	t_key key;

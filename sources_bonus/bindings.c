@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 12:31:12 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/06 15:29:34 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/06 15:51:28 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,28 +135,28 @@ void	press_E_F(t_game *cube)
 	step_x = cos(cube->player.angle);
 	if (cube->key.e == true)
 	{
-		if (cube->map->final_grid[(int)(cube->player.pos_y
+		if (cube->map.final_grid[(int)(cube->player.pos_y
 				+ step_y)][(int)cube->player.pos_x] == 'C')
 		{
-			cube->map->final_grid[(int)(cube->player.pos_y
+			cube->map.final_grid[(int)(cube->player.pos_y
 					+ step_y)][(int)cube->player.pos_x] = 'O';
 		}
-		else if (cube->map->final_grid[(int)cube->player.pos_y][(int)(cube->player.pos_x
+		else if (cube->map.final_grid[(int)cube->player.pos_y][(int)(cube->player.pos_x
 				+ step_x)] == 'C')
-			cube->map->final_grid[(int)cube->player.pos_y][(int)(cube->player.pos_x
+			cube->map.final_grid[(int)cube->player.pos_y][(int)(cube->player.pos_x
 					+ step_x)] = 'O';
 	}
 	else if (cube->key.f == true)
 	{
-		if (cube->map->final_grid[(int)cube->player.pos_y][(int)(cube->player.pos_x)] != 'O')
+		if (cube->map.final_grid[(int)cube->player.pos_y][(int)(cube->player.pos_x)] != 'O')
 		{
-			if (cube->map->final_grid[(int)(cube->player.pos_y
+			if (cube->map.final_grid[(int)(cube->player.pos_y
 					+ step_y)][(int)cube->player.pos_x] == 'O')
-				cube->map->final_grid[(int)(cube->player.pos_y
+				cube->map.final_grid[(int)(cube->player.pos_y
 						+ step_y)][(int)cube->player.pos_x] = 'C';
-			else if (cube->map->final_grid[(int)cube->player.pos_y][(int)(cube->player.pos_x
+			else if (cube->map.final_grid[(int)cube->player.pos_y][(int)(cube->player.pos_x
 					+ step_x)] == 'O')
-				cube->map->final_grid[(int)cube->player.pos_y][(int)(cube->player.pos_x
+				cube->map.final_grid[(int)cube->player.pos_y][(int)(cube->player.pos_x
 						+ step_x)] = 'C';
 		}
 	}

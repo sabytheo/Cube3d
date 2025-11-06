@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:45:45 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/06 15:38:16 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/06 15:52:04 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,12 @@
 int	init(t_game *cube)
 {
 	ft_bzero(cube, sizeof(t_game));
-	cube->map = (t_map *)ft_calloc(1, sizeof(t_map));
 	cube->img = (t_img *)ft_calloc(1, sizeof(t_img));
 	cube->minimap_img = (t_img *)ft_calloc(1, sizeof(t_img));
-	cube->raycast = (t_raycast *)ft_calloc(1, sizeof(t_raycast));
-	cube->raycast->dir = (t_vector *)ft_calloc(1, sizeof(t_vector));
+	// cube->hit_info = (t_hit_info*)ft_calloc(1,sizeof(t_hit_info));
 	cube->player.speed = 0.25;
 	// cube->fps_counter = init_fps_counter();
-	if (!cube->map || !cube->img || !cube->minimap_img || !cube->raycast
-		|| !cube->raycast->dir)
+	if (!cube->img || !cube->minimap_img)
 	{
 		ft_printf_fd(2, "Error:\n Failed to allocate memory\n");
 		return (-1);

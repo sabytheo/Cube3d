@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 17:47:04 by egache            #+#    #+#             */
-/*   Updated: 2025/11/06 15:35:39 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/06 15:54:26 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,15 +43,15 @@ static void	draw_one_tile(t_game *cube, t_minimap *mmv, char c)
 static char	minimap_item_check(t_game *cube, t_minimap *mmv, int grid_x,
 		int grid_y)
 {
-	if (cube->map->final_grid[mmv->grid_y_check]
-		&& cube->map->final_grid[mmv->grid_y_check][mmv->grid_x_check]
-		&& grid_y >= 0 && grid_y <= cube->map->grid_height && grid_x >= 0
-		&& grid_x <= cube->map->max_width
-		&& (cube->map->final_grid[grid_y][grid_x] == '1'
-			|| cube->map->final_grid[grid_y][grid_x] == 'B'
-			|| cube->map->final_grid[grid_y][grid_x] == 'M'
-			|| cube->map->final_grid[grid_y][grid_x] == 'C'))
-		return (cube->map->final_grid[grid_y][grid_x]);
+	if (cube->map.final_grid[mmv->grid_y_check]
+		&& cube->map.final_grid[mmv->grid_y_check][mmv->grid_x_check]
+		&& grid_y >= 0 && grid_y <= cube->map.grid_height && grid_x >= 0
+		&& grid_x <= cube->map.max_width
+		&& (cube->map.final_grid[grid_y][grid_x] == '1'
+			|| cube->map.final_grid[grid_y][grid_x] == 'B'
+			|| cube->map.final_grid[grid_y][grid_x] == 'M'
+			|| cube->map.final_grid[grid_y][grid_x] == 'C'))
+		return (cube->map.final_grid[grid_y][grid_x]);
 	return ('0');
 }
 
@@ -118,13 +118,13 @@ void	render_mapmap(t_img *minimap_img, t_game *cube)
 // 	step_x = 0;
 // 	step_y = 0;
 // 	mm_width = WIDTH * 0.8;
-// 	tile_width = mm_width / cube->map->max_width;
+// 	tile_width = mm_width / cube->map.max_width;
 // 	tile_height = tile_width;
-// 	while (cube->map->final_grid[y])
+// 	while (cube->map.final_grid[y])
 // 	{
 // 		x = 0;
 // 		offset_x = WIDTH * 0.1;
-// 		while (cube->map->final_grid[y][x])
+// 		while (cube->map.final_grid[y][x])
 // 		{
 // 			if (y == (int)cube->player.pos_y && x == (int)cube->player.pos_x)
 // 			{
@@ -161,7 +161,7 @@ void	render_mapmap(t_img *minimap_img, t_game *cube)
 // 					triangle_base_size++;
 // 				}
 // 			}
-// 			if (cube->map->final_grid[y][x] == '1')
+// 			if (cube->map.final_grid[y][x] == '1')
 // 			{
 // 				step_x = tile_width * 0.15;
 // 				while (step_x < tile_width)
@@ -176,10 +176,10 @@ void	render_mapmap(t_img *minimap_img, t_game *cube)
 // 					step_x++;
 // 				}
 // 			}
-// 			else if (cube->map->final_grid[y][x] == 'C')
+// 			else if (cube->map.final_grid[y][x] == 'C')
 // 			{
-// 				if (cube->map->final_grid[y][x + 1] == '1'
-// 				&& cube->map->final_grid[y][x - 1] == '1')
+// 				if (cube->map.final_grid[y][x + 1] == '1'
+// 				&& cube->map.final_grid[y][x - 1] == '1')
 // 				{
 // 					step_x = tile_width * 0.15;
 // 					while (step_x < tile_width)
@@ -203,8 +203,8 @@ void	render_mapmap(t_img *minimap_img, t_game *cube)
 // 						step_x++;
 // 					}
 // 				}
-// 				else if (cube->map->final_grid[y + 1][x] == '1'
-// 				&& cube->map->final_grid[y - 1][x] == '1')
+// 				else if (cube->map.final_grid[y + 1][x] == '1'
+// 				&& cube->map.final_grid[y - 1][x] == '1')
 // 				{
 // 					step_x = tile_width * 0.15;
 // 					while (step_x < tile_width * 0.5)

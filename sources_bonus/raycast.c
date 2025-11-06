@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 16:23:49 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/06 15:23:56 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/06 15:54:03 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,26 +17,26 @@ static void	get_texture_coord_and_distance(t_game *cube, t_raycast *raycast,
 {
 	if (!side)
 	{
-		raycast->floatX = cube->player.pos_x + raycast->dir->x
+		raycast->floatX = cube->player.pos_x + raycast->dir.x
 			* (raycast->sideDistX - raycast->deltaDistX);
-		raycast->floatY = cube->player.pos_y + raycast->dir->y
+		raycast->floatY = cube->player.pos_y + raycast->dir.y
 			* (raycast->sideDistX - raycast->deltaDistX);
 		cube->textures.x = raycast->floatY - floor(raycast->floatY);
 	}
 	else
 	{
-		raycast->floatX = cube->player.pos_x + raycast->dir->x
+		raycast->floatX = cube->player.pos_x + raycast->dir.x
 			* (raycast->sideDistY - raycast->deltaDistY);
-		raycast->floatY = cube->player.pos_y + raycast->dir->y
+		raycast->floatY = cube->player.pos_y + raycast->dir.y
 			* (raycast->sideDistY - raycast->deltaDistY);
 		cube->textures.x = raycast->floatX - floor(raycast->floatX);
 	}
 	if (side == 0)
 		(*new_hit)->distance = (raycast->intX - cube->player.pos_x + (1
-					- raycast->stepX) / 2) / raycast->dir->x;
+					- raycast->stepX) / 2) / raycast->dir.x;
 	else
 		(*new_hit)->distance = (raycast->intY - cube->player.pos_y + (1
-					- raycast->stepY) / 2) / raycast->dir->y;
+					- raycast->stepY) / 2) / raycast->dir.y;
 	(*new_hit)->side = side;
 	(*new_hit)->texture_x = cube->textures.x;
 	return ;
@@ -82,13 +82,13 @@ static t_img *assign_texture_and_current_hit(t_game *cube,t_raycast *raycast, t_
 		texture = &cube->textures.SP_img;
 	else
 	{
-		if (raycast->dir->x > 0 && current_hit->side == 0)
+		if (raycast->dir.x > 0 && current_hit->side == 0)
 			texture = &cube->textures.EA_img;
-		else if (raycast->dir->x < 0 && current_hit->side == 0)
+		else if (raycast->dir.x < 0 && current_hit->side == 0)
 			texture = &cube->textures.WE_img;
-		else if (raycast->dir->y > 0 && current_hit->side == 1)
+		else if (raycast->dir.y > 0 && current_hit->side == 1)
 			texture = &cube->textures.NO_img;
-		else if (raycast->dir->y < 0 && current_hit->side == 1)
+		else if (raycast->dir.y < 0 && current_hit->side == 1)
 			texture = &cube->textures.SO_img;
 	}
 	raycast->distance = current_hit->distance;
@@ -114,7 +114,7 @@ static void render_from_last_wall(t_game* cube,t_raycast *raycast,int x)
 		get_distance_and_wallheight(cube);
 		if (texture)
 		{
-			cube->textures.y = texture->ht / cube->raycast->wall_height;
+			cube->textures.y = texture->ht / cube->raycast.wall_height;
 			raycast->texture_assigned = texture;
 			render_wall(raycast->wall_height, cube, x);
 		}

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_grid_flood_fill.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 12:49:13 by egache            #+#    #+#             */
-/*   Updated: 2025/11/06 12:10:15 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/06 15:23:15 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,30 +32,30 @@ char replace_char(char c)
 
 bool is_surrounded(t_game *cube, int i, int j)
 {
-	if ((cube->map->final_grid[i + 1][j] == '1' && cube->map->final_grid[i
-					- 1][j] == '1') || (cube->map->final_grid[i][j + 1] == '1'
-				&& cube->map->final_grid[i][j - 1] == '1'))
+	if ((cube->map.final_grid[i + 1][j] == '1' && cube->map.final_grid[i
+					- 1][j] == '1') || (cube->map.final_grid[i][j + 1] == '1'
+				&& cube->map.final_grid[i][j - 1] == '1'))
 						return (true);
 	return (false);
 }
 
 int	flood_fill(int i, int j, t_game *cube)
 {
-	if (i < 0 || i >= cube->map->grid_height || !cube->map->final_grid[i])
+	if (i < 0 || i >= cube->map.grid_height || !cube->map.final_grid[i])
 		return (-1);
-	if (j < 0 || !cube->map->final_grid[i][j]
-		|| cube->map->final_grid[i][j] == '\n')
+	if (j < 0 || !cube->map.final_grid[i][j]
+		|| cube->map.final_grid[i][j] == '\n')
 		return (-1);
-	if (is_a_wall(cube->map->final_grid[i][j]))
+	if (is_a_wall(cube->map.final_grid[i][j]))
 		return (0);
-	if (is_already_visited(cube->map->final_grid[i][j]))
+	if (is_already_visited(cube->map.final_grid[i][j]))
 		return (0);
-	if (cube->map->final_grid[i][j] == 'D')
+	if (cube->map.final_grid[i][j] == 'D')
 	{
 		if (!is_surrounded(cube, i, j))
 			return (-1);
 	}
-	cube->map->final_grid[i][j] = replace_char(cube->map->final_grid[i][j]);
+	cube->map.final_grid[i][j] = replace_char(cube->map.final_grid[i][j]);
 	if (flood_fill(i + 1, j, cube) == -1)
 		return (-1);
 	if (flood_fill(i - 1, j, cube) == -1)
@@ -69,17 +69,17 @@ int	flood_fill(int i, int j, t_game *cube)
 
 // void	flood_fill(int i, int j, t_game *cube)
 // {
-// 	if (i < 0 || i >= cube->map->total_height || j < 0
-// 		|| j >= cube->map->width[i])
+// 	if (i < 0 || i >= cube->map.total_height || j < 0
+// 		|| j >= cube->map.width[i])
 // 		return ;
-// 	while (cube->map->grid[i][j] == ' ' && cube->map->grid[i][j] != '\n')
+// 	while (cube->map.grid[i][j] == ' ' && cube->map.grid[i][j] != '\n')
 // 		j++;
-// 	if (is_a_player(cube->map->grid[i][j]))
-// 		cube->map->grid[i][j] = '3';
-// 	else if (cube->map->grid[i][j] == 'D')
-// 		cube->map->grid[i][j] = 'C';
-// 	else if (cube->map->grid[i][j] == '0')
-// 		cube->map->grid[i][j] = 'F';
+// 	if (is_a_player(cube->map.grid[i][j]))
+// 		cube->map.grid[i][j] = '3';
+// 	else if (cube->map.grid[i][j] == 'D')
+// 		cube->map.grid[i][j] = 'C';
+// 	else if (cube->map.grid[i][j] == '0')
+// 		cube->map.grid[i][j] = 'F';
 // 	else
 // 		return ;
 // 	flood_fill(i + 1, j, cube);
@@ -90,23 +90,23 @@ int	flood_fill(int i, int j, t_game *cube)
 
 // int	vlood_vill(int i, int j, t_game *cube)
 // {
-// 	if (i < 0 || i >= cube->map->grid_height || !cube->map->final_grid[i])
+// 	if (i < 0 || i >= cube->map.grid_height || !cube->map.final_grid[i])
 // 		return (-1);
-// 	if (j < 0 || !cube->map->final_grid[i][j]
-// 		|| cube->map->final_grid[i][j] == '\n')
+// 	if (j < 0 || !cube->map.final_grid[i][j]
+// 		|| cube->map.final_grid[i][j] == '\n')
 // 		return (-1);
-// 	if (is_a_wall(cube->map->final_grid[i][j]))
+// 	if (is_a_wall(cube->map.final_grid[i][j]))
 // 		return (0);
-// 	if (cube->map->final_grid[i][j] == 'V' || cube->map->final_grid[i][j] == 'O'
-// 		|| cube->map->final_grid[i][j] == 'L')
+// 	if (cube->map.final_grid[i][j] == 'V' || cube->map.final_grid[i][j] == 'O'
+// 		|| cube->map.final_grid[i][j] == 'L')
 // 		return (0);
-// 	if (cube->map->final_grid[i][j] == ' '
-// 		|| cube->map->final_grid[i][j] == '0')
+// 	if (cube->map.final_grid[i][j] == ' '
+// 		|| cube->map.final_grid[i][j] == '0')
 // 		return (-1);
-// 	if (!is_a_valid_char(cube->map->final_grid[i][j], GRID_CHECK))
+// 	if (!is_a_valid_char(cube->map.final_grid[i][j], GRID_CHECK))
 // 		return (-1);
-// 	if (cube->map->final_grid[i][j] != 'C')
-// 		cube->map->final_grid[i][j] = 'V';
+// 	if (cube->map.final_grid[i][j] != 'C')
+// 		cube->map.final_grid[i][j] = 'V';
 // 	if (vlood_vill(i + 1, j, cube) == -1)
 // 		return (-1);
 // 	if (vlood_vill(i - 1, j, cube) == -1)
