@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:45:45 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/07 16:34:01 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/07 16:53:50 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,15 +124,18 @@ int	main(int argc, char **argv)
 	if (load_textures(&cube) < 0)
 		free_exit(&cube);
 	cube.windows = mlx_new_window(cube.mlx, WIDTH, HEIGHT, "CUB3D");
-	cube.thread_img = (t_img **)ft_calloc(cube.nb_cores, sizeof(t_img *));
-	int i = 0;
-	while (i < cube.nb_cores)
-	{
-		cube.thread_img[i] = (t_img *)ft_calloc(1, sizeof(t_img));
-		cube.thread_img[i]->img = mlx_new_image(cube.mlx, WIDTH - (WIDTH / cube.nb_cores), HEIGHT);
-		cube.thread_img[i]->addr = mlx_get_data_addr(cube.thread_img[i]->img,
-			&cube.thread_img[i]->bpp, &cube.thread_img[i]->sl, &cube.thread_img[i]->en);
-	}
+	// cube.thread_img = (t_img **)ft_calloc(cube.nb_cores, sizeof(t_img *));
+	// int i = 0;
+	// while (i < cube.nb_cores)
+	// {
+	// 	int current_width = WIDTH / cube.nb_cores;
+    //     if (i == cube.nb_cores - 1)
+    //         current_width = WIDTH - ((WIDTH / cube.nb_cores) * i);
+	// 	cube.thread_img[i] = (t_img *)ft_calloc(1, sizeof(t_img));
+	// 	cube.thread_img[i]->img = mlx_new_image(cube.mlx, current_width, HEIGHT);
+	// 	cube.thread_img[i]->addr = mlx_get_data_addr(cube.thread_img[i]->img,
+	// 		&cube.thread_img[i]->bpp, &cube.thread_img[i]->sl, &cube.thread_img[i]->en);
+	// }
 	cube.img->img = mlx_new_image(cube.mlx, WIDTH, WIDTH);
 	cube.img->addr = mlx_get_data_addr(cube.img->img,
 			&cube.img->bpp, &cube.img->sl, &cube.img->en);
