@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 14:16:45 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/06 21:00:53 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/07 12:31:50 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,18 +127,13 @@ void	render(t_game *cube)
 		cube_thread[i]->cube = cube;
 		cube_thread[i]->map = cube->map;
 		cube_thread[i]->textures = cube->textures;
+		cube_thread[i]->raycast = cube->raycast;
 		cube_thread[i]->id = i;
-		// printf("cube_thread->id : %d || width_start : %d || width_end : %d\n", cube_thread[i]->id, cube_thread[i]->width_start, cube_thread[i]->width_end);
 		cube_thread[i]->map.final_grid = malloc(sizeof(char *) * cube->map.grid_height);
 		for (int j = 0; j < cube->map.grid_height; j++)
 		{
 			cube_thread[i]->map.final_grid[j] = ft_strdup(cube->map.final_grid[j]);
 		}
-		// printf("CACA\n\n\n\n\n");
-		// print_map(cube->map.final_grid);
-		// printf("PIPI %p\n\n\n\n\n", &cube_thread[i]->map.final_grid);
-		// print_map(cube_thread[i]->map.final_grid);
-		// printf("cube address :%p || cube_thread->cube address : %p || cube.map : %p || cube_thread->cube.map : %p\n", &cube, &cube_thread[i]->cube, &cube->map, &cube_thread[i]->cube->map);
 		if (pthread_create(&cube_thread[i]->thread, NULL, &raycast, cube_thread[i]))
 		{
 			return;

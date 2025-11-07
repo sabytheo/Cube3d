@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:45:45 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/06 21:03:07 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/07 12:31:40 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,9 +130,8 @@ int	main(int argc, char **argv)
 	cube.minimap_img->img = mlx_new_image(cube.mlx, WIDTH * 0.2, WIDTH * 0.2);
 	cube.minimap_img->addr = mlx_get_data_addr(cube.minimap_img->img,
 			&cube.minimap_img->bpp, &cube.minimap_img->sl, &cube.minimap_img->en);
-	// Premier rendu
+	init_height_dplan(&cube, &cube.raycast);
 	render(&cube);
-	// Hooks
 	mlx_hook(cube.windows, 2, 1L << 0, press_key, &cube);
 	mlx_hook(cube.windows, 3, 1L << 1, release_key, &cube);
 	mlx_loop_hook(cube.mlx, define_control, &cube);
