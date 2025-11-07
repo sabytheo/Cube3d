@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 12:47:21 by egache            #+#    #+#             */
-/*   Updated: 2025/11/05 19:42:17 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/07 15:40:53 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ bool	is_a_valid_char(char c, bool state)
 
 	if (state == CHAR_CHECK)
 	{
-		if (c == '0' || c == '1' || c == 'D' || c == ' ' || c == 'L')
+		if (c == '0' || c == '1' || c == 'D' || c == ' ' || c == 'O')
 			return (true);
 		else if (is_a_player(c) && found_player == false)
 		{
@@ -58,7 +58,7 @@ bool	is_a_valid_char(char c, bool state)
 	}
 	if (state == GRID_CHECK)
 	{
-		if (c == 'D' || c == '0' || c == '1' || is_a_player(c))
+		if (c == 'D' || c == '0' || c == '1' || is_a_player(c) || c == 'O')
 			return (true);
 		return (false);
 	}

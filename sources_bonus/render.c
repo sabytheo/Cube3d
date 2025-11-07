@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 14:16:45 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/07 12:31:50 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/07 16:34:03 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,9 +131,8 @@ void	render(t_game *cube)
 		cube_thread[i]->id = i;
 		cube_thread[i]->map.final_grid = malloc(sizeof(char *) * cube->map.grid_height);
 		for (int j = 0; j < cube->map.grid_height; j++)
-		{
 			cube_thread[i]->map.final_grid[j] = ft_strdup(cube->map.final_grid[j]);
-		}
+		cube_thread[i]->img = cube->thread_img[i];
 		if (pthread_create(&cube_thread[i]->thread, NULL, &raycast, cube_thread[i]))
 		{
 			return;

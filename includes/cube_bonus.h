@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/06 21:00:24 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/07 15:36:40 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -251,6 +251,7 @@ typedef struct s_game
 	t_map map;
 	t_img *img;
 	t_img *minimap_img;
+	t_img **thread_img;
 	t_minimap minimap_values;
 	t_player player;
 	t_raycast raycast;
@@ -269,6 +270,7 @@ typedef struct s_cube_thread
 	int width_start;
 	int width_end;
 	int id;
+	t_img *img;
 	pthread_t		thread;
 	t_textures textures;
 
