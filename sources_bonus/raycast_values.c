@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 16:26:36 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/06 15:53:25 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/06 20:15:34 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,21 +31,21 @@ void	init_raycast_values(t_game *cube, t_raycast *raycast, int x)
 	raycast->start_y = HEIGHT * 0.5;
 }
 
-void	init_height_dplan(t_game *cube)
+void	init_height_dplan(t_game *cube, t_raycast *raycast)
 {
-	cube->raycast.base_height = 1;
-	cube->raycast.d_plan = WIDTH / (2 * tan(cube->player.fov * 0.5));
+	raycast->base_height = 1;
+	raycast->d_plan = WIDTH / (2 * tan(cube->player.fov * 0.5));
 	return ;
 }
 
-void	get_distance_and_wallheight(t_game *cube)
+void	get_distance_and_wallheight(t_game *cube, t_raycast *raycast)
 {
-	cube->raycast.corrected_distance = cube->raycast.distance
-		* cos(cube->raycast.angle - cube->player.angle);
-	if (cube->raycast.corrected_distance <= 0)
-		cube->raycast.corrected_distance = 0.1;
-	cube->raycast.wall_height = (cube->raycast.base_height
-			* cube->raycast.d_plan) / cube->raycast.corrected_distance;
+	raycast->corrected_distance = raycast->distance
+		* cos(raycast->angle - cube->player.angle);
+	if (raycast->corrected_distance <= 0)
+		raycast->corrected_distance = 0.1;
+	raycast->wall_height = (raycast->base_height
+			* raycast->d_plan) / raycast->corrected_distance;
 }
 
 void	init_raycast_direction(t_game *cube, t_raycast *raycast)
@@ -76,7 +76,7 @@ void	init_raycast_direction(t_game *cube, t_raycast *raycast)
 	}
 }
 
-int	init_hit_char(t_game *cube, t_raycast *raycast, t_hit_info **new_hit)
+int	init_hit_char(t_cube_thread *cube_thread, t_raycast *raycast, t_hit_info **new_hit)
 {
 	int	side;
 
@@ -95,7 +95,7 @@ int	init_hit_char(t_game *cube, t_raycast *raycast, t_hit_info **new_hit)
 	*new_hit = malloc(sizeof(t_hit_info));
 	if (!*new_hit)
 		return (-1);
-	(*new_hit)->hit_type = cube->map.final_grid[raycast->intY][raycast->intX];
+	(*new_hit)->hit_type = cube_thread->map.final_grid[raycast->intY][raycast->intX];
 	return (side);
 }
 

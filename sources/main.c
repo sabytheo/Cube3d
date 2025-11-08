@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:46:14 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/06 15:45:02 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/06 16:08:18 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	init(t_game *cube)
 	// cube->frame_limit = 16666; // ~60 FPS (16.666ms par frame)
 	return (0);
 }
-int	xpm_to_image(t_game *cube, t_texture *textures)
+int	xpm_to_image(t_game *cube, t_textures *textures)
 {
 	cube->textures.NO_img.img = mlx_xpm_file_to_image(cube->mlx, textures->NO,
 			&textures->NO_img.wh, &textures->NO_img.ht);

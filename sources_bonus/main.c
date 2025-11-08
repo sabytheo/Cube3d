@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:45:45 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/06 21:05:50 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/08 19:54:10 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,11 @@
 int	init(t_game *cube)
 {
 	ft_bzero(cube, sizeof(t_game));
+	cube->nb_cores = sysconf(_SC_NPROCESSORS_ONLN);
 	cube->img = (t_img *)ft_calloc(1, sizeof(t_img));
 	cube->minimap_img = (t_img *)ft_calloc(1, sizeof(t_img));
 	// cube->hit_info = (t_hit_info*)ft_calloc(1,sizeof(t_hit_info));
-	cube->player.speed = 0.25;
+	cube->player.speed = 0.1;
 	cube->fps_counter = init_fps_counter();
 	if (!cube->img || !cube->minimap_img)
 	{
@@ -32,7 +33,7 @@ int	init(t_game *cube)
 	return (0);
 }
 
-int	xpm_to_image(t_game *cube, t_texture *textures)
+int	xpm_to_image(t_game *cube, t_textures *textures)
 {
 	cube->textures.NO_img.img = mlx_xpm_file_to_image(cube->mlx, textures->NO,
 			&textures->NO_img.wh, &textures->NO_img.ht);
@@ -58,7 +59,7 @@ int	xpm_to_image(t_game *cube, t_texture *textures)
 	return (0);
 }
 
-static int get_data_addr_cardinal(t_texture *textures)
+static int get_data_addr_cardinal(t_textures *textures)
 {
 		textures->NO_img.addr = mlx_get_data_addr(textures->NO_img.img,
 				&textures->NO_img.bpp, &textures->NO_img.sl,
@@ -123,15 +124,26 @@ int	main(int argc, char **argv)
 	if (load_textures(&cube) < 0)
 		free_exit(&cube);
 	cube.windows = mlx_new_window(cube.mlx, WIDTH, HEIGHT, "CUB3D");
-	cube.img->img = mlx_new_image(cube.mlx, WIDTH, HEIGHT);
+	// cube.thread_img = (t_img **)ft_calloc(cube.nb_cores, sizeof(t_img *));
+	// int i = 0;
+	// while (i < cube.nb_cores)
+	// {
+	// 	int current_width = WIDTH / cube.nb_cores;
+    //     if (i == cube.nb_cores - 1)
+    //         current_width = WIDTH - ((WIDTH / cube.nb_cores) * i);
+	// 	cube.thread_img[i] = (t_img *)ft_calloc(1, sizeof(t_img));
+	// 	cube.thread_img[i]->img = mlx_new_image(cube.mlx, current_width, HEIGHT);
+	// 	cube.thread_img[i]->addr = mlx_get_data_addr(cube.thread_img[i]->img,
+	// 		&cube.thread_img[i]->bpp, &cube.thread_img[i]->sl, &cube.thread_img[i]->en);
+	// }
+	cube.img->img = mlx_new_image(cube.mlx, WIDTH, WIDTH);
 	cube.img->addr = mlx_get_data_addr(cube.img->img,
 			&cube.img->bpp, &cube.img->sl, &cube.img->en);
 	cube.minimap_img->img = mlx_new_image(cube.mlx, WIDTH * 0.2, WIDTH * 0.2);
 	cube.minimap_img->addr = mlx_get_data_addr(cube.minimap_img->img,
 			&cube.minimap_img->bpp, &cube.minimap_img->sl, &cube.minimap_img->en);
-	// Premier rendu
+	init_height_dplan(&cube, &cube.raycast);
 	render(&cube);
-	// Hooks
 	mlx_hook(cube.windows, 2, 1L << 0, press_key, &cube);
 	mlx_hook(cube.windows, 3, 1L << 1, release_key, &cube);
 	mlx_loop_hook(cube.mlx, define_control, &cube);

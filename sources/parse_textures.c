@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_textures.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 12:42:42 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/04 15:25:32 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/06 16:08:18 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void	skip_textures_identifier(char **str)
 		(*str)++;
 }
 
-int	copy_textures(char *str, t_texture *textures)
+int	copy_textures(char *str, t_textures *textures)
 {
 	if (ft_strncmp(str, "NO ", 3) == 0 && !textures->NO)
 	{
@@ -46,7 +46,7 @@ int	copy_textures(char *str, t_texture *textures)
 	return (0);
 }
 
-static int	get_textures(char *str, t_texture *textures, int i)
+static int	get_textures(char *str, t_textures *textures, int i)
 {
 	if (copy_textures(str, textures) == -1)
 	{

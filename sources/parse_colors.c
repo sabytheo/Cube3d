@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 13:29:30 by tsaby             #+#    #+#             */
-/*   Updated: 2025/10/17 14:03:51 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/06 16:08:18 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	check_len_and_skip_space(char **str, int *j, int *len)
 	return (0);
 }
 
-int	get_ceiling_values(char **str, int *len, t_texture *textures)
+int	get_ceiling_values(char **str, int *len, t_textures *textures)
 {
 	char	*tmp;
 	int		j;
@@ -62,7 +62,7 @@ int	get_ceiling_values(char **str, int *len, t_texture *textures)
 	return (0);
 }
 
-int	get_floor_values(char **str, int *len, t_texture *textures)
+int	get_floor_values(char **str, int *len, t_textures *textures)
 {
 	char	*tmp;
 	int		j;
@@ -88,7 +88,7 @@ int	get_floor_values(char **str, int *len, t_texture *textures)
 	return (0);
 }
 
-static int	get_colors(char *str, t_texture *textures)
+static int	get_colors(char *str, t_textures *textures)
 {
 	int	len;
 

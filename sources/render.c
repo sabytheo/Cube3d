@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   render.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 14:16:45 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/06 15:34:51 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/06 17:40:40 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cube.h"
 
-void	render_floor_ceilling(t_img *img, t_texture *textures, int x,
+void	render_floor_ceilling(t_img *img, t_textures *textures, int x,
 		int draw_start, int draw_end)
 {
 	int	j;

@@ -39,4 +39,18 @@ BONUS
 ## Collectibles bonus/malus
 ## Ennemis
 
+**MULTITHREADING**
 
+## GOOD STRUCTURES ^_^
+- Raycast
+
+## BAD STRUCTURES è_é
+- t_hit_info *hits
+- t_img *texture
+
+
+delta_time pour rotation.
+
+diviser l image a afficher en nb de thread. et donner une image par nb de thread
+
+cache_miss et afficher horizontalement plutot que verticalement.
