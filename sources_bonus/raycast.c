@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycast.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 16:23:49 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/07 12:30:12 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/08 19:50:36 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,10 +119,8 @@ static void render_from_last_wall(t_cube_thread *cube_thread, t_game *cube ,t_ra
 
 void	*raycast(void *arg)
 {
-	int			x;
 	t_cube_thread *cube_thread;
 	cube_thread = (t_cube_thread *)arg;
-	x = 0;
 	while (cube_thread->width_start <= cube_thread->width_end)
 	{
 		init_raycast_values(cube_thread->cube, &cube_thread->raycast, cube_thread->width_start);

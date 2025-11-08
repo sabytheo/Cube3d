@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bindings.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 12:31:12 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/06 15:51:28 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/08 19:51:07 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,6 @@
 
 static void	press_s(t_game *cube, float newpos_x, float newpos_y)
 {
-	float	step_x;
-	float	step_y;
-
-	step_x = cos(cube->player.angle) * cube->player.speed;
-	step_y = -sin(cube->player.angle) * cube->player.speed;
 	if (cube->key.s == true)
 	{
 		newpos_x -= cos(cube->player.angle) * cube->player.speed;
