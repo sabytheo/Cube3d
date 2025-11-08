@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:45:45 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/06 21:03:07 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/07 16:53:50 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,15 +124,26 @@ int	main(int argc, char **argv)
 	if (load_textures(&cube) < 0)
 		free_exit(&cube);
 	cube.windows = mlx_new_window(cube.mlx, WIDTH, HEIGHT, "CUB3D");
-	cube.img->img = mlx_new_image(cube.mlx, WIDTH, HEIGHT);
+	// cube.thread_img = (t_img **)ft_calloc(cube.nb_cores, sizeof(t_img *));
+	// int i = 0;
+	// while (i < cube.nb_cores)
+	// {
+	// 	int current_width = WIDTH / cube.nb_cores;
+    //     if (i == cube.nb_cores - 1)
+    //         current_width = WIDTH - ((WIDTH / cube.nb_cores) * i);
+	// 	cube.thread_img[i] = (t_img *)ft_calloc(1, sizeof(t_img));
+	// 	cube.thread_img[i]->img = mlx_new_image(cube.mlx, current_width, HEIGHT);
+	// 	cube.thread_img[i]->addr = mlx_get_data_addr(cube.thread_img[i]->img,
+	// 		&cube.thread_img[i]->bpp, &cube.thread_img[i]->sl, &cube.thread_img[i]->en);
+	// }
+	cube.img->img = mlx_new_image(cube.mlx, WIDTH, WIDTH);
 	cube.img->addr = mlx_get_data_addr(cube.img->img,
 			&cube.img->bpp, &cube.img->sl, &cube.img->en);
 	cube.minimap_img->img = mlx_new_image(cube.mlx, WIDTH * 0.2, WIDTH * 0.2);
 	cube.minimap_img->addr = mlx_get_data_addr(cube.minimap_img->img,
 			&cube.minimap_img->bpp, &cube.minimap_img->sl, &cube.minimap_img->en);
-	// Premier rendu
+	init_height_dplan(&cube, &cube.raycast);
 	render(&cube);
-	// Hooks
 	mlx_hook(cube.windows, 2, 1L << 0, press_key, &cube);
 	mlx_hook(cube.windows, 3, 1L << 1, release_key, &cube);
 	mlx_loop_hook(cube.mlx, define_control, &cube);

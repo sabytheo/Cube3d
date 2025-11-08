@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 16:23:49 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/06 20:59:30 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/07 12:30:12 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,10 +122,7 @@ void	*raycast(void *arg)
 	int			x;
 	t_cube_thread *cube_thread;
 	cube_thread = (t_cube_thread *)arg;
-	init_height_dplan(cube_thread->cube, &cube_thread->raycast);
 	x = 0;
-	// print_map(cube_thread->cube->map.final_grid);
-	// printf("thread id : %d || cube_thread->cube address : %p || cube_thread->cube.map : %p\n",cube_thread->id, &cube_thread->cube, &cube_thread->cube->map);
 	while (cube_thread->width_start <= cube_thread->width_end)
 	{
 		init_raycast_values(cube_thread->cube, &cube_thread->raycast, cube_thread->width_start);
