@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cube_bonus.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/07 16:57:10 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/08 21:03:23 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,8 @@ enum
 	A = 97,
 	E = 101,
 	F = 102,
+	TAB = 65289,
+	MAJ = 65509,
 	ESCAPE = 65307,
 	A_LEFT = 65361,
 	A_RIGHT = 65363
@@ -115,6 +117,7 @@ typedef struct s_player
 	float fov;
 	float tan_fov_2;
 	double speed;
+	double rotation_speed;
 } t_player;
 
 typedef struct s_map
@@ -176,7 +179,8 @@ typedef struct s_key
 	bool left;
 	bool right;
 	bool escape;
-
+	bool tab;
+	bool maj;
 } t_key;
 
 enum direction
@@ -248,6 +252,7 @@ typedef struct s_game
 	struct timeval last_frame;  // Timer pour limiter les FPS
 	int frame_limit;             // Limite en microsecondes (16666 = 60 FPS)
 	long nb_cores;
+	double delta_time;
 	t_map map;
 	t_img *img;
 	t_img *minimap_img;
@@ -291,6 +296,7 @@ void	draw_debug_info_cardinal(t_game *cube);
 int	is_hitting(float x, float y, t_game *cube);
 int	press_key(int keypress, t_game *cube);
 int	release_key(int keypress, t_game *cube);
+void	update_delta_time(t_game *cube);
 
 // Render
 void	render_textured_floor_ceiling(t_cube_thread *cube_thread, int x, float draw_start,float draw_end);
