@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:46:14 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/06 16:08:18 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/19 20:01:27 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ int	init(t_game *cube)
 {
 	ft_bzero(cube, sizeof(t_game));
 	cube->img = (t_img *)ft_calloc(1, sizeof(t_img));
-	cube->player.speed = 0.25;
+	cube->player.speed = 1;
+	cube->player.rotation_speed = 1;
+	cube->delta_time = 0.016;
 	//cube->fps_counter = init_fps_counter();
 	if (!cube->img)
 	{

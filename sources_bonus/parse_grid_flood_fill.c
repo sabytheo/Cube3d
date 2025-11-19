@@ -6,36 +6,36 @@
 /*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 12:49:13 by egache            #+#    #+#             */
-/*   Updated: 2025/11/06 15:23:15 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/19 16:08:53 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cube_bonus.h"
 
-bool is_already_visited(char c)
+bool	is_already_visited(char c)
 {
 	if (c == 'V' || c == 'C' || c == '3')
 		return (true);
 	return (false);
 }
 
-char replace_char(char c)
+char	replace_char(char c)
 {
 	if (is_a_player(c))
 		return ('3');
 	else if (c == '0')
 		return ('V');
 	else if (c == 'D')
-		return('C');
+		return ('C');
 	return (c);
 }
 
-bool is_surrounded(t_game *cube, int i, int j)
+bool	is_surrounded(t_game *cube, int i, int j)
 {
 	if ((cube->map.final_grid[i + 1][j] == '1' && cube->map.final_grid[i
-					- 1][j] == '1') || (cube->map.final_grid[i][j + 1] == '1'
-				&& cube->map.final_grid[i][j - 1] == '1'))
-						return (true);
+			- 1][j] == '1') || (cube->map.final_grid[i][j + 1] == '1'
+			&& cube->map.final_grid[i][j - 1] == '1'))
+		return (true);
 	return (false);
 }
 

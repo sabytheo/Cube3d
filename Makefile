@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: egache <egache@student.42.fr>              +#+  +:+       +#+         #
+#    By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: Invalid date        by                   #+#    #+#              #
-#    Updated: 2025/11/06 21:00:56 by egache           ###   ########.fr        #
+#    Updated: 2025/11/19 16:06:49 by tsaby            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ SRCS		:=		main.c \
 					parse_grid.c \
 					parse_grid_utils.c \
 					parse_grid_flood_fill.c \
-					bindings.c \
+					bindings.c\
 					bindings_utils.c \
 					reef.c \
 					render.c \
@@ -45,6 +45,7 @@ SRCS_BONUS	:=		main.c \
 					parse_grid_utils.c \
 					parse_grid_flood_fill.c \
 					bindings.c \
+					bindings_door.c \
 					bindings_utils.c \
 					reef.c \
 					render.c \

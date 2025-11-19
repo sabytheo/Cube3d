@@ -6,10 +6,11 @@ DO ./assets/Door_open2.xpm
 FL ./assets/floor2.xpm
 CE ./assets/ceiling.xpm
 SP ./assets/Door_closed2.xpm
+SP ./assets/Door_closed2.xpm
+SP ./assets/Door_closed2.xpm
 
 C 255,0,0
 F 104,104,104
-
 
 1111111111111111111111111111111111111111
 1000000000000000000111111111111111111111

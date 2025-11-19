@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cube.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/06 16:08:18 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/19 20:09:46 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@
 
 # define XBOX 0.2
 # define DEG_TO_RAD (1.0 / 180.0) * M_PI
+# define IDENTIFIER_CHECK 1
+# define TEXTURE_EXIST 0
 
 # define CHAR_CHECK false
 # define GRID_CHECK true
@@ -61,6 +63,7 @@ enum
 	A = 97,
 	E = 101,
 	F = 102,
+	MAJ = 65509,
 	ESCAPE = 65307,
 	A_LEFT = 65361,
 	A_RIGHT = 65363
@@ -102,6 +105,7 @@ typedef struct s_player
 	float fov;
 	float tan_fov_2;
 	double speed;
+	double rotation_speed;
 } t_player;
 
 typedef struct s_map
@@ -129,7 +133,7 @@ typedef struct s_key
 	bool left;
 	bool right;
 	bool escape;
-
+	bool maj;
 } t_key;
 
 enum direction
@@ -190,6 +194,7 @@ typedef struct s_game
 {
 	void *mlx;
 	void *windows;
+	double delta_time;
 	struct timeval last_frame;  // Timer pour limiter les FPS
 	int frame_limit;             // Limite en microsecondes (16666 = 60 FPS)
 	t_map map;
@@ -238,7 +243,8 @@ void	render_wall(float wall_height, t_game *cube, int x, t_img *img);
 int define_control(t_game *cube);
 int release_key(int keypress, t_game *cube);
 int press_key(int keypress, t_game *cube);
-int	is_hitting(float x, float y, t_game *cube, char c);
+int	is_hitting(float x, float y, t_game *cube);
+void	update_delta_time(t_game *cube);
 
 // Debug
 void print_map(char **map);
@@ -266,6 +272,7 @@ bool is_only_whitespace(int *i, char **grid);
 bool is_a_wall(char c);
 bool is_a_player(char c);
 bool is_a_valid_char(char c, bool state);
+void	get_angle(t_game *cube, char c);
 
 // Parse_grid_flood_fill
 // void flood_fill(int i, int j, t_game *cube);

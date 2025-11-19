@@ -3,39 +3,57 @@
 /*                                                        :::      ::::::::   */
 /*   bindings_utils.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/04 15:11:35 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/06 15:44:20 by egache           ###   ########.fr       */
+/*   Created: 2025/11/06 12:28:58 by tsaby             #+#    #+#             */
+/*   Updated: 2025/11/19 19:55:53 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cube.h"
 
-int	is_hitting(float x, float y, t_game *cube, char c)
+void	update_delta_time(t_game *cube)
 {
-	if (cube->map.final_grid[(int)(y + XBOX)][(int)(x + XBOX)] != c)
+	struct timeval	current_time;
+	double			time_spent;
+
+	gettimeofday(&current_time, NULL);
+	time_spent = (current_time.tv_sec - cube->last_frame.tv_sec)
+		+ (current_time.tv_usec - cube->last_frame.tv_usec) / 1000000.0;
+	if (time_spent < 0.1)
+		time_spent = 0.1;
+	cube->delta_time = time_spent;
+	cube->last_frame = current_time;
+}
+
+int	is_hitting(float x, float y, t_game *cube)
+{
+	static const char	c[1] = {'1'};
+
+	if (cube->map.final_grid[(int)(y + XBOX)][(int)(x + XBOX)] != c[0])
 	{
-		if (cube->map.final_grid[(int)(y + XBOX)][(int)(x - XBOX)] != c)
+		if (cube->map.final_grid[(int)(y + XBOX)][(int)(x - XBOX)] != c[0])
 		{
-			if (cube->map.final_grid[(int)(y - XBOX)][(int)(x + XBOX)] != c)
+			if (cube->map.final_grid[(int)(y - XBOX)][(int)(x + XBOX)] != c[0])
 			{
 				if (cube->map.final_grid[(int)(y - XBOX)][(int)(x
-						- XBOX)] != c)
+						- XBOX)] != c[0])
 				{
 					return (0);
 				}
-				return (-1);
+				return (1);
 			}
-			return (-1);
+			return (1);
 		}
-		return (-1);
+		return (1);
 	}
-	return (-1);
+	return (1);
 }
 
 int	press_key(int keypress, t_game *cube)
 {
+	if (keypress == MAJ)
+		cube->key.maj = true;
 	if (keypress == W)
 		cube->key.w = true;
 	if (keypress == S)
@@ -59,6 +77,8 @@ int	press_key(int keypress, t_game *cube)
 
 int	release_key(int keypress, t_game *cube)
 {
+	if (keypress == MAJ)
+		cube->key.maj = false;
 	if (keypress == W)
 		cube->key.w = false;
 	if (keypress == S)

@@ -3,14 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   parse_grid_utils.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 12:47:21 by egache            #+#    #+#             */
-/*   Updated: 2025/11/07 15:40:53 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/19 16:09:45 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cube_bonus.h"
+
+void	get_angle(t_game *cube, char c)
+{
+	if (c == 'N')
+		cube->player.angle = M_PI / 2;
+	else if (c == 'S')
+		cube->player.angle = -M_PI / 2;
+	else if (c == 'W')
+		cube->player.angle = M_PI;
+	else if (c == 'E')
+		cube->player.angle = 0;
+	return ;
+}
 
 bool	is_only_whitespace(int *i, char **grid)
 {

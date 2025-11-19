@@ -6,7 +6,7 @@
 /*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 19:35:31 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/06 15:23:15 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/19 20:06:40 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,10 +112,7 @@ int	parse_map(t_game *cube, char **argv)
 		return (-1);
 	get_width(cube->map.grid, cube);
 	if (init_textures(&i, cube->map.grid, cube) < 0)
-	{
-		printf("fros caca\n");
 		return (-1);
-	}
 	if (init_colors(&i, cube->map.grid, cube) < 0)
 		return (-1);
 	if (parse_grid(&i, cube->map.grid, cube) < 0)

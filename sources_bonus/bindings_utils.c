@@ -6,7 +6,7 @@
 /*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 12:28:58 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/19 01:07:14 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/19 16:08:11 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ void	camera_mouse_control(t_game *cube)
 		if (fabs(movement_x) > 1)
 		{
 			mlx_mouse_move(cube->mlx, cube->windows, center_x, HEIGHT / 2);
-			rotation = MOUSE_SENSIBILITY * movement_x * cube->player.rotation_speed
-				* cube->delta_time;
+			rotation = MOUSE_SENSIBILITY * movement_x
+				* cube->player.rotation_speed * cube->delta_time;
 			cube->player.angle -= rotation;
 		}
 	}

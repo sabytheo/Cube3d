@@ -6,14 +6,14 @@
 /*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/19 01:07:24 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/19 20:39:53 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CUBE_BONUS_H
 #define CUBE_BONUS_H
 
-#include "error.h"
+#include "error_bonus.h"
 #include "ft_printf.h"
 #include "ft_printf_fd.h"
 #include "get_next_line.h"
@@ -35,17 +35,15 @@
 #define BLUE 0x000000FF
 #define YELLOW 0x00FFFF00
 #define PURPLE 0x00FF00FF
-
 #define WIDTH 1920
 #define HEIGHT 1080
-
 #define MOUSE_SENSIBILITY 0.02
-
 // # define SPEED 0.25
 # define XBOX 0.2
-
 # define CHAR_CHECK false
 # define GRID_CHECK true
+# define IDENTIFIER_CHECK 1
+# define TEXTURE_EXIST 0
 
 enum
 {
@@ -298,6 +296,9 @@ void	free_fps_counter(t_fps *fps);
 void	draw_debug_info_cardinal(t_game *cube);
 
 
+// bindings_door
+void	open_close_door(t_game *cube);
+
 // bindings_utils
 int	is_hitting(float x, float y, t_game *cube);
 int	press_key(int keypress, t_game *cube);
@@ -367,6 +368,7 @@ bool is_only_whitespace(int *i, char **grid);
 bool is_a_wall(char c);
 bool is_a_player(char c);
 bool is_a_valid_char(char c, bool state);
+void	get_angle(t_game *cube, char c);
 
 // Parse_grid_flood_fill
 int flood_fill(int i, int j, t_game *cube);

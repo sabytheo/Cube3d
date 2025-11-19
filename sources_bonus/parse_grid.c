@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_grid.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 14:33:21 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/06 15:52:39 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/19 16:09:26 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,19 +61,6 @@ static int	check_char_validity(t_game *cube)
 		i++;
 	}
 	return (0);
-}
-
-static void	get_angle(t_game *cube, char c)
-{
-	if (c == 'N')
-		cube->player.angle = M_PI / 2;
-	else if (c == 'S')
-		cube->player.angle = -M_PI / 2;
-	else if (c == 'W')
-		cube->player.angle = M_PI;
-	else if (c == 'E')
-		cube->player.angle = 0;
-	return ;
 }
 
 static void	set_player_info(int i, int j, t_game *cube)
