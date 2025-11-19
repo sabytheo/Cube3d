@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42lyon.fr>            +#+  +:+       +#+        */
+/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 14:16:45 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/08 19:54:48 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/19 14:57:16 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -157,7 +157,13 @@ void launch_threads(t_game *cube)
 	while (i < cube->nb_cores)
 	{
 		if (cube_thread[i])
+		{
 			pthread_join(cube_thread[i]->thread, NULL);
+			for (int j = 0; j < cube->map.grid_height; j++)
+				free(cube_thread[i]->map.final_grid[j]);
+			free(cube_thread[i]->map.final_grid);
+			free(cube_thread[i]);
+		}
 		i++;
 	}
 }
