@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cube_bonus.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/19 01:07:24 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/19 20:01:11 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -275,13 +275,11 @@ typedef struct s_cube_thread
 	t_raycast raycast;
 	t_hit_info hit;
 	t_map map;
+	t_textures textures;
 	int width_start;
 	int width_end;
 	int id;
-	// t_img *img;
 	pthread_t		thread;
-	t_textures textures;
-
 } t_cube_thread;
 
 
@@ -303,6 +301,12 @@ int	is_hitting(float x, float y, t_game *cube);
 int	press_key(int keypress, t_game *cube);
 int	release_key(int keypress, t_game *cube);
 void	update_delta_time(t_game *cube);
+
+
+// Multithreading
+void launch_threads(t_game *cube);
+t_cube_thread *init_thread(t_game *cube, t_cube_thread *cube_thread, int column_size, int column_start);
+void join_threads(t_game *cube, t_cube_thread **cube_thread);
 
 // Render
 void	render_textured_floor_ceiling(t_cube_thread *cube_thread, int x, float draw_start,float draw_end);
@@ -330,7 +334,7 @@ void	draw_wall_tile(t_game *cube, t_minimap *mmv);
 void *raycast(void *arg);
 
 // Raycast_values
-int	init_hit_char(t_cube_thread *cube_thread, t_raycast *raycast, t_hit_info **new_hit);
+int		init_hit_char(t_map *map, t_raycast *raycast, t_hit_info **new_hit);
 void	init_raycast_direction(t_game *cube, t_raycast *raycast);
 void	get_distance_and_wallheight(t_game *cube, t_raycast *raycast);
 void	init_height_dplan(t_game *cube, t_raycast *raycast);
@@ -349,6 +353,9 @@ void print_texture(t_textures *textures);
 // Reef
 int free_exit(t_game *cube);
 void free_tab(char **tab);
+
+// Load_textures
+int	load_textures(t_game *cube);
 
 // Parse_map
 int parse_map(t_game *cube, char **argv);

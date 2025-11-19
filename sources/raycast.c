@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 14:33:01 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/06 16:41:02 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/19 19:24:36 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ static int	if_wall_hit(t_game *cube, t_raycast *raycast, int side)
 	}
 	return (side);
 }
+
 static int	ray_displacement(t_game *cube, t_raycast *raycast)
 {
 	int		side;

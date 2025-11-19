@@ -6,12 +6,11 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 16:26:36 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/06 20:15:34 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/19 19:32:53 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cube_bonus.h"
-
 
 void	init_raycast_values(t_game *cube, t_raycast *raycast, int x)
 {
@@ -40,12 +39,12 @@ void	init_height_dplan(t_game *cube, t_raycast *raycast)
 
 void	get_distance_and_wallheight(t_game *cube, t_raycast *raycast)
 {
-	raycast->corrected_distance = raycast->distance
-		* cos(raycast->angle - cube->player.angle);
+	raycast->corrected_distance = raycast->distance * cos(raycast->angle
+			- cube->player.angle);
 	if (raycast->corrected_distance <= 0)
 		raycast->corrected_distance = 0.1;
-	raycast->wall_height = (raycast->base_height
-			* raycast->d_plan) / raycast->corrected_distance;
+	raycast->wall_height = (raycast->base_height * raycast->d_plan)
+		/ raycast->corrected_distance;
 }
 
 void	init_raycast_direction(t_game *cube, t_raycast *raycast)
@@ -76,7 +75,8 @@ void	init_raycast_direction(t_game *cube, t_raycast *raycast)
 	}
 }
 
-int	init_hit_char(t_cube_thread *cube_thread, t_raycast *raycast, t_hit_info **new_hit)
+int	init_hit_char(t_map *map, t_raycast *raycast,
+		t_hit_info **new_hit)
 {
 	int	side;
 
@@ -95,7 +95,6 @@ int	init_hit_char(t_cube_thread *cube_thread, t_raycast *raycast, t_hit_info **n
 	*new_hit = malloc(sizeof(t_hit_info));
 	if (!*new_hit)
 		return (-1);
-	(*new_hit)->hit_type = cube_thread->map.final_grid[raycast->intY][raycast->intX];
+	(*new_hit)->hit_type = map->final_grid[raycast->intY][raycast->intX];
 	return (side);
 }
-

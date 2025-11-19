@@ -6,7 +6,7 @@
 #    By: egache <egache@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: Invalid date        by                   #+#    #+#              #
-#    Updated: 2025/11/06 21:00:56 by egache           ###   ########.fr        #
+#    Updated: 2025/11/19 16:23:13 by egache           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,7 @@ SRCS		:=		main.c \
 					parse_grid.c \
 					parse_grid_utils.c \
 					parse_grid_flood_fill.c \
+					load_textures.c \
 					bindings.c \
 					bindings_utils.c \
 					reef.c \
@@ -44,9 +45,11 @@ SRCS_BONUS	:=		main.c \
 					parse_grid.c \
 					parse_grid_utils.c \
 					parse_grid_flood_fill.c \
+					load_textures.c \
 					bindings.c \
 					bindings_utils.c \
 					reef.c \
+					multithreading.c \
 					render.c \
 					render_utils.c \
 					render_minimap.c \

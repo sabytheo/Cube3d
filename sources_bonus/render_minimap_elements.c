@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 14:45:08 by egache            #+#    #+#             */
-/*   Updated: 2025/11/06 15:23:56 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/19 20:07:06 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,17 +91,6 @@ void	draw_minimap_borders(t_img *minimap_img, int mm_width, int tile_width)
 		}
 		j++;
 	}
-	// j = (tile_width * 0.2) * 0.2;
-	// while (j < ((tile_width * 0.2) - ((tile_width * 0.2) * 0.2)))
-	// {
-	// 	i = (tile_width * 0.2) * 0.2;
-	// 	while (i < mm_width - (tile_width * 0.2) * 0.2)
-	// 	{
-	// 		img_pixel_put(minimap_img, i, j, get_color(255, 0, 255));
-	// 		i++;
-	// 	}
-	// 	j++;
-	// }
 }
 
 void	draw_wall_tile(t_game *cube, t_minimap *mmv)

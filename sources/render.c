@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 14:16:45 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/06 17:40:40 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/19 16:28:20 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,13 +69,4 @@ void	render_wall(float wall_height, t_game *cube, int x, t_img *img)
 		text_y += cube->textures.y;
 		j++;
 	}
-}
-
-void	render(t_game *cube)
-{
-	// render_floor_ceilling(cube->img, &cube->textures);
-	// update_fps_counter(cube);
-	raycast(cube, &cube->raycast);
-	mlx_put_image_to_window(cube->mlx, cube->windows, cube->img->img, 0, 0);
-	// draw_debug_info_cardinal(cube);
 }

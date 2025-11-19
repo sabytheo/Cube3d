@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/06 16:08:18 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/19 16:22:50 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -248,6 +248,9 @@ void print_texture(t_textures *textures);
 // Reef
 int free_exit(t_game *cube);
 void free_tab(char **tab);
+
+// Load_textures
+int	load_textures(t_game *cube);
 
 // Parse_map
 int parse_map(t_game *cube, char **argv);

@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 14:16:45 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/19 14:57:16 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/19 16:10:56 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,64 +117,44 @@ void	render_wall(float wall_height, t_cube_thread *cube_thread, int x,
 		render_wall_pixel(cube_thread, x, &j, &text_y);
 }
 
-void launch_threads(t_game *cube)
-{
-	t_cube_thread	*cube_thread[cube->nb_cores];
-	int				column_size;
-	int				column_start;
-	int				i;
+// void launch_threads(t_game *cube)
+// {
+// 	t_cube_thread	*cube_thread[cube->nb_cores];
+// 	int				column_size;
+// 	int				column_start;
+// 	int				i;
 
-	column_size = WIDTH / cube->nb_cores;
-	column_start = 0;
-	i = 0;
-	while (i < cube->nb_cores)
-	{
-		cube_thread[i] = malloc(1 * sizeof(t_cube_thread));
-		if (i == 0)
-			cube_thread[i]->width_start = column_start;
-		else
-			cube_thread[i]->width_start = column_start + 1;
-		cube_thread[i]->width_end = column_start + column_size;
-		cube_thread[i]->cube = cube;
-		cube_thread[i]->map = cube->map;
-		cube_thread[i]->textures = cube->textures;
-		cube_thread[i]->raycast = cube->raycast;
-		cube_thread[i]->id = i;
-		cube_thread[i]->map.final_grid = malloc(sizeof(char *)
-				* cube->map.grid_height);
-		for (int j = 0; j < cube->map.grid_height; j++)
-			cube_thread[i]->map.final_grid[j] = ft_strdup(cube->map.final_grid[j]);
-		// cube_thread[i]->img = cube->thread_img[i];
-		if (pthread_create(&cube_thread[i]->thread, NULL, &raycast,
-				cube_thread[i]))
-		{
-			return ;
-		}
-		column_start += column_size;
-		i++;
-	}
-	i = 0;
-	while (i < cube->nb_cores)
-	{
-		if (cube_thread[i])
-		{
-			pthread_join(cube_thread[i]->thread, NULL);
-			for (int j = 0; j < cube->map.grid_height; j++)
-				free(cube_thread[i]->map.final_grid[j]);
-			free(cube_thread[i]->map.final_grid);
-			free(cube_thread[i]);
-		}
-		i++;
-	}
-}
-
-void	render(t_game *cube)
-{
-	launch_threads(cube);
-	render_mapmap(cube->minimap_img, cube);
-	mlx_put_image_to_window(cube->mlx, cube->windows, cube->img->img, 0, 0);
-	mlx_put_image_to_window(cube->mlx, cube->windows, cube->minimap_img->img, 0,
-		0);
-	update_fps_counter(cube);
-	draw_debug_info_cardinal(cube);
-}
+// 	column_size = WIDTH / cube->nb_cores;
+// 	column_start = 0;
+// 	i = 0;
+// 	while (i < cube->nb_cores)
+// 	{
+// 		cube_thread[i] = malloc(1 * sizeof(t_cube_thread));
+// 		if (i == 0)
+// 			cube_thread[i]->width_start = column_start;
+// 		else
+// 			cube_thread[i]->width_start = column_start + 1;
+// 		cube_thread[i]->width_end = column_start + column_size;
+// 		cube_thread[i]->cube = cube;
+// 		cube_thread[i]->map = cube->map;
+// 		cube_thread[i]->textures = cube->textures;
+// 		cube_thread[i]->raycast = cube->raycast;
+// 		cube_thread[i]->map.final_grid = malloc(sizeof(char *)
+// 		* cube->map.grid_height);
+// 		j = 0;
+// 		while (j < cube->map.grid_height)
+// 		{
+// 			cube_thread[i]->map.final_grid[j] = ft_strdup(cube->map.final_grid[j]);
+// 			j++;
+// 		}
+// 		cube_thread[i] = init_thread(cube, cube_thread[i], column_size, column_start);
+// 		if (pthread_create(&cube_thread[i]->thread, NULL, &raycast,
+// 				cube_thread[i]))
+// 		{
+// 			return ;
+// 		}
+// 		column_start += column_size;
+// 		i++;
+// 	}
+// 	join_threads(cube, cube_thread);
+// }

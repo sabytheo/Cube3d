@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 15:37:43 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/19 14:58:43 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/19 20:06:04 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	free_tab(char **tab)
 // 	}
 // }
 
-static void destroy_image(t_game *cube)
+static void	destroy_image(t_game *cube)
 {
 	if (cube->textures.EA_img.img)
 		mlx_destroy_image(cube->mlx, cube->textures.EA_img.img);
@@ -66,9 +66,10 @@ static void destroy_image(t_game *cube)
 		mlx_destroy_image(cube->mlx, cube->textures.CE_img.img);
 	if (cube->textures.SP_img.img)
 		mlx_destroy_image(cube->mlx, cube->textures.SP_img.img);
-	return;
+	return ;
 }
-static void clean_textures(t_game *cube)
+
+static void	clean_textures(t_game *cube)
 {
 	if (cube->textures.NO)
 		free(cube->textures.NO);
@@ -86,10 +87,10 @@ static void clean_textures(t_game *cube)
 		free(cube->textures.SP);
 	if (cube->textures.CE)
 		free(cube->textures.CE);
-	return;
+	return ;
 }
 
-static void clean_struct(t_game *cube)
+static void	clean_struct(t_game *cube)
 {
 	if (cube->minimap_img)
 		free(cube->minimap_img);
@@ -97,7 +98,7 @@ static void clean_struct(t_game *cube)
 		free(cube->img);
 	if (cube->fps_counter)
 		free(cube->fps_counter);
-	return;
+	return ;
 }
 
 int	free_exit(t_game *cube)
