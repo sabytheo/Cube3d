@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cube_bonus.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42lyon.fr>            +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/08 21:03:23 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/19 01:07:24 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@
 
 #define WIDTH 1920
 #define HEIGHT 1080
+
+#define MOUSE_SENSIBILITY 0.02
 
 // # define SPEED 0.25
 # define XBOX 0.2
@@ -253,6 +255,7 @@ typedef struct s_game
 	int frame_limit;             // Limite en microsecondes (16666 = 60 FPS)
 	long nb_cores;
 	double delta_time;
+	float last_mouse_pos_x;
 	t_map map;
 	t_img *img;
 	t_img *minimap_img;
@@ -280,6 +283,9 @@ typedef struct s_cube_thread
 	t_textures textures;
 
 } t_cube_thread;
+
+
+void	camera_mouse_control(t_game *cube);
 
 void img_pixel_put(t_img *img, int x, int y, int color);
 unsigned int	get_texture_pixel(float text_y, t_img *img, float text_x);

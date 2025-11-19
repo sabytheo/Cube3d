@@ -3,16 +3,40 @@
 /*                                                        :::      ::::::::   */
 /*   bindings_utils.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42lyon.fr>            +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 12:28:58 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/08 21:09:22 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/19 01:07:14 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cube_bonus.h"
 
+void	camera_mouse_control(t_game *cube)
+{
+	static int	mouse_x = 0;
+	static int	mouse_y = 0;
+	double		movement_x;
+	int			center_x;
+	double		rotation;
 
+	if (cube->key.tab)
+	{
+		center_x = WIDTH / 2;
+		mlx_mouse_hide(cube->mlx, cube->windows);
+		mlx_mouse_get_pos(cube->mlx, cube->windows, &mouse_x, &mouse_y);
+		movement_x = (double)(mouse_x - center_x);
+		if (fabs(movement_x) > 1)
+		{
+			mlx_mouse_move(cube->mlx, cube->windows, center_x, HEIGHT / 2);
+			rotation = MOUSE_SENSIBILITY * movement_x * cube->player.rotation_speed
+				* cube->delta_time;
+			cube->player.angle -= rotation;
+		}
+	}
+	else
+		mlx_mouse_show(cube->mlx, cube->windows);
+}
 
 void	update_delta_time(t_game *cube)
 {
@@ -79,6 +103,8 @@ int	press_key(int keypress, t_game *cube)
 		cube->key.right = true;
 	if (keypress == ESCAPE)
 		cube->key.escape = true;
+	if (keypress == TAB)
+		cube->key.tab = !cube->key.tab;
 	return (0);
 }
 

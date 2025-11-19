@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42lyon.fr>            +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:45:45 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/08 20:15:51 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/19 00:41:29 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cube_bonus.h"
 #include <sys/time.h>
-
 
 int	init(t_game *cube)
 {
@@ -20,8 +19,9 @@ int	init(t_game *cube)
 	cube->nb_cores = sysconf(_SC_NPROCESSORS_ONLN);
 	cube->img = (t_img *)ft_calloc(1, sizeof(t_img));
 	cube->minimap_img = (t_img *)ft_calloc(1, sizeof(t_img));
-	cube->player.speed = 0.5;
-	cube->player.rotation_speed = 0.5;
+	cube->player.speed = 1;
+	cube->player.rotation_speed = 1;
+	cube->last_mouse_pos_x = WIDTH / 2;
 	cube->delta_time = 0.016;
 	cube->fps_counter = init_fps_counter();
 	gettimeofday(&cube->last_frame, NULL);
@@ -102,6 +102,8 @@ int	load_textures(t_game *cube)
 	return (-1);
 }
 
+
+
 int	main(int argc, char **argv)
 {
 	t_game	cube;
@@ -132,6 +134,7 @@ int	main(int argc, char **argv)
 	render(&cube);
 	mlx_hook(cube.windows, 2, 1L << 0, press_key, &cube);
 	mlx_hook(cube.windows, 3, 1L << 1, release_key, &cube);
+	// mlx_hook(cube.windows, 6, 1L << 6, mouse_move, &cube);
 	mlx_loop_hook(cube.mlx, define_control, &cube);
 	mlx_hook(cube.windows, ON_DESTROY, 0, free_exit, &cube);
 	mlx_loop(cube.mlx);

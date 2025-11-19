@@ -36,8 +36,7 @@ BONUS
 ## Animations
 ## Minimap - E _done?_ | Diviser en fichiers
 ## Sprint - E
-## Collectibles bonus/malus
-## Ennemis
+
 
 **MULTITHREADING**
 

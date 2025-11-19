@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bindings.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42lyon.fr>            +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 12:31:12 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/08 22:07:15 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/18 23:44:08 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,10 +144,11 @@ int	define_control(t_game *cube)
 	move_x = 0;
 	move_y = 0;
 	update_delta_time(cube);
+	camera_mouse_control(cube);
 	if (cube->key.escape == true)
 		free_exit(cube);
 	if (cube->key.maj == true)
-		cube->player.speed = 0.8;
+		cube->player.speed = 1.5;
     else if  (cube->key.maj == false)
 		cube->player.speed = 0.5;
 	calculate_movement(cube, &move_x, &move_y);
