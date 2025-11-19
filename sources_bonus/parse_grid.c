@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 14:33:21 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/06 15:52:39 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/19 20:19:31 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,6 @@ static void	set_player_info(int i, int j, t_game *cube)
 {
 	cube->player.direction = cube->map.grid[i][j];
 	get_angle(cube, cube->player.direction);
-	cube->player.fov = M_PI / 3;
 	cube->player.tan_fov_2 = tan(cube->player.fov * 0.5);
 	cube->player.pos_y = (i - cube->map.grid_start) + 0.5;
 	cube->player.pos_x = j + 0.5;

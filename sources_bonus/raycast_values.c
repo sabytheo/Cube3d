@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 16:26:36 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/19 19:32:53 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/19 20:18:15 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,12 @@ void	init_raycast_values(t_game *cube, t_raycast *raycast, int x)
 	raycast->start_y = HEIGHT * 0.5;
 }
 
-void	init_height_dplan(t_game *cube, t_raycast *raycast)
-{
-	raycast->base_height = 1;
-	raycast->d_plan = WIDTH / (2 * tan(cube->player.fov * 0.5));
-	return ;
-}
+// void	init_height_dplan(t_game *cube, t_raycast *raycast)
+// {
+// 	raycast->base_height = 1;
+// 	raycast->d_plan = WIDTH / (2 * tan(cube->player.fov * 0.5));
+// 	return ;
+// }
 
 void	get_distance_and_wallheight(t_game *cube, t_raycast *raycast)
 {

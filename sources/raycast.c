@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 14:33:01 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/19 19:24:36 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/19 20:20:26 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,6 @@ void	raycast(t_game *cube, t_raycast *raycast)
 	t_img	*texture;
 
 	texture = NULL;
-	init_height_dplan(cube);
 	side = 0;
 	x = 0;
 	while (x <= WIDTH)

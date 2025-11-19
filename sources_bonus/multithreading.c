@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 16:07:01 by egache            #+#    #+#             */
-/*   Updated: 2025/11/19 16:07:41 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/19 20:11:37 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void join_threads(t_game *cube, t_cube_thread **cube_thread)
 {
 	int i;
+	int j;
 
 	i = 0;
 	while (i < cube->nb_cores)
@@ -22,8 +23,12 @@ void join_threads(t_game *cube, t_cube_thread **cube_thread)
 		if (cube_thread[i])
 		{
 			pthread_join(cube_thread[i]->thread, NULL);
-			for (int j = 0; j < cube->map.grid_height; j++)
+			j = 0;
+			while (j < cube->map.grid_height)
+			{
 				free(cube_thread[i]->map.final_grid[j]);
+				j++;
+			}
 			free(cube_thread[i]->map.final_grid);
 			free(cube_thread[i]);
 		}
