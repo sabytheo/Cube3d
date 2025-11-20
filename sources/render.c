@@ -3,36 +3,35 @@
 /*                                                        :::      ::::::::   */
 /*   render.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 14:16:45 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/20 12:41:16 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/20 16:03:06 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cube.h"
 
-void	render_floor_ceilling(t_img *img, t_textures *textures, int x,
-		int draw_start, int draw_end)
+void	render_floor_ceilling(t_game *cube, int x, int draw_start, int draw_end)
 {
 	int	j;
 	int	c_color;
 	int	f_color;
 
-	c_color = get_color(textures->ceiling[0], textures->ceiling[1],
-			textures->ceiling[2]);
-	f_color = get_color(textures->floor[0], textures->floor[1],
-			textures->floor[2]);
+	c_color = get_color(cube->textures.ceiling[0], cube->textures.ceiling[1],
+			cube->textures.ceiling[2]);
+	f_color = get_color(cube->textures.floor[0], cube->textures.floor[1],
+			cube->textures.floor[2]);
 	j = 0;
 	while (j < draw_start)
 	{
-		img_pixel_put(img, x, j, c_color);
+		img_pixel_put(cube->img, x, j, c_color);
 		j++;
 	}
 	j = draw_end + 1;
 	while (j < HEIGHT)
 	{
-		img_pixel_put(img, x, j, f_color);
+		img_pixel_put(cube->img, x, j, f_color);
 		j++;
 	}
 	return ;
@@ -59,8 +58,7 @@ void	render_wall(float wall_height, t_game *cube, int x, t_img *img)
 	if (draw_end >= HEIGHT)
 		draw_end = HEIGHT - 1;
 	else
-		render_floor_ceilling(cube->img, &cube->textures, x, draw_start,
-			draw_end);
+		render_floor_ceilling(cube, x, draw_start, draw_end);
 	j = draw_start;
 	while (j < draw_end)
 	{

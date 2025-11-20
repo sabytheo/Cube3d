@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 16:15:05 by egache            #+#    #+#             */
-/*   Updated: 2025/11/19 16:16:18 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/20 15:52:59 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,26 +54,26 @@ static int	get_data_addr_cardinal(t_textures *textures)
 	return (0);
 }
 
-int	load_textures(t_game *cube)
+int	load_textures(t_game *cube, t_textures *textures)
 {
-	if (xpm_to_image(cube, &cube->textures) == 0)
+	if (xpm_to_image(cube, &textures) == 0)
 	{
-		if (get_data_addr_cardinal(&cube->textures) < 0)
+		if (get_data_addr_cardinal(&textures) < 0)
 			return (-1);
-		cube->textures.DO_img.addr = mlx_get_data_addr(cube->textures.DO_img.img,
-				&cube->textures.DO_img.bpp, &cube->textures.DO_img.sl,
-				&cube->textures.DO_img.en);
-		cube->textures.FL_img.addr = mlx_get_data_addr(cube->textures.FL_img.img,
-				&cube->textures.FL_img.bpp, &cube->textures.FL_img.sl,
-				&cube->textures.FL_img.en);
-		cube->textures.CE_img.addr = mlx_get_data_addr(cube->textures.CE_img.img,
-				&cube->textures.CE_img.bpp, &cube->textures.CE_img.sl,
-				&cube->textures.CE_img.en);
-		cube->textures.SP_img.addr = mlx_get_data_addr(cube->textures.SP_img.img,
-				&cube->textures.SP_img.bpp, &cube->textures.SP_img.sl,
-				&cube->textures.SP_img.en);
-		if (!cube->textures.DO_img.addr || !cube->textures.FL_img.addr
-			|| !cube->textures.CE_img.addr || !cube->textures.SP_img.addr)
+		textures->DO_img.addr = mlx_get_data_addr(textures->DO_img.img,
+				&textures->DO_img.bpp, &textures->DO_img.sl,
+				&textures->DO_img.en);
+		textures->FL_img.addr = mlx_get_data_addr(textures->FL_img.img,
+				&textures->FL_img.bpp, &textures->FL_img.sl,
+				&textures->FL_img.en);
+		textures->CE_img.addr = mlx_get_data_addr(textures->CE_img.img,
+				&textures->CE_img.bpp, &textures->CE_img.sl,
+				&textures->CE_img.en);
+		textures->SP_img.addr = mlx_get_data_addr(textures->SP_img.img,
+				&textures->SP_img.bpp, &textures->SP_img.sl,
+				&textures->SP_img.en);
+		if (!textures->DO_img.addr || !textures->FL_img.addr
+			|| !textures->CE_img.addr || !textures->SP_img.addr)
 			return (-1);
 		return (0);
 	}

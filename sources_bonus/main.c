@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:45:45 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/20 13:59:47 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/20 15:55:31 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cube_bonus.h"
 #include <sys/time.h>
-
 
 int	init(t_game *cube)
 {
@@ -60,6 +59,7 @@ void	init_window_and_img(t_game *cube)
 int	main(int argc, char **argv)
 {
 	t_game	cube;
+
 	if (argc != 2)
 	{
 		write(2, "Number of arguments invalid\n", 28);
@@ -72,7 +72,7 @@ int	main(int argc, char **argv)
 	cube.mlx = mlx_init();
 	if (!cube.mlx)
 		return (0);
-	if (load_textures(&cube) < 0)
+	if (load_textures(&cube, &cube.textures) < 0)
 		free_exit(&cube);
 	init_window_and_img(&cube);
 	render(&cube);

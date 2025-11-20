@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:46:14 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/20 13:21:18 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/20 15:51:16 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int	main(int argc, char **argv)
 	cube.mlx = mlx_init();
 	if (!cube.mlx)
 		return (1);
-	if (load_textures(&cube) < 0)
+	if (load_textures(&cube, &cube.textures) < 0)
 		free_exit(&cube);
 	init_window_and_img(&cube);
 	render(&cube);

@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   multithreading.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 16:07:01 by egache            #+#    #+#             */
-/*   Updated: 2025/11/20 14:24:48 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/20 15:44:25 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cube_bonus.h"
 
-void join_threads(t_game *cube, t_cube_thread **cube_thread)
+void	join_threads(t_game *cube, t_cube_thread **cube_thread)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	while (i < cube->nb_cores)
@@ -37,9 +37,10 @@ void join_threads(t_game *cube, t_cube_thread **cube_thread)
 	free(cube_thread);
 }
 
-t_cube_thread *init_thread(t_game *cube, t_cube_thread *cube_thread, int column_size, int column_start)
+t_cube_thread	*init_thread(t_game *cube, t_cube_thread *cube_thread,
+		int column_size, int column_start)
 {
-	int				i;
+	int	i;
 
 	cube_thread = malloc(1 * sizeof(t_cube_thread));
 	if (column_start == 0)
@@ -52,17 +53,17 @@ t_cube_thread *init_thread(t_game *cube, t_cube_thread *cube_thread, int column_
 	cube_thread->textures = cube->textures;
 	cube_thread->raycast = cube->raycast;
 	cube_thread->map.final_grid = malloc(sizeof(char *)
-	* cube->map.grid_height);
+			* cube->map.grid_height);
 	i = 0;
 	while (i < cube->map.grid_height)
 	{
 		cube_thread->map.final_grid[i] = ft_strdup(cube->map.final_grid[i]);
 		i++;
 	}
-	return(cube_thread);
+	return (cube_thread);
 }
 
-void launch_threads(t_game *cube)
+void	launch_threads(t_game *cube)
 {
 	t_cube_thread	**cube_thread;
 	int				column_size;
@@ -77,7 +78,8 @@ void launch_threads(t_game *cube)
 	i = 0;
 	while (i < cube->nb_cores)
 	{
-		cube_thread[i] = init_thread(cube, cube_thread[i], column_size, column_start);
+		cube_thread[i] = init_thread(cube, cube_thread[i], column_size,
+				column_start);
 		if (pthread_create(&cube_thread[i]->thread, NULL, &raycast,
 				cube_thread[i]))
 			return ;

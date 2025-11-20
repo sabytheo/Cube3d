@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 14:16:45 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/20 12:43:11 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/20 15:55:48 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,45 +116,3 @@ void	render_wall(float wall_height, t_cube_thread *cube_thread, int x,
 	while (j < draw_end)
 		render_wall_pixel(cube_thread, x, &j, &text_y);
 }
-
-// void launch_threads(t_game *cube)
-// {
-// 	t_cube_thread	*cube_thread[cube->nb_cores];
-// 	int				column_size;
-// 	int				column_start;
-// 	int				i;
-
-// 	column_size = WIDTH / cube->nb_cores;
-// 	column_start = 0;
-// 	i = 0;
-// 	while (i < cube->nb_cores)
-// 	{
-// 		cube_thread[i] = malloc(1 * sizeof(t_cube_thread));
-// 		if (i == 0)
-// 			cube_thread[i]->width_start = column_start;
-// 		else
-// 			cube_thread[i]->width_start = column_start + 1;
-// 		cube_thread[i]->width_end = column_start + column_size;
-// 		cube_thread[i]->cube = cube;
-// 		cube_thread[i]->map = cube->map;
-// 		cube_thread[i]->textures = cube->textures;
-// 		cube_thread[i]->raycast = cube->raycast;
-// 		cube_thread[i]->map.final_grid = malloc(sizeof(char *)
-// 		* cube->map.grid_height);
-// 		j = 0;
-// 		while (j < cube->map.grid_height)
-// 		{
-// 			cube_thread[i]->map.final_grid[j] = ft_strdup(cube->map.final_grid[j]);
-// 			j++;
-// 		}
-// 		cube_thread[i] = init_thread(cube, cube_thread[i], column_size, column_start);
-// 		if (pthread_create(&cube_thread[i]->thread, NULL, &raycast,
-// 				cube_thread[i]))
-// 		{
-// 			return ;
-// 		}
-// 		column_start += column_size;
-// 		i++;
-// 	}
-// 	join_threads(cube, cube_thread);
-// }

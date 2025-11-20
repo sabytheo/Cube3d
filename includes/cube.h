@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cube.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/20 12:39:27 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/20 16:02:31 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -218,7 +218,7 @@ void	draw_debug_info_cardinal(t_game *cube);
 
 
 // void render_floor_ceilling(t_img *img, t_textures *textures);
-void render_floor_ceilling(t_img *img, t_textures *textures, int x, int draw_start, int draw_end);
+void render_floor_ceilling(t_game *cube, int x, int draw_start, int draw_end);
 
 
 // Raycast_value
@@ -256,7 +256,7 @@ int free_exit(t_game *cube);
 void free_tab(char **tab);
 
 // Load_textures
-int	load_textures(t_game *cube);
+int	load_textures(t_game *cube, t_textures *textures);
 
 // Parse_map
 int parse_map(t_game *cube, char **argv);

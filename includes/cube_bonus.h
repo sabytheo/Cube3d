@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cube_bonus.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/20 13:55:40 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/20 15:51:50 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -354,7 +354,7 @@ int free_exit(t_game *cube);
 void free_tab(char **tab);
 
 // Load_textures
-int	load_textures(t_game *cube);
+int	load_textures(t_game *cube, t_textures *textures);
 
 // Parse_map
 int parse_map(t_game *cube, char **argv);
