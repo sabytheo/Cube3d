@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 14:16:45 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/19 14:57:16 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/20 12:33:24 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -175,6 +175,4 @@ void	render(t_game *cube)
 	mlx_put_image_to_window(cube->mlx, cube->windows, cube->img->img, 0, 0);
 	mlx_put_image_to_window(cube->mlx, cube->windows, cube->minimap_img->img, 0,
 		0);
-	update_fps_counter(cube);
-	draw_debug_info_cardinal(cube);
 }

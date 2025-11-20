@@ -6,7 +6,7 @@
 /*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:46:14 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/19 20:01:27 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/20 12:32:02 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ int	init(t_game *cube)
 	cube->player.speed = 1;
 	cube->player.rotation_speed = 1;
 	cube->delta_time = 0.016;
-	//cube->fps_counter = init_fps_counter();
 	if (!cube->img)
 	{
 		ft_printf_fd(2, "Error:\n Failed to allocate memory\n");

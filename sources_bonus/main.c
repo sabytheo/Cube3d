@@ -6,7 +6,7 @@
 /*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:45:45 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/19 00:41:29 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/20 12:33:57 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ int	init(t_game *cube)
 	cube->player.rotation_speed = 1;
 	cube->last_mouse_pos_x = WIDTH / 2;
 	cube->delta_time = 0.016;
-	cube->fps_counter = init_fps_counter();
 	gettimeofday(&cube->last_frame, NULL);
 	if (!cube->img || !cube->minimap_img)
 	{
@@ -134,7 +133,6 @@ int	main(int argc, char **argv)
 	render(&cube);
 	mlx_hook(cube.windows, 2, 1L << 0, press_key, &cube);
 	mlx_hook(cube.windows, 3, 1L << 1, release_key, &cube);
-	// mlx_hook(cube.windows, 6, 1L << 6, mouse_move, &cube);
 	mlx_loop_hook(cube.mlx, define_control, &cube);
 	mlx_hook(cube.windows, ON_DESTROY, 0, free_exit, &cube);
 	mlx_loop(cube.mlx);

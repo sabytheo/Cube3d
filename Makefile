@@ -6,7 +6,7 @@
 #    By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: Invalid date        by                   #+#    #+#              #
-#    Updated: 2025/11/19 16:06:49 by tsaby            ###   ########.fr        #
+#    Updated: 2025/11/20 12:32:29 by tsaby            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,6 @@ SRCS		:=		main.c \
 					raycast.c \
 					raycast_value.c \
 					vector_maths.c \
-					fps_counter.c \
 					debug.c
 
 SRCS_BONUS	:=		main.c \
@@ -56,7 +55,6 @@ SRCS_BONUS	:=		main.c \
 					raycast.c \
 					raycast_values.c \
 					vector_maths.c \
-					fps_counter.c \
 					debug.c
 
 
