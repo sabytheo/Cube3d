@@ -6,7 +6,7 @@
 /*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:46:14 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/20 12:40:29 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/20 13:21:18 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	render(t_game *cube)
 	mlx_put_image_to_window(cube->mlx, cube->windows, cube->img->img, 0, 0);
 }
 
-void init_window_and_img(t_game *cube)
+void	init_window_and_img(t_game *cube)
 {
 	cube->windows = mlx_new_window(cube->mlx, WIDTH, HEIGHT, "CUB3D");
 	cube->img->img = mlx_new_image(cube->mlx, WIDTH, HEIGHT);

@@ -6,7 +6,7 @@
 /*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/20 12:39:03 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/20 13:55:40 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <sys/time.h>
-# include <pthread.h>
+#include <pthread.h>
 
 #define _GNU_SOURCE
 
@@ -38,12 +38,11 @@
 #define WIDTH 1920
 #define HEIGHT 1080
 #define MOUSE_SENSIBILITY 0.02
-// # define SPEED 0.25
-# define XBOX 0.2
-# define CHAR_CHECK false
-# define GRID_CHECK true
-# define IDENTIFIER_CHECK 1
-# define TEXTURE_EXIST 0
+#define XBOX 0.2
+#define CHAR_CHECK false
+#define GRID_CHECK true
+#define IDENTIFIER_CHECK 1
+#define TEXTURE_EXIST 0
 
 enum
 {
@@ -279,7 +278,6 @@ typedef struct s_cube_thread
 	int id;
 	pthread_t		thread;
 } t_cube_thread;
-
 
 void	camera_mouse_control(t_game *cube);
 

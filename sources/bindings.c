@@ -6,7 +6,7 @@
 /*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 12:31:12 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/19 19:57:46 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/20 13:16:54 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,7 @@ int	define_control(t_game *cube)
 	if (cube->key.maj == true)
 		cube->player.speed = 1.5;
 	else if (cube->key.maj == false)
-		cube->player.speed = 0.5;
+		cube->player.speed = 1;
 	calculate_movement(cube, &move_x, &move_y);
 	apply_movement(cube, move_x, move_y);
 	if (cube->key.right == true)

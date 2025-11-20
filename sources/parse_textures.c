@@ -6,7 +6,7 @@
 /*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 12:42:42 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/19 20:19:43 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/20 13:22:12 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ static int	copy_coord_text(char *str, t_textures *textures)
 	}
 	return (-1);
 }
+
 static int	is_valid_texture(t_game *cube, char **grid, int i, int status)
 {
 	if (status == IDENTIFIER_CHECK)

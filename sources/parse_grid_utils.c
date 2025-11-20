@@ -6,7 +6,7 @@
 /*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 12:47:21 by egache            #+#    #+#             */
-/*   Updated: 2025/11/19 20:06:02 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/20 13:21:29 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,16 +64,16 @@ bool	is_a_valid_char(char c, bool state)
 	}
 	return (true);
 }
+
 void	get_angle(t_game *cube, char c)
 {
 	if (c == 'N')
 		cube->player.angle = M_PI / 2;
 	else if (c == 'S')
-		cube->player.angle = - M_PI / 2;
+		cube->player.angle = -M_PI / 2;
 	else if (c == 'W')
 		cube->player.angle = M_PI;
 	else if (c == 'E')
 		cube->player.angle = 0;
 	return ;
 }
-

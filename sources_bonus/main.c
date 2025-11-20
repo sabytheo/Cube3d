@@ -6,12 +6,13 @@
 /*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:45:45 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/20 12:42:10 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/20 13:59:47 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cube_bonus.h"
 #include <sys/time.h>
+
 
 int	init(t_game *cube)
 {
@@ -42,11 +43,9 @@ void	render(t_game *cube)
 	mlx_put_image_to_window(cube->mlx, cube->windows, cube->img->img, 0, 0);
 	mlx_put_image_to_window(cube->mlx, cube->windows, cube->minimap_img->img, 0,
 		0);
-	update_fps_counter(cube);
-	draw_debug_info_cardinal(cube);
 }
 
-void init_window_and_img(t_game *cube)
+void	init_window_and_img(t_game *cube)
 {
 	cube->windows = mlx_new_window(cube->mlx, WIDTH, HEIGHT, "CUB3D");
 	cube->img->img = mlx_new_image(cube->mlx, WIDTH, WIDTH);
@@ -61,7 +60,6 @@ void init_window_and_img(t_game *cube)
 int	main(int argc, char **argv)
 {
 	t_game	cube;
-
 	if (argc != 2)
 	{
 		write(2, "Number of arguments invalid\n", 28);

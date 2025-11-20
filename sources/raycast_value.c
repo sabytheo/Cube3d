@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycast_value.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 14:35:08 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/19 20:20:23 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/20 13:21:00 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ void	init_raycast_values(t_game *cube, t_raycast *raycast, int x)
 	raycast->floatY = cube->player.pos_y;
 	raycast->start_y = HEIGHT * 0.5;
 }
-
 
 void	init_raycast_direction(t_game *cube, t_raycast *raycast)
 {

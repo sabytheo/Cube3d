@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   multithreading.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 16:07:01 by egache            #+#    #+#             */
-/*   Updated: 2025/11/19 20:11:37 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/20 14:24:48 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void join_threads(t_game *cube, t_cube_thread **cube_thread)
 		}
 		i++;
 	}
+	free(cube_thread);
 }
 
 t_cube_thread *init_thread(t_game *cube, t_cube_thread *cube_thread, int column_size, int column_start)
@@ -63,11 +64,14 @@ t_cube_thread *init_thread(t_game *cube, t_cube_thread *cube_thread, int column_
 
 void launch_threads(t_game *cube)
 {
-	t_cube_thread	*cube_thread[cube->nb_cores];
+	t_cube_thread	**cube_thread;
 	int				column_size;
 	int				column_start;
 	int				i;
 
+	cube_thread = malloc(cube->nb_cores * sizeof(t_cube_thread));
+	if (!cube_thread)
+		free_exit(cube);
 	column_size = WIDTH / cube->nb_cores;
 	column_start = 0;
 	i = 0;
