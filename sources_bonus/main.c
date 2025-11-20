@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:45:45 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/19 20:42:42 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/20 12:42:10 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ int	init(t_game *cube)
 	cube->player.fov = M_PI / 3;
 	cube->last_mouse_pos_x = WIDTH / 2;
 	cube->delta_time = 0.016;
-	cube->fps_counter = init_fps_counter();
 	cube->raycast.base_height = 1;
 	cube->raycast.d_plan = WIDTH / (2 * tan(cube->player.fov * 0.5));
 	gettimeofday(&cube->last_frame, NULL);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:46:14 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/19 20:43:36 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/20 12:40:29 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,12 @@ int	init(t_game *cube)
 {
 	ft_bzero(cube, sizeof(t_game));
 	cube->img = (t_img *)ft_calloc(1, sizeof(t_img));
-	cube->player.speed = 0.25;
 	cube->player.fov = M_PI / 3;
 	cube->raycast.base_height = 1;
 	cube->raycast.d_plan = WIDTH / (2 * tan(cube->player.fov * 0.5));
+	cube->player.speed = 1;
+	cube->player.rotation_speed = 1;
+	cube->delta_time = 0.016;
 	if (!cube->img)
 	{
 		ft_printf_fd(2, "Error:\n Failed to allocate memory\n");
