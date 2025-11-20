@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/20 16:02:31 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/20 16:55:25 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -237,7 +237,7 @@ int	get_color(int red, int green, int blue);
 
 // Render
 void render(t_game *cube);
-void	render_wall(float wall_height, t_game *cube, int x, t_img *img);
+void	render_wall(float wall_height, t_game *cube, int x, t_img *texture);
 
 // Binding
 int define_control(t_game *cube);

@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:45:45 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/20 15:55:31 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/20 20:21:21 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ int	init(t_game *cube)
 	cube->player.speed = 1;
 	cube->player.rotation_speed = 1;
 	cube->player.fov = M_PI / 3;
+	cube->running = true;
+	pthread_mutex_init(&cube->running_lock, NULL);
 	cube->last_mouse_pos_x = WIDTH / 2;
 	cube->delta_time = 0.016;
 	cube->raycast.base_height = 1;
@@ -37,7 +39,16 @@ int	init(t_game *cube)
 
 void	render(t_game *cube)
 {
-	launch_threads(cube);
+	t_cube_thread	**cube_thread;
+
+	cube_thread = malloc(cube->nb_cores * sizeof(t_cube_thread));
+	if (!cube_thread)
+		free_exit(cube);
+	if (launch_threads(cube, cube_thread) < 0)
+	{
+		free_threads_tab(cube, cube_thread);
+		free_exit(cube);
+	}
 	render_mapmap(cube->minimap_img, cube);
 	mlx_put_image_to_window(cube->mlx, cube->windows, cube->img->img, 0, 0);
 	mlx_put_image_to_window(cube->mlx, cube->windows, cube->minimap_img->img, 0,

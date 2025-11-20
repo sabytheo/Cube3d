@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 16:23:49 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/20 15:40:29 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/20 20:26:36 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static void	get_texture_coord_and_distance(t_cube_thread *cube_thread,
 	return ;
 }
 
-static void	collect_hits(t_cube_thread *cube_thread, t_raycast *raycast,
+static int	collect_hits(t_cube_thread *cube_thread, t_raycast *raycast,
 		t_hit_info **hits, int *hit_count)
 {
 	int			side;
@@ -52,7 +52,7 @@ static void	collect_hits(t_cube_thread *cube_thread, t_raycast *raycast,
 	{
 		side = init_hit_char(&cube_thread->map, raycast, &new_hit);
 		if (side == -1)
-			return (free(new_hit));
+			return (-1);
 		if (new_hit->hit_type == '1' || new_hit->hit_type == 'C'
 			|| new_hit->hit_type == 'O')
 		{
@@ -66,6 +66,7 @@ static void	collect_hits(t_cube_thread *cube_thread, t_raycast *raycast,
 		}
 		free(new_hit);
 	}
+	return (0);
 }
 
 void	assign_texture_and_current_hit(t_cube_thread *cube_thread,
@@ -93,7 +94,7 @@ void	assign_texture_and_current_hit(t_cube_thread *cube_thread,
 	cube_thread->textures.x = current_hit->texture_x;
 }
 
-static void	render_from_last_wall(t_cube_thread *cube_thread, t_game *cube,
+static int	render_from_last_wall(t_cube_thread *cube_thread, t_game *cube,
 		t_raycast *raycast, int x)
 {
 	int			hit_count;
@@ -102,7 +103,8 @@ static void	render_from_last_wall(t_cube_thread *cube_thread, t_game *cube,
 
 	hit_count = 0;
 	hits = NULL;
-	collect_hits(cube_thread, raycast, &hits, &hit_count);
+	if (collect_hits(cube_thread, raycast, &hits, &hit_count) < 0)
+		return (-1);
 	i = hit_count - 1;
 	while (i >= 0)
 	{
@@ -114,6 +116,7 @@ static void	render_from_last_wall(t_cube_thread *cube_thread, t_game *cube,
 	}
 	if (hits)
 		free(hits);
+	return (0);
 }
 
 void	*raycast(void *arg)
@@ -123,11 +126,19 @@ void	*raycast(void *arg)
 	cube_thread = (t_cube_thread *)arg;
 	while (cube_thread->width_start <= cube_thread->width_end)
 	{
+		if (cube_thread->cube->running == false)
+			break ;
 		init_raycast_values(cube_thread->cube, &cube_thread->raycast,
 			cube_thread->width_start);
 		init_raycast_direction(cube_thread->cube, &cube_thread->raycast);
-		render_from_last_wall(cube_thread, cube_thread->cube,
-			&cube_thread->raycast, cube_thread->width_start);
+		if (render_from_last_wall(cube_thread, cube_thread->cube,
+				&cube_thread->raycast, cube_thread->width_start) < 0)
+		{
+			pthread_mutex_lock(&cube_thread->cube->running_lock);
+			cube_thread->cube->running = false;
+			pthread_mutex_unlock(&cube_thread->cube->running_lock);
+			break ;
+		}
 		cube_thread->width_start++;
 	}
 	return (NULL);

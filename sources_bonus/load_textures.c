@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 16:15:05 by egache            #+#    #+#             */
-/*   Updated: 2025/11/20 15:52:59 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/20 16:28:09 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,9 @@ static int	get_data_addr_cardinal(t_textures *textures)
 
 int	load_textures(t_game *cube, t_textures *textures)
 {
-	if (xpm_to_image(cube, &textures) == 0)
+	if (xpm_to_image(cube, textures) == 0)
 	{
-		if (get_data_addr_cardinal(&textures) < 0)
+		if (get_data_addr_cardinal(textures) < 0)
 			return (-1);
 		textures->DO_img.addr = mlx_get_data_addr(textures->DO_img.img,
 				&textures->DO_img.bpp, &textures->DO_img.sl,

@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/20 15:51:50 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/20 20:12:43 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -253,6 +253,8 @@ typedef struct s_game
 	long nb_cores;
 	double delta_time;
 	float last_mouse_pos_x;
+	bool running;
+	pthread_mutex_t running_lock;
 	t_map map;
 	t_img *img;
 	t_img *minimap_img;
@@ -303,7 +305,7 @@ void	update_delta_time(t_game *cube);
 
 
 // Multithreading
-void launch_threads(t_game *cube);
+int launch_threads(t_game *cube, t_cube_thread **cube_thread);
 t_cube_thread *init_thread(t_game *cube, t_cube_thread *cube_thread, int column_size, int column_start);
 void join_threads(t_game *cube, t_cube_thread **cube_thread);
 
@@ -336,7 +338,6 @@ void *raycast(void *arg);
 int		init_hit_char(t_map *map, t_raycast *raycast, t_hit_info **new_hit);
 void	init_raycast_direction(t_game *cube, t_raycast *raycast);
 void	get_distance_and_wallheight(t_game *cube, t_raycast *raycast);
-void	init_height_dplan(t_game *cube, t_raycast *raycast);
 void	init_raycast_values(t_game *cube, t_raycast *raycast, int x);
 
 // Bindings
@@ -352,6 +353,7 @@ void print_texture(t_textures *textures);
 // Reef
 int free_exit(t_game *cube);
 void free_tab(char **tab);
+void free_threads_tab(t_game *cube, t_cube_thread **cube_thread);
 
 // Load_textures
 int	load_textures(t_game *cube, t_textures *textures);

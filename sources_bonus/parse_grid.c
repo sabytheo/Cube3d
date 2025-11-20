@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_grid.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 14:33:21 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/20 12:42:32 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/20 19:37:53 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,6 @@ static int	copy_grid(t_game *cube)
 		j++;
 	}
 	cube->map.final_grid[j] = NULL;
-	printf("\n---------------------------------\n");
-	print_map(cube->map.final_grid);
-	printf("\n---------------------------------\n");
 	return (1);
 }
 

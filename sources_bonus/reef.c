@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 15:37:43 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/19 20:06:04 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/20 18:24:34 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	free_tab(char **tab)
 	}
 }
 
-// static void	free_int_tab(int *tab)
+// static void	free_int_tab(int **tab)
 // {
 // 	int	i;
 

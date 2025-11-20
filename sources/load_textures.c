@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 16:21:32 by egache            #+#    #+#             */
-/*   Updated: 2025/11/20 15:59:52 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/20 16:28:46 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static int	xpm_to_image(t_game *cube, t_textures *textures)
 
 int	load_textures(t_game *cube, t_textures *textures)
 {
-	if (xpm_to_image(cube, &cube->textures) == 0)
+	if (xpm_to_image(cube, textures) == 0)
 	{
 		textures->NO_img.addr = mlx_get_data_addr(textures->NO_img.img,
 				&textures->NO_img.bpp, &textures->NO_img.sl,
