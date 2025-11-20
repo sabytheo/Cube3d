@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 16:23:49 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/19 19:32:19 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/20 15:40:29 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,11 +62,9 @@ static void	collect_hits(t_cube_thread *cube_thread, t_raycast *raycast,
 			(*hits)[*hit_count] = *new_hit;
 			(*hit_count)++;
 			if (new_hit->hit_type == '1' || new_hit->hit_type == 'C')
-			{
-				free(new_hit);
 				hit_wall = true;
-			}
 		}
+		free(new_hit);
 	}
 }
 
