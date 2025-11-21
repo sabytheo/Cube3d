@@ -6,7 +6,7 @@
 /*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 12:31:12 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/20 13:17:04 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/21 11:35:21 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,7 @@ int	define_control(t_game *cube)
 	move_x = 0;
 	move_y = 0;
 	update_delta_time(cube);
+	update_texture_animation(cube);
 	camera_mouse_control(cube);
 	if (cube->key.escape == true)
 		free_exit(cube);

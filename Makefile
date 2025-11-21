@@ -6,7 +6,7 @@
 #    By: egache <egache@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: Invalid date        by                   #+#    #+#              #
-#    Updated: 2025/11/21 14:23:29 by egache           ###   ########.fr        #
+#    Updated: 2025/11/21 16:06:16 by egache           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,6 +40,7 @@ SRCS		:=		main.c \
 SRCS_BONUS	:=		main.c \
 					parse_map.c \
 					parse_textures.c \
+					parse_textures_utils.c \
 					parse_colors.c \
 					parse_grid.c \
 					parse_grid_utils.c \
@@ -49,6 +50,7 @@ SRCS_BONUS	:=		main.c \
 					bindings_door.c \
 					bindings_utils.c \
 					reef.c \
+					animation.c \
 					multithreading.c \
 					render.c \
 					render_utils.c \
@@ -59,7 +61,6 @@ SRCS_BONUS	:=		main.c \
 					raycast_values.c \
 					vector_maths.c \
 					debug.c
-
 
 #*------------------------------------------------------------------------------*
 
