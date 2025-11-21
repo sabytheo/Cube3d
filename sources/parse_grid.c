@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 14:33:21 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/21 15:42:16 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/21 16:59:41 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,5 +120,6 @@ int	parse_grid(int *i, char **grid, t_game *cube)
 			return (-1);
 		return (0);
 	}
+	printf(E_BAD_GRID_MISSING);
 	return (-1);
 }

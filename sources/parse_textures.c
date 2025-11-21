@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 12:42:42 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/21 15:59:39 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/21 17:24:39 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void	skip_textures_identifier(char **str)
 		(*str)++;
 }
 
-static int	copy_mandatory_textures(char *str, t_textures *textures)
+static int	cp_mand_textures(char *str, t_textures *textures)
 {
 	if (ft_strncmp(str, "NO ", 3) == 0 && !textures->NO)
 	{
@@ -50,7 +50,7 @@ static int	copy_mandatory_textures(char *str, t_textures *textures)
 
 int	is_valid_texture(t_game *cube, char **grid, int i, int status)
 {
-	if (status == IDENTIFIER_CHECK)
+	if (status == ID_CHECK)
 	{
 		if (ft_strncmp("NO ", grid[i], 3) == 0 || ft_strncmp("SO ", grid[i],
 				3) == 0 || ft_strncmp("EA ", grid[i], 3) == 0
@@ -74,9 +74,9 @@ int	init_textures(int *i, char **grid, t_game *cube)
 	count = 0;
 	while (grid[*i])
 	{
-		if (is_valid_texture(cube, grid, *i, IDENTIFIER_CHECK) == 0)
+		if (is_valid_texture(cube, grid, *i, ID_CHECK) == 0)
 		{
-			if (copy_mandatory_textures(grid[*i], &cube->textures) == 0)
+			if (cp_mand_textures(grid[*i], &cube->textures) == 0)
 				count++;
 		}
 		(*i)++;

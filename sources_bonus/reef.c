@@ -6,13 +6,14 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 15:37:43 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/21 16:09:19 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/21 17:48:53 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cube_bonus.h"
 
-void	free_tab(char **tab)
+// ADD TO LIBFT FOR NORMINETTE
+void	free_tab(char **tab) // ADD  TO LIBFT FOR NORMINETTE
 {
 	int	i;
 
@@ -28,23 +29,7 @@ void	free_tab(char **tab)
 	}
 }
 
-// static void	free_int_tab(int **tab)
-// {
-// 	int	i;
-
-// 	i = 0;
-// 	if (tab)
-// 	{
-// 		while (tab[i])
-// 		{
-// 			free(tab[i]);
-// 			i++;
-// 		}
-// 		free(tab);
-// 	}
-// }
-
-static void clean_animation(t_game *cube)
+static void	clean_animation(t_game *cube)
 {
 	int	i;
 
@@ -58,6 +43,7 @@ static void clean_animation(t_game *cube)
 		i++;
 	}
 }
+
 static void	destroy_image(t_game *cube)
 {
 	if (cube->textures.EA_img.img)
@@ -85,8 +71,6 @@ static void	clean_textures(t_game *cube)
 {
 	if (cube->textures.NO)
 		free(cube->textures.NO);
-	// if (cube->textures.SO)
-	// 	free(cube->textures.SO);
 	if (cube->textures.WE)
 		free(cube->textures.WE);
 	if (cube->textures.EA)

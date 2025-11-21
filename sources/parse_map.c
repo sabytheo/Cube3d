@@ -6,39 +6,11 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 19:35:31 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/21 16:00:55 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/21 17:42:19 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cube.h"
-
-static int	copy_line(t_game *cube, char *line)
-{
-	char	**temp;
-	int		i;
-
-	if (!line)
-		return (0);
-	i = 0;
-	cube->map.total_height++;
-	temp = (char **)malloc(sizeof(char *) * (cube->map.total_height + 1));
-	if (!temp)
-	{
-		free(line);
-		free_exit(cube);
-	}
-	temp[cube->map.total_height] = NULL;
-	while (i < cube->map.total_height - 1)
-	{
-		temp[i] = cube->map.grid[i];
-		i++;
-	}
-	temp[i] = line;
-	if (cube->map.grid)
-		free(cube->map.grid);
-	cube->map.grid = temp;
-	return (1);
-}
 
 int	open_map(t_game *cube, char **argv)
 {
@@ -83,6 +55,8 @@ int	get_width(char **map, t_game *cube)
 		cube->map.width[i] = len - 1;
 		if (cube->map.width[i] > cube->map.max_width)
 			cube->map.max_width = cube->map.width[i];
+		if (len > 100 || i > 50)
+			return (-1);
 		i++;
 	}
 	return (0);
@@ -101,6 +75,34 @@ int	check_arg(char *mapname)
 	return (0);
 }
 
+int	parse_textures_and_colors(t_game *cube, char **grid, int *i)
+{
+	while (grid[*i])
+	{
+		while (grid[*i] && is_only_whitespace(i, grid))
+			(*i)++;
+		if (is_valid_texture(cube, grid, *i, ID_CHECK) == 0)
+		{
+			if (init_textures(i, grid, cube) < 0)
+				return (-1);
+			if (init_colors(i, grid, cube) < 0)
+				return (-1);
+			return (0);
+		}
+		else if (ft_strncmp("F ", grid[*i], 2) == 0 || ft_strncmp("C ",
+				grid[*i], 2) == 0)
+		{
+			if (init_colors(i, grid, cube) < 0)
+				return (-1);
+			if (init_textures(i, grid, cube) < 0)
+				return (-1);
+			return (0);
+		}
+		(*i)++;
+	}
+	return (-1);
+}
+
 int	parse_map(t_game *cube, char **argv)
 {
 	int	i;
@@ -111,15 +113,11 @@ int	parse_map(t_game *cube, char **argv)
 	if (open_map(cube, argv) < 0)
 		return (-1);
 	if (get_width(cube->map.grid, cube) < 0)
-		return (-1);
-	while (cube->map.grid[i])
 	{
-		while (cube->map.grid[i] && is_only_whitespace(&i, cube->map.grid))
-			i++;
-	}
-	if (init_textures(&i, cube->map.grid, cube) < 0)
+		printf(E_BAD_MAP_SIZE);
 		return (-1);
-	if (init_colors(&i, cube->map.grid, cube) < 0)
+	}
+	if (parse_textures_and_colors(cube, cube->map.grid, &i))
 		return (-1);
 	if (parse_grid(&i, cube->map.grid, cube) < 0)
 		return (-1);

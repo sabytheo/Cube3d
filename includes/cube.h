@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/21 15:59:53 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/21 17:23:56 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@
 
 # define XBOX 0.2
 # define DEG_TO_RAD (1.0 / 180.0) * M_PI
-# define IDENTIFIER_CHECK 1
+# define ID_CHECK 1
 # define TEXTURE_EXIST 0
 
 # define CHAR_CHECK false
@@ -261,6 +261,9 @@ int	load_textures(t_game *cube, t_textures *textures);
 
 // Parse_map
 int parse_map(t_game *cube, char **argv);
+
+// Parse_map_utils
+int	copy_line(t_game *cube, char *line);
 
 // Parse_grid
 int parse_grid(int *i, char **grid, t_game *cube);

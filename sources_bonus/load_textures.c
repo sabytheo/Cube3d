@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 16:15:05 by egache            #+#    #+#             */
-/*   Updated: 2025/11/21 16:08:22 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/21 17:45:39 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ static int	xpm_addr_animated(t_game *cube, t_textures *textures)
 	}
 	return (0);
 }
+
 static int	xpm_to_image(t_game *cube, t_textures *textures)
 {
 	if (xpm_addr_animated(cube, textures) < 0)
@@ -53,8 +54,8 @@ static int	xpm_to_image(t_game *cube, t_textures *textures)
 			&textures->SP_img.wh, &textures->SP_img.ht);
 	if (!cube->textures.NO_img.img || !cube->textures.EA_img.img
 		|| !cube->textures.WE_img.img || !cube->textures.DO_img.img
-			|| !cube->textures.FL_img.img || !cube->textures.CE_img.img
-			|| !cube->textures.SP_img.img)
+		|| !cube->textures.FL_img.img || !cube->textures.CE_img.img
+		|| !cube->textures.SP_img.img)
 		return (-1);
 	return (0);
 }
@@ -67,7 +68,8 @@ static int	get_data_addr_cardinal(t_textures *textures)
 			&textures->EA_img.bpp, &textures->EA_img.sl, &textures->EA_img.en);
 	textures->WE_img.addr = mlx_get_data_addr(textures->WE_img.img,
 			&textures->WE_img.bpp, &textures->WE_img.sl, &textures->WE_img.en);
-	if (!textures->NO_img.addr || !textures->EA_img.addr || !textures->WE_img.addr)
+	if (!textures->NO_img.addr || !textures->EA_img.addr
+		|| !textures->WE_img.addr)
 		return (-1);
 	return (0);
 }

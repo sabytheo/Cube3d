@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 12:42:42 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/21 16:08:41 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/21 17:25:06 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void	skip_textures_identifier(char **str)
 		(*str)++;
 }
 
-static int	copy_coord_text(char *str, t_textures *textures, int *so_count)
+static int	cp_mand_textures(char *str, t_textures *textures, int *so_count)
 {
 	if (ft_strncmp(str, "NO ", 3) == 0 && !textures->NO)
 	{
@@ -101,9 +101,9 @@ int	init_textures(int *i, char **grid, t_game *cube)
 	count = 0;
 	while (grid[*i])
 	{
-		if (is_valid_texture(cube, grid, *i, IDENTIFIER_CHECK) == 0)
+		if (is_valid_texture(cube, grid, *i, ID_CHECK) == 0)
 		{
-			if (copy_coord_text(grid[*i], &cube->textures, &so_count) == 0)
+			if (cp_mand_textures(grid[*i], &cube->textures, &so_count) == 0)
 				count++;
 			else if (copy_bonus_textures(grid[*i], &cube->textures) == 0)
 				count++;
@@ -113,9 +113,10 @@ int	init_textures(int *i, char **grid, t_game *cube)
 		{
 			if (check_textures(cube, so_count, grid, i) < 0)
 				return (-1);
+			while (grid[*i] && (!is_valid_texture(cube, grid, *i, ID_CHECK)))
+				(*i)++;
 			return (0);
 		}
 	}
-	printf(E_MISSING_TEXTURE);
 	return (-1);
 }

@@ -6,11 +6,24 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 12:47:21 by egache            #+#    #+#             */
-/*   Updated: 2025/11/21 15:43:13 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/21 17:32:11 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cube.h"
+
+void	get_angle(t_game *cube, char c)
+{
+	if (c == 'N')
+		cube->player.angle = M_PI / 2;
+	else if (c == 'S')
+		cube->player.angle = -M_PI / 2;
+	else if (c == 'W')
+		cube->player.angle = M_PI;
+	else if (c == 'E')
+		cube->player.angle = 0;
+	return ;
+}
 
 bool	is_only_whitespace(int *i, char **grid)
 {
@@ -52,10 +65,7 @@ bool	is_a_valid_char(t_game *cube, char c, bool state)
 			return (true);
 		}
 		else
-		{
-			printf("%c\n", c);
 			return (false);
-		}
 	}
 	if (state == GRID_CHECK)
 	{
@@ -64,17 +74,4 @@ bool	is_a_valid_char(t_game *cube, char c, bool state)
 		return (false);
 	}
 	return (true);
-}
-
-void	get_angle(t_game *cube, char c)
-{
-	if (c == 'N')
-		cube->player.angle = M_PI / 2;
-	else if (c == 'S')
-		cube->player.angle = -M_PI / 2;
-	else if (c == 'W')
-		cube->player.angle = M_PI;
-	else if (c == 'E')
-		cube->player.angle = 0;
-	return ;
 }

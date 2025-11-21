@@ -6,12 +6,13 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 15:37:43 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/06 15:49:15 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/21 17:49:01 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cube.h"
 
+// ADD TO LIBFT FOR NORMINETTE
 void	free_tab(char **tab)
 {
 	int	i;

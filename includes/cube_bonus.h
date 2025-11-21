@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/21 16:10:31 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/21 17:50:16 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@
 # define CHAR_CHECK false
 # define GRID_CHECK true
 # define ANIMATED_SPRITE 5
-# define IDENTIFIER_CHECK 1
+# define ID_CHECK 1
 # define TEXTURE_EXIST 0
 
 enum
@@ -110,6 +110,7 @@ typedef struct s_raycast
 
 typedef struct s_player
 {
+	bool			found;
 	float			pos_x;
 	char			direction;
 	float			pos_y;
@@ -261,8 +262,8 @@ typedef struct s_game
 	t_img			*img;
 	t_img			*minimap_img;
 	// t_img **thread_img;
-	bool running;
-	pthread_mutex_t running_lock;
+	bool			running;
+	pthread_mutex_t	running_lock;
 	t_minimap		minimap_values;
 	t_player		player;
 	t_raycast		raycast;
@@ -373,14 +374,11 @@ int					parse_grid(int *i, char **grid, t_game *cube);
 // Parse_textures
 int					init_textures(int *i, char **grid, t_game *cube);
 
-// Parse_colors
-int					init_colors(int *i, char **grid, t_game *cube);
-
 // Parse_grid_utils
 bool				is_only_whitespace(int *i, char **grid);
 bool				is_a_wall(char c);
 bool				is_a_player(char c);
-bool				is_a_valid_char(char c, bool state);
+bool				is_a_valid_char(t_game *cube, char c, bool state);
 void				get_angle(t_game *cube, char c);
 
 // Parse_grid_flood_fill

@@ -6,7 +6,7 @@
 #    By: egache <egache@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: Invalid date        by                   #+#    #+#              #
-#    Updated: 2025/11/21 16:06:16 by egache           ###   ########.fr        #
+#    Updated: 2025/11/21 17:50:00 by egache           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ NC		:= \033[0m
 
 SRCS		:=		main.c \
 					parse_map.c \
+					parse_map_utils.c \
 					parse_textures.c \
 					parse_colors.c \
 					parse_grid.c \
@@ -41,7 +42,6 @@ SRCS_BONUS	:=		main.c \
 					parse_map.c \
 					parse_textures.c \
 					parse_textures_utils.c \
-					parse_colors.c \
 					parse_grid.c \
 					parse_grid_utils.c \
 					parse_grid_flood_fill.c \

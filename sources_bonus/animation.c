@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   animation.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 11:33:22 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/21 15:29:25 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/21 17:43:31 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ void	update_texture_animation(t_game *cube)
 
 	gettimeofday(&current_time, NULL);
 	elapsed_time = (current_time.tv_sec - cube->textures.last_frame_time.tv_sec)
-		+ (current_time.tv_usec - cube->textures.last_frame_time.tv_usec) / 1000000.0;
+		+ (current_time.tv_usec - cube->textures.last_frame_time.tv_usec)
+		/ 1000000.0;
 	if (elapsed_time >= frame_duration)
 	{
 		cube->textures.current_frame = (cube->textures.current_frame + 1) % 6;

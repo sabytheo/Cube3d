@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 19:35:31 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/21 15:15:28 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/21 17:43:25 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,8 @@ int	get_width(char **map, t_game *cube)
 		cube->map.width[i] = len - 1;
 		if (cube->map.width[i] > cube->map.max_width)
 			cube->map.max_width = cube->map.width[i];
+		if (len > 100 || i > 50)
+			return (-1);
 		i++;
 	}
 	return (0);
@@ -101,11 +103,6 @@ int	check_arg(char *mapname)
 	return (0);
 }
 
-// int check_order(char **map, t_game *cube)
-// {
-
-// }
-
 int	parse_map(t_game *cube, char **argv)
 {
 	int	i;
@@ -116,13 +113,15 @@ int	parse_map(t_game *cube, char **argv)
 	if (open_map(cube, argv) < 0)
 		return (-1);
 	if (get_width(cube->map.grid, cube) < 0)
+	{
+		printf(E_BAD_MAP_SIZE);
 		return (-1);
-	// if (check_order(cube->map.grid, cube) < 0)
-		// return (-1);
+	}
 	if (init_textures(&i, cube->map.grid, cube) < 0)
+	{
+		printf(E_MISSING_TEXTURE);
 		return (-1);
-	if (init_colors(&i, cube->map.grid, cube) < 0)
-		return (-1);
+	}
 	if (parse_grid(&i, cube->map.grid, cube) < 0)
 		return (-1);
 	return (0);

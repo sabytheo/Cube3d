@@ -14,7 +14,6 @@ URGENT
 =======
 **PARSING**
 -----------
-Handle tabs apres les noms des textures ET colors (tout enft)
 Voir pour limiter taille de la map (floodfill avec recursivité)
 Voir GNL (differenciation erreur de malloc et fin de read)
 
