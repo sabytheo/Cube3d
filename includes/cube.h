@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/20 16:55:25 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/21 15:59:53 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,7 @@ typedef struct s_raycast
 
 typedef struct s_player
 {
+	bool found;
 	float pos_x;
 	char direction;
 	float pos_y;
@@ -218,7 +219,7 @@ void	draw_debug_info_cardinal(t_game *cube);
 
 
 // void render_floor_ceilling(t_img *img, t_textures *textures);
-void render_floor_ceilling(t_game *cube, int x, int draw_start, int draw_end);
+//void render_floor_ceilling(t_game *cube, int x, int draw_start, int draw_end);
 
 
 // Raycast_value
@@ -266,6 +267,7 @@ int parse_grid(int *i, char **grid, t_game *cube);
 
 // Parse_textures
 int init_textures(int *i, char **grid, t_game *cube);
+int	is_valid_texture(t_game *cube, char **grid, int i, int status);
 
 // Parse_colors
 int init_colors(int *i, char **grid, t_game *cube);
@@ -274,7 +276,7 @@ int init_colors(int *i, char **grid, t_game *cube);
 bool is_only_whitespace(int *i, char **grid);
 bool is_a_wall(char c);
 bool is_a_player(char c);
-bool is_a_valid_char(char c, bool state);
+bool is_a_valid_char(t_game *cube, char c, bool state);
 void	get_angle(t_game *cube, char c);
 
 // Parse_grid_flood_fill

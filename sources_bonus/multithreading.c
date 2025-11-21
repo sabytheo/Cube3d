@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 16:07:01 by egache            #+#    #+#             */
-/*   Updated: 2025/11/20 20:26:47 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/21 13:57:50 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,10 @@ t_cube_thread	*init_thread(t_game *cube, t_cube_thread *cube_thread,
 	cube_thread->textures = cube->textures;
 	cube_thread->raycast = cube->raycast;
 	if (init_thread_grid(cube, cube_thread) < 0)
+	{
+		free(cube_thread);
 		return (NULL);
+	}
 	return (cube_thread);
 }
 
@@ -120,7 +123,6 @@ int	launch_threads(t_game *cube, t_cube_thread **cube_thread)
 	{
 		cube_thread[i] = init_thread(cube, cube_thread[i], column_size,
 				column_start);
-		cube_thread[i]->id = i;
 		if (cube_thread[i] == NULL)
 			return (-1);
 		if (pthread_create(&cube_thread[i]->thread, NULL, &raycast,

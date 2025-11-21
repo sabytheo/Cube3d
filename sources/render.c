@@ -6,13 +6,14 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 14:16:45 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/20 16:59:09 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/21 14:43:00 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cube.h"
 
-void	render_floor_ceilling(t_game *cube, int x, int draw_start, int draw_end)
+static void	render_floor_ceilling(t_game *cube, int x, int draw_start,
+		int draw_end)
 {
 	int	j;
 	int	c_color;
@@ -37,15 +38,21 @@ void	render_floor_ceilling(t_game *cube, int x, int draw_start, int draw_end)
 	return ;
 }
 
+static void	init_textures_y(t_game *cube, t_img *texture)
+{
+	cube->textures.y = (float)texture->ht / cube->raycast.wall_height;
+	if (cube->textures.y <= 0)
+		cube->textures.y = 0.01;
+}
+
 void	render_wall(float wall_height, t_game *cube, int x, t_img *texture)
 {
 	int		draw_start;
 	int		draw_end;
 	float	text_y;
 
-	cube->textures.y = (float)texture->ht / cube->raycast.wall_height;
-	if (cube->textures.y <= 0)
-		cube->textures.y = 0.01;
+	init_textures_y(cube, texture);
+	text_y = 0;
 	draw_start = (cube->raycast.start_y - (wall_height * 0.5));
 	if (draw_start < 0)
 	{

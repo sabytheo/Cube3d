@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_grid_flood_fill.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 12:49:13 by egache            #+#    #+#             */
-/*   Updated: 2025/11/06 15:23:15 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/21 15:28:39 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	flood_fill(int i, int j, t_game *cube)
 		return (0);
 	if (is_already_visited(cube->map.final_grid[i][j]))
 		return (0);
-	if (!is_a_valid_char(cube->map.final_grid[i][j], GRID_CHECK))
+	if (!is_a_valid_char(cube, cube->map.final_grid[i][j], GRID_CHECK))
 		return (-1);
 	cube->map.final_grid[i][j] = replace_char(cube->map.final_grid[i][j]);
 	if (flood_fill(i + 1, j, cube) == -1)

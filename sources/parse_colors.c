@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 13:29:30 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/06 16:08:18 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/21 15:48:12 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,7 +124,12 @@ int	init_colors(int *i, char **grid, t_game *cube)
 		}
 		(*i)++;
 		if (count == COLORS_FOUND)
+		{
+			while (grid[*i] && (ft_strncmp("F ", grid[*i], 2) == 0 || ft_strncmp("C ", grid[*i],
+				2) == 0))
+				(*i)++;
 			return (0);
+		}
 	}
 	return (-1);
 }

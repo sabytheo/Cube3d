@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_grid_utils.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 12:47:21 by egache            #+#    #+#             */
-/*   Updated: 2025/11/20 13:21:29 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/21 15:43:13 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,21 +40,22 @@ bool	is_a_player(char c)
 	return (false);
 }
 
-bool	is_a_valid_char(char c, bool state)
+bool	is_a_valid_char(t_game *cube, char c, bool state)
 {
-	static bool	found_player = 0;
-
 	if (state == CHAR_CHECK)
 	{
 		if (c == '0' || c == '1' || c == ' ')
 			return (true);
-		else if (is_a_player(c) && found_player == false)
+		else if (is_a_player(c) && cube->player.found == false)
 		{
-			found_player = true;
+			cube->player.found = true;
 			return (true);
 		}
 		else
+		{
+			printf("%c\n", c);
 			return (false);
+		}
 	}
 	if (state == GRID_CHECK)
 	{

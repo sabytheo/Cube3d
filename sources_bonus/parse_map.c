@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 19:35:31 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/20 19:39:30 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/21 15:15:28 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,11 @@ int	check_arg(char *mapname)
 	return (0);
 }
 
+// int check_order(char **map, t_game *cube)
+// {
+
+// }
+
 int	parse_map(t_game *cube, char **argv)
 {
 	int	i;
@@ -112,6 +117,8 @@ int	parse_map(t_game *cube, char **argv)
 		return (-1);
 	if (get_width(cube->map.grid, cube) < 0)
 		return (-1);
+	// if (check_order(cube->map.grid, cube) < 0)
+		// return (-1);
 	if (init_textures(&i, cube->map.grid, cube) < 0)
 		return (-1);
 	if (init_colors(&i, cube->map.grid, cube) < 0)
