@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cube_bonus.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/20 15:51:50 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/20 16:53:47 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -213,6 +213,7 @@ typedef struct s_textures
 	char *FL;
 	char *CE;
 	char *SP;
+	char *EA[5];
 	t_img NO_img;
 	t_img SO_img;
 	t_img WE_img;
@@ -221,6 +222,7 @@ typedef struct s_textures
 	t_img FL_img;
 	t_img CE_img;
 	t_img SP_img;
+	t_img EA_img[5];
 	int ceiling[3];
 	int floor[3];
 	double	y;
