@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render_minimap.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 17:47:04 by egache            #+#    #+#             */
-/*   Updated: 2025/11/06 15:54:26 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/21 13:43:29 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ void	render_mapmap(t_img *minimap_img, t_game *cube)
 	init_minimap_values(&mmv, cube);
 	draw_minimap_background(minimap_img);
 	draw_minimap_tiles(cube, &mmv);
-	draw_minimap_player(minimap_img, cube, &mmv);
+	draw_minimap_player(minimap_img,cube, &mmv);
 	draw_minimap_borders(minimap_img, mmv.mm_width, mmv.tile_width);
 }
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycast.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 16:23:49 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/20 15:40:29 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/21 11:37:36 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,8 +72,10 @@ void	assign_texture_and_current_hit(t_cube_thread *cube_thread,
 		t_raycast *raycast, t_hit_info *hits, int i)
 {
 	t_hit_info	*current_hit;
+	int			frame;
 
 	current_hit = &hits[i];
+	frame = cube_thread->textures.current_frame;
 	if (current_hit->hit_type == 'O')
 		raycast->texture_assigned = &cube_thread->textures.DO_img;
 	else if (current_hit->hit_type == 'C')
@@ -87,7 +89,9 @@ void	assign_texture_and_current_hit(t_cube_thread *cube_thread,
 		else if (raycast->dir.y > 0 && current_hit->side == 1)
 			raycast->texture_assigned = &cube_thread->textures.NO_img;
 		else if (raycast->dir.y < 0 && current_hit->side == 1)
-			raycast->texture_assigned = &cube_thread->textures.SO_img;
+		{
+			raycast->texture_assigned = &cube_thread->textures.SO_img[frame];
+		}
 	}
 	raycast->distance = current_hit->distance;
 	cube_thread->textures.x = current_hit->texture_x;

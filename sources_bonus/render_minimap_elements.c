@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render_minimap_elements.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 14:45:08 by egache            #+#    #+#             */
-/*   Updated: 2025/11/19 20:07:06 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/21 14:50:54 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,23 +25,41 @@ void	draw_minimap_background(t_img *minimap_img)
 		i = 0;
 		while (i < mm_width)
 		{
-			img_pixel_put(minimap_img, i, j, get_color(0, 0, 0));
+			img_pixel_put(minimap_img, i, j, get_color(135, 72, 91));
 			i++;
 		}
 		j++;
 	}
 }
 
+// static void	calculate_triangle_offset(t_game *cube, t_minimap *mmv,
+// 		int base_size, int width_offset)
+// {
+// 	int	center;
+
+// 	center = mmv->mm_width * 0.5;
+// 	mmv->center_line_x = center + base_size * cos(cube->player.angle + M_PI);
+// 	mmv->width_offset_x = width_offset * cos(cube->player.angle + M_PI
+// 			+ M_PI_2);
+// 	mmv->center_line_y = center - base_size * sin(cube->player.angle + M_PI);
+// 	mmv->width_offset_y = width_offset * sin(cube->player.angle + M_PI
+// 			+ M_PI_2);
+// }
+
 static void	calculate_triangle_offset(t_game *cube, t_minimap *mmv,
 		int base_size, int width_offset)
 {
-	int	center;
+	int		center;
+	double	centered_base;
 
 	center = mmv->mm_width * 0.5;
-	mmv->center_line_x = center + base_size * cos(cube->player.angle + M_PI);
+	centered_base = base_size - 5.0;
+	mmv->center_line_x = center + centered_base * cos(cube->player.angle
+			+ M_PI);
 	mmv->width_offset_x = width_offset * cos(cube->player.angle + M_PI
 			+ M_PI_2);
-	mmv->center_line_y = center - base_size * sin(cube->player.angle + M_PI);
+	mmv->center_line_y = center - centered_base * sin(cube->player.angle
+			+ M_PI);
 	mmv->width_offset_y = width_offset * sin(cube->player.angle + M_PI
 			+ M_PI_2);
 }
@@ -61,10 +79,10 @@ void	draw_minimap_player(t_img *minimap_img, t_game *cube, t_minimap *mmv)
 				width_offset_pixel);
 			img_pixel_put(minimap_img, (int)(mmv->center_line_x
 					+ mmv->width_offset_x), (int)(mmv->center_line_y
-					- mmv->width_offset_y), get_color(255, 255, 0));
+					- mmv->width_offset_y), get_color(255, 255, 255));
 			img_pixel_put(minimap_img, (int)(mmv->center_line_x
 					- mmv->width_offset_x), (int)(mmv->center_line_y
-					+ mmv->width_offset_y), get_color(0, 255, 255));
+					+ mmv->width_offset_y), get_color(255, 255, 255));
 			width_offset_pixel++;
 		}
 		triangle_base_size++;
@@ -85,7 +103,7 @@ void	draw_minimap_borders(t_img *minimap_img, int mm_width, int tile_width)
 			if (i > mm_width - (tile_width * 0.2) || i < (tile_width * 0.2)
 				|| j < (tile_width * 0.2) || j > mm_width - (tile_width * 0.2))
 			{
-				img_pixel_put(minimap_img, i, j, get_color(255, 141, 161));
+				img_pixel_put(minimap_img, i, j, get_color(71, 30, 41));
 			}
 			i++;
 		}
@@ -110,7 +128,7 @@ void	draw_wall_tile(t_game *cube, t_minimap *mmv)
 				&& mmv->pixel_y > mmv->tile_width * 0.1
 				&& mmv->pixel_y < mmv->mm_width)
 				img_pixel_put(cube->minimap_img, mmv->pixel_x, mmv->pixel_y,
-					get_color(255, 255, 255));
+					get_color(102, 43, 58));
 			mmv->step_y++;
 		}
 		mmv->step_x++;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   debug.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 20:21:37 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/06 16:08:18 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/21 11:50:44 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	print_texture(t_textures *textures)
 
 	i = 0;
 	printf("texture NO : |%s|\n", textures->NO);
-	printf("texture SO : |%s|\n", textures->SO);
+	// printf("texture SO : |%s|\n", textures->SO);
 	printf("texture WE : |%s|\n", textures->WE);
 	printf("texture EA : |%s|\n", textures->EA);
 	while (i < 3)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   reef.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 15:37:43 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/19 20:06:04 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/21 11:50:34 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,20 @@ void	free_tab(char **tab)
 // 	}
 // }
 
+static void clean_animation(t_game *cube)
+{
+	int	i;
+
+	i = 0;
+	while (i < 6)
+	{
+		if (cube->textures.SO_img[i].img)
+			mlx_destroy_image(cube->mlx, cube->textures.SO_img[i].img);
+		if (cube->textures.SO[i])
+			free(cube->textures.SO[i]);
+		i++;
+	}
+}
 static void	destroy_image(t_game *cube)
 {
 	if (cube->textures.EA_img.img)
@@ -54,8 +68,6 @@ static void	destroy_image(t_game *cube)
 		mlx_destroy_image(cube->mlx, cube->minimap_img->img);
 	if (cube->textures.NO_img.img)
 		mlx_destroy_image(cube->mlx, cube->textures.NO_img.img);
-	if (cube->textures.SO_img.img)
-		mlx_destroy_image(cube->mlx, cube->textures.SO_img.img);
 	if (cube->textures.WE_img.img)
 		mlx_destroy_image(cube->mlx, cube->textures.WE_img.img);
 	if (cube->textures.DO_img.img)
@@ -73,8 +85,8 @@ static void	clean_textures(t_game *cube)
 {
 	if (cube->textures.NO)
 		free(cube->textures.NO);
-	if (cube->textures.SO)
-		free(cube->textures.SO);
+	// if (cube->textures.SO)
+	// 	free(cube->textures.SO);
 	if (cube->textures.WE)
 		free(cube->textures.WE);
 	if (cube->textures.EA)
@@ -105,6 +117,7 @@ int	free_exit(t_game *cube)
 {
 	if (cube->windows)
 		mlx_destroy_window(cube->mlx, cube->windows);
+	clean_animation(cube);
 	destroy_image(cube);
 	clean_textures(cube);
 	if (cube->map.grid)
