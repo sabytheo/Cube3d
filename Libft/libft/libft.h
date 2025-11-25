@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 15:54:05 by tsaby             #+#    #+#             */
-/*   Updated: 2025/06/24 13:22:06 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/25 16:37:48 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct s_list
 int					ft_atoi(const char *nbr);
 void				ft_bzero(void *s, size_t n);
 void				*ft_calloc(size_t nmemb, size_t size);
+void	free_tab(char **tab);
 int					ft_isalnum(int str);
 int					ft_isalpha(int str);
 int					ft_isascii(int str);
@@ -53,6 +54,7 @@ void				ft_putnbr_fd(int n, int fd);
 void				ft_putstr_fd(char *s, int fd);
 char				**ft_split(char const *s, char c);
 char				*ft_strchr(const char *s, int c);
+char				*ft_strdup_no_whitespace(char *src);
 char				*ft_strdup(char *src);
 char				*ft_strldup(char *src, int size);
 void				ft_striteri(char *s, void (*f)(unsigned int, char *));

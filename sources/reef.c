@@ -3,47 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   reef.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 15:37:43 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/21 17:49:01 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/25 16:34:22 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cube.h"
-
-// ADD TO LIBFT FOR NORMINETTE
-void	free_tab(char **tab)
-{
-	int	i;
-
-	i = 0;
-	if (tab)
-	{
-		while (tab[i])
-		{
-			free(tab[i]);
-			i++;
-		}
-		free(tab);
-	}
-}
-
-// static void	free_int_tab(int *tab)
-// {
-// 	int	i;
-
-// 	i = 0;
-// 	if (tab)
-// 	{
-// 		while (tab[i])
-// 		{
-// 			free(tab[i]);
-// 			i++;
-// 		}
-// 		free(tab);
-// 	}
-// }
 
 static void	destroy_image(t_game *cube)
 {

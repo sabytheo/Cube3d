@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_textures.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 12:42:42 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/21 17:24:39 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/25 16:48:58 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,25 +24,25 @@ static int	cp_mand_textures(char *str, t_textures *textures)
 	if (ft_strncmp(str, "NO ", 3) == 0 && !textures->NO)
 	{
 		skip_textures_identifier(&str);
-		textures->NO = ft_strdup(str);
+		textures->NO = ft_strdup_no_whitespace(str);
 		return (0);
 	}
 	else if (ft_strncmp(str, "SO ", 3) == 0 && !textures->SO)
 	{
 		skip_textures_identifier(&str);
-		textures->SO = ft_strdup(str);
+		textures->SO = ft_strdup_no_whitespace(str);
 		return (0);
 	}
 	else if (ft_strncmp(str, "WE ", 3) == 0 && !textures->WE)
 	{
 		skip_textures_identifier(&str);
-		textures->WE = ft_strdup(str);
+		textures->WE = ft_strdup_no_whitespace(str);
 		return (0);
 	}
 	else if (ft_strncmp(str, "EA ", 3) == 0 && !textures->EA)
 	{
 		skip_textures_identifier(&str);
-		textures->EA = ft_strdup(str);
+		textures->EA = ft_strdup_no_whitespace(str);
 		return (0);
 	}
 	return (-1);

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: egache <egache@student.42lyon.fr>          +#+  +:+       +#+         #
+#    By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/08 12:50:41 by tsaby             #+#    #+#              #
-#    Updated: 2025/06/24 13:21:50 by egache           ###   ########.fr        #
+#    Updated: 2025/11/25 16:33:51 by tsaby            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,7 @@ SRCS		:= \
 					ft_atoi.c\
 					ft_bzero.c\
 					ft_calloc.c\
+					ft_free_tab.c\
 					ft_isalnum.c\
 					ft_isalpha.c\
 					ft_isascii.c\
@@ -32,6 +33,7 @@ SRCS		:= \
 					ft_split.c\
 					ft_strchr.c\
 					ft_strdup.c\
+					ft_strdup_nospace.c\
 					ft_strldup.c\
 					ft_striteri.c\
 					ft_strjoin.c\

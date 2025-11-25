@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_textures.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 12:42:42 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/21 17:25:06 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/25 16:48:35 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,25 +24,25 @@ static int	cp_mand_textures(char *str, t_textures *textures, int *so_count)
 	if (ft_strncmp(str, "NO ", 3) == 0 && !textures->NO)
 	{
 		skip_textures_identifier(&str);
-		textures->NO = ft_strdup(str);
+		textures->NO = ft_strdup_no_whitespace(str);
 		return (0);
 	}
 	else if (ft_strncmp(str, "SO ", 3) == 0 && *so_count < 6)
 	{
 		skip_textures_identifier(&str);
-		textures->SO[(*so_count)++] = ft_strdup(str);
+		textures->SO[(*so_count)++] = ft_strdup_no_whitespace(str);
 		return (0);
 	}
 	else if (ft_strncmp(str, "WE ", 3) == 0 && !textures->WE)
 	{
 		skip_textures_identifier(&str);
-		textures->WE = ft_strdup(str);
+		textures->WE = ft_strdup_no_whitespace(str);
 		return (0);
 	}
 	else if (ft_strncmp(str, "EA ", 3) == 0 && !textures->EA)
 	{
 		skip_textures_identifier(&str);
-		textures->EA = ft_strdup(str);
+		textures->EA = ft_strdup_no_whitespace(str);
 		return (0);
 	}
 	return (-1);
@@ -53,25 +53,25 @@ static int	copy_bonus_textures(char *str, t_textures *textures)
 	if (ft_strncmp(str, "DO ", 3) == 0 && !textures->DO)
 	{
 		skip_textures_identifier(&str);
-		textures->DO = ft_strdup(str);
+		textures->DO = ft_strdup_no_whitespace(str);
 		return (0);
 	}
 	else if (ft_strncmp(str, "FL ", 3) == 0 && !textures->FL)
 	{
 		skip_textures_identifier(&str);
-		textures->FL = ft_strdup(str);
+		textures->FL = ft_strdup_no_whitespace(str);
 		return (0);
 	}
 	else if (ft_strncmp(str, "CE ", 3) == 0 && !textures->CE)
 	{
 		skip_textures_identifier(&str);
-		textures->CE = ft_strdup(str);
+		textures->CE = ft_strdup_no_whitespace(str);
 		return (0);
 	}
 	else if (ft_strncmp(str, "SP ", 3) == 0 && !textures->SP)
 	{
 		skip_textures_identifier(&str);
-		textures->SP = ft_strdup(str);
+		textures->SP = ft_strdup_no_whitespace(str);
 		return (0);
 	}
 	return (-1);

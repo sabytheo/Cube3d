@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strdup_nospace.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 16:05:21 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/25 16:32:48 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/25 16:46:23 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(char *src)
+char	*ft_strdup_no_whitespace(char *src)
 {
 	char	*dest;
 	size_t	i;
@@ -28,7 +28,7 @@ char	*ft_strdup(char *src)
 		dest[i] = '\0';
 		return (dest);
 	}
-	while (src[i] && src[i] != '\n')
+	while (src[i] && src[i] != '\n' && src[i] != ' ' && src[i] != '\t')
 	{
 		dest[i] = src[i];
 		i++;

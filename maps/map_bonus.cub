@@ -1,6 +1,6 @@
 NO ./assets/Brick_nord.xpm
 SO ./assets/Brick_sud.xpm
-SO ./assets/Brick1.xpm
+SO ./assets/Brick1.xpm           
 SO ./assets/Brick3.xpm
 SO ./assets/Brick0.xpm
 SO ./assets/Brick4.xpm
@@ -14,3 +14,6 @@ SP ./assets/Door_closed2.xpm
 SP ./assets/Door_closed2.xpm
 SP ./assets/Door_closed2.xpm
 
+11111111111111111111111111111
+1N1
+ 1
