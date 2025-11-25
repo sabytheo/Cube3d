@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/25 16:07:53 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/25 18:22:59 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ enum
 	E = 101,
 	F = 102,
 	TAB = 65289,
-	MAJ = 65509,
+	MAJ = 65505,
 	ESCAPE = 65307,
 	A_LEFT = 65361,
 	A_RIGHT = 65363
@@ -124,7 +124,6 @@ typedef struct s_player
 typedef struct s_map
 {
 	int				total_height;
-	int				max_width;
 	int				grid_start;
 	int				grid_height;
 	int				*width;
@@ -151,8 +150,6 @@ typedef struct s_minimap
 	int				step_y;
 	int				grid_x;
 	int				grid_y;
-	int				grid_x_check;
-	int				grid_y_check;
 	int				grid_y_start;
 	int				grid_x_start;
 	int				depth_offset_x;
@@ -351,11 +348,6 @@ void				init_raycast_values(t_game *cube, t_raycast *raycast,
 int					define_control(t_game *cube);
 int					release_key(int keypress, t_game *cube);
 int					press_key(int keypress, t_game *cube);
-
-// Debug
-void				print_map(char **map);
-void				print_width(t_game *cube);
-void				print_texture(t_textures *textures);
 
 // Reef
 int					free_exit(t_game *cube);

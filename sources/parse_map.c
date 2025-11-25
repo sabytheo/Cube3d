@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 19:35:31 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/25 16:11:49 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/25 18:18:09 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,5 @@ int	parse_map(t_game *cube, char **argv)
 		return (-1);
 	if (parse_grid(&i, cube->map.grid, cube) < 0)
 		return (-1);
-	print_map(cube->map.final_grid);
 	return (0);
 }

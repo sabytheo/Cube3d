@@ -6,7 +6,7 @@
 #    By: egache <egache@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: Invalid date        by                   #+#    #+#              #
-#    Updated: 2025/11/21 17:50:00 by egache           ###   ########.fr        #
+#    Updated: 2025/11/25 18:18:36 by egache           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,8 +35,7 @@ SRCS		:=		main.c \
 					render_utils.c \
 					raycast.c \
 					raycast_value.c \
-					vector_maths.c \
-					debug.c
+					vector_maths.c
 
 SRCS_BONUS	:=		main.c \
 					parse_map.c \
@@ -59,8 +58,7 @@ SRCS_BONUS	:=		main.c \
 					render_minimap_closed_door.c \
 					raycast.c \
 					raycast_values.c \
-					vector_maths.c \
-					debug.c
+					vector_maths.c
 
 #*------------------------------------------------------------------------------*
 

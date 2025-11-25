@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 12:47:21 by egache            #+#    #+#             */
-/*   Updated: 2025/11/25 16:05:15 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/25 18:16:19 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,6 @@ int	get_width(char **map, t_game *cube, int i)
 			j++;
 		}
 		cube->map.width[i] = len - 1;
-		if (cube->map.width[i] > cube->map.max_width)
-			cube->map.max_width = cube->map.width[i];
 		if (len > 100 || i - cube->map.grid_start > 50)
 			return (-1);
 		i++;

@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 12:49:13 by egache            #+#    #+#             */
-/*   Updated: 2025/11/25 16:28:30 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/25 18:14:26 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	flood_fill(int i, int j, t_game *cube)
 		return (-1);
 	if (j < 0 || !cube->map.final_grid[i] || !cube->map.final_grid[i][j]
 		|| cube->map.final_grid[i][j] == '\n')
-			return (-1);
+		return (-1);
 	if (is_a_wall(cube->map.final_grid[i][j]))
 		return (0);
 	if (is_already_visited(cube->map.final_grid[i][j]))

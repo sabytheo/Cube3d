@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 14:33:21 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/25 16:20:09 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/25 18:08:09 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ static int	check_char_validity(t_game *cube)
 		{
 			if (!is_a_valid_char(cube, grid[i][j], CHAR_CHECK))
 			{
-				ft_printf_fd(2, E_BAD_CHAR_PARSING);
+				ft_printf_fd(2, E_BAD_CHAR_PARSING, grid[i][j]);
 				return (-1);
 			}
 			j++;
