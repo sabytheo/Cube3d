@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycast.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 16:23:49 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/21 16:08:58 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/25 22:10:58 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,24 +126,25 @@ static int	render_from_last_wall(t_cube_thread *cube_thread, t_game *cube,
 void	*raycast(void *arg)
 {
 	t_cube_thread	*cube_thread;
+	int				x;
 
 	cube_thread = (t_cube_thread *)arg;
-	while (cube_thread->width_start <= cube_thread->width_end)
+	x = cube_thread->width_start;
+	while (x < cube_thread->width_end)
 	{
 		if (cube_thread->cube->running == false)
 			break ;
-		init_raycast_values(cube_thread->cube, &cube_thread->raycast,
-			cube_thread->width_start);
+		init_raycast_values(cube_thread->cube, &cube_thread->raycast, x);
 		init_raycast_direction(cube_thread->cube, &cube_thread->raycast);
 		if (render_from_last_wall(cube_thread, cube_thread->cube,
-				&cube_thread->raycast, cube_thread->width_start) < 0)
+				&cube_thread->raycast, x) < 0)
 		{
 			pthread_mutex_lock(&cube_thread->cube->running_lock);
 			cube_thread->cube->running = false;
 			pthread_mutex_unlock(&cube_thread->cube->running_lock);
 			break ;
 		}
-		cube_thread->width_start++;
+		x++;
 	}
 	return (NULL);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   multithreading.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 16:07:01 by egache            #+#    #+#             */
-/*   Updated: 2025/11/21 13:57:50 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/25 22:10:45 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,10 +93,7 @@ t_cube_thread	*init_thread(t_game *cube, t_cube_thread *cube_thread,
 	cube_thread = malloc(1 * sizeof(t_cube_thread));
 	if (!cube_thread)
 		return (NULL);
-	if (column_start == 0)
-		cube_thread->width_start = column_start;
-	else
-		cube_thread->width_start = column_start + 1;
+	cube_thread->width_start = column_start;
 	cube_thread->width_end = column_start + column_size;
 	cube_thread->cube = cube;
 	cube_thread->map = cube->map;
