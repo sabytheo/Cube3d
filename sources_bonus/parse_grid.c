@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 14:33:21 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/21 17:33:22 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/25 16:20:27 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,14 +52,17 @@ static int	check_char_validity(t_game *cube)
 		{
 			if (!is_a_valid_char(cube, grid[i][j], CHAR_CHECK))
 			{
-				printf("%c\n", grid[i][j]);
+				ft_printf_fd(2, E_BAD_CHAR_PARSING);
 				return (-1);
 			}
 			j++;
 		}
 		i++;
 	}
-	return (0);
+	if (cube->player.found == true)
+		return (0);
+	ft_printf_fd(2, E_MISSING_PLAYER);
+	return (-1);
 }
 
 static void	set_player_info(int i, int j, t_game *cube)
@@ -108,11 +111,13 @@ int	parse_grid(int *i, char **grid, t_game *cube)
 	{
 		cube->map.grid_start = *i;
 		cube->map.grid_height = cube->map.total_height - cube->map.grid_start;
-		if (check_char_validity(cube) < 0)
+		if (get_width(cube->map.grid, cube, *i) < 0)
 		{
-			ft_printf_fd(2, E_BAD_CHAR_PARSING);
+			printf(E_BAD_MAP_SIZE);
 			return (-1);
 		}
+		if (check_char_validity(cube) < 0)
+			return (-1);
 		if (check_grid_validity(i, cube) < 0)
 			return (-1);
 		return (0);

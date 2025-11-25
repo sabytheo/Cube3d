@@ -3,23 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   parse_grid_flood_fill.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 12:49:13 by egache            #+#    #+#             */
-/*   Updated: 2025/11/19 16:08:53 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/25 16:28:30 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cube_bonus.h"
 
-bool	is_already_visited(char c)
+static bool	is_a_wall(char c)
+{
+	if (c == '1')
+		return (true);
+	return (false);
+}
+
+static bool	is_already_visited(char c)
 {
 	if (c == 'V' || c == 'C' || c == '3')
 		return (true);
 	return (false);
 }
 
-char	replace_char(char c)
+static char	replace_char(char c)
 {
 	if (is_a_player(c))
 		return ('3');
@@ -43,9 +50,9 @@ int	flood_fill(int i, int j, t_game *cube)
 {
 	if (i < 0 || i >= cube->map.grid_height || !cube->map.final_grid[i])
 		return (-1);
-	if (j < 0 || !cube->map.final_grid[i][j]
+	if (j < 0 || !cube->map.final_grid[i] || !cube->map.final_grid[i][j]
 		|| cube->map.final_grid[i][j] == '\n')
-		return (-1);
+			return (-1);
 	if (is_a_wall(cube->map.final_grid[i][j]))
 		return (0);
 	if (is_already_visited(cube->map.final_grid[i][j]))

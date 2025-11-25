@@ -6,11 +6,18 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 12:49:13 by egache            #+#    #+#             */
-/*   Updated: 2025/11/21 15:28:39 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/25 16:08:19 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cube.h"
+
+static bool	is_a_wall(char c)
+{
+	if (c == '1')
+		return (true);
+	return (false);
+}
 
 bool	is_already_visited(char c)
 {
@@ -19,7 +26,7 @@ bool	is_already_visited(char c)
 	return (false);
 }
 
-char	replace_char(char c)
+static char	replace_char(char c)
 {
 	if (is_a_player(c))
 		return ('3');
@@ -52,22 +59,3 @@ int	flood_fill(int i, int j, t_game *cube)
 		return (-1);
 	return (0);
 }
-
-// void	flood_fill(int i, int j, t_game *cube)
-// {
-// 	if (i < 0 || i >= cube->map.total_height || j < 0
-// 		|| j >= cube->map.width[i])
-// 		return ;
-// 	while (cube->map.grid[i][j] == ' ' && cube->map.grid[i][j] != '\n')
-// 		j++;
-// 	if (is_a_player(cube->map.grid[i][j]))
-// 		cube->map.grid[i][j] = '3';
-// 	else if (cube->map.grid[i][j] == '0')
-// 		cube->map.grid[i][j] = 'F';
-// 	else
-// 		return ;
-// 	flood_fill(i + 1, j, cube);
-// 	flood_fill(i - 1, j, cube);
-// 	flood_fill(i, j + 1, cube);
-// 	flood_fill(i, j - 1, cube);
-// }

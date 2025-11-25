@@ -6,11 +6,38 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 12:47:21 by egache            #+#    #+#             */
-/*   Updated: 2025/11/21 17:28:12 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/25 16:05:38 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cube_bonus.h"
+
+int	get_width(char **map, t_game *cube, int i)
+{
+	int	j;
+	int	len;
+
+	cube->map.width = malloc(sizeof(int) * (cube->map.total_height + 1));
+	if (!cube->map.width)
+		return (-1);
+	while (map[i])
+	{
+		j = 0;
+		len = 0;
+		while (map[i][j] && map[i][j] != '\n')
+		{
+			len++;
+			j++;
+		}
+		cube->map.width[i] = len - 1;
+		if (cube->map.width[i] > cube->map.max_width)
+			cube->map.max_width = cube->map.width[i];
+		if (len > 100 || i - cube->map.grid_start > 50)
+			return (-1);
+		i++;
+	}
+	return (0);
+}
 
 void	get_angle(t_game *cube, char c)
 {
@@ -37,13 +64,6 @@ bool	is_only_whitespace(int *i, char **grid)
 		j++;
 	}
 	return (true);
-}
-
-bool	is_a_wall(char c)
-{
-	if (c == '1')
-		return (true);
-	return (false);
 }
 
 bool	is_a_player(char c)

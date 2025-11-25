@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/21 17:50:16 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/25 16:07:53 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -375,8 +375,8 @@ int					parse_grid(int *i, char **grid, t_game *cube);
 int					init_textures(int *i, char **grid, t_game *cube);
 
 // Parse_grid_utils
+int					get_width(char **map, t_game *cube, int i);
 bool				is_only_whitespace(int *i, char **grid);
-bool				is_a_wall(char c);
 bool				is_a_player(char c);
 bool				is_a_valid_char(t_game *cube, char c, bool state);
 void				get_angle(t_game *cube, char c);
