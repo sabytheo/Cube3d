@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_colors.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 13:29:30 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/21 17:42:03 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/25 19:26:05 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	check_len_and_skip_space(char **str, int *j, int *len)
 {
 	if (*j > 2)
 	{
-		ft_printf(E_BAD_COLOR_USAGE);
+		ft_printf_fd(2, E_BAD_COLOR_USAGE);
 		return (-1);
 	}
 	(*str)++;
@@ -29,7 +29,7 @@ int	check_len_and_skip_space(char **str, int *j, int *len)
 	}
 	if (*len > 3 || *len == 0)
 	{
-		ft_printf(E_BAD_COLOR_USAGE);
+		ft_printf_fd(2, E_BAD_COLOR_USAGE);
 		return (-1);
 	}
 	(*str) -= (*len);
@@ -53,7 +53,7 @@ int	get_ceiling_values(char **str, int *len, t_textures *textures)
 		tmp = NULL;
 		if (textures->ceiling[j] > 255)
 		{
-			ft_printf(E_BAD_COLOR_USAGE);
+			ft_printf_fd(2, E_BAD_COLOR_USAGE);
 			return (-1);
 		}
 		*str += *len;
@@ -79,7 +79,7 @@ int	get_floor_values(char **str, int *len, t_textures *textures)
 		tmp = NULL;
 		if (textures->floor[j] > 255)
 		{
-			ft_printf(E_BAD_COLOR_USAGE);
+			ft_printf_fd(2, E_BAD_COLOR_USAGE);
 			return (-1);
 		}
 		*str += *len;
@@ -131,6 +131,6 @@ int	init_colors(int *i, char **grid, t_game *cube)
 			return (0);
 		}
 	}
-	printf(E_MISSING_COLOR);
+	ft_printf_fd(2, E_MISSING_COLOR);
 	return (-1);
 }

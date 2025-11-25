@@ -4,12 +4,6 @@ F 104,104,104
 NO ./assets/Brick_nord.xpm
 SO ./assets/Brick_sud.xpm
 WE ./assets/Brick_west.xpm
-WE ./assets/Brick_west.xpm
-WE ./assets/Brick_west.xpm
-WE ./assets/Brick_west.xpm
-WE ./assets/Brick_west.xpm
-WE ./assets/Brick_west.xpm
-
 EA ./assets/Brick_est.xpm
 
 1111111111111111111111111111111111111111

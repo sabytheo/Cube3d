@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 19:35:31 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/25 18:18:09 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/25 19:25:57 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	open_map(t_game *cube, char **argv)
 	line = get_next_line(fd);
 	if (!line)
 	{
-		printf(E_EMPTY_FILE);
+		ft_printf_fd(2, E_EMPTY_FILE);
 		return (-1);
 	}
 	while (1)

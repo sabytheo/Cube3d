@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   load_textures.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 16:15:05 by egache            #+#    #+#             */
-/*   Updated: 2025/11/21 17:45:39 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/25 19:26:32 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,10 @@ static int	xpm_addr_animated(t_game *cube, t_textures *textures)
 				textures->SO[i], &textures->SO_img[i].wh,
 				&textures->SO_img[i].ht);
 		if (!cube->textures.SO_img[i].img)
+		{
+			ft_printf_fd(2, E_WRONG_PATH);
 			return (-1);
+		}
 		textures->SO_img[i].addr = mlx_get_data_addr(textures->SO_img[i].img,
 				&textures->SO_img[i].bpp, &textures->SO_img[i].sl,
 				&textures->SO_img[i].en);
@@ -56,7 +59,10 @@ static int	xpm_to_image(t_game *cube, t_textures *textures)
 		|| !cube->textures.WE_img.img || !cube->textures.DO_img.img
 		|| !cube->textures.FL_img.img || !cube->textures.CE_img.img
 		|| !cube->textures.SP_img.img)
+	{
+		ft_printf_fd(2, E_WRONG_PATH);
 		return (-1);
+	}
 	return (0);
 }
 
@@ -70,7 +76,9 @@ static int	get_data_addr_cardinal(t_textures *textures)
 			&textures->WE_img.bpp, &textures->WE_img.sl, &textures->WE_img.en);
 	if (!textures->NO_img.addr || !textures->EA_img.addr
 		|| !textures->WE_img.addr)
-		return (-1);
+	{
+	}
+	return (-1);
 	return (0);
 }
 

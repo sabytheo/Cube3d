@@ -6,7 +6,7 @@
 /*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 12:42:42 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/25 16:48:58 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/25 19:25:38 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,12 +84,12 @@ int	init_textures(int *i, char **grid, t_game *cube)
 		{
 			if (is_valid_texture(cube, grid, *i, TEXTURE_EXIST) == -1)
 			{
-				printf(E_MISSING_TEXTURE);
+				ft_printf_fd(2, E_MISSING_TEXTURE);
 				return (-1);
 			}
 			return (0);
 		}
 	}
-	printf(E_MISSING_TEXTURE);
+	ft_printf_fd(2, E_MISSING_TEXTURE);
 	return (-1);
 }

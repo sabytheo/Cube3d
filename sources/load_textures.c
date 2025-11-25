@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   load_textures.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 16:21:32 by egache            #+#    #+#             */
-/*   Updated: 2025/11/20 16:28:46 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/25 19:25:53 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,10 @@ static int	xpm_to_image(t_game *cube, t_textures *textures)
 			&textures->WE_img.wh, &textures->WE_img.ht);
 	if (!cube->textures.NO_img.img || !cube->textures.EA_img.img
 		|| !cube->textures.SO_img.img || !cube->textures.WE_img.img)
+	{
+		ft_printf_fd(2, E_WRONG_PATH);
 		return (-1);
+	}
 	return (0);
 }
 

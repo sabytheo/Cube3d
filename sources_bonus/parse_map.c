@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 19:35:31 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/25 16:11:58 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/25 19:26:47 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int	open_map(t_game *cube, char **argv)
 	line = get_next_line(fd);
 	if (!line)
 	{
-		printf(E_EMPTY_FILE);
+		ft_printf_fd(2, E_EMPTY_FILE);
 		return (-1);
 	}
 	while (1)
@@ -91,7 +91,7 @@ int	parse_map(t_game *cube, char **argv)
 		return (-1);
 	if (init_textures(&i, cube->map.grid, cube) < 0)
 	{
-		printf(E_MISSING_TEXTURE);
+		ft_printf_fd(2, E_MISSING_TEXTURE);
 		return (-1);
 	}
 	if (parse_grid(&i, cube->map.grid, cube) < 0)

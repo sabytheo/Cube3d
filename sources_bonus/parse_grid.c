@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_grid.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 14:33:21 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/25 18:14:20 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/25 19:27:10 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ static int	copy_grid(t_game *cube)
 	while (grid[i] && j < cube->map.grid_height)
 	{
 		cube->map.final_grid[j] = ft_strdup(grid[i++]);
-		printf("%s\n", cube->map.final_grid[j]);
 		if (!cube->map.final_grid[j])
 			return (-1);
 		j++;
@@ -114,7 +113,7 @@ int	parse_grid(int *i, char **grid, t_game *cube)
 		cube->map.grid_height = cube->map.total_height - cube->map.grid_start;
 		if (get_width(cube->map.grid, cube, *i) < 0)
 		{
-			printf(E_BAD_MAP_SIZE);
+			ft_printf_fd(2, E_BAD_MAP_SIZE);
 			return (-1);
 		}
 		if (check_char_validity(cube) < 0)
@@ -123,6 +122,6 @@ int	parse_grid(int *i, char **grid, t_game *cube)
 			return (-1);
 		return (0);
 	}
-	printf(E_BAD_GRID_MISSING);
+	ft_printf_fd(2, E_BAD_GRID_MISSING);
 	return (-1);
 }
