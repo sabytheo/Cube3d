@@ -6,7 +6,7 @@
 /*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 16:15:05 by egache            #+#    #+#             */
-/*   Updated: 2025/11/25 19:26:32 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/25 20:06:16 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,9 +76,7 @@ static int	get_data_addr_cardinal(t_textures *textures)
 			&textures->WE_img.bpp, &textures->WE_img.sl, &textures->WE_img.en);
 	if (!textures->NO_img.addr || !textures->EA_img.addr
 		|| !textures->WE_img.addr)
-	{
-	}
-	return (-1);
+		return (-1);
 	return (0);
 }
 
