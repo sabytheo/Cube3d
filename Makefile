@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: egache <egache@student.42.fr>              +#+  +:+       +#+         #
+#    By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: Invalid date        by                   #+#    #+#              #
-#    Updated: 2025/11/25 18:18:36 by egache           ###   ########.fr        #
+#    Updated: 2025/11/26 14:17:31 by tsaby            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -93,11 +93,11 @@ CFLAGS		:=	-Wall -Wextra -Werror -g3
 
 #*------------------------------------------------------------------------------*
 
-NAME		:=	cube
+NAME		:=	cub3d
 
 VFLAGS		=	--leak-check=full --show-leak-kinds=all --track-origins=yes
 
-NAME_B		:=	cube_bonus
+NAME_B		:=	cub3d_bonus
 
 #*------------------------------------------------------------------------------*
 
