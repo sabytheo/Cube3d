@@ -6,7 +6,7 @@
 /*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 19:35:31 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/25 19:26:47 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/26 13:24:01 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	open_map(t_game *cube, char **argv)
 	fd = open(argv[1], O_RDONLY);
 	if (fd < 0)
 	{
-		ft_printf_fd(2, "Error\n");
+		ft_printf_fd(2, E_BAD_FD);
 		return (-1);
 	}
 	line = get_next_line(fd);
@@ -72,6 +72,11 @@ int	check_arg(char *mapname)
 	char	*s;
 
 	s = ".cub\0";
+	if (ft_strlen(mapname) < 5 || !ft_strchr(mapname, '.'))
+	{
+		ft_printf_fd(2, E_WRONG_EXT);
+		return (-1);
+	}
 	if ((ft_strncmp(ft_strchr(mapname, '.'), s, 5)) != 0)
 	{
 		ft_printf_fd(2, E_WRONG_EXT);

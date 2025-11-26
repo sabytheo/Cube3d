@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cube_bonus.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/25 18:22:59 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/26 14:09:45 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@
 # define BLUE 0x000000FF
 # define YELLOW 0x00FFFF00
 # define PURPLE 0x00FF00FF
-# define WIDTH 1920
+# define WIDTH  1920
 # define HEIGHT 1080
 # define MOUSE_SENSIBILITY 0.02
 # define XBOX 0.2
