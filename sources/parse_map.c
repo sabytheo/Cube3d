@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 19:35:31 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/26 13:21:21 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/26 20:18:22 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,16 +57,24 @@ int	check_arg(char *mapname)
 	return (0);
 }
 
+//SKIP WHITESPACES DANS CETTE FONCTION
+//CHECK
+
 int	parse_textures_and_colors(t_game *cube, char **grid, int *i)
 {
 	while (grid[*i])
 	{
-		while (grid[*i] && is_only_whitespace(i, grid))
-			(*i)++;
 		if (is_valid_texture(cube, grid, *i, ID_CHECK) == 0)
 		{
 			if (init_textures(i, grid, cube) < 0)
 				return (-1);
+			while (ft_strncmp("F ", grid[*i], 2) != 0 && ft_strncmp("C ", grid[*i],
+				2) != 0)
+			{
+				if (!is_only_whitespace(i, grid))
+					return (-1);
+				(*i)++;
+			}
 			if (init_colors(i, grid, cube) < 0)
 				return (-1);
 			return (0);
@@ -76,9 +84,20 @@ int	parse_textures_and_colors(t_game *cube, char **grid, int *i)
 		{
 			if (init_colors(i, grid, cube) < 0)
 				return (-1);
+			while (is_valid_texture(cube, grid, *i, ID_CHECK) < 0)
+			{
+				if (!is_only_whitespace(i, grid))
+					return (-1);
+				(*i)++;
+			}
 			if (init_textures(i, grid, cube) < 0)
 				return (-1);
 			return (0);
+		}
+		else if (!is_only_whitespace(i, grid))
+		{
+			ft_printf_fd(2, "Error\nWrong parameter\n");
+			return (-1);
 		}
 		(*i)++;
 	}

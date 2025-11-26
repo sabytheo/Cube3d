@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/26 15:08:54 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/26 16:13:16 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -195,13 +195,6 @@ enum				direction
 	CE,
 	SP,
 	TEXTURES_FOUND
-};
-
-enum
-{
-	FLOOR,
-	CEILING,
-	COLORS_FOUND
 };
 
 typedef struct s_textures

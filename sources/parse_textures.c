@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_textures.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 12:42:42 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/25 19:25:38 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/26 21:39:46 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,20 +76,26 @@ int	init_textures(int *i, char **grid, t_game *cube)
 	{
 		if (is_valid_texture(cube, grid, *i, ID_CHECK) == 0)
 		{
-			if (cp_mand_textures(grid[*i], &cube->textures) == 0)
-				count++;
+			if (cp_mand_textures(grid[*i], &cube->textures) < 0)
+				return (-1);
+			count++;
+		}
+		else if (!is_only_whitespace(i, grid))
+		{
+			ft_printf_fd(2, E_PARSING_TEXTURES);
+			return (-1);
 		}
 		(*i)++;
 		if (count == TEXTURES_FOUND)
 		{
 			if (is_valid_texture(cube, grid, *i, TEXTURE_EXIST) == -1)
 			{
-				ft_printf_fd(2, E_MISSING_TEXTURE);
+				ft_printf_fd(2, E_PARSING_TEXTURES);
 				return (-1);
 			}
 			return (0);
 		}
 	}
-	ft_printf_fd(2, E_MISSING_TEXTURE);
+	ft_printf_fd(2, E_PARSING_TEXTURES);
 	return (-1);
 }

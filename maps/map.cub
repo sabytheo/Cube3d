@@ -1,10 +1,13 @@
-C 55,55,55
-F 104,104,104
-
 NO ./assets/Brick_nord.xpm
 SO ./assets/Brick_sud.xpm
 WE ./assets/Brick_west.xpm
 EA ./assets/Brick_est.xpm
+
+
+F 104,104,104
+C 55,55,55
+
+
 
 1111111111111111111111111111111111111111
 1000000000000000000111111111111111111111

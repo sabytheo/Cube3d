@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   reef.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 15:37:43 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/25 16:34:33 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/26 20:34:57 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ static void	clean_struct(t_game *cube)
 	return ;
 }
 
-int	free_exit(t_game *cube)
+int	free_exit(t_game *cube, int status)
 {
 	if (cube->windows)
 		mlx_destroy_window(cube->mlx, cube->windows);
@@ -99,5 +99,7 @@ int	free_exit(t_game *cube)
 		mlx_destroy_display(cube->mlx);
 		free(cube->mlx);
 	}
+	if (status)
+		printf("Error:\nMalloc error\n");
 	exit(0);
 }

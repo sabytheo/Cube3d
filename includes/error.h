@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/19 13:18:37 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/26 15:08:54 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/26 21:39:42 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 # define E_WRONG_PATH "Error :\nWrong path for texture.\n"
 # define E_BAD_FD "Error :\nOpen failed\n"
 # define E_MISSING_PLAYER "Error:\nMissing player char\n"
-# define E_MISSING_TEXTURE "Error :\nOne or multiple textures is missing\n"
-# define E_MISSING_COLOR "Error :\nOne or multiple colors is missing\n"
+# define E_PARSING_TEXTURES "Error :\nTextures parsing issue\n"
+# define E_PARSING_COLORS "Error :\nColors parsing issue\n"
 # define E_BAD_COLOR_USAGE "Error :\nEmpty field or bad format. Enter 3 values between 0 and 255\n"
 # define E_BAD_CHAR_PARSING "Error :\nWrong grid character : %c\n"
 # define E_BAD_GRID_PARSING "Error :\nMap should be surrounded by walls\n"
