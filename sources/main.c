@@ -6,16 +6,32 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:46:14 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/20 15:51:16 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/26 15:11:26 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cube.h"
 #include <sys/time.h>
 
+static int	check_game_values(void)
+{
+	if (WIDTH < 960 || HEIGHT < 540 || WIDTH > 1920 || HEIGHT > 1080)
+		return (-1);
+	if ((WIDTH * 9) != (HEIGHT * 16))
+		return (-1);
+	if (XBOX != 0.2)
+		return (-1);
+	return (0);
+}
+
 int	init(t_game *cube)
 {
 	ft_bzero(cube, sizeof(t_game));
+	if (check_game_values() < 0)
+	{
+		ft_printf_fd(2, E_WRONG_INIT);
+		return (-1);
+	}
 	cube->img = (t_img *)ft_calloc(1, sizeof(t_img));
 	cube->player.fov = M_PI / 3;
 	cube->raycast.base_height = 1;

@@ -6,16 +6,32 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:45:45 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/21 13:57:17 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/26 15:11:12 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cube_bonus.h"
 #include <sys/time.h>
 
+static int	check_game_values(void)
+{
+	if (WIDTH < 960 || HEIGHT < 540 || WIDTH > 1920 || HEIGHT > 1080)
+		return (-1);
+	if ((WIDTH * 9) != (HEIGHT * 16))
+		return (-1);
+	if (XBOX != 0.2)
+		return (-1);
+	return (0);
+}
+
 int	init(t_game *cube)
 {
 	ft_bzero(cube, sizeof(t_game));
+	if (check_game_values() < 0)
+	{
+		ft_printf_fd(2, E_WRONG_INIT);
+		return (-1);
+	}
 	cube->nb_cores = sysconf(_SC_NPROCESSORS_ONLN);
 	cube->img = (t_img *)ft_calloc(1, sizeof(t_img));
 	cube->minimap_img = (t_img *)ft_calloc(1, sizeof(t_img));
@@ -49,7 +65,7 @@ void	render(t_game *cube)
 		free_threads_tab(cube, cube_thread);
 		free_exit(cube);
 	}
-	render_mapmap(cube->minimap_img, cube);
+	render_minimap(cube->minimap_img, cube);
 	mlx_put_image_to_window(cube->mlx, cube->windows, cube->img->img, 0, 0);
 	mlx_put_image_to_window(cube->mlx, cube->windows, cube->minimap_img->img, 0,
 		0);

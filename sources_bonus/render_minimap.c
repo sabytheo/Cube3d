@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 17:47:04 by egache            #+#    #+#             */
-/*   Updated: 2025/11/25 18:14:51 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/26 15:04:20 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 static void	init_minimap_values(t_minimap *mmv, t_game *cube)
 {
 	mmv->mm_width = WIDTH * 0.2;
+	mmv->player_triangle_size = 0.03 * mmv->mm_width;
 	mmv->vision_range = 3;
 	mmv->tile_width = mmv->mm_width / (mmv->vision_range * 2);
 	mmv->tile_height = mmv->tile_width;
@@ -73,13 +74,13 @@ static void	draw_minimap_tiles(t_game *cube, t_minimap *mmv)
 	}
 }
 
-void	render_mapmap(t_img *minimap_img, t_game *cube)
+void	render_minimap(t_img *minimap_img, t_game *cube)
 {
 	t_minimap	mmv;
 
 	mmv = cube->minimap_values;
 	init_minimap_values(&mmv, cube);
-	draw_minimap_background(minimap_img);
+	draw_minimap_background(&mmv, minimap_img);
 	draw_minimap_tiles(cube, &mmv);
 	draw_minimap_player(minimap_img, cube, &mmv);
 	draw_minimap_borders(minimap_img, mmv.mm_width, mmv.tile_width);

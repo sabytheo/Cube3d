@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cube_bonus.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/26 14:09:45 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/26 15:08:54 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@
 # define BLUE 0x000000FF
 # define YELLOW 0x00FFFF00
 # define PURPLE 0x00FF00FF
-# define WIDTH  1920
-# define HEIGHT 1080
+# define WIDTH  960
+# define HEIGHT 540
 # define MOUSE_SENSIBILITY 0.02
 # define XBOX 0.2
 # define CHAR_CHECK false
@@ -139,6 +139,7 @@ typedef struct s_map
 typedef struct s_minimap
 {
 	int				mm_width;
+	int				player_triangle_size;
 	int				vision_range;
 	int				tile_width;
 	int				tile_height;
@@ -317,14 +318,12 @@ void				render(t_game *cube);
 int					get_color(int red, int green, int blue);
 
 // Render_minimap
-void				render_mapmap(t_img *minimap, t_game *cube);
-// void	render_minimap(t_img *img, t_game *cube);
-
+void				render_minimap(t_img *minimap, t_game *cube);
 // Render_minimap_closed_door
 void				draw_closed_door_tile(t_game *cube, t_minimap *mmv);
 
 // Render_minimap_elements
-void				draw_minimap_background(t_img *minimap_img);
+void				draw_minimap_background(t_minimap *mmv, t_img *minimap_img);
 void				draw_minimap_player(t_img *minimap_img, t_game *cube,
 						t_minimap *mmv);
 void				draw_minimap_borders(t_img *minimap_img, int mm_width,

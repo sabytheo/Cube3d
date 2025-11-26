@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bindings_utils.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 12:28:58 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/19 16:08:11 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/26 15:08:58 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	update_delta_time(t_game *cube)
 	gettimeofday(&current_time, NULL);
 	time_spent = (current_time.tv_sec - cube->last_frame.tv_sec)
 		+ (current_time.tv_usec - cube->last_frame.tv_usec) / 1000000.0;
-	if (time_spent < 0.1)
+	if (time_spent > 0.1)
 		time_spent = 0.1;
 	cube->delta_time = time_spent;
 	cube->last_frame = current_time;

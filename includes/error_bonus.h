@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   error_bonus.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/19 13:18:37 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/26 13:23:05 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/26 15:08:54 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ERROR_BONUS_H
 # define ERROR_BONUS_H
 
+# define E_WRONG_INIT "Error :\nUse valid window or XBOX values\n"
 # define E_WRONG_EXT "Error :\nFile extension must be .cub\n"
 # define E_EMPTY_FILE "Error :\nEmpty file\n"
 # define E_MISSING_PLAYER "Error:\nMissing player char\n"

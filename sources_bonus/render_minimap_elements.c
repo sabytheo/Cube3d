@@ -3,27 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   render_minimap_elements.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 14:45:08 by egache            #+#    #+#             */
-/*   Updated: 2025/11/26 14:10:11 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/26 15:09:55 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <cube_bonus.h>
 
-void	draw_minimap_background(t_img *minimap_img)
+void	draw_minimap_background(t_minimap *mmv, t_img *minimap_img)
 {
 	int	i;
 	int	j;
-	int	mm_width;
 
-	mm_width = WIDTH * 0.2;
 	j = 0;
-	while (j < mm_width)
+	while (j < mmv->mm_width)
 	{
 		i = 0;
-		while (i < mm_width)
+		while (i < mmv->mm_width)
 		{
 			img_pixel_put(minimap_img, i, j, get_color(135, 72, 91));
 			i++;
@@ -56,7 +54,7 @@ void	draw_minimap_player(t_img *minimap_img, t_game *cube, t_minimap *mmv)
 	int	width_offset_pixel;
 
 	triangle_base_size = 1;
-	while (triangle_base_size <= 10)
+	while (triangle_base_size <= mmv->player_triangle_size)
 	{
 		width_offset_pixel = 1;
 		while (width_offset_pixel <= triangle_base_size)
