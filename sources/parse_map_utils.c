@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 16:20:16 by egache            #+#    #+#             */
-/*   Updated: 2025/11/26 20:41:54 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/27 15:33:07 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,35 @@ int	copy_line(t_game *cube, char *line)
 		free(cube->map.grid);
 	cube->map.grid = temp;
 	return (1);
+}
+
+int	init_textures_then_colors(t_game *cube, int *i, char **grid)
+{
+	if (init_textures(i, grid, cube) < 0)
+		return (-1);
+	while (ft_strncmp("F ", grid[*i], 2) != 0 && ft_strncmp("C ", grid[*i],
+			2) != 0)
+	{
+		if (!is_only_whitespace(i, grid))
+			return (-1);
+		(*i)++;
+	}
+	if (init_colors(i, grid, cube) < 0)
+		return (-1);
+	return (0);
+}
+
+int	init_colors_then_textures(t_game *cube, int *i, char **grid)
+{
+	if (init_colors(i, grid, cube) < 0)
+		return (-1);
+	while (is_valid_texture(cube, grid, *i, ID_CHECK) < 0)
+	{
+		if (!is_only_whitespace(i, grid))
+			return (-1);
+		(*i)++;
+	}
+	if (init_textures(i, grid, cube) < 0)
+		return (-1);
+	return (0);
 }

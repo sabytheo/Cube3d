@@ -6,100 +6,73 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 13:29:30 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/26 21:42:59 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/27 15:51:22 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cube.h"
 
-int	check_len_and_skip_space(char **str, int *j, int *len)
+int check_and_fill_values(char **str, int *len, int *j, int *tab)
 {
-	if (*j > 2)
+	char *tmp;
+
+	if (check_len_and_skip_space(str, j, len) < 0)
+		return (-1);
+	tmp = ft_strldup(*str, *len);
+	if (!tmp)
+		return (-1);
+	if (str_is_digit(tmp) < 0)
+	{
+		free(tmp);
+		return (-1);
+	}
+	tab[*j] = ft_atoi(tmp);
+	free(tmp);
+	tmp = NULL;
+	if (tab[*j] > 255)
 	{
 		ft_printf_fd(2, E_BAD_COLOR_USAGE);
 		return (-1);
 	}
-	(*str)++;
-	while (**str == ' ' || (**str >= 9 && **str <= 13))
-		(*str)++;
-	while (**str && **str != '\n' && **str != ',')
-	{
-		(*len)++;
-		(*str)++;
-	}
-	if (*len > 3 || *len == 0)
-	{
-		ft_printf_fd(2, E_BAD_COLOR_USAGE);
-		return (-1);
-	}
-	(*str) -= (*len);
+	*str += *len;
 	return (0);
 }
 
 int	get_ceiling_values(char **str, int *len, t_textures *textures)
 {
-	char	*tmp;
 	int		j;
 
 	j = 0;
 	while (**str && **str != '\n')
 	{
 		*len = 0;
-		if (check_len_and_skip_space(str, &j, len) < 0)
+		if (check_and_fill_values(str, len, &j, textures->ceiling) < 0)
 			return (-1);
-		tmp = ft_strldup(*str, *len);
-		if (!tmp)
-			return (-1);
-		if (str_is_digit(tmp) < 0)
-		{
-			free(tmp);
-			return (-1);
-		}
-		textures->ceiling[j] = ft_atoi(tmp);
-		free(tmp);
-		tmp = NULL;
-		if (textures->ceiling[j] > 255)
-			return (-1);
-		*str += *len;
 		j++;
 	}
-	if (textures->ceiling[0] && textures->ceiling[1] && textures->ceiling[2])
+	if (textures->ceiling[0] != -1 && textures->ceiling[1] != -1
+		&& textures->ceiling[2] != -1)
 		return (0);
+	ft_printf_fd(2, E_BAD_COLOR_USAGE);
 	return (-1);
 }
 
 int	get_floor_values(char **str, int *len, t_textures *textures)
 {
-	char	*tmp;
 	int		j;
 
 	j = 0;
 	while (**str && **str != '\n')
 	{
 		*len = 0;
-		if (check_len_and_skip_space(str, &j, len) < 0)
+		if (check_and_fill_values(str, len, &j, textures->floor) < 0)
 			return (-1);
-		tmp = ft_strldup(*str, *len);
-		if (!tmp)
-			return (-1);
-		if (str_is_digit(tmp) < 0)
-		{
-			free(tmp);
-			return (-1);
-		}
-		textures->floor[j] = ft_atoi(tmp);
-		free(tmp);
-		tmp = NULL;
-		if (textures->floor[j] > 255)
-		{
-			ft_printf_fd(2, E_BAD_COLOR_USAGE);
-			return (-1);
-		}
-		*str += *len;
 		j++;
-	}
-	if (textures->floor[0] && textures->floor[1] && textures->floor[2])
+		}
+	if (textures->floor[0] != -1 && textures->floor[1] != -1
+		&& textures->floor[2] != -1)
 		return (0);
+	ft_printf_fd(2, E_BAD_COLOR_USAGE);
 	return (-1);
 }
 
@@ -110,20 +83,17 @@ static int	get_colors(char *str, t_textures *textures)
 	len = 0;
 	if (ft_strncmp(str, "F ", 2) == 0)
 	{
-		if (textures->floor[0])
+		if (textures->floor[0] != -1)
 		{
 			ft_printf_fd(2, E_PARSING_COLORS);
 			return (-1);
 		}
 		if (get_floor_values(&str, &len, textures) < 0)
-		{
-			ft_printf_fd(2, E_BAD_COLOR_USAGE);
 			return (-1);
-		}
 	}
 	else if (ft_strncmp(str, "C ", 2) == 0)
 	{
-		if (textures->ceiling[0])
+		if (textures->ceiling[0] != -1)
 		{
 			ft_printf_fd(2, E_PARSING_COLORS);
 			return (-1);

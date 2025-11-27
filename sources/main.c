@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:46:14 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/26 20:42:00 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/27 15:29:29 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,34 +16,54 @@
 static int	check_game_values(void)
 {
 	if (WIDTH < 960 || HEIGHT < 540 || WIDTH > 1920 || HEIGHT > 1080)
+	{
+		ft_printf_fd(2, E_WRONG_INIT);
 		return (-1);
+	}
 	if ((WIDTH * 9) != (HEIGHT * 16))
+	{
+		ft_printf_fd(2, E_WRONG_INIT);
 		return (-1);
+	}
 	if (XBOX != 0.2)
+	{
+		ft_printf_fd(2, E_WRONG_INIT);
 		return (-1);
+	}
 	return (0);
+}
+
+void	init_floor_and_ceil_tab(t_game *cube)
+{
+	int	i;
+
+	i = 0;
+	while (i < 3)
+	{
+		cube->textures.ceiling[i] = -1;
+		cube->textures.floor[i] = -1;
+		i++;
+	}
 }
 
 int	init(t_game *cube)
 {
 	ft_bzero(cube, sizeof(t_game));
 	if (check_game_values() < 0)
-	{
-		ft_printf_fd(2, E_WRONG_INIT);
 		return (-1);
-	}
-	cube->img = (t_img *)ft_calloc(1, sizeof(t_img));
 	cube->player.fov = M_PI / 3;
 	cube->raycast.base_height = 1;
 	cube->raycast.d_plan = WIDTH / (2 * tan(cube->player.fov * 0.5));
 	cube->player.speed = 1;
 	cube->player.rotation_speed = 1;
 	cube->delta_time = 0.016;
+	cube->img = (t_img *)ft_calloc(1, sizeof(t_img));
 	if (!cube->img)
 	{
 		ft_printf_fd(2, "Error:\n Failed to allocate memory\n");
 		return (-1);
 	}
+	init_floor_and_ceil_tab(cube);
 	return (0);
 }
 

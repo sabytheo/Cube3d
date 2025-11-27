@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/26 21:12:32 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/27 15:51:53 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -257,6 +257,10 @@ int					parse_map(t_game *cube, char **argv);
 
 // Parse_map_utils
 int					copy_line(t_game *cube, char *line);
+int					init_textures_then_colors(t_game *cube, int *i,
+						char **grid);
+int					init_colors_then_textures(t_game *cube, int *i,
+						char **grid);
 
 // Parse_grid
 int					parse_grid(int *i, char **grid, t_game *cube);
@@ -270,8 +274,8 @@ int					is_valid_texture(t_game *cube, char **grid, int i,
 int					init_colors(int *i, char **grid, t_game *cube);
 
 // Parse_colors_utils
-int	str_is_digit(char *str);
-bool is_a_wall_or_texture_identifier(char *str);
+int					str_is_digit(char *str);
+int					check_len_and_skip_space(char **str, int *j, int *len);
 
 // Parse_grid_utils
 int					get_width(char **map, t_game *cube, int i);

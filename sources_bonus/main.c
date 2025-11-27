@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:45:45 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/26 15:11:12 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/27 15:20:06 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,20 @@
 static int	check_game_values(void)
 {
 	if (WIDTH < 960 || HEIGHT < 540 || WIDTH > 1920 || HEIGHT > 1080)
+	{
+		ft_printf_fd(2, E_WRONG_INIT);
 		return (-1);
+	}
 	if ((WIDTH * 9) != (HEIGHT * 16))
+	{
+		ft_printf_fd(2, E_WRONG_INIT);
 		return (-1);
+	}
 	if (XBOX != 0.2)
+	{
+		ft_printf_fd(2, E_WRONG_INIT);
 		return (-1);
+	}
 	return (0);
 }
 
@@ -28,10 +37,7 @@ int	init(t_game *cube)
 {
 	ft_bzero(cube, sizeof(t_game));
 	if (check_game_values() < 0)
-	{
-		ft_printf_fd(2, E_WRONG_INIT);
 		return (-1);
-	}
 	cube->nb_cores = sysconf(_SC_NPROCESSORS_ONLN);
 	cube->img = (t_img *)ft_calloc(1, sizeof(t_img));
 	cube->minimap_img = (t_img *)ft_calloc(1, sizeof(t_img));
@@ -39,7 +45,6 @@ int	init(t_game *cube)
 	cube->player.rotation_speed = 1;
 	cube->player.fov = M_PI / 3;
 	cube->running = true;
-	pthread_mutex_init(&cube->running_lock, NULL);
 	cube->last_mouse_pos_x = WIDTH / 2;
 	cube->delta_time = 0.016;
 	cube->raycast.base_height = 1;

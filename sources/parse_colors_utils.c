@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 16:42:11 by egache            #+#    #+#             */
-/*   Updated: 2025/11/26 21:37:10 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/27 15:48:03 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,29 @@ int	str_is_digit(char *str)
 		}
 		i++;
 	}
+	return (0);
+}
+
+int	check_len_and_skip_space(char **str, int *j, int *len)
+{
+	if (*j > 2)
+	{
+		ft_printf_fd(2, E_BAD_COLOR_USAGE);
+		return (-1);
+	}
+	(*str)++;
+	while (**str == ' ' || (**str >= 9 && **str <= 13))
+		(*str)++;
+	while (**str && **str != '\n' && **str != ',')
+	{
+		(*len)++;
+		(*str)++;
+	}
+	if (*len > 3 || *len == 0)
+	{
+		ft_printf_fd(2, E_BAD_COLOR_USAGE);
+		return (-1);
+	}
+	(*str) -= (*len);
 	return (0);
 }
