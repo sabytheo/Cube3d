@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycast.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 16:23:49 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/25 22:10:58 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/27 18:33:57 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ static int	collect_hits(t_cube_thread *cube_thread, t_raycast *raycast,
 	return (0);
 }
 
-void	assign_texture_and_current_hit(t_cube_thread *cube_thread,
+static void	assign_texture_and_current_hit(t_cube_thread *cube_thread,
 		t_raycast *raycast, t_hit_info *hits, int i)
 {
 	t_hit_info	*current_hit;

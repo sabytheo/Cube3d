@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/26 16:13:16 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/27 18:44:01 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@
 # include <sys/time.h>
 
 # define _GNU_SOURCE
-
 # define WHITE 0x00FFFFFF
 # define BLACK 0x00000000
 # define RED 0x00FF0000
@@ -35,14 +34,13 @@
 # define BLUE 0x000000FF
 # define YELLOW 0x00FFFF00
 # define PURPLE 0x00FF00FF
-# define WIDTH  960
+# define WIDTH 960
 # define HEIGHT 540
 # define MOUSE_SENSIBILITY 0.02
 # define XBOX 0.2
 # define CHAR_CHECK false
 # define GRID_CHECK true
 # define ANIMATED_SPRITE 5
-# define ID_CHECK 1
 # define TEXTURE_EXIST 0
 
 enum
@@ -67,6 +65,7 @@ enum
 	A_LEFT = 65361,
 	A_RIGHT = 65363
 };
+
 typedef struct s_vector
 {
 	float			x;
@@ -161,7 +160,6 @@ typedef struct s_minimap
 	int				pixel_y;
 	char			c;
 
-	// player triangle
 	float			center_line_x;
 	float			width_offset_x;
 	float			center_line_y;
@@ -194,7 +192,7 @@ enum				direction
 	FL,
 	CE,
 	SP,
-	TEXTURES_FOUND
+	TEXTURES_FOUND = 13
 };
 
 typedef struct s_textures
@@ -224,14 +222,6 @@ typedef struct s_textures
 
 }					t_textures;
 
-typedef struct s_fps
-{
-	int				frame_count;
-	double			fps;
-	struct timeval	last_fps_update;
-	char			fps_string[32];
-}					t_fps;
-
 typedef struct s_hit_info
 {
 	float			distance;
@@ -252,7 +242,6 @@ typedef struct s_game
 	t_map			map;
 	t_img			*img;
 	t_img			*minimap_img;
-	// t_img **thread_img;
 	bool			running;
 	pthread_mutex_t	running_lock;
 	t_minimap		minimap_values;
@@ -260,7 +249,6 @@ typedef struct s_game
 	t_raycast		raycast;
 	t_textures		textures;
 	t_hit_info		*hit_info;
-	t_fps			*fps_counter;
 	t_key			key;
 }					t_game;
 
@@ -277,41 +265,63 @@ typedef struct s_cube_thread
 	pthread_t		thread;
 }					t_cube_thread;
 
-void				camera_mouse_control(t_game *cube);
-void				update_texture_animation(t_game *cube);
-int					is_valid_texture(t_game *cube, char **grid, int i,
-						int status);
+// Init
+void				init_values(t_game *cube);
 
-void				img_pixel_put(t_img *img, int x, int y, int color);
-unsigned int		get_texture_pixel(float text_y, t_img *img, float text_x);
+// Parse_map
+int					parse_map(t_game *cube, char **argv);
 
-// bindings_door
-void				open_close_door(t_game *cube);
+// Parse_textures
+int					init_textures(int *i, char **grid, t_game *cube);
 
-// bindings_utils
-int					is_hitting(float x, float y, t_game *cube);
-int					press_key(int keypress, t_game *cube);
-int					release_key(int keypress, t_game *cube);
-void				update_delta_time(t_game *cube);
+// Parse_textures_utils
+int					is_valid_texture(char **grid, int i);
+
+// Parse_grid
+int					parse_grid(int *i, char **grid, t_game *cube);
+
+// Parse_grid_utils
+int					get_width(char **map, t_game *cube, int i);
+void				get_angle(t_game *cube, char c);
+bool				is_only_whitespace(int *i, char **grid);
+bool				is_a_player(char c);
+bool				is_a_valid_char(t_game *cube, char c, bool state);
+
+// Parse_grid_flood_fill
+int					flood_fill(int i, int j, t_game *cube);
+
+// Load_textures
+int					load_textures(t_game *cube, t_textures *textures);
 
 // Multithreading
 int					launch_threads(t_game *cube, t_cube_thread **cube_thread);
-t_cube_thread		*init_thread(t_game *cube, t_cube_thread *cube_thread,
-						int column_size, int column_start);
-void				join_threads(t_game *cube, t_cube_thread **cube_thread);
+void				free_threads_tab(t_game *cube, t_cube_thread **cube_thread);
+
+// Raycast
+void				*raycast(void *arg);
+
+// Raycast_values
+void				init_raycast_values(t_game *cube, t_raycast *raycast,
+						int x);
+void				get_distance_and_wallheight(t_game *cube,
+						t_raycast *raycast);
+void				init_raycast_direction(t_game *cube, t_raycast *raycast);
+int					init_hit_char(t_map *map, t_raycast *raycast,
+						t_hit_info **new_hit);
 
 // Render
-void				render_textured_floor_ceiling(t_cube_thread *cube_thread,
-						int x, float draw_start, float draw_end);
 void				render_wall(float wall_height, t_cube_thread *cube_thread,
 						int x, t_raycast *raycast);
 void				render(t_game *cube);
 
 // Render_utils
+void				img_pixel_put(t_img *img, int x, int y, int color);
+unsigned int		get_texture_pixel(float text_y, t_img *img, float text_x);
 int					get_color(int red, int green, int blue);
 
 // Render_minimap
 void				render_minimap(t_img *minimap, t_game *cube);
+
 // Render_minimap_closed_door
 void				draw_closed_door_tile(t_game *cube, t_minimap *mmv);
 
@@ -323,49 +333,23 @@ void				draw_minimap_borders(t_img *minimap_img, int mm_width,
 						int tile_width);
 void				draw_wall_tile(t_game *cube, t_minimap *mmv);
 
-// Raycast44h2
-// void raycast(t_cube_thread *cube_thread, t_raycast *raycast);
-void				*raycast(void *arg);
-
-// Raycast_values
-int					init_hit_char(t_map *map, t_raycast *raycast,
-						t_hit_info **new_hit);
-void				init_raycast_direction(t_game *cube, t_raycast *raycast);
-void				get_distance_and_wallheight(t_game *cube,
-						t_raycast *raycast);
-void				init_raycast_values(t_game *cube, t_raycast *raycast,
-						int x);
-
 // Bindings
 int					define_control(t_game *cube);
-int					release_key(int keypress, t_game *cube);
+
+// bindings_utils
+void				camera_mouse_control(t_game *cube);
+void				update_delta_time(t_game *cube);
+int					is_hitting(float x, float y, t_game *cube);
 int					press_key(int keypress, t_game *cube);
+int					release_key(int keypress, t_game *cube);
 
-// Reef
+// bindings_door
+void				open_close_door(t_game *cube);
+
+// Animation
+void				update_texture_animation(t_game *cube);
+
+// Free_exit
 int					free_exit(t_game *cube);
-void				free_tab(char **tab);
-void				free_threads_tab(t_game *cube, t_cube_thread **cube_thread);
-
-// Load_textures
-int					load_textures(t_game *cube, t_textures *textures);
-
-// Parse_map
-int					parse_map(t_game *cube, char **argv);
-
-// Parse_grid
-int					parse_grid(int *i, char **grid, t_game *cube);
-
-// Parse_textures
-int					init_textures(int *i, char **grid, t_game *cube);
-
-// Parse_grid_utils
-int					get_width(char **map, t_game *cube, int i);
-bool				is_only_whitespace(int *i, char **grid);
-bool				is_a_player(char c);
-bool				is_a_valid_char(t_game *cube, char c, bool state);
-void				get_angle(t_game *cube, char c);
-
-// Parse_grid_flood_fill
-int					flood_fill(int i, int j, t_game *cube);
 
 #endif

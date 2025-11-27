@@ -6,13 +6,13 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 19:35:31 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/27 16:09:30 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/27 17:55:27 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cube.h"
 
-int	open_map(t_game *cube, char **argv)
+static int	open_map(t_game *cube, char **argv)
 {
 	char	*line;
 	int		fd;
@@ -39,7 +39,7 @@ int	open_map(t_game *cube, char **argv)
 	return (0);
 }
 
-int	check_arg(char *mapname)
+static int	check_arg(char *mapname)
 {
 	char	*s;
 
@@ -57,7 +57,7 @@ int	check_arg(char *mapname)
 	return (0);
 }
 
-int	parse_textures_and_colors(t_game *cube, char **grid, int *i)
+static int	parse_textures_and_colors(t_game *cube, char **grid, int *i)
 {
 	while (grid[*i])
 	{

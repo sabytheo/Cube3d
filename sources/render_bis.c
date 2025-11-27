@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 14:53:07 by egache            #+#    #+#             */
-/*   Updated: 2025/11/06 17:40:40 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/27 18:46:04 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,17 @@
 // 	cube->raycast.base_height = 1;
 // 	cube->raycast.R_H = 2 * tan(cube->player.fov * 0.5) / WIDTH;
 // 	cube->raycast.d_plan = WIDTH / (2 * tan(cube->player.fov * 0.5));
-// 	return;
+// 	return ;
 // }
 
 // static void get_distance_and_wallheight(t_game *cube, t_vector rayon)
 // {
-// 	cube->raycast.distance = sqrt(pow(rayon.x - cube->player.pos_x, 2) + pow(rayon.y - cube->player.pos_y, 2));
-// 	cube->raycast.corrected_distance = cube->raycast.distance * cos(cube->raycast.angle - cube->player.angle);
-// 	cube->raycast.wall_height = (cube->raycast.base_height * cube->raycast.d_plan) / cube->raycast.corrected_distance;
+// 	cube->raycast.distance = sqrt(pow(rayon.x - cube->player.pos_x, 2)
+//			+ pow(rayon.y - cube->player.pos_y, 2));
+// 	cube->raycast.corrected_distance = cube->raycast.distance
+//		* cos(cube->raycast.angle - cube->player.angle);
+// 	cube->raycast.wall_height = (cube->raycast.base_height
+//			* cube->raycast.d_plan) / cube->raycast.corrected_distance;
 // }
 
 // void raycast(t_game *cube, t_raycast *raycast)
@@ -45,7 +48,8 @@
 // 	while (x <= WIDTH)
 // 	{
 // 		float camera_x = 2 * x / (float)WIDTH - 1;
-// 		raycast->angle = cube->player.angle + atan(camera_x * tan(cube->player.fov / 2));
+// 		raycast->angle = cube->player.angle + atan(camera_x
+//				* tan(cube->player.fov / 2));
 // 		dir.x = cos(raycast->angle) * 0.01;
 // 		dir.y = -sin(raycast->angle) * 0.01;
 // 		ray.x = cube->player.pos_x;
@@ -83,6 +87,6 @@
 // 		//     render_wall(raycast->wall_height, cube, x, RED);
 // 		x++;
 // 	}
-// 	return;
+// 	return ;
 // }
 /* OTHER ALGO ----------------------   */

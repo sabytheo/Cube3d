@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 12:49:13 by egache            #+#    #+#             */
-/*   Updated: 2025/11/25 16:08:19 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/27 17:58:58 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static bool	is_a_wall(char c)
 	return (false);
 }
 
-bool	is_already_visited(char c)
+static bool	is_already_visited(char c)
 {
 	if (c == 'V' || c == '3')
 		return (true);

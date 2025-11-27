@@ -6,12 +6,11 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:46:14 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/27 15:29:29 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/27 18:26:56 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cube.h"
-#include <sys/time.h>
 
 static int	check_game_values(void)
 {
@@ -33,37 +32,15 @@ static int	check_game_values(void)
 	return (0);
 }
 
-void	init_floor_and_ceil_tab(t_game *cube)
-{
-	int	i;
-
-	i = 0;
-	while (i < 3)
-	{
-		cube->textures.ceiling[i] = -1;
-		cube->textures.floor[i] = -1;
-		i++;
-	}
-}
-
-int	init(t_game *cube)
+static int	init(t_game *cube)
 {
 	ft_bzero(cube, sizeof(t_game));
 	if (check_game_values() < 0)
 		return (-1);
-	cube->player.fov = M_PI / 3;
-	cube->raycast.base_height = 1;
-	cube->raycast.d_plan = WIDTH / (2 * tan(cube->player.fov * 0.5));
-	cube->player.speed = 1;
-	cube->player.rotation_speed = 1;
-	cube->delta_time = 0.016;
 	cube->img = (t_img *)ft_calloc(1, sizeof(t_img));
 	if (!cube->img)
-	{
-		ft_printf_fd(2, "Error:\n Failed to allocate memory\n");
 		return (-1);
-	}
-	init_floor_and_ceil_tab(cube);
+	init_values(cube);
 	return (0);
 }
 
@@ -73,7 +50,7 @@ void	render(t_game *cube)
 	mlx_put_image_to_window(cube->mlx, cube->windows, cube->img->img, 0, 0);
 }
 
-void	init_window_and_img(t_game *cube)
+static void	init_window_and_img(t_game *cube)
 {
 	cube->windows = mlx_new_window(cube->mlx, WIDTH, HEIGHT, "CUB3D");
 	cube->img->img = mlx_new_image(cube->mlx, WIDTH, HEIGHT);

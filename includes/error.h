@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/19 13:18:37 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/26 21:39:42 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/27 17:01:25 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # define E_WRONG_INIT "Error :\nUse valid window or XBOX values\n"
 # define E_WRONG_EXT "Error :\nFile extension must be .cub\n"
 # define E_EMPTY_FILE "Error :\nEmpty file\n"
-# define E_WRONG_PATH "Error :\nWrong path for texture.\n"
+# define E_WRONG_PATH "Error :\nWrong path for texture\n"
 # define E_BAD_FD "Error :\nOpen failed\n"
 # define E_MISSING_PLAYER "Error:\nMissing player char\n"
 # define E_PARSING_TEXTURES "Error :\nTextures parsing issue\n"

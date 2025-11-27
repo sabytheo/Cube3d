@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   multithreading.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 16:07:01 by egache            #+#    #+#             */
-/*   Updated: 2025/11/25 22:10:45 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/27 18:32:53 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	free_threads_tab(t_game *cube, t_cube_thread **cube_thread)
 	free(cube_thread);
 }
 
-void	join_threads(t_game *cube, t_cube_thread **cube_thread)
+static void	join_threads(t_game *cube, t_cube_thread **cube_thread)
 {
 	int	i;
 	int	j;
@@ -87,7 +87,7 @@ static int	init_thread_grid(t_game *cube, t_cube_thread *cube_thread)
 	return (0);
 }
 
-t_cube_thread	*init_thread(t_game *cube, t_cube_thread *cube_thread,
+static t_cube_thread	*init_thread(t_game *cube, t_cube_thread *cube_thread,
 		int column_size, int column_start)
 {
 	cube_thread = malloc(1 * sizeof(t_cube_thread));

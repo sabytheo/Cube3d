@@ -6,16 +6,16 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 13:29:30 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/27 15:53:51 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/27 17:57:26 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cube.h"
 
-int check_and_fill_values(char **str, int *j, int *tab)
+static int	check_and_fill_values(char **str, int *j, int *tab)
 {
-	char *tmp;
-	int len;
+	char	*tmp;
+	int		len;
 
 	len = 0;
 	if (check_len_and_skip_space(str, j, &len) < 0)
@@ -40,9 +40,9 @@ int check_and_fill_values(char **str, int *j, int *tab)
 	return (0);
 }
 
-int	get_ceiling_values(char **str, t_textures *textures)
+static int	get_ceiling_values(char **str, t_textures *textures)
 {
-	int		j;
+	int	j;
 
 	j = 0;
 	while (**str && **str != '\n')
@@ -58,9 +58,9 @@ int	get_ceiling_values(char **str, t_textures *textures)
 	return (-1);
 }
 
-int	get_floor_values(char **str, t_textures *textures)
+static int	get_floor_values(char **str, t_textures *textures)
 {
-	int		j;
+	int	j;
 
 	j = 0;
 	while (**str && **str != '\n')
@@ -68,7 +68,7 @@ int	get_floor_values(char **str, t_textures *textures)
 		if (check_and_fill_values(str, &j, textures->floor) < 0)
 			return (-1);
 		j++;
-		}
+	}
 	if (textures->floor[0] != -1 && textures->floor[1] != -1
 		&& textures->floor[2] != -1)
 		return (0);

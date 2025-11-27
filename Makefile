@@ -6,7 +6,7 @@
 #    By: egache <egache@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: Invalid date        by                   #+#    #+#              #
-#    Updated: 2025/11/26 16:44:47 by egache           ###   ########.fr        #
+#    Updated: 2025/11/27 18:44:22 by egache           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ NC		:= \033[0m
 #*------------------------------------------------------------------------------*
 
 SRCS		:=		main.c \
+					init.c \
 					parse_map.c \
 					parse_map_utils.c \
 					parse_textures.c \
@@ -31,14 +32,14 @@ SRCS		:=		main.c \
 					load_textures.c \
 					bindings.c \
 					bindings_utils.c \
-					reef.c \
+					free_exit.c \
 					render.c \
 					render_utils.c \
 					raycast.c \
 					raycast_value.c \
-					vector_maths.c
 
 SRCS_BONUS	:=		main.c \
+					init.c \
 					parse_map.c \
 					parse_textures.c \
 					parse_textures_utils.c \
@@ -49,7 +50,7 @@ SRCS_BONUS	:=		main.c \
 					bindings.c \
 					bindings_door.c \
 					bindings_utils.c \
-					reef.c \
+					free_exit.c \
 					animation.c \
 					multithreading.c \
 					render.c \
@@ -59,7 +60,6 @@ SRCS_BONUS	:=		main.c \
 					render_minimap_closed_door.c \
 					raycast.c \
 					raycast_values.c \
-					vector_maths.c
 
 #*------------------------------------------------------------------------------*
 

@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 12:42:42 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/27 16:20:23 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/27 17:31:54 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ static void	skip_textures_identifier(char **str)
 		(*str)++;
 }
 
-static int skip_and_copy_path(char **path, char *str)
+static int	skip_and_copy_path(char **path, char *str)
 {
-		skip_textures_identifier(&str);
-		*path = ft_strdup_no_whitespace(str);
-		if (!path)
-			return (-1);
-		return (0);
+	skip_textures_identifier(&str);
+	*path = ft_strdup_no_whitespace(str);
+	if (!path)
+		return (-1);
+	return (0);
 }
 
 static int	cp_mand_textures(char *str, t_textures *textures)
@@ -64,10 +64,7 @@ int	init_textures(int *i, char **grid, t_game *cube)
 			count++;
 		}
 		else if (!is_only_whitespace(i, grid))
-		{
-			ft_printf_fd(2, E_PARSING_TEXTURES);
-			return (-1);
-		}
+			break ;
 		(*i)++;
 		if (count == TEXTURES_FOUND)
 			return (0);

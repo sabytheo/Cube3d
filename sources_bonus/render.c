@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 14:16:45 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/20 15:55:48 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/27 18:36:04 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ static void	render_floor(t_cube_thread *cube_thread, float draw_end, int x,
 	}
 }
 
-void	render_textured_floor_ceiling(t_cube_thread *cube_thread, int x,
+static void	render_textured_floor_ceiling(t_cube_thread *cube_thread, int x,
 		float draw_start, float draw_end)
 {
 	float	correction;
@@ -75,7 +75,7 @@ void	render_textured_floor_ceiling(t_cube_thread *cube_thread, int x,
 	render_floor(cube_thread, draw_end, x, correction);
 }
 
-void	render_wall_pixel(t_cube_thread *cube_thread, int x, int *j,
+static void	render_wall_pixel(t_cube_thread *cube_thread, int x, int *j,
 		float *text_y)
 {
 	int	color;

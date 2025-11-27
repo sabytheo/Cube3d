@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse_textures_utils.c                             :+:      :+:    :+:   */
+/*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/21 15:10:45 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/27 17:46:25 by egache           ###   ########.fr       */
+/*   Created: 2025/11/27 17:44:25 by egache            #+#    #+#             */
+/*   Updated: 2025/11/27 18:24:35 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cube_bonus.h"
 
-int	is_valid_texture(char **grid, int i)
+void	init_values(t_game *cube)
 {
-	if (ft_strncmp("NO ", grid[i], 3) == 0 || ft_strncmp("SO ", grid[i], 3) == 0
-		|| ft_strncmp("EA ", grid[i], 3) == 0 || ft_strncmp("WE ", grid[i],
-			3) == 0 || ft_strncmp("DO ", grid[i], 3) == 0 || ft_strncmp("FL ",
-			grid[i], 3) == 0 || ft_strncmp("CE ", grid[i], 3) == 0
-		|| ft_strncmp("SP ", grid[i], 3) == 0)
-		return (0);
-	return (-1);
+	cube->nb_cores = sysconf(_SC_NPROCESSORS_ONLN);
+	cube->player.speed = 1;
+	cube->player.rotation_speed = 1;
+	cube->player.fov = M_PI / 3;
+	cube->running = true;
+	pthread_mutex_init(&cube->running_lock, NULL);
+	cube->last_mouse_pos_x = WIDTH / 2;
+	cube->delta_time = 0.016;
+	cube->raycast.base_height = 1;
+	cube->raycast.d_plan = WIDTH / (2 * tan(cube->player.fov * 0.5));
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 19:35:31 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/26 13:24:01 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/27 18:27:43 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static int	copy_line(t_game *cube, char *line)
 	return (1);
 }
 
-int	open_map(t_game *cube, char **argv)
+static int	open_map(t_game *cube, char **argv)
 {
 	char	*line;
 	int		fd;
@@ -67,7 +67,7 @@ int	open_map(t_game *cube, char **argv)
 	return (0);
 }
 
-int	check_arg(char *mapname)
+static int	check_arg(char *mapname)
 {
 	char	*s;
 
@@ -95,10 +95,7 @@ int	parse_map(t_game *cube, char **argv)
 	if (open_map(cube, argv) < 0)
 		return (-1);
 	if (init_textures(&i, cube->map.grid, cube) < 0)
-	{
-		ft_printf_fd(2, E_MISSING_TEXTURE);
 		return (-1);
-	}
 	if (parse_grid(&i, cube->map.grid, cube) < 0)
 		return (-1);
 	return (0);
