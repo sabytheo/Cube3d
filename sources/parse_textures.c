@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 12:42:42 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/26 21:39:46 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/27 16:20:23 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,52 +19,35 @@ static void	skip_textures_identifier(char **str)
 		(*str)++;
 }
 
+static int skip_and_copy_path(char **path, char *str)
+{
+		skip_textures_identifier(&str);
+		*path = ft_strdup_no_whitespace(str);
+		if (!path)
+			return (-1);
+		return (0);
+}
+
 static int	cp_mand_textures(char *str, t_textures *textures)
 {
 	if (ft_strncmp(str, "NO ", 3) == 0 && !textures->NO)
-	{
-		skip_textures_identifier(&str);
-		textures->NO = ft_strdup_no_whitespace(str);
-		return (0);
-	}
+		return (skip_and_copy_path(&textures->NO, str));
 	else if (ft_strncmp(str, "SO ", 3) == 0 && !textures->SO)
-	{
-		skip_textures_identifier(&str);
-		textures->SO = ft_strdup_no_whitespace(str);
-		return (0);
-	}
+		return (skip_and_copy_path(&textures->SO, str));
 	else if (ft_strncmp(str, "WE ", 3) == 0 && !textures->WE)
-	{
-		skip_textures_identifier(&str);
-		textures->WE = ft_strdup_no_whitespace(str);
-		return (0);
-	}
+		return (skip_and_copy_path(&textures->WE, str));
 	else if (ft_strncmp(str, "EA ", 3) == 0 && !textures->EA)
-	{
-		skip_textures_identifier(&str);
-		textures->EA = ft_strdup_no_whitespace(str);
-		return (0);
-	}
+		return (skip_and_copy_path(&textures->EA, str));
 	return (-1);
 }
 
-int	is_valid_texture(t_game *cube, char **grid, int i, int status)
+int	is_valid_texture(char **grid, int i)
 {
-	if (status == ID_CHECK)
-	{
-		if (ft_strncmp("NO ", grid[i], 3) == 0 || ft_strncmp("SO ", grid[i],
-				3) == 0 || ft_strncmp("EA ", grid[i], 3) == 0
-			|| ft_strncmp("WE ", grid[i], 3) == 0)
-			return (0);
-		return (-1);
-	}
-	else
-	{
-		if (!cube->textures.NO || !cube->textures.SO || !cube->textures.WE
-			|| !cube->textures.EA)
-			return (-1);
+	if (ft_strncmp("NO ", grid[i], 3) == 0 || ft_strncmp("SO ", grid[i], 3) == 0
+		|| ft_strncmp("EA ", grid[i], 3) == 0 || ft_strncmp("WE ", grid[i],
+			3) == 0)
 		return (0);
-	}
+	return (-1);
 }
 
 int	init_textures(int *i, char **grid, t_game *cube)
@@ -74,10 +57,10 @@ int	init_textures(int *i, char **grid, t_game *cube)
 	count = 0;
 	while (grid[*i])
 	{
-		if (is_valid_texture(cube, grid, *i, ID_CHECK) == 0)
+		if (is_valid_texture(grid, *i) == 0)
 		{
 			if (cp_mand_textures(grid[*i], &cube->textures) < 0)
-				return (-1);
+				break ;
 			count++;
 		}
 		else if (!is_only_whitespace(i, grid))
@@ -87,14 +70,7 @@ int	init_textures(int *i, char **grid, t_game *cube)
 		}
 		(*i)++;
 		if (count == TEXTURES_FOUND)
-		{
-			if (is_valid_texture(cube, grid, *i, TEXTURE_EXIST) == -1)
-			{
-				ft_printf_fd(2, E_PARSING_TEXTURES);
-				return (-1);
-			}
 			return (0);
-		}
 	}
 	ft_printf_fd(2, E_PARSING_TEXTURES);
 	return (-1);

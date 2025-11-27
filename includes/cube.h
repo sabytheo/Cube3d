@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/27 15:51:53 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/27 16:09:15 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -267,8 +267,7 @@ int					parse_grid(int *i, char **grid, t_game *cube);
 
 // Parse_textures
 int					init_textures(int *i, char **grid, t_game *cube);
-int					is_valid_texture(t_game *cube, char **grid, int i,
-						int status);
+int					is_valid_texture(char **grid, int i);
 
 // Parse_colors
 int					init_colors(int *i, char **grid, t_game *cube);

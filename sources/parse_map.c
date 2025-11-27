@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 19:35:31 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/27 15:33:17 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/27 16:09:30 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int	parse_textures_and_colors(t_game *cube, char **grid, int *i)
 {
 	while (grid[*i])
 	{
-		if (is_valid_texture(cube, grid, *i, ID_CHECK) == 0)
+		if (is_valid_texture(grid, *i) == 0)
 		{
 			if (init_textures_then_colors(cube, i, grid) < 0)
 				return (-1);

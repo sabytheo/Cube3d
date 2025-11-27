@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 15:37:43 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/26 20:34:57 by egache           ###   ########.fr       */
+/*   Updated: 2025/11/27 16:24:04 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ static void	clean_struct(t_game *cube)
 	return ;
 }
 
-int	free_exit(t_game *cube, int status)
+int	free_exit(t_game *cube)
 {
 	if (cube->windows)
 		mlx_destroy_window(cube->mlx, cube->windows);
@@ -99,7 +99,5 @@ int	free_exit(t_game *cube, int status)
 		mlx_destroy_display(cube->mlx);
 		free(cube->mlx);
 	}
-	if (status)
-		printf("Error:\nMalloc error\n");
 	exit(0);
 }

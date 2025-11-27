@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_textures.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 12:42:42 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/25 19:26:50 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/11/27 16:27:04 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,10 +103,11 @@ int	init_textures(int *i, char **grid, t_game *cube)
 	{
 		if (is_valid_texture(cube, grid, *i, ID_CHECK) == 0)
 		{
-			if (cp_mand_textures(grid[*i], &cube->textures, &so_count) == 0)
-				count++;
-			else if (copy_bonus_textures(grid[*i], &cube->textures) == 0)
-				count++;
+			if (cp_mand_textures(grid[*i], &cube->textures, &so_count) < 0)
+				break ;
+			else if (copy_bonus_textures(grid[*i], &cube->textures) < 0)
+				break ;
+			count++;
 		}
 		(*i)++;
 		if (count == TEXTURES_FOUND + 5)
