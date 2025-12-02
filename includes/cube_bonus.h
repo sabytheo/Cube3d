@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/12/02 15:10:03 by egache           ###   ########.fr       */
+/*   Updated: 2025/12/02 15:52:33 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,16 +91,16 @@ typedef struct s_raycast
 	float			wall_height;
 	int				base_height;
 	float			d_plan;
-	float			deltaDistY;
-	float			deltaDistX;
-	float			sideDistX;
-	float			sideDistY;
-	int				stepY;
-	int				stepX;
-	int				intX;
-	int				intY;
-	float			floatX;
-	float			floatY;
+	float			deltadist_y;
+	float			deltadist_x;
+	float			sidedist_x;
+	float			sidedist_y;
+	int				step_y;
+	int				step_x;
+	int				int_x;
+	int				int_y;
+	float			float_x;
+	float			float_y;
 	float			start_y;
 	t_img			*texture_assigned;
 	t_vector		dir;
@@ -178,13 +178,13 @@ typedef struct s_key
 	bool			maj;
 }					t_key;
 
-enum				direction
+enum				e_direction
 {
 	NO,
 	SO,
 	WE,
 	EA,
-	DO,
+	OD,
 	FL,
 	CE,
 	SP,
@@ -193,22 +193,22 @@ enum				direction
 
 typedef struct s_textures
 {
-	char			*NO;
-	char			*SO[6];
-	char			*WE;
-	char			*EA;
-	char			*DO;
-	char			*FL;
-	char			*CE;
-	char			*CL;
-	t_img			NO_img;
-	t_img			SO_img[6];
-	t_img			WE_img;
-	t_img			EA_img;
-	t_img			DO_img;
-	t_img			FL_img;
-	t_img			CE_img;
-	t_img			CL_img;
+	char			*no;
+	char			*so[6];
+	char			*we;
+	char			*ea;
+	char			*od;
+	char			*fl;
+	char			*ce;
+	char			*cd;
+	t_img			no_img;
+	t_img			so_img[6];
+	t_img			we_img;
+	t_img			ea_img;
+	t_img			od_img;
+	t_img			fl_img;
+	t_img			ce_img;
+	t_img			cd_img;
 	int				ceiling[3];
 	int				floor[3];
 	int				current_frame;
@@ -230,7 +230,7 @@ typedef struct s_game
 {
 	void			*mlx;
 	void			*windows;
-	struct timeval last_frame; // Timer pour limiter les FPS
+	struct timeval	last_frame; // Timer pour limiter les FPS
 	long			nb_cores;
 	double			delta_time;
 	float			last_mouse_pos_x;

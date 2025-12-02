@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_textures.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 12:42:42 by tsaby             #+#    #+#             */
-/*   Updated: 2025/12/02 11:13:02 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/12/02 15:51:38 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,27 +30,27 @@ static int	skip_and_copy_path(char **path, char *str)
 
 static int	cp_mand_textures(char *str, t_textures *textures, int *so_count)
 {
-	if (ft_strncmp(str, "NO ", 3) == 0 && !textures->NO)
-		return (skip_and_copy_path(&textures->NO, str));
+	if (ft_strncmp(str, "NO ", 3) == 0 && !textures->no)
+		return (skip_and_copy_path(&textures->no, str));
 	else if (ft_strncmp(str, "SO ", 3) == 0 && *so_count < 6)
-		return (skip_and_copy_path(&textures->SO[(*so_count)++], str));
-	else if (ft_strncmp(str, "WE ", 3) == 0 && !textures->WE)
-		return (skip_and_copy_path(&textures->WE, str));
-	else if (ft_strncmp(str, "EA ", 3) == 0 && !textures->EA)
-		return (skip_and_copy_path(&textures->EA, str));
+		return (skip_and_copy_path(&textures->so[(*so_count)++], str));
+	else if (ft_strncmp(str, "WE ", 3) == 0 && !textures->we)
+		return (skip_and_copy_path(&textures->we, str));
+	else if (ft_strncmp(str, "EA ", 3) == 0 && !textures->ea)
+		return (skip_and_copy_path(&textures->ea, str));
 	return (-1);
 }
 
 static int	copy_bonus_textures(char *str, t_textures *textures)
 {
-	if (ft_strncmp(str, "DO ", 3) == 0 && !textures->DO)
-		return (skip_and_copy_path(&textures->DO, str));
-	else if (ft_strncmp(str, "FL ", 3) == 0 && !textures->FL)
-		return (skip_and_copy_path(&textures->FL, str));
-	else if (ft_strncmp(str, "CE ", 3) == 0 && !textures->CE)
-		return (skip_and_copy_path(&textures->CE, str));
-	else if (ft_strncmp(str, "CL ", 3) == 0 && !textures->CL)
-		return (skip_and_copy_path(&textures->CL, str));
+	if (ft_strncmp(str, "OD ", 3) == 0 && !textures->od)
+		return (skip_and_copy_path(&textures->od, str));
+	else if (ft_strncmp(str, "FL ", 3) == 0 && !textures->fl)
+		return (skip_and_copy_path(&textures->fl, str));
+	else if (ft_strncmp(str, "CE ", 3) == 0 && !textures->ce)
+		return (skip_and_copy_path(&textures->ce, str));
+	else if (ft_strncmp(str, "CD ", 3) == 0 && !textures->cd)
+		return (skip_and_copy_path(&textures->cd, str));
 	return (-1);
 }
 

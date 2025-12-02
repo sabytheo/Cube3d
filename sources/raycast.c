@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 14:33:01 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/19 20:20:26 by egache           ###   ########.fr       */
+/*   Updated: 2025/12/02 15:44:13 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,19 @@ static int	if_wall_hit(t_game *cube, t_raycast *raycast, int side)
 {
 	if (!side)
 	{
-		raycast->floatX = cube->player.pos_x + raycast->dir.x
-			* (raycast->sideDistX - raycast->deltaDistX);
-		raycast->floatY = cube->player.pos_y + raycast->dir.y
-			* (raycast->sideDistX - raycast->deltaDistX);
-		cube->textures.x = raycast->floatY - floor(raycast->floatY);
+		raycast->float_x = cube->player.pos_x + raycast->dir.x
+			* (raycast->sidedist_x - raycast->deltadist_x);
+		raycast->float_y = cube->player.pos_y + raycast->dir.y
+			* (raycast->sidedist_x - raycast->deltadist_x);
+		cube->textures.x = raycast->float_y - floor(raycast->float_y);
 	}
 	else
 	{
-		raycast->floatX = cube->player.pos_x + raycast->dir.x
-			* (raycast->sideDistY - raycast->deltaDistY);
-		raycast->floatY = cube->player.pos_y + raycast->dir.y
-			* (raycast->sideDistY - raycast->deltaDistY);
-		cube->textures.x = raycast->floatX - floor(raycast->floatX);
+		raycast->float_x = cube->player.pos_x + raycast->dir.x
+			* (raycast->sidedist_y - raycast->deltadist_y);
+		raycast->float_y = cube->player.pos_y + raycast->dir.y
+			* (raycast->sidedist_y - raycast->deltadist_y);
+		cube->textures.x = raycast->float_x - floor(raycast->float_x);
 	}
 	return (side);
 }
@@ -41,19 +41,19 @@ static int	ray_displacement(t_game *cube, t_raycast *raycast)
 	hit = false;
 	while (hit == false)
 	{
-		if (raycast->sideDistX < raycast->sideDistY)
+		if (raycast->sidedist_x < raycast->sidedist_y)
 		{
-			raycast->sideDistX += raycast->deltaDistX;
-			raycast->intX += raycast->stepX;
+			raycast->sidedist_x += raycast->deltadist_x;
+			raycast->int_x += raycast->step_x;
 			side = 0;
 		}
 		else
 		{
-			raycast->sideDistY += raycast->deltaDistY;
-			raycast->intY += raycast->stepY;
+			raycast->sidedist_y += raycast->deltadist_y;
+			raycast->int_y += raycast->step_y;
 			side = 1;
 		}
-		if (cube->map.final_grid[raycast->intY][raycast->intX] == '1')
+		if (cube->map.final_grid[raycast->int_y][raycast->int_x] == '1')
 		{
 			hit = false;
 			return (if_wall_hit(cube, raycast, side));
@@ -67,25 +67,25 @@ static t_img	*assign_texture_and_render(t_textures *textures,
 {
 	if (raycast->dir.x > 0 && side == 0)
 	{
-		textures->y = textures->EA_img.ht / raycast->wall_height;
+		textures->y = textures->ea_img.ht / raycast->wall_height;
 		textures->x = 1 - textures->x;
-		return (&textures->EA_img);
+		return (&textures->ea_img);
 	}
 	else if (raycast->dir.x < 0 && side == 0)
 	{
-		textures->y = textures->WE_img.ht / raycast->wall_height;
-		return (&textures->WE_img);
+		textures->y = textures->we_img.ht / raycast->wall_height;
+		return (&textures->we_img);
 	}
 	else if (raycast->dir.y > 0 && side == 1)
 	{
-		textures->y = textures->NO_img.ht / raycast->wall_height;
-		return (&textures->NO_img);
+		textures->y = textures->no_img.ht / raycast->wall_height;
+		return (&textures->no_img);
 	}
 	else if (raycast->dir.y < 0 && side == 1)
 	{
-		textures->y = textures->SO_img.ht / raycast->wall_height;
+		textures->y = textures->so_img.ht / raycast->wall_height;
 		textures->x = 1 - textures->x;
-		return (&textures->SO_img);
+		return (&textures->so_img);
 	}
 	else
 		return (NULL);

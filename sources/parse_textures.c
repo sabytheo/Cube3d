@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 12:42:42 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/27 17:31:54 by egache           ###   ########.fr       */
+/*   Updated: 2025/12/02 15:43:06 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,14 @@ static int	skip_and_copy_path(char **path, char *str)
 
 static int	cp_mand_textures(char *str, t_textures *textures)
 {
-	if (ft_strncmp(str, "NO ", 3) == 0 && !textures->NO)
-		return (skip_and_copy_path(&textures->NO, str));
-	else if (ft_strncmp(str, "SO ", 3) == 0 && !textures->SO)
-		return (skip_and_copy_path(&textures->SO, str));
-	else if (ft_strncmp(str, "WE ", 3) == 0 && !textures->WE)
-		return (skip_and_copy_path(&textures->WE, str));
-	else if (ft_strncmp(str, "EA ", 3) == 0 && !textures->EA)
-		return (skip_and_copy_path(&textures->EA, str));
+	if (ft_strncmp(str, "NO ", 3) == 0 && !textures->no)
+		return (skip_and_copy_path(&textures->no, str));
+	else if (ft_strncmp(str, "SO ", 3) == 0 && !textures->so)
+		return (skip_and_copy_path(&textures->so, str));
+	else if (ft_strncmp(str, "WE ", 3) == 0 && !textures->we)
+		return (skip_and_copy_path(&textures->we, str));
+	else if (ft_strncmp(str, "EA ", 3) == 0 && !textures->ea)
+		return (skip_and_copy_path(&textures->ea, str));
 	return (-1);
 }
 

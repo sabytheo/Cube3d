@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycast.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 16:23:49 by tsaby             #+#    #+#             */
-/*   Updated: 2025/12/02 11:13:02 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/12/02 15:52:26 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,23 +17,23 @@ static void	get_texture_coord_and_distance(t_cube_thread *cube_thread,
 {
 	if (!side)
 	{
-		raycast->floatX = cube_thread->cube->player.pos_x + raycast->dir.x
-			* (raycast->sideDistX - raycast->deltaDistX);
-		raycast->floatY = cube_thread->cube->player.pos_y + raycast->dir.y
-			* (raycast->sideDistX - raycast->deltaDistX);
-		cube_thread->textures.x = raycast->floatY - floor(raycast->floatY);
-		(*new_hit)->distance = (raycast->intX - cube_thread->cube->player.pos_x
-				+ (1 - raycast->stepX) * 0.5) / raycast->dir.x;
+		raycast->float_x = cube_thread->cube->player.pos_x + raycast->dir.x
+			* (raycast->sidedist_x - raycast->deltadist_x);
+		raycast->float_y = cube_thread->cube->player.pos_y + raycast->dir.y
+			* (raycast->sidedist_x - raycast->deltadist_x);
+		cube_thread->textures.x = raycast->float_y - floor(raycast->float_y);
+		(*new_hit)->distance = (raycast->int_x - cube_thread->cube->player.pos_x
+				+ (1 - raycast->step_x) * 0.5) / raycast->dir.x;
 	}
 	else
 	{
-		raycast->floatX = cube_thread->cube->player.pos_x + raycast->dir.x
-			* (raycast->sideDistY - raycast->deltaDistY);
-		raycast->floatY = cube_thread->cube->player.pos_y + raycast->dir.y
-			* (raycast->sideDistY - raycast->deltaDistY);
-		cube_thread->textures.x = raycast->floatX - floor(raycast->floatX);
-		(*new_hit)->distance = (raycast->intY - cube_thread->cube->player.pos_y
-				+ (1 - raycast->stepY) * 0.5) / raycast->dir.y;
+		raycast->float_x = cube_thread->cube->player.pos_x + raycast->dir.x
+			* (raycast->sidedist_y - raycast->deltadist_y);
+		raycast->float_y = cube_thread->cube->player.pos_y + raycast->dir.y
+			* (raycast->sidedist_y - raycast->deltadist_y);
+		cube_thread->textures.x = raycast->float_x - floor(raycast->float_x);
+		(*new_hit)->distance = (raycast->int_y - cube_thread->cube->player.pos_y
+				+ (1 - raycast->step_y) * 0.5) / raycast->dir.y;
 	}
 	(*new_hit)->side = side;
 	(*new_hit)->texture_x = cube_thread->textures.x;
@@ -78,20 +78,20 @@ static void	assign_texture_and_current_hit(t_cube_thread *cube_thread,
 	current_hit = &hits[i];
 	frame = cube_thread->textures.current_frame;
 	if (current_hit->hit_type == 'O')
-		raycast->texture_assigned = &cube_thread->textures.DO_img;
+		raycast->texture_assigned = &cube_thread->textures.od_img;
 	else if (current_hit->hit_type == 'C')
-		raycast->texture_assigned = &cube_thread->textures.CL_img;
+		raycast->texture_assigned = &cube_thread->textures.cd_img;
 	else
 	{
 		if (raycast->dir.x > 0 && current_hit->side == 0)
-			raycast->texture_assigned = &cube_thread->textures.EA_img;
+			raycast->texture_assigned = &cube_thread->textures.ea_img;
 		else if (raycast->dir.x < 0 && current_hit->side == 0)
-			raycast->texture_assigned = &cube_thread->textures.WE_img;
+			raycast->texture_assigned = &cube_thread->textures.we_img;
 		else if (raycast->dir.y > 0 && current_hit->side == 1)
-			raycast->texture_assigned = &cube_thread->textures.NO_img;
+			raycast->texture_assigned = &cube_thread->textures.no_img;
 		else if (raycast->dir.y < 0 && current_hit->side == 1)
 		{
-			raycast->texture_assigned = &cube_thread->textures.SO_img[frame];
+			raycast->texture_assigned = &cube_thread->textures.so_img[frame];
 		}
 	}
 	raycast->distance = current_hit->distance;

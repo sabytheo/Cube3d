@@ -4,7 +4,7 @@ C 1,55,156
 NO ./assets/Brick_nord.xpm
 SO ./assets/Brick_sud.xpm
 WE ./assets/Brick_west.xpm
-EA ./assets/Brick_est.xpm
+ea ./assets/Brick_est.xpm
 
 1111111111111111111111111111111111111111
 100000000S000000000111111111111111111111

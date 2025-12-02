@@ -7,10 +7,10 @@ SO ./assets/Brick3.xpm
 SO ./assets/Brick4.xpm
 WE ./assets/Brick_west.xpm
 EA ./assets/Brick_est.xpm
-DO ./assets/Door_open2.xpm
+OD ./assets/Door_open2.xpm
 FL ./assets/floor2.xpm
 CE ./assets/ceiling.xpm
-CL ./assets/Door_closed2.xpm
+CD ./assets/Door_closed2.xpm
 
 1111111111111111111111111111111111111111
 1000000000000000000111111111111111111111

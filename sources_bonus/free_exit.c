@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   free_exit.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 15:37:43 by tsaby             #+#    #+#             */
-/*   Updated: 2025/12/02 11:13:02 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/12/02 15:52:26 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,53 +19,53 @@ static void	clean_animation(t_game *cube)
 	i = 0;
 	while (i < 6)
 	{
-		if (cube->textures.SO_img[i].img)
-			mlx_destroy_image(cube->mlx, cube->textures.SO_img[i].img);
-		if (cube->textures.SO[i])
-			free(cube->textures.SO[i]);
+		if (cube->textures.so_img[i].img)
+			mlx_destroy_image(cube->mlx, cube->textures.so_img[i].img);
+		if (cube->textures.so[i])
+			free(cube->textures.so[i]);
 		i++;
 	}
 }
 
 static void	destroy_image(t_game *cube)
 {
-	if (cube->textures.EA_img.img)
-		mlx_destroy_image(cube->mlx, cube->textures.EA_img.img);
+	if (cube->textures.ea_img.img)
+		mlx_destroy_image(cube->mlx, cube->textures.ea_img.img);
 	if (cube->img->img)
 		mlx_destroy_image(cube->mlx, cube->img->img);
 	if (cube->minimap_img->img)
 		mlx_destroy_image(cube->mlx, cube->minimap_img->img);
-	if (cube->textures.NO_img.img)
-		mlx_destroy_image(cube->mlx, cube->textures.NO_img.img);
-	if (cube->textures.WE_img.img)
-		mlx_destroy_image(cube->mlx, cube->textures.WE_img.img);
-	if (cube->textures.DO_img.img)
-		mlx_destroy_image(cube->mlx, cube->textures.DO_img.img);
-	if (cube->textures.FL_img.img)
-		mlx_destroy_image(cube->mlx, cube->textures.FL_img.img);
-	if (cube->textures.CE_img.img)
-		mlx_destroy_image(cube->mlx, cube->textures.CE_img.img);
-	if (cube->textures.CL_img.img)
-		mlx_destroy_image(cube->mlx, cube->textures.CL_img.img);
+	if (cube->textures.no_img.img)
+		mlx_destroy_image(cube->mlx, cube->textures.no_img.img);
+	if (cube->textures.we_img.img)
+		mlx_destroy_image(cube->mlx, cube->textures.we_img.img);
+	if (cube->textures.od_img.img)
+		mlx_destroy_image(cube->mlx, cube->textures.od_img.img);
+	if (cube->textures.fl_img.img)
+		mlx_destroy_image(cube->mlx, cube->textures.fl_img.img);
+	if (cube->textures.ce_img.img)
+		mlx_destroy_image(cube->mlx, cube->textures.ce_img.img);
+	if (cube->textures.cd_img.img)
+		mlx_destroy_image(cube->mlx, cube->textures.cd_img.img);
 	return ;
 }
 
 static void	clean_textures(t_game *cube)
 {
-	if (cube->textures.NO)
-		free(cube->textures.NO);
-	if (cube->textures.WE)
-		free(cube->textures.WE);
-	if (cube->textures.EA)
-		free(cube->textures.EA);
-	if (cube->textures.DO)
-		free(cube->textures.DO);
-	if (cube->textures.FL)
-		free(cube->textures.FL);
-	if (cube->textures.CL)
-		free(cube->textures.CL);
-	if (cube->textures.CE)
-		free(cube->textures.CE);
+	if (cube->textures.no)
+		free(cube->textures.no);
+	if (cube->textures.we)
+		free(cube->textures.we);
+	if (cube->textures.ea)
+		free(cube->textures.ea);
+	if (cube->textures.od)
+		free(cube->textures.od);
+	if (cube->textures.fl)
+		free(cube->textures.fl);
+	if (cube->textures.cd)
+		free(cube->textures.cd);
+	if (cube->textures.ce)
+		free(cube->textures.ce);
 	return ;
 }
 

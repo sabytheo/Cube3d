@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   load_textures.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 16:15:05 by egache            #+#    #+#             */
-/*   Updated: 2025/12/02 11:13:02 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/12/02 15:52:26 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,18 @@ static int	xpm_addr_animated(t_game *cube, t_textures *textures)
 	i = 0;
 	while (i < 6)
 	{
-		cube->textures.SO_img[i].img = mlx_xpm_file_to_image(cube->mlx,
-				textures->SO[i], &textures->SO_img[i].wh,
-				&textures->SO_img[i].ht);
-		if (!cube->textures.SO_img[i].img)
+		cube->textures.so_img[i].img = mlx_xpm_file_to_image(cube->mlx,
+				textures->so[i], &textures->so_img[i].wh,
+				&textures->so_img[i].ht);
+		if (!cube->textures.so_img[i].img)
 		{
 			ft_printf_fd(2, E_WRONG_PATH);
 			return (-1);
 		}
-		textures->SO_img[i].addr = mlx_get_data_addr(textures->SO_img[i].img,
-				&textures->SO_img[i].bpp, &textures->SO_img[i].sl,
-				&textures->SO_img[i].en);
-		if (!textures->SO_img[i].addr)
+		textures->so_img[i].addr = mlx_get_data_addr(textures->so_img[i].img,
+				&textures->so_img[i].bpp, &textures->so_img[i].sl,
+				&textures->so_img[i].en);
+		if (!textures->so_img[i].addr)
 			return (-1);
 		i++;
 	}
@@ -41,24 +41,24 @@ static int	xpm_to_image(t_game *cube, t_textures *textures)
 {
 	if (xpm_addr_animated(cube, textures) < 0)
 		return (-1);
-	cube->textures.NO_img.img = mlx_xpm_file_to_image(cube->mlx, textures->NO,
-			&textures->NO_img.wh, &textures->NO_img.ht);
-	cube->textures.EA_img.img = mlx_xpm_file_to_image(cube->mlx, textures->EA,
-			&textures->EA_img.wh, &textures->EA_img.ht);
-	cube->textures.WE_img.img = mlx_xpm_file_to_image(cube->mlx, textures->WE,
-			&textures->WE_img.wh, &textures->WE_img.ht);
-	cube->textures.DO_img.img = mlx_xpm_file_to_image(cube->mlx, textures->DO,
-			&textures->DO_img.wh, &textures->DO_img.ht);
-	cube->textures.FL_img.img = mlx_xpm_file_to_image(cube->mlx, textures->FL,
-			&textures->FL_img.wh, &textures->FL_img.ht);
-	cube->textures.CE_img.img = mlx_xpm_file_to_image(cube->mlx, textures->CE,
-			&textures->CE_img.wh, &textures->CE_img.ht);
-	cube->textures.CL_img.img = mlx_xpm_file_to_image(cube->mlx, textures->CL,
-			&textures->CL_img.wh, &textures->CL_img.ht);
-	if (!cube->textures.NO_img.img || !cube->textures.EA_img.img
-		|| !cube->textures.WE_img.img || !cube->textures.DO_img.img
-		|| !cube->textures.FL_img.img || !cube->textures.CE_img.img
-		|| !cube->textures.CL_img.img)
+	cube->textures.no_img.img = mlx_xpm_file_to_image(cube->mlx, textures->no,
+			&textures->no_img.wh, &textures->no_img.ht);
+	cube->textures.ea_img.img = mlx_xpm_file_to_image(cube->mlx, textures->ea,
+			&textures->ea_img.wh, &textures->ea_img.ht);
+	cube->textures.we_img.img = mlx_xpm_file_to_image(cube->mlx, textures->we,
+			&textures->we_img.wh, &textures->we_img.ht);
+	cube->textures.od_img.img = mlx_xpm_file_to_image(cube->mlx, textures->od,
+			&textures->od_img.wh, &textures->od_img.ht);
+	cube->textures.fl_img.img = mlx_xpm_file_to_image(cube->mlx, textures->fl,
+			&textures->fl_img.wh, &textures->fl_img.ht);
+	cube->textures.ce_img.img = mlx_xpm_file_to_image(cube->mlx, textures->ce,
+			&textures->ce_img.wh, &textures->ce_img.ht);
+	cube->textures.cd_img.img = mlx_xpm_file_to_image(cube->mlx, textures->cd,
+			&textures->cd_img.wh, &textures->cd_img.ht);
+	if (!cube->textures.no_img.img || !cube->textures.ea_img.img
+		|| !cube->textures.we_img.img || !cube->textures.od_img.img
+		|| !cube->textures.fl_img.img || !cube->textures.ce_img.img
+		|| !cube->textures.cd_img.img)
 	{
 		ft_printf_fd(2, E_WRONG_PATH);
 		return (-1);
@@ -68,14 +68,14 @@ static int	xpm_to_image(t_game *cube, t_textures *textures)
 
 static int	get_data_addr_cardinal(t_textures *textures)
 {
-	textures->NO_img.addr = mlx_get_data_addr(textures->NO_img.img,
-			&textures->NO_img.bpp, &textures->NO_img.sl, &textures->NO_img.en);
-	textures->EA_img.addr = mlx_get_data_addr(textures->EA_img.img,
-			&textures->EA_img.bpp, &textures->EA_img.sl, &textures->EA_img.en);
-	textures->WE_img.addr = mlx_get_data_addr(textures->WE_img.img,
-			&textures->WE_img.bpp, &textures->WE_img.sl, &textures->WE_img.en);
-	if (!textures->NO_img.addr || !textures->EA_img.addr
-		|| !textures->WE_img.addr)
+	textures->no_img.addr = mlx_get_data_addr(textures->no_img.img,
+			&textures->no_img.bpp, &textures->no_img.sl, &textures->no_img.en);
+	textures->ea_img.addr = mlx_get_data_addr(textures->ea_img.img,
+			&textures->ea_img.bpp, &textures->ea_img.sl, &textures->ea_img.en);
+	textures->we_img.addr = mlx_get_data_addr(textures->we_img.img,
+			&textures->we_img.bpp, &textures->we_img.sl, &textures->we_img.en);
+	if (!textures->no_img.addr || !textures->ea_img.addr
+		|| !textures->we_img.addr)
 		return (-1);
 	return (0);
 }
@@ -88,20 +88,20 @@ int	load_textures(t_game *cube, t_textures *textures)
 		gettimeofday(&cube->textures.last_frame_time, NULL);
 		if (get_data_addr_cardinal(textures) < 0)
 			return (-1);
-		textures->DO_img.addr = mlx_get_data_addr(textures->DO_img.img,
-				&textures->DO_img.bpp, &textures->DO_img.sl,
-				&textures->DO_img.en);
-		textures->FL_img.addr = mlx_get_data_addr(textures->FL_img.img,
-				&textures->FL_img.bpp, &textures->FL_img.sl,
-				&textures->FL_img.en);
-		textures->CE_img.addr = mlx_get_data_addr(textures->CE_img.img,
-				&textures->CE_img.bpp, &textures->CE_img.sl,
-				&textures->CE_img.en);
-		textures->CL_img.addr = mlx_get_data_addr(textures->CL_img.img,
-				&textures->CL_img.bpp, &textures->CL_img.sl,
-				&textures->CL_img.en);
-		if (!textures->DO_img.addr || !textures->FL_img.addr
-			|| !textures->CE_img.addr || !textures->CL_img.addr)
+		textures->od_img.addr = mlx_get_data_addr(textures->od_img.img,
+				&textures->od_img.bpp, &textures->od_img.sl,
+				&textures->od_img.en);
+		textures->fl_img.addr = mlx_get_data_addr(textures->fl_img.img,
+				&textures->fl_img.bpp, &textures->fl_img.sl,
+				&textures->fl_img.en);
+		textures->ce_img.addr = mlx_get_data_addr(textures->ce_img.img,
+				&textures->ce_img.bpp, &textures->ce_img.sl,
+				&textures->ce_img.en);
+		textures->cd_img.addr = mlx_get_data_addr(textures->cd_img.img,
+				&textures->cd_img.bpp, &textures->cd_img.sl,
+				&textures->cd_img.en);
+		if (!textures->od_img.addr || !textures->fl_img.addr
+			|| !textures->ce_img.addr || !textures->cd_img.addr)
 			return (-1);
 		return (0);
 	}

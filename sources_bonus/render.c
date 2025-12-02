@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 14:16:45 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/27 18:36:04 by egache           ###   ########.fr       */
+/*   Updated: 2025/12/02 15:52:20 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ static void	render_ceil(t_cube_thread *cube_thread, float draw_start, int x,
 		floor_y = cube_thread->cube->player.pos_y + cube_thread->raycast.dir.y
 			* row_distance;
 		img_pixel_put(cube_thread->cube->img, x, y, get_texture_pixel((floor_y
-					- floor(floor_y)) * cube_thread->textures.CE_img.ht,
-				&cube_thread->textures.CE_img, floor_x - floor(floor_x)));
+					- floor(floor_y)) * cube_thread->textures.ce_img.ht,
+				&cube_thread->textures.ce_img, floor_x - floor(floor_x)));
 		y++;
 	}
 }
@@ -56,8 +56,8 @@ static void	render_floor(t_cube_thread *cube_thread, float draw_end, int x,
 		floor_y = cube_thread->cube->player.pos_y + cube_thread->raycast.dir.y
 			* row_distance;
 		img_pixel_put(cube_thread->cube->img, x, y, get_texture_pixel((floor_y
-					- floor(floor_y)) * cube_thread->textures.FL_img.ht,
-				&cube_thread->textures.FL_img, floor_x - floor(floor_x)));
+					- floor(floor_y)) * cube_thread->textures.fl_img.ht,
+				&cube_thread->textures.fl_img, floor_x - floor(floor_x)));
 		y++;
 	}
 }
