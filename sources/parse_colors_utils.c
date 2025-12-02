@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_colors_utils.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 16:42:11 by egache            #+#    #+#             */
-/*   Updated: 2025/11/27 15:48:03 by egache           ###   ########.fr       */
+/*   Updated: 2025/12/02 10:42:09 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,11 @@ int	check_len_and_skip_space(char **str, int *j, int *len)
 		return (-1);
 	}
 	(*str)++;
-	while (**str == ' ' || (**str >= 9 && **str <= 13))
-		(*str)++;
+	if (*j == 0)
+	{
+		while (**str == ' ' || (**str >= 9 && **str <= 13))
+			(*str)++;
+	}
 	while (**str && **str != '\n' && **str != ',')
 	{
 		(*len)++;

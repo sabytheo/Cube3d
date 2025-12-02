@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycast.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 16:23:49 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/27 18:33:57 by egache           ###   ########.fr       */
+/*   Updated: 2025/12/02 11:13:02 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ static void	assign_texture_and_current_hit(t_cube_thread *cube_thread,
 	if (current_hit->hit_type == 'O')
 		raycast->texture_assigned = &cube_thread->textures.DO_img;
 	else if (current_hit->hit_type == 'C')
-		raycast->texture_assigned = &cube_thread->textures.SP_img;
+		raycast->texture_assigned = &cube_thread->textures.CL_img;
 	else
 	{
 		if (raycast->dir.x > 0 && current_hit->side == 0)

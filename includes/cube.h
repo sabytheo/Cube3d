@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cube.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/27 18:43:57 by egache           ###   ########.fr       */
+/*   Updated: 2025/12/02 11:10:21 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,8 +112,6 @@ typedef struct s_map
 	int				*width;
 	char			**grid;
 	char			**final_grid;
-	int				start_x;
-	int				start_y;
 	char			start_dir;
 }					t_map;
 
@@ -181,7 +179,6 @@ typedef struct s_game
 	void			*windows;
 	double			delta_time;
 	struct timeval 	last_frame; // Timer pour limiter les FPS
-	int 			frame_limit;           // Limite en microsecondes (16666 = 60 FPS)
 	t_map			map;
 	t_img			*img;
 	t_player		player;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 17:44:25 by egache            #+#    #+#             */
-/*   Updated: 2025/11/27 18:24:35 by egache           ###   ########.fr       */
+/*   Updated: 2025/12/02 10:58:14 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 void	init_values(t_game *cube)
 {
 	cube->nb_cores = sysconf(_SC_NPROCESSORS_ONLN);
-	cube->player.speed = 1;
-	cube->player.rotation_speed = 1;
+	cube->player.speed = 3;
+	cube->player.rotation_speed = 4;
 	cube->player.fov = M_PI / 3;
 	cube->running = true;
 	pthread_mutex_init(&cube->running_lock, NULL);

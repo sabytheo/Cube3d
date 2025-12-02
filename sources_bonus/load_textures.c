@@ -6,7 +6,7 @@
 /*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 16:15:05 by egache            #+#    #+#             */
-/*   Updated: 2025/11/25 20:06:16 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/12/02 11:13:02 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,12 +53,12 @@ static int	xpm_to_image(t_game *cube, t_textures *textures)
 			&textures->FL_img.wh, &textures->FL_img.ht);
 	cube->textures.CE_img.img = mlx_xpm_file_to_image(cube->mlx, textures->CE,
 			&textures->CE_img.wh, &textures->CE_img.ht);
-	cube->textures.SP_img.img = mlx_xpm_file_to_image(cube->mlx, textures->SP,
-			&textures->SP_img.wh, &textures->SP_img.ht);
+	cube->textures.CL_img.img = mlx_xpm_file_to_image(cube->mlx, textures->CL,
+			&textures->CL_img.wh, &textures->CL_img.ht);
 	if (!cube->textures.NO_img.img || !cube->textures.EA_img.img
 		|| !cube->textures.WE_img.img || !cube->textures.DO_img.img
 		|| !cube->textures.FL_img.img || !cube->textures.CE_img.img
-		|| !cube->textures.SP_img.img)
+		|| !cube->textures.CL_img.img)
 	{
 		ft_printf_fd(2, E_WRONG_PATH);
 		return (-1);
@@ -97,11 +97,11 @@ int	load_textures(t_game *cube, t_textures *textures)
 		textures->CE_img.addr = mlx_get_data_addr(textures->CE_img.img,
 				&textures->CE_img.bpp, &textures->CE_img.sl,
 				&textures->CE_img.en);
-		textures->SP_img.addr = mlx_get_data_addr(textures->SP_img.img,
-				&textures->SP_img.bpp, &textures->SP_img.sl,
-				&textures->SP_img.en);
+		textures->CL_img.addr = mlx_get_data_addr(textures->CL_img.img,
+				&textures->CL_img.bpp, &textures->CL_img.sl,
+				&textures->CL_img.en);
 		if (!textures->DO_img.addr || !textures->FL_img.addr
-			|| !textures->CE_img.addr || !textures->SP_img.addr)
+			|| !textures->CE_img.addr || !textures->CL_img.addr)
 			return (-1);
 		return (0);
 	}

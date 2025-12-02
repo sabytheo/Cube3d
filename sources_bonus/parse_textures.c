@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_textures.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 12:42:42 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/27 17:46:39 by egache           ###   ########.fr       */
+/*   Updated: 2025/12/02 11:13:02 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,8 @@ static int	copy_bonus_textures(char *str, t_textures *textures)
 		return (skip_and_copy_path(&textures->FL, str));
 	else if (ft_strncmp(str, "CE ", 3) == 0 && !textures->CE)
 		return (skip_and_copy_path(&textures->CE, str));
-	else if (ft_strncmp(str, "SP ", 3) == 0 && !textures->SP)
-		return (skip_and_copy_path(&textures->SP, str));
+	else if (ft_strncmp(str, "CL ", 3) == 0 && !textures->CL)
+		return (skip_and_copy_path(&textures->CL, str));
 	return (-1);
 }
 

@@ -1,5 +1,5 @@
-F 104,104,104
-C 55,55,55
+F 104,140,104
+C 1,55,156
 
 NO ./assets/Brick_nord.xpm
 SO ./assets/Brick_sud.xpm

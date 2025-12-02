@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bindings.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 12:31:12 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/26 20:41:54 by egache           ###   ########.fr       */
+/*   Updated: 2025/12/02 10:54:03 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,9 +107,9 @@ int	define_control(t_game *cube)
 	if (cube->key.escape == true)
 		free_exit(cube);
 	if (cube->key.maj == true)
-		cube->player.speed = 1.5;
+		cube->player.speed = 5;
 	else if (cube->key.maj == false)
-		cube->player.speed = 1;
+		cube->player.speed = 3;
 	calculate_movement(cube, &move_x, &move_y);
 	apply_movement(cube, move_x, move_y);
 	if (cube->key.right == true)

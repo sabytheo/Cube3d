@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   free_exit.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 15:37:43 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/27 18:24:20 by egache           ###   ########.fr       */
+/*   Updated: 2025/12/02 11:13:02 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,8 @@ static void	destroy_image(t_game *cube)
 		mlx_destroy_image(cube->mlx, cube->textures.FL_img.img);
 	if (cube->textures.CE_img.img)
 		mlx_destroy_image(cube->mlx, cube->textures.CE_img.img);
-	if (cube->textures.SP_img.img)
-		mlx_destroy_image(cube->mlx, cube->textures.SP_img.img);
+	if (cube->textures.CL_img.img)
+		mlx_destroy_image(cube->mlx, cube->textures.CL_img.img);
 	return ;
 }
 
@@ -62,8 +62,8 @@ static void	clean_textures(t_game *cube)
 		free(cube->textures.DO);
 	if (cube->textures.FL)
 		free(cube->textures.FL);
-	if (cube->textures.SP)
-		free(cube->textures.SP);
+	if (cube->textures.CL)
+		free(cube->textures.CL);
 	if (cube->textures.CE)
 		free(cube->textures.CE);
 	return ;

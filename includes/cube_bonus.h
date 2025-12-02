@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cube_bonus.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/27 18:44:01 by egache           ###   ########.fr       */
+/*   Updated: 2025/12/02 11:12:44 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@
 # define BLUE 0x000000FF
 # define YELLOW 0x00FFFF00
 # define PURPLE 0x00FF00FF
-# define WIDTH 960
-# define HEIGHT 540
+# define WIDTH 1920
+# define HEIGHT 1080
 # define MOUSE_SENSIBILITY 0.02
 # define XBOX 0.2
 # define CHAR_CHECK false
@@ -128,8 +128,6 @@ typedef struct s_map
 	int				*width;
 	char			**grid;
 	char			**final_grid;
-	int				start_x;
-	int				start_y;
 	char			start_dir;
 	bool			door_found;
 
@@ -159,7 +157,6 @@ typedef struct s_minimap
 	int				pixel_x;
 	int				pixel_y;
 	char			c;
-
 	float			center_line_x;
 	float			width_offset_x;
 	float			center_line_y;
@@ -204,7 +201,7 @@ typedef struct s_textures
 	char			*DO;
 	char			*FL;
 	char			*CE;
-	char			*SP;
+	char			*CL;
 	t_img			NO_img;
 	t_img			SO_img[6];
 	t_img			WE_img;
@@ -212,7 +209,7 @@ typedef struct s_textures
 	t_img			DO_img;
 	t_img			FL_img;
 	t_img			CE_img;
-	t_img			SP_img;
+	t_img			CL_img;
 	int				ceiling[3];
 	int				floor[3];
 	int				current_frame;
@@ -235,7 +232,6 @@ typedef struct s_game
 	void			*mlx;
 	void			*windows;
 	struct timeval last_frame; // Timer pour limiter les FPS
-	int frame_limit;           // Limite en microsecondes (16666 = 60 FPS)
 	long			nb_cores;
 	double			delta_time;
 	float			last_mouse_pos_x;
