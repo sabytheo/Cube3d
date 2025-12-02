@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:46:14 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/27 18:26:56 by egache           ###   ########.fr       */
+/*   Updated: 2025/12/02 17:36:35 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,12 @@ static void	init_window_and_img(t_game *cube)
 {
 	cube->windows = mlx_new_window(cube->mlx, WIDTH, HEIGHT, "CUB3D");
 	cube->img->img = mlx_new_image(cube->mlx, WIDTH, HEIGHT);
+	if (!cube->windows || !cube->img->img)
+		free_exit(cube);
 	cube->img->addr = mlx_get_data_addr(cube->img->img, &cube->img->bpp,
 			&cube->img->sl, &cube->img->en);
+	if (!cube->img->addr)
+		free_exit(cube);
 }
 
 int	main(int argc, char **argv)
@@ -69,11 +73,11 @@ int	main(int argc, char **argv)
 	}
 	if (init(&cube))
 		exit(1);
-	if (parse_map(&cube, argv))
+	if (parse_map(&cube, argv) < 0)
 		free_exit(&cube);
 	cube.mlx = mlx_init();
 	if (!cube.mlx)
-		return (1);
+		free_exit(&cube);
 	if (load_textures(&cube, &cube.textures) < 0)
 		free_exit(&cube);
 	init_window_and_img(&cube);
