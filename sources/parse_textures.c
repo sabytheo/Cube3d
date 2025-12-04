@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_textures.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 12:42:42 by tsaby             #+#    #+#             */
-/*   Updated: 2025/12/02 15:43:06 by egache           ###   ########.fr       */
+/*   Updated: 2025/12/02 17:42:17 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static int	skip_and_copy_path(char **path, char *str)
 {
 	skip_textures_identifier(&str);
 	*path = ft_strdup_no_whitespace(str);
-	if (!path)
+	if (!*path)
 		return (-1);
 	return (0);
 }

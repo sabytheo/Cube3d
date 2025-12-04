@@ -6,7 +6,7 @@
 /*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 15:54:05 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/25 16:37:48 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/12/04 13:41:47 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typedef struct s_list
 int					ft_atoi(const char *nbr);
 void				ft_bzero(void *s, size_t n);
 void				*ft_calloc(size_t nmemb, size_t size);
-void	free_tab(char **tab);
+void				free_tab(char **tab);
 int					ft_isalnum(int str);
 int					ft_isalpha(int str);
 int					ft_isascii(int str);
