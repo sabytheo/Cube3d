@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cube_bonus.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/12/02 15:52:33 by egache           ###   ########.fr       */
+/*   Updated: 2025/12/04 13:43:46 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -230,7 +230,7 @@ typedef struct s_game
 {
 	void			*mlx;
 	void			*windows;
-	struct timeval	last_frame; // Timer pour limiter les FPS
+	struct timeval	last_frame;
 	long			nb_cores;
 	double			delta_time;
 	float			last_mouse_pos_x;
