@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycast.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 16:23:49 by tsaby             #+#    #+#             */
-/*   Updated: 2025/12/02 15:52:26 by egache           ###   ########.fr       */
+/*   Updated: 2025/12/09 17:48:18 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,12 +90,13 @@ static void	assign_texture_and_current_hit(t_cube_thread *cube_thread,
 		else if (raycast->dir.y > 0 && current_hit->side == 1)
 			raycast->texture_assigned = &cube_thread->textures.no_img;
 		else if (raycast->dir.y < 0 && current_hit->side == 1)
-		{
 			raycast->texture_assigned = &cube_thread->textures.so_img[frame];
-		}
 	}
 	raycast->distance = current_hit->distance;
-	cube_thread->textures.x = current_hit->texture_x;
+	if (is_texture_inversed(cube_thread, current_hit))
+		cube_thread->textures.x = 1 - current_hit->texture_x;
+	else
+		cube_thread->textures.x = current_hit->texture_x;
 }
 
 static int	render_from_last_wall(t_cube_thread *cube_thread, t_game *cube,

@@ -6,7 +6,7 @@
 /*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/12/04 13:43:46 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/12/09 17:39:03 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -313,6 +313,8 @@ void				render(t_game *cube);
 void				img_pixel_put(t_img *img, int x, int y, int color);
 unsigned int		get_texture_pixel(float text_y, t_img *img, float text_x);
 int					get_color(int red, int green, int blue);
+int					is_texture_inversed(t_cube_thread *cube_thread,
+						t_hit_info *current_hit);
 
 // Render_minimap
 void				render_minimap(t_img *minimap, t_game *cube);
