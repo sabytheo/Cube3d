@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_grid.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 14:33:21 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/25 19:25:45 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/12/09 17:59:54 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ static int	check_char_validity(t_game *cube)
 		{
 			if (!is_a_valid_char(cube, grid[i][j], CHAR_CHECK))
 			{
-				ft_printf_fd(2, E_BAD_CHAR_PARSING, grid[i][j]);
+				ft_printf_fd(2, E_BAD_CHAR_PARSING, grid[i][j]); // A preciser ?
 				return (-1);
 			}
 			j++;
@@ -61,7 +61,7 @@ static int	check_char_validity(t_game *cube)
 	}
 	if (cube->player.found == true)
 		return (0);
-	ft_printf_fd(2, E_MISSING_PLAYER);
+	ft_printf_fd(2, E_MISSING_PLAYER); //GOOD
 	return (-1);
 }
 
@@ -91,7 +91,7 @@ static int	check_grid_validity(int *i, t_game *cube)
 					return (-1);
 				if (flood_fill(*i - cube->map.grid_start, j, cube) < 0)
 				{
-					ft_printf_fd(2, E_BAD_GRID_PARSING);
+					ft_printf_fd(2, E_BAD_GRID_PARSING); //GOOD ?
 					return (-1);
 				}
 				return (0);
@@ -113,7 +113,7 @@ int	parse_grid(int *i, char **grid, t_game *cube)
 		cube->map.grid_height = cube->map.total_height - cube->map.grid_start;
 		if (get_width(cube->map.grid, cube, *i) < 0)
 		{
-			ft_printf_fd(2, E_BAD_MAP_SIZE);
+			ft_printf_fd(2, E_BAD_MAP_SIZE); //GOOD
 			return (-1);
 		}
 		if (check_char_validity(cube) < 0)
@@ -122,6 +122,6 @@ int	parse_grid(int *i, char **grid, t_game *cube)
 			return (-1);
 		return (0);
 	}
-	ft_printf_fd(2, E_BAD_GRID_MISSING);
+	ft_printf_fd(2, E_BAD_GRID_MISSING); //GOOD
 	return (-1);
 }

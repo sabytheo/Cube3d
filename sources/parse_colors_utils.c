@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_colors_utils.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 16:42:11 by egache            #+#    #+#             */
-/*   Updated: 2025/12/02 10:42:09 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/12/09 17:51:05 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	str_is_digit(char *str)
 	{
 		if (!ft_isdigit(str[i]))
 		{
-			ft_printf_fd(2, E_BAD_COLOR_USAGE);
+			ft_printf_fd(2, "Error\nEnter only digits values\n");
 			return (-1);
 		}
 		i++;
@@ -33,7 +33,7 @@ int	check_len_and_skip_space(char **str, int *j, int *len)
 {
 	if (*j > 2)
 	{
-		ft_printf_fd(2, E_BAD_COLOR_USAGE);
+		ft_printf_fd(2, "Erro\nEnter a 3 digit value\n");
 		return (-1);
 	}
 	(*str)++;
@@ -49,7 +49,7 @@ int	check_len_and_skip_space(char **str, int *j, int *len)
 	}
 	if (*len > 3 || *len == 0)
 	{
-		ft_printf_fd(2, E_BAD_COLOR_USAGE);
+		ft_printf_fd(2, "Error\nOne or multiple RGB value missing\n");
 		return (-1);
 	}
 	(*str) -= (*len);

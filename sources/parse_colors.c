@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 13:29:30 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/27 17:57:26 by egache           ###   ########.fr       */
+/*   Updated: 2025/12/09 17:56:58 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static int	check_and_fill_values(char **str, int *j, int *tab)
 	tmp = NULL;
 	if (tab[*j] > 255)
 	{
-		ft_printf_fd(2, E_BAD_COLOR_USAGE);
+		ft_printf_fd(2, "Error\nEach value must be between 0 and 255\n");
 		return (-1);
 	}
 	*str += len;
@@ -54,7 +54,7 @@ static int	get_ceiling_values(char **str, t_textures *textures)
 	if (textures->ceiling[0] != -1 && textures->ceiling[1] != -1
 		&& textures->ceiling[2] != -1)
 		return (0);
-	ft_printf_fd(2, E_BAD_COLOR_USAGE);
+	ft_printf_fd(2, "Error\nOne or multiple RGB value missing\n");
 	return (-1);
 }
 
@@ -72,7 +72,7 @@ static int	get_floor_values(char **str, t_textures *textures)
 	if (textures->floor[0] != -1 && textures->floor[1] != -1
 		&& textures->floor[2] != -1)
 		return (0);
-	ft_printf_fd(2, E_BAD_COLOR_USAGE);
+	ft_printf_fd(2, "Error\nOne or multiple RGB value missing\n");
 	return (-1);
 }
 
@@ -82,7 +82,7 @@ static int	get_colors(char *str, t_textures *textures)
 	{
 		if (textures->floor[0] != -1)
 		{
-			ft_printf_fd(2, E_PARSING_COLORS);
+			ft_printf_fd(2, "Error\nDuplicate floor color\n");
 			return (-1);
 		}
 		if (get_floor_values(&str, textures) < 0)
@@ -92,7 +92,7 @@ static int	get_colors(char *str, t_textures *textures)
 	{
 		if (textures->ceiling[0] != -1)
 		{
-			ft_printf_fd(2, E_PARSING_COLORS);
+			ft_printf_fd(2, "Error\nDuplicate ceiling color\n");
 			return (-1);
 		}
 		if (get_ceiling_values(&str, textures) < 0)
@@ -119,13 +119,13 @@ int	init_colors(int *i, char **grid, t_game *cube)
 		}
 		else if (!is_only_whitespace(i, grid))
 		{
-			ft_printf_fd(2, E_PARSING_COLORS);
+			ft_printf_fd(2, "Error\nMissing one color\n");
 			return (-1);
 		}
 		(*i)++;
 		if (count == COLORS_FOUND)
 			return (0);
 	}
-	ft_printf_fd(2, E_PARSING_COLORS);
+	ft_printf_fd(2, E_PARSING_COLORS); // A DETERMINER
 	return (-1);
 }
