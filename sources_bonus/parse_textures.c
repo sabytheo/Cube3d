@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_textures.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 12:42:42 by tsaby             #+#    #+#             */
-/*   Updated: 2025/12/02 17:44:54 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/12/10 21:55:16 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ static int	copy_bonus_textures(char *str, t_textures *textures)
 	return (-1);
 }
 
+#include <stdio.h>
 int	init_textures(int *i, char **grid, t_game *cube)
 {
 	int	count;
@@ -78,6 +79,6 @@ int	init_textures(int *i, char **grid, t_game *cube)
 		if (count == TEXTURES_FOUND)
 			return (0);
 	}
-	ft_printf_fd(2, E_PARSING_TEXTURES);
+	ft_printf_fd(2, "Error\nUnexpected line : %s4 textures are expected\nOne of each : [\"NO \", \"SO \", \"WE \", \"EA \", \"OD \", \"CD \", \"FL \", \"CE \"]\n", grid[*i]);
 	return (-1);
 }

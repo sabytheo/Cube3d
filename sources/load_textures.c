@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 16:21:32 by egache            #+#    #+#             */
-/*   Updated: 2025/12/09 18:43:24 by egache           ###   ########.fr       */
+/*   Updated: 2025/12/10 18:58:25 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static int	xpm_to_image(t_game *cube, t_textures *textures)
 	if (!cube->textures.no_img.img || !cube->textures.ea_img.img
 		|| !cube->textures.so_img.img || !cube->textures.we_img.img)
 	{
-		ft_printf_fd(2, "Error\nEmpty or wrong path\n"); // WHERE
+		ft_printf_fd(2, "Error\nUnexpected texture path\n");
 		return (-1);
 	}
 	return (0);

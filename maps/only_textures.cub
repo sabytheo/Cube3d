@@ -3,8 +3,6 @@ SO ./assets/Brick_sud.xpm
 WE ./assets/Brick_west.xpm
 EA ./assets/Brick_est.xpm
 
-C 253,108,158
-F 254,108,156
 
         11111
         10001

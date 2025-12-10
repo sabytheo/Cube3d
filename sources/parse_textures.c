@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 12:42:42 by tsaby             #+#    #+#             */
-/*   Updated: 2025/12/09 18:43:56 by egache           ###   ########.fr       */
+/*   Updated: 2025/12/10 21:23:58y egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,13 @@ static int	skip_and_copy_path(char **path, char *str)
 static int	cp_mand_textures(char *str, t_textures *textures)
 {
 	if (ft_strncmp(str, "NO ", 3) == 0 && !textures->no)
-		return (skip_and_copy_path(&textures->no, str));
+			return (skip_and_copy_path(&textures->no, str));
 	else if (ft_strncmp(str, "SO ", 3) == 0 && !textures->so)
-		return (skip_and_copy_path(&textures->so, str));
+			return (skip_and_copy_path(&textures->so, str));
 	else if (ft_strncmp(str, "WE ", 3) == 0 && !textures->we)
-		return (skip_and_copy_path(&textures->we, str));
+			return (skip_and_copy_path(&textures->we, str));
 	else if (ft_strncmp(str, "EA ", 3) == 0 && !textures->ea)
-		return (skip_and_copy_path(&textures->ea, str));
+			return (skip_and_copy_path(&textures->ea, str));
 	return (-1);
 }
 
@@ -64,11 +64,11 @@ int	init_textures(int *i, char **grid, t_game *cube)
 			count++;
 		}
 		else if (!is_only_whitespace(i, grid))
-			break ;
+				break ;
 		(*i)++;
 		if (count == TEXTURES_FOUND)
 			return (0);
 	}
-	ft_printf_fd(2, "Error\nMissing one or multiple textures\n");
+	ft_printf_fd(2, "Error\nUnexpected line : %s4 textures are expected\nOne of each : [\"NO \" \"SO \" \"WE \" \"EA \"]\n", grid[*i]);
 	return (-1);
 }

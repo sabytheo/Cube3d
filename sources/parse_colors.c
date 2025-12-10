@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 13:29:30 by tsaby             #+#    #+#             */
-/*   Updated: 2025/12/09 17:56:58 by egache           ###   ########.fr       */
+/*   Updated: 2025/12/10 21:42:15 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,13 +119,12 @@ int	init_colors(int *i, char **grid, t_game *cube)
 		}
 		else if (!is_only_whitespace(i, grid))
 		{
-			ft_printf_fd(2, "Error\nMissing one color\n");
-			return (-1);
+			break ;
 		}
 		(*i)++;
 		if (count == COLORS_FOUND)
 			return (0);
 	}
-	ft_printf_fd(2, E_PARSING_COLORS); // A DETERMINER
-	return (-1);
+	ft_printf_fd(2, "Error\nUnexpected line : %s2 colors are expected\nOne of each : [\"C \" \"F \"]\n", grid[*i]);
+	 return (-1);
 }

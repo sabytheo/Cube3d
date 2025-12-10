@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 16:15:05 by egache            #+#    #+#             */
-/*   Updated: 2025/12/02 15:52:26 by egache           ###   ########.fr       */
+/*   Updated: 2025/12/10 18:58:01 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static int	xpm_addr_animated(t_game *cube, t_textures *textures)
 				&textures->so_img[i].ht);
 		if (!cube->textures.so_img[i].img)
 		{
-			ft_printf_fd(2, E_WRONG_PATH);
+			ft_printf_fd(2, "Error\nUnexpected texture path\n");
 			return (-1);
 		}
 		textures->so_img[i].addr = mlx_get_data_addr(textures->so_img[i].img,
@@ -60,7 +60,7 @@ static int	xpm_to_image(t_game *cube, t_textures *textures)
 		|| !cube->textures.fl_img.img || !cube->textures.ce_img.img
 		|| !cube->textures.cd_img.img)
 	{
-		ft_printf_fd(2, E_WRONG_PATH);
+		ft_printf_fd(2, "Error\nUnexpected texture path\n");
 		return (-1);
 	}
 	return (0);
@@ -76,7 +76,10 @@ static int	get_data_addr_cardinal(t_textures *textures)
 			&textures->we_img.bpp, &textures->we_img.sl, &textures->we_img.en);
 	if (!textures->no_img.addr || !textures->ea_img.addr
 		|| !textures->we_img.addr)
+	{
+		ft_printf_fd(2, "Error\nFailed to get image data address\n");
 		return (-1);
+	}
 	return (0);
 }
 
