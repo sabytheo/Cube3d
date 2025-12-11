@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 13:29:30 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/27 17:57:26 by egache           ###   ########.fr       */
+/*   Updated: 2025/12/11 15:59:24 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ static int	get_colors(char *str, t_textures *textures)
 	{
 		if (textures->floor[0] != -1)
 		{
-			ft_printf_fd(2, E_PARSING_COLORS);
+			ft_printf_fd(2, E_BAD_COLOR_PARSING, str);
 			return (-1);
 		}
 		if (get_floor_values(&str, textures) < 0)
@@ -92,7 +92,7 @@ static int	get_colors(char *str, t_textures *textures)
 	{
 		if (textures->ceiling[0] != -1)
 		{
-			ft_printf_fd(2, E_PARSING_COLORS);
+			ft_printf_fd(2, E_BAD_COLOR_PARSING, str);
 			return (-1);
 		}
 		if (get_ceiling_values(&str, textures) < 0)
@@ -119,13 +119,12 @@ int	init_colors(int *i, char **grid, t_game *cube)
 		}
 		else if (!is_only_whitespace(i, grid))
 		{
-			ft_printf_fd(2, E_PARSING_COLORS);
-			return (-1);
+			break ;
 		}
 		(*i)++;
 		if (count == COLORS_FOUND)
 			return (0);
 	}
-	ft_printf_fd(2, E_PARSING_COLORS);
+	ft_printf_fd(2, E_BAD_COLOR_PARSING, grid[*i]);
 	return (-1);
 }

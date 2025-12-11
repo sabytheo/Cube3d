@@ -6,24 +6,26 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/19 13:18:37 by tsaby             #+#    #+#             */
-/*   Updated: 2025/12/02 14:38:46 by egache           ###   ########.fr       */
+/*   Updated: 2025/12/11 15:52:50 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ERROR_BONUS_H
 # define ERROR_BONUS_H
 
-# define E_WRONG_INIT "Error :\nUse valid window or XBOX values\n"
-# define E_WRONG_EXT "Error :\nFile extension must be .cub\n"
-# define E_EMPTY_FILE "Error :\nEmpty file\n"
-# define E_TEXT_MISS "Error\nTextures are missing\n"
-# define E_MISSING_PLAYER "Error:\nMissing player char\n"
-# define E_WRONG_PATH "Error :\nWrong path for texture\n"
-# define E_PARSING_TEXTURES "Error :\nTextures parsing issue\n"
-# define E_BAD_FD "Error :\nOpen failed\n"
-# define E_BAD_CHAR_PARSING "Error :\nWrong grid character : %c\n"
-# define E_BAD_GRID_PARSING "Error :\nMap should be surrounded by walls\n"
-# define E_BAD_GRID_MISSING "Error :\nMap missing\n"
-# define E_BAD_MAP_SIZE "Error :\nMap too long\n"
+# define E_WRONG_INIT "Error\nUse valid window or hitbox values\n"
+# define E_WRONG_EXT "Error\nFile extension must be .cub\n"
+# define E_EMPTY_FILE "Error\nEmpty file\n"
+# define E_MISSING_PLAYER "Error\nMissing player character\n"
+# define E_WRONG_PATH "Error\nUnexpected path for texture\n"
+# define E_BAD_DATA_ADDR "Error\nFailed to get image data address\n"
+# define E_BAD_TEXT_PARSING "Error\nUnexpected line : %s\
+8 textures are expected\n1 of each : [\"NO \", \"WE \", \"EA \", \"OD \", \"CD \", \"FL \", \"CE \"]\n\
+6 of this : [\"SO \"]\n"
+# define E_BAD_FD "Error\nOpen failed\n"
+# define E_BAD_CHAR_PARSING "Error\nUnexpected grid character : %c\n"
+# define E_BAD_GRID_PARSING "Error\nMap should be surrounded by walls\n"
+# define E_BAD_GRID_MISSING "Error\nMap missing\n"
+# define E_BAD_MAP_SIZE "Error\nMap too long\n"
 
 #endif

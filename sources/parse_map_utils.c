@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_map_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 16:20:16 by egache            #+#    #+#             */
-/*   Updated: 2025/11/28 19:02:56 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/12/11 15:59:15 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,12 @@ int	init_textures_then_colors(t_game *cube, int *i, char **grid)
 {
 	if (init_textures(i, grid, cube) < 0)
 		return (-1);
-	while (ft_strncmp("F ", grid[*i], 2) != 0 && ft_strncmp("C ", grid[*i],
-			2) != 0)
+	while (grid[*i] && ft_strncmp("F ", grid[*i], 2) != 0
+		&& ft_strncmp("C ", grid[*i], 2) != 0)
 	{
 		if (!is_only_whitespace(i, grid))
 		{
-			ft_printf_fd(2, E_COLORS_MISS);
+			ft_printf_fd(2, E_BAD_COLOR_PARSING, grid[*i]);
 			return (-1);
 		}
 		(*i)++;
@@ -63,11 +63,11 @@ int	init_colors_then_textures(t_game *cube, int *i, char **grid)
 {
 	if (init_colors(i, grid, cube) < 0)
 		return (-1);
-	while (is_valid_texture(grid, *i) < 0)
+	while (grid[*i] && is_valid_texture(grid, *i) < 0)
 	{
 		if (!is_only_whitespace(i, grid))
 		{
-			ft_printf_fd(2, E_TEXT_MISS);
+			ft_printf_fd(2, E_BAD_TEXT_PARSING, grid[*i]);
 			return (-1);
 		}
 		(*i)++;

@@ -6,7 +6,7 @@
 #    By: egache <egache@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: Invalid date        by                   #+#    #+#              #
-#    Updated: 2025/12/09 15:26:40 by egache           ###   ########.fr        #
+#    Updated: 2025/12/09 17:19:09 by egache           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -97,6 +97,8 @@ CFLAGS		:=	-Wall -Wextra -Werror -g3
 NAME		:=	cub3D
 
 VFLAGS		=	--leak-check=full --show-leak-kinds=all --track-origins=yes
+
+# MAKEFLAGS	:= -j4
 
 NAME_B		:=	cub3D_bonus
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_textures.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 12:42:42 by tsaby             #+#    #+#             */
-/*   Updated: 2025/12/02 17:44:54 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/12/11 15:51:17 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,6 @@ int	init_textures(int *i, char **grid, t_game *cube)
 		if (count == TEXTURES_FOUND)
 			return (0);
 	}
-	ft_printf_fd(2, E_PARSING_TEXTURES);
+	ft_printf_fd(2, E_BAD_TEXT_PARSING, grid[*i]);
 	return (-1);
 }

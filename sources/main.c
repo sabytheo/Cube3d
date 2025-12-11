@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:46:14 by tsaby             #+#    #+#             */
-/*   Updated: 2025/12/04 14:17:36 by egache           ###   ########.fr       */
+/*   Updated: 2025/12/11 15:53:48 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ int	main(int argc, char **argv)
 
 	if (argc != 2)
 	{
-		write(2, "Error :\nNumber of arguments invalid\n", 28);
+		write(2, "Error\nNumber of arguments invalid\n", 28);
 		exit(1);
 	}
 	if (init(&cube))
