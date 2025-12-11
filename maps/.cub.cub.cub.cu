@@ -1,10 +1,10 @@
-NO ./assets/Brick_nord.xpm
-SO ./assets/Brick_sud.xpm
+NO ./assets/Brick_north.xpm
+SO ./assets/Brick_south.xpm
 WE ./assets/Brick_west.xpm
-EA ./assets/Brick_est.xpm
+EA ./assets/Brick_east.xpm
 
 C 253,108,158
-F 253,a,123
+F 253,000,123
 
         11111
         10001

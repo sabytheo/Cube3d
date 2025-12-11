@@ -1,5 +1,5 @@
 /* XPM */
-static char * Brick_nord_xpm[] = {
+static char * Brick_north_xpm[] = {
 "256 256 124 2",
 "  	c #434343",
 ". 	c #363636",

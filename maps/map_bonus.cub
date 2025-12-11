@@ -1,12 +1,12 @@
-NO ./assets/Brick_nord.xpm
+NO ./assets/Brick_north.xpm
 SO ./assets/Brick0.xpm
 SO ./assets/Brick0.xpm
 SO ./assets/Brick1.xpm
 SO ./assets/Brick2.xpm
 SO ./assets/Brick3.xpm
 SO ./assets/Brick4.xpm
-WE ./assets/Brick_sud.xpm
-EA ./assets/Brick_est.xpm
+WE ./assets/Brick_south.xpm
+EA ./assets/Brick_east.xpm
 OD ./assets/Door_open2.xpm
 CD ./assets/Door_closed2.xpm
 FL ./assets/floor2.xpm

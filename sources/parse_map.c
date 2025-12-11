@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 19:35:31 by tsaby             #+#    #+#             */
-/*   Updated: 2025/12/11 15:56:44 by egache           ###   ########.fr       */
+/*   Updated: 2025/12/11 18:35:06 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,15 @@ static int	check_arg(char *mapname)
 	char	*s;
 
 	s = ".cub\0";
-	if (ft_strlen(mapname) < 5 || !ft_strchr(mapname, '.'))
+	if (ft_strcmp(mapname + 5, s) == 0)
 	{
 		ft_printf_fd(2, E_WRONG_EXT);
 		return (-1);
 	}
-	if ((ft_strncmp(ft_strchr(mapname, '.'), s, 5)) != 0)
+	while (*mapname)
+		mapname++;
+	mapname -= 4;
+	if (ft_strcmp(mapname, s) != 0)
 	{
 		ft_printf_fd(2, E_WRONG_EXT);
 		return (-1);
