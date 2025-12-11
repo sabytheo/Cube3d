@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 16:42:11 by egache            #+#    #+#             */
-/*   Updated: 2025/12/09 17:51:05 by egache           ###   ########.fr       */
+/*   Updated: 2025/12/11 15:47:26 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	str_is_digit(char *str)
 	{
 		if (!ft_isdigit(str[i]))
 		{
-			ft_printf_fd(2, "Error\nEnter only digits values\n");
+			ft_printf_fd(2, E_BAD_COLOR_USAGE);
 			return (-1);
 		}
 		i++;
@@ -33,7 +33,7 @@ int	check_len_and_skip_space(char **str, int *j, int *len)
 {
 	if (*j > 2)
 	{
-		ft_printf_fd(2, "Erro\nEnter a 3 digit value\n");
+		ft_printf_fd(2, E_BAD_COLOR_USAGE);
 		return (-1);
 	}
 	(*str)++;
@@ -49,7 +49,7 @@ int	check_len_and_skip_space(char **str, int *j, int *len)
 	}
 	if (*len > 3 || *len == 0)
 	{
-		ft_printf_fd(2, "Error\nOne or multiple RGB value missing\n");
+		ft_printf_fd(2, E_BAD_COLOR_USAGE);
 		return (-1);
 	}
 	(*str) -= (*len);

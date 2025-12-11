@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 16:20:16 by egache            #+#    #+#             */
-/*   Updated: 2025/12/10 21:45:42 by egache           ###   ########.fr       */
+/*   Updated: 2025/12/11 15:27:31 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int	init_textures_then_colors(t_game *cube, int *i, char **grid)
 	{
 		if (!is_only_whitespace(i, grid))
 		{
-			ft_printf_fd(2, "Error\nUnexpected line : %s2 colors are expected\nOne of each : [\"C \" \"F \"]\n", grid[*i]);
+			ft_printf_fd(2, "Error\nUnexpected line : %s2 colors are expected\n1 of each : [\"C \" \"F \"]\n", grid[*i]);
 			return (-1);
 		}
 		(*i)++;
@@ -67,7 +67,7 @@ int	init_colors_then_textures(t_game *cube, int *i, char **grid)
 	{
 		if (!is_only_whitespace(i, grid))
 		{
-			ft_printf_fd(2, "Error\nUnexpected line : %s4 textures are expected\nOne of each : [\"NO \" \"SO \" \"WE \" \"EA \"]\n", grid[*i]);
+			ft_printf_fd(2, "Error\nUnexpected line : %s4 textures are expected\n1 of each : [\"NO \" \"SO \" \"WE \" \"EA \"]\n", grid[*i]);
 			return (-1);
 		}
 		(*i)++;

@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 12:42:42 by tsaby             #+#    #+#             */
-/*   Updated: 2025/12/10 21:55:16 by egache           ###   ########.fr       */
+/*   Updated: 2025/12/11 15:51:17 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ static int	copy_bonus_textures(char *str, t_textures *textures)
 	return (-1);
 }
 
-#include <stdio.h>
 int	init_textures(int *i, char **grid, t_game *cube)
 {
 	int	count;
@@ -79,6 +78,6 @@ int	init_textures(int *i, char **grid, t_game *cube)
 		if (count == TEXTURES_FOUND)
 			return (0);
 	}
-	ft_printf_fd(2, "Error\nUnexpected line : %s4 textures are expected\nOne of each : [\"NO \", \"SO \", \"WE \", \"EA \", \"OD \", \"CD \", \"FL \", \"CE \"]\n", grid[*i]);
+	ft_printf_fd(2, E_BAD_TEXT_PARSING, grid[*i]);
 	return (-1);
 }

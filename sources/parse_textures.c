@@ -69,6 +69,6 @@ int	init_textures(int *i, char **grid, t_game *cube)
 		if (count == TEXTURES_FOUND)
 			return (0);
 	}
-	ft_printf_fd(2, "Error\nUnexpected line : %s4 textures are expected\nOne of each : [\"NO \" \"SO \" \"WE \" \"EA \"]\n", grid[*i]);
+	ft_printf_fd(2, E_BAD_TEXT_PARSING, grid[*i]);
 	return (-1);
 }

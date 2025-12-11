@@ -8,6 +8,7 @@ SO ./assets/Brick4.xpm
 WE ./assets/Brick_west.xpm
 EA ./assets/Brick_est.xpm
 OD ./assets/Door_open2.xpm
+CD ./assets/Door_closed2.xpm
 FL ./assets/floor2.xpm
 CE ./assets/ceiling.xpm
 
