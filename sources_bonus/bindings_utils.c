@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 12:28:58 by tsaby             #+#    #+#             */
-/*   Updated: 2025/11/26 15:08:58 by egache           ###   ########.fr       */
+/*   Updated: 2025/12/11 17:48:24 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,27 @@
 
 void	camera_mouse_control(t_game *cube)
 {
-	static int	mouse_x = 0;
-	static int	mouse_y = 0;
-	double		movement_x;
-	int			center_x;
-	double		rotation;
+	int			mouse_x;
+	int			mouse_y;
+	int			mouvement_x;
+	static int	old_x = WIDTH / 2;
 
 	if (cube->key.tab)
 	{
-		center_x = WIDTH / 2;
 		mlx_mouse_hide(cube->mlx, cube->windows);
 		mlx_mouse_get_pos(cube->mlx, cube->windows, &mouse_x, &mouse_y);
-		movement_x = (double)(mouse_x - center_x);
-		if (fabs(movement_x) > 1)
+		mouvement_x = mouse_x - old_x;
+		if (mouvement_x == 0)
+			return ;
+		cube->player.angle -= mouvement_x * MOUSE_SENSIBILITY
+			* cube->player.rotation_speed * cube->delta_time;
+		if (mouse_x < WIDTH * 0.1 || mouse_x > WIDTH * 0.9)
 		{
-			mlx_mouse_move(cube->mlx, cube->windows, center_x, HEIGHT / 2);
-			rotation = MOUSE_SENSIBILITY * movement_x
-				* cube->player.rotation_speed * cube->delta_time;
-			cube->player.angle -= rotation;
+			mlx_mouse_move(cube->mlx, cube->windows, WIDTH / 2, HEIGHT / 2);
+			old_x = WIDTH / 2;
 		}
+		else
+			old_x = mouse_x;
 	}
 	else
 		mlx_mouse_show(cube->mlx, cube->windows);
