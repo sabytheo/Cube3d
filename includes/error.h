@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/19 13:18:37 by tsaby             #+#    #+#             */
-/*   Updated: 2025/12/11 15:48:37 by egache           ###   ########.fr       */
+/*   Updated: 2025/12/11 15:56:28 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,9 @@
 # define E_MISSING_PLAYER "Error\nMissing player character\n"
 # define E_BAD_COLOR_USAGE "Error\nEmpty field or bad format\n\
 Enter 3 values between 0 and 255\n"
+# define E_BEFORE_PARSING "Error\nUnexpected line : %s\
+2 colors are expected\n1 of each : [\"C \" \"F \"]\n\
+4 textures are expected\n1 of each : [\"NO \" \"SO \" \"WE \" \"EA \"]\n"
 # define E_BAD_TEXT_PARSING "Error\nUnexpected line : %s\
 4 textures are expected\n1 of each : [\"NO \" \"SO \" \"WE \" \"EA \"]\n"
 # define E_BAD_COLOR_PARSING "Error\nUnexpected line : %s\

@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 19:35:31 by tsaby             #+#    #+#             */
-/*   Updated: 2025/12/11 15:27:31 by egache           ###   ########.fr       */
+/*   Updated: 2025/12/11 15:56:44 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ static int	parse_textures_and_colors(t_game *cube, char **grid, int *i)
 		}
 		else if (!is_only_whitespace(i, grid))
 		{
-			ft_printf_fd(2, "Error\nUnexpected line : %s2 colors are expected\n1 of each : [\"C \" \"F \"]\n4 textures are expected\n1 of each : [\"NO \" \"SO \" \"WE \" \"EA \"]\n", grid[*i]);
+			ft_printf_fd(2, E_BEFORE_PARSING, grid[*i]);
 			return (-1);
 		}
 		(*i)++;

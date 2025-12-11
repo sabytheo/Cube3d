@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 13:29:30 by tsaby             #+#    #+#             */
-/*   Updated: 2025/12/11 15:45:46 by egache           ###   ########.fr       */
+/*   Updated: 2025/12/11 15:59:24 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,5 +126,5 @@ int	init_colors(int *i, char **grid, t_game *cube)
 			return (0);
 	}
 	ft_printf_fd(2, E_BAD_COLOR_PARSING, grid[*i]);
-	 return (-1);
+	return (-1);
 }
