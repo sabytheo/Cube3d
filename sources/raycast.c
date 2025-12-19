@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycast.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 14:33:01 by tsaby             #+#    #+#             */
-/*   Updated: 2025/12/11 16:03:24 by egache           ###   ########.fr       */
+/*   Updated: 2025/12/19 09:31:07 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,13 +68,13 @@ static t_img	*assign_texture_and_render(t_textures *textures,
 	if (raycast->dir.x > 0 && side == 0)
 	{
 		textures->y = textures->ea_img.ht / raycast->wall_height;
-		return (&textures->ea_img);
+		return (&textures->we_img);
 	}
 	else if (raycast->dir.x < 0 && side == 0)
 	{
 		textures->y = textures->we_img.ht / raycast->wall_height;
 		textures->x = 1 - textures->x;
-		return (&textures->we_img);
+		return (&textures->ea_img);
 	}
 	else if (raycast->dir.y > 0 && side == 1)
 	{
