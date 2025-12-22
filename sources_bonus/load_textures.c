@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 16:15:05 by egache            #+#    #+#             */
-/*   Updated: 2025/12/11 15:52:57 by egache           ###   ########.fr       */
+/*   Updated: 2025/12/22 14:47:20 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,18 @@ static int	xpm_addr_animated(t_game *cube, t_textures *textures)
 	i = 0;
 	while (i < 6)
 	{
-		cube->textures.so_img[i].img = mlx_xpm_file_to_image(cube->mlx,
-				textures->so[i], &textures->so_img[i].wh,
-				&textures->so_img[i].ht);
-		if (!cube->textures.so_img[i].img)
+		cube->textures.we_img[i].img = mlx_xpm_file_to_image(cube->mlx,
+				textures->we[i], &textures->we_img[i].wh,
+				&textures->we_img[i].ht);
+		if (!cube->textures.we_img[i].img)
 		{
 			ft_printf_fd(2, "Error\nUnexpected texture path\n");
 			return (-1);
 		}
-		textures->so_img[i].addr = mlx_get_data_addr(textures->so_img[i].img,
-				&textures->so_img[i].bpp, &textures->so_img[i].sl,
-				&textures->so_img[i].en);
-		if (!textures->so_img[i].addr)
+		textures->we_img[i].addr = mlx_get_data_addr(textures->we_img[i].img,
+				&textures->we_img[i].bpp, &textures->we_img[i].sl,
+				&textures->we_img[i].en);
+		if (!textures->we_img[i].addr)
 			return (-1);
 		i++;
 	}
@@ -45,8 +45,8 @@ static int	xpm_to_image(t_game *cube, t_textures *textures)
 			&textures->no_img.wh, &textures->no_img.ht);
 	cube->textures.ea_img.img = mlx_xpm_file_to_image(cube->mlx, textures->ea,
 			&textures->ea_img.wh, &textures->ea_img.ht);
-	cube->textures.we_img.img = mlx_xpm_file_to_image(cube->mlx, textures->we,
-			&textures->we_img.wh, &textures->we_img.ht);
+	cube->textures.so_img.img = mlx_xpm_file_to_image(cube->mlx, textures->so,
+			&textures->so_img.wh, &textures->so_img.ht);
 	cube->textures.od_img.img = mlx_xpm_file_to_image(cube->mlx, textures->od,
 			&textures->od_img.wh, &textures->od_img.ht);
 	cube->textures.fl_img.img = mlx_xpm_file_to_image(cube->mlx, textures->fl,
@@ -56,7 +56,7 @@ static int	xpm_to_image(t_game *cube, t_textures *textures)
 	cube->textures.cd_img.img = mlx_xpm_file_to_image(cube->mlx, textures->cd,
 			&textures->cd_img.wh, &textures->cd_img.ht);
 	if (!cube->textures.no_img.img || !cube->textures.ea_img.img
-		|| !cube->textures.we_img.img || !cube->textures.od_img.img
+		|| !cube->textures.so_img.img || !cube->textures.od_img.img
 		|| !cube->textures.fl_img.img || !cube->textures.ce_img.img
 		|| !cube->textures.cd_img.img)
 	{
@@ -72,10 +72,10 @@ static int	get_data_addr_cardinal(t_textures *textures)
 			&textures->no_img.bpp, &textures->no_img.sl, &textures->no_img.en);
 	textures->ea_img.addr = mlx_get_data_addr(textures->ea_img.img,
 			&textures->ea_img.bpp, &textures->ea_img.sl, &textures->ea_img.en);
-	textures->we_img.addr = mlx_get_data_addr(textures->we_img.img,
-			&textures->we_img.bpp, &textures->we_img.sl, &textures->we_img.en);
+	textures->so_img.addr = mlx_get_data_addr(textures->so_img.img,
+			&textures->so_img.bpp, &textures->so_img.sl, &textures->so_img.en);
 	if (!textures->no_img.addr || !textures->ea_img.addr
-		|| !textures->we_img.addr)
+		|| !textures->so_img.addr)
 	{
 		ft_printf_fd(2, E_BAD_DATA_ADDR);
 		return (-1);

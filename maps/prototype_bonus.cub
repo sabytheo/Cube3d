@@ -1,16 +1,16 @@
 NO ./assets/prototype_north.xpm
-SO ./assets/prototype_south.xpm
-SO ./assets/Brick0.xpm
-SO ./assets/Brick1.xpm
-SO ./assets/Brick2.xpm
-SO ./assets/Brick3.xpm
-SO ./assets/Brick4.xpm
 WE ./assets/prototype_west.xpm
+WE ./assets/prototype_west.xpm
+WE ./assets/prototype_west.xpm
+WE ./assets/prototype_west.xpm
+WE ./assets/prototype_west.xpm
+WE ./assets/prototype_west.xpm
+SO ./assets/prototype_south.xpm
 EA ./assets/prototype_east.xpm
-OD ./assets/Door_open2.xpm
+OD ./assets/Door_open.xpm
 FL ./assets/prototype_green.xpm
 CE ./assets/prototype_red.xpm
-CD ./assets/Door_closed2.xpm
+CD ./assets/Door_closed.xpm
 
 1111111111111111111111111111111111111111
 1000000000000000000111111111111111111111

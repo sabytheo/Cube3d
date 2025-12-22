@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cube.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/12/04 13:43:54 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/12/22 14:31:22 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,19 +24,9 @@
 # include <stdbool.h>
 # include <sys/time.h>
 
-# define _GNU_SOURCE
-# define WHITE 0x00FFFFFF
-# define BLACK 0x00000000
-# define RED 0x00FF0000
-# define GREEN 0x0000FF00
-# define BLUE 0x000000FF
-# define YELLOW 0x00FFFF00
-# define PURPLE 0x00FF00FF
 # define WIDTH 1920
 # define HEIGHT 1080
 # define XBOX 0.2
-# define DEG_TO_RAD 0.017453293 //(1 / 180) * PI
-# define TEXTURE_EXIST 0
 # define CHAR_CHECK false
 # define GRID_CHECK true
 

@@ -1,15 +1,15 @@
 NO ./assets/Brick_north.xpm
-SO ./assets/Brick0.xpm
-SO ./assets/Brick0.xpm
-SO ./assets/Brick1.xpm
-SO ./assets/Brick2.xpm
-SO ./assets/Brick3.xpm
-SO ./assets/Brick4.xpm
-WE ./assets/Brick_south.xpm
+WE ./assets/Brick0_west.xpm
+WE ./assets/Brick0_west.xpm
+WE ./assets/Brick1_west.xpm
+WE ./assets/Brick2_west.xpm
+WE ./assets/Brick3_west.xpm
+WE ./assets/Brick4_west.xpm
+SO ./assets/Brick_south.xpm
 EA ./assets/Brick_east.xpm
-OD ./assets/Door_open2.xpm
-CD ./assets/Door_closed2.xpm
-FL ./assets/floor2.xpm
+OD ./assets/Door_open.xpm
+CD ./assets/Door_closed.xpm
+FL ./assets/floor.xpm
 CE ./assets/ceiling.xpm
 
 1111111111111111111111111111111111111111

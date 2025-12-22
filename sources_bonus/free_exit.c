@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 15:37:43 by tsaby             #+#    #+#             */
-/*   Updated: 2025/12/02 15:52:26 by egache           ###   ########.fr       */
+/*   Updated: 2025/12/22 14:47:53 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ static void	clean_animation(t_game *cube)
 	i = 0;
 	while (i < 6)
 	{
-		if (cube->textures.so_img[i].img)
-			mlx_destroy_image(cube->mlx, cube->textures.so_img[i].img);
-		if (cube->textures.so[i])
-			free(cube->textures.so[i]);
+		if (cube->textures.we_img[i].img)
+			mlx_destroy_image(cube->mlx, cube->textures.we_img[i].img);
+		if (cube->textures.we[i])
+			free(cube->textures.we[i]);
 		i++;
 	}
 }
@@ -37,8 +37,8 @@ static void	destroy_image(t_game *cube)
 		mlx_destroy_image(cube->mlx, cube->minimap_img->img);
 	if (cube->textures.no_img.img)
 		mlx_destroy_image(cube->mlx, cube->textures.no_img.img);
-	if (cube->textures.we_img.img)
-		mlx_destroy_image(cube->mlx, cube->textures.we_img.img);
+	if (cube->textures.so_img.img)
+		mlx_destroy_image(cube->mlx, cube->textures.so_img.img);
 	if (cube->textures.od_img.img)
 		mlx_destroy_image(cube->mlx, cube->textures.od_img.img);
 	if (cube->textures.fl_img.img)
@@ -54,8 +54,8 @@ static void	clean_textures(t_game *cube)
 {
 	if (cube->textures.no)
 		free(cube->textures.no);
-	if (cube->textures.we)
-		free(cube->textures.we);
+	if (cube->textures.so)
+		free(cube->textures.so);
 	if (cube->textures.ea)
 		free(cube->textures.ea);
 	if (cube->textures.od)

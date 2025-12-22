@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:04 by tsaby             #+#    #+#             */
-/*   Updated: 2025/12/11 17:35:09 by egache           ###   ########.fr       */
+/*   Updated: 2025/12/22 14:44:47 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,22 +25,13 @@
 # include <stdbool.h>
 # include <sys/time.h>
 
-# define _GNU_SOURCE
-# define WHITE 0x00FFFFFF
-# define BLACK 0x00000000
-# define RED 0x00FF0000
-# define GREEN 0x0000FF00
-# define BLUE 0x000000FF
-# define YELLOW 0x00FFFF00
-# define PURPLE 0x00FF00FF
 # define WIDTH 1920
 # define HEIGHT 1080
 # define MOUSE_SENSIBILITY 0.02
 # define XBOX 0.2
 # define CHAR_CHECK false
 # define GRID_CHECK true
-# define ANIMATED_SPRITE 5
-# define TEXTURE_EXIST 0
+# define ANIMATED_SPRITE 6
 
 enum
 {
@@ -194,16 +185,16 @@ enum				e_direction
 typedef struct s_textures
 {
 	char			*no;
-	char			*so[6];
-	char			*we;
+	char			*so;
+	char			*we[6];
 	char			*ea;
 	char			*od;
 	char			*fl;
 	char			*ce;
 	char			*cd;
 	t_img			no_img;
-	t_img			so_img[6];
-	t_img			we_img;
+	t_img			so_img;
+	t_img			we_img[6];
 	t_img			ea_img;
 	t_img			od_img;
 	t_img			fl_img;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycast.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 16:23:49 by tsaby             #+#    #+#             */
-/*   Updated: 2025/12/19 09:36:58 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/12/22 14:48:52 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,13 +84,13 @@ static void	assign_texture_and_current_hit(t_cube_thread *cube_thread,
 	else
 	{
 		if (raycast->dir.x > 0 && current_hit->side == 0)
-			raycast->texture_assigned = &cube_thread->textures.we_img;
+			raycast->texture_assigned = &cube_thread->textures.we_img[frame];
 		else if (raycast->dir.x < 0 && current_hit->side == 0)
 			raycast->texture_assigned = &cube_thread->textures.ea_img;
 		else if (raycast->dir.y > 0 && current_hit->side == 1)
 			raycast->texture_assigned = &cube_thread->textures.no_img;
 		else if (raycast->dir.y < 0 && current_hit->side == 1)
-			raycast->texture_assigned = &cube_thread->textures.so_img[frame];
+			raycast->texture_assigned = &cube_thread->textures.so_img;
 	}
 	raycast->distance = current_hit->distance;
 	if (is_texture_inversed(cube_thread, current_hit))

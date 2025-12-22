@@ -6,13 +6,14 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/19 13:18:37 by tsaby             #+#    #+#             */
-/*   Updated: 2025/12/11 15:56:28 by egache           ###   ########.fr       */
+/*   Updated: 2025/12/22 14:28:09 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ERROR_H
 # define ERROR_H
 
+# define E_BAD_ARG "Error\nNumber of arguments invalid\n"
 # define E_WRONG_INIT "Error\nUse valid window or hitbox values\n"
 # define E_WRONG_EXT "Error\nFile extension must be .cub\n"
 # define E_EMPTY_FILE "Error\nEmpty file\n"

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   animation.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
+/*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 11:33:22 by tsaby             #+#    #+#             */
-/*   Updated: 2025/12/09 18:34:46 by tsaby            ###   ########.fr       */
+/*   Updated: 2025/12/22 14:33:42 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ void	update_texture_animation(t_game *cube)
 		/ 1000000.0;
 	if (elapsed_time >= frame_duration)
 	{
-		cube->textures.current_frame = (cube->textures.current_frame + 1) % 6;
+		cube->textures.current_frame = (cube->textures.current_frame + 1)
+			% ANIMATED_SPRITE;
 		cube->textures.last_frame_time = current_time;
 	}
 }
