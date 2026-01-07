@@ -3,30 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   parse_grid_flood_fill.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: teatime <teatime@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 12:49:13 by egache            #+#    #+#             */
-/*   Updated: 2026/01/06 23:48:17 by teatime          ###   ########.fr       */
+/*   Updated: 2026/01/07 13:45:21 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cube_bonus.h"
 
-static bool is_a_wall(char c)
+static bool	is_a_wall(char c)
 {
 	if (c == '1')
 		return (true);
 	return (false);
 }
 
-static bool is_already_visited(char c)
+static bool	is_already_visited(char c)
 {
 	if (c == 'V' || c == 'C' || c == '3')
 		return (true);
 	return (false);
 }
 
-static char replace_char(char c)
+static char	replace_char(char c)
 {
 	if (is_a_player(c))
 		return ('3');
@@ -37,18 +37,22 @@ static char replace_char(char c)
 	return (c);
 }
 
-static bool is_surrounded(t_game *cube, int i, int j)
+static bool	is_surrounded(t_game *cube, int i, int j)
 {
-	if ((cube->map.final_grid[i + 1][j] == '1' && cube->map.final_grid[i - 1][j] == '1') || (cube->map.final_grid[i][j + 1] == '1' && cube->map.final_grid[i][j - 1] == '1'))
+	if ((cube->map.final_grid[i + 1][j] == '1' && cube->map.final_grid[i
+			- 1][j] == '1') || (cube->map.final_grid[i][j + 1] == '1'
+			&& cube->map.final_grid[i][j - 1] == '1'))
 		return (true);
 	return (false);
 }
 
-int flood_fill(int i, int j, t_game *cube)
+int	flood_fill(int i, int j, t_game *cube)
 {
 	if (i < 0 || i >= cube->map.grid_height || !cube->map.final_grid[i])
 		return (-1);
-	if (j < 0 || (size_t)j >= ft_strlen(cube->map.final_grid[i]) || !cube->map.final_grid[i] || !cube->map.final_grid[i][j] || cube->map.final_grid[i][j] == '\n')
+	if (j < 0 || (size_t)j >= ft_strlen(cube->map.final_grid[i])
+		|| !cube->map.final_grid[i] || !cube->map.final_grid[i][j]
+		|| cube->map.final_grid[i][j] == '\n')
 		return (-1);
 	if (is_a_wall(cube->map.final_grid[i][j]))
 		return (0);
