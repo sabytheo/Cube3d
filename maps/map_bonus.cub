@@ -5,7 +5,7 @@ WE ./assets/Brick1_west.xpm
 WE ./assets/Brick2_west.xpm
 WE ./assets/Brick3_west.xpm
 WE ./assets/Brick4_west.xpm
-SO ./assets/Brick_south.xpm
+SO ./assets/Brick_south.xpm         q
 EA ./assets/Brick_east.xpm
 OD ./assets/Door_open.xpm
 CD ./assets/Door_closed.xpm

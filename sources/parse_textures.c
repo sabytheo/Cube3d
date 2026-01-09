@@ -6,7 +6,7 @@
 /*   By: egache <egache@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 12:42:42 by tsaby             #+#    #+#             */
-/*   Updated: 2025/12/11 15:58:26 by egache           ###   ########.fr       */
+/*   Updated: 2026/01/09 13:44:46 by egache           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,19 @@ static void	skip_textures_identifier(char **str)
 
 static int	skip_and_copy_path(char **path, char *str)
 {
+	int	i;
+
+	i = 0;
 	skip_textures_identifier(&str);
+	while (str && str[i] != '\n' && str[i] != ' ')
+		i++;
+	if (str[i] == ' ')
+	{
+		while (str && str[i] == ' ')
+			i++;
+	}
+	if (str[i] != '\n')
+		return (-1);
 	*path = ft_strdup_no_whitespace(str);
 	if (!*path)
 		return (-1);
